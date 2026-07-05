@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+ENV/
+
+# PyTorch / Models
+*.pth
+*.pt
+*.bin
+*.safetensors
+checkpoint-*/
+adapter_model.safetensors
+
+# Heavy Raw Datasets (>100MB or >10k files not needed for core medical pipeline)
+datasets/pii_masking_300k.jsonl
+datasets/vietnews-master/
+datasets/wikilingua/
+datasets/ViMs-Dataset-master/
+datasets/vlsp/
+
+# Logs & Results (exclude huge raw generations, keep small stats)
+*.log
+results/defense_model_*/
+results/*.jsonl
+!results/benchmarks/*.json
+!results/figures/*.png
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,26 @@
+{
+  "Base_Model": {
+    "faithfulness": 3.6,
+    "relevance": 3.7333333333333334,
+    "conciseness": 4.233333333333333,
+    "overall": 3.8555555555555556
+  },
+  "Baseline_Filter": {
+    "faithfulness": 3.566666666666667,
+    "relevance": 3.966666666666667,
+    "conciseness": 4.5,
+    "overall": 4.011111111111111
+  },
+  "Standard_DPO": {
+    "faithfulness": 4.0,
+    "relevance": 3.466666666666667,
+    "conciseness": 4.733333333333333,
+    "overall": 4.066666666666666
+  },
+  "OGPSA_DPO": {
+    "faithfulness": 4.0,
+    "relevance": 3.1666666666666665,
+    "conciseness": 4.6,
+    "overall": 3.922222222222222
+  }
+}

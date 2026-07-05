@@ -1,0 +1,970 @@
+{
+  "Base_Model": [
+    {
+      "doc_id": "vlsp_train_238",
+      "rouge1": 60.08583690987125,
+      "rouge2": 25.43103448275862,
+      "rougeL": 32.18884120171674,
+      "len_ratio": 0.5861297539149888,
+      "output": "Tóm tắt: Taliban đã không tuân thủ các cam kết đưa ra sau khi nắm quyền, đặc biệt là về quyền phụ nữ. Họ áp đặt nhiều sắc lệnh hạn chế quyền của phụ nữ, bao gồm việc yêu cầu họ che kín toàn thân, không cho phép họ ra ngoài không có người giám hộ nam, và giới hạn thời gian ra ngoài tùy thuộc giới tính. Taliban cho rằng họ đang lo lắng về an ninh của phụ nữ, nhưng các học giả và giáo lý Hồi giáo khác cho rằng họ vi phạm quyền của phụ nữ. Taliban cũng đã hạn chế quyền tiếp cận việc làm cho phụ nữ, trái ngược với Hồi giáo."
+    },
+    {
+      "doc_id": "vlsp_train_96",
+      "rouge1": 61.199999999999996,
+      "rouge2": 34.93975903614458,
+      "rougeL": 33.6,
+      "len_ratio": 0.6090909090909091,
+      "output": "Brad Pitt trải qua thời gian cô độc sau ly hôn Angelina Jolie, cố gắng thay đổi bản thân bằng cách cai nghiện rượu và từ bỏ thuốc lá. Anh đã có cuộc phỏng vấn độc quyền với tờ GQ và cho biết nỗi buồn và sự cô đơn là điều tất yếu trong cuộc sống. Brad Pitt đã quyết định cai nghiện rượu và từ bỏ thuốc lá, thay vào đó nhai kẹo cao su có hương nicotine. Anh cũng không còn hẹn hò người phụ nữ nào khác kể từ khi ly hôn. Brad Pitt và Angelina Jolie có 6 người con chung. Anh đã kiện vợ cũ lên tòa án thượng thẩm Los Angeles vì việc bán toàn bộ cổ phần của cô tại nhà máy sản xuất rượu vang Chateau Miraval."
+    },
+    {
+      "doc_id": "vlsp_train_8",
+      "rouge1": 58.00240673886884,
+      "rouge2": 22.195416164053075,
+      "rougeL": 29.602888086642597,
+      "len_ratio": 1.6305015353121801,
+      "output": "Tóm tắt: \n\n- Cục Dự trữ Nhà nước TP.HCM đã hoàn thành tốt nhiệm vụ nhập, xuất hàng dự trữ quốc gia trong 6 tháng đầu năm 2022.\n\n- Mặc dù gặp khó khăn như thay đổi xu hướng tích trữ lương thực, ảnh hưởng từ dịch COVID-19, đơn vị vẫn hoàn thành mục tiêu nhập 10.500 tấn gạo.\n\n- Công tác mua lương thực gặp khó khăn do thiếu thông tin về giá và doanh nghiệp bảo hiểm không cung cấp báo giá.\n\n- Đấu thầu qua mạng thành công mua 10.500 tấn gạo, đạt tiêu chuẩn chất lượng.\n\n- Cục đã tổ chức đấu thầu qua mạng thành công mua 10.500 tấn gạo, hoàn thành 100% kế hoạch được giao trước thời hạn quy định.\n\n- Công tác xuất gạo hỗ trợ học sinh gặp khó khăn do thiếu thông tin về giá và doanh nghiệp bảo hiểm không cung cấp báo giá.\n\n- Cục đã tổ chức đấu thầu qua mạng thành công mua 10.500 tấn gạo, hoàn thành 100% kế hoạch được giao trước thời hạn quy định.\n\n- Cục đã tổ chức đấu thầu qua mạng thành công mua 10.500 tấn gạo, hoàn thành 100% kế hoạch được giao trước thời hạn quy định.\n\n- Cục đã tổ chức đấu thầu qua mạng thành công mua 10.500 tấn gạo, hoàn thành 100% kế hoạch được giao trước thời hạn quy định.\n\n- Cục đã tổ chức đấu thầu qua mạng thành công mua 10.500 tấn gạo, hoàn thành 100% kế hoạch được giao trước thời hạn quy định.\n\n- Cục đã tổ chức đấu thầu qua mạng thành công mua 10.500 tấn gạo, hoàn thành 100% kế hoạch được giao trước thời hạn quy định.\n\n- Cục đã tổ chức đấu thầu qua mạng thành công mua 10.500 tấn gạo, hoàn thành 100% kế hoạch được giao trước thời hạn quy định.\n\n- Cục đã tổ chức đấu thầu qua mạng thành công mua 10.500 tấn gạo, hoàn thành 100% kế hoạch được giao trước thời"
+    },
+    {
+      "doc_id": "vlsp_train_206",
+      "rouge1": 71.60493827160494,
+      "rouge2": 31.636863823933975,
+      "rougeL": 30.45267489711934,
+      "len_ratio": 1.1383886255924172,
+      "output": "**Tóm tắt:**\n\n- **Tăng động lực cho khu vực công**: Nhiều chuyên gia đề cập đến việc cần chú trọng đến chính sách nhằm tăng động lực cho khu vực công, bao gồm việc cải thiện thu nhập cho cán bộ và công chức.\n\n- **Đánh giá cán bộ thực chất**: Một số chuyên gia nhấn mạnh rằng việc đánh giá cán bộ cần thực chất để thu hút và giữ chân nhân tài.\n\n- **Thu nhập cho cán bộ**: TPHCM đã áp dụng chính sách về thu nhập cho cán bộ, nhưng mức thu nhập hiện tại vẫn chưa đủ hấp dẫn, do đó cần cải thiện.\n\n- **Hệ thống quản trị thực thi**: Một giải pháp được đề xuất để cải thiện tình hình là xây dựng hệ thống thông tin về kết quả công việc, giúp phân bổ biên chế và tinh giản hiệu quả hơn.\n\n- **Chính sách đặc thù về thu nhập**: Để nâng cao hiệu quả, TPHCM đã thực hiện đánh giá và phân loại cán bộ hàng quý, với tỷ lệ hoàn thành nhiệm vụ cao hơn 90%.\n\n- **Công nghệ và sáng kiến**: Nhóm Sáng kiến Việt Nam đang hợp tác với Chính phủ và địa phương khác để xây dựng hệ thống quản trị thực thi, giúp phân bổ biên chế và tinh giản hiệu quả hơn.\n\n- **Thực trạng và xu hướng**: TPHCM có tỷ lệ cán bộ cao nhất cả nước, gây áp lực lớn cho công việc, đòi hỏi chính sách thu nhập phù hợp để thu hút và giữ chân nhân tài."
+    },
+    {
+      "doc_id": "vlsp_train_263",
+      "rouge1": 44.03669724770642,
+      "rouge2": 23.204419889502763,
+      "rougeL": 27.88990825688073,
+      "len_ratio": 0.32816326530612244,
+      "output": "Tóm tắt: \n\nTP Hà Nội đã ban hành Chỉ thị về nâng cao PCI năm 2022, nhìn nhận những mặt được và chưa được, đặc biệt là các chỉ số thành phần giảm hạng. TP đã tiến hành phân tích và đề xuất giải pháp khắc phục, tập trung vào việc cải thiện chất lượng hành chính và môi trường kinh doanh. Các giải pháp bao gồm đơn giản hóa thủ tục hành chính, giảm chi phí, tăng kiểm tra và xử lý các hành vi nhũng nhiễu."
+    },
+    {
+      "doc_id": "vlsp_train_282",
+      "rouge1": 54.285714285714285,
+      "rouge2": 26.315789473684216,
+      "rougeL": 22.857142857142858,
+      "len_ratio": 0.38508239375542064,
+      "output": "### Tóm tắt\n\nLuis Suarez, tiền đạo cũ của Liverpool, đã khuyên Darwin Nunez, người mới gia nhập đội hình, về hành vi không phù hợp trong trận đấu với Crystal Palace. Nunez đã bị trọng tài rút thẻ đỏ, dẫn đến việc mất quyền thi đấu và bị treo giò 3 trận. Liverpool gặp khó khăn do nhiều trường hợp chấn thương và hậu quả từ lỗi của Nunez. Darwin Nunez đã nhận được sự động viên từ đàn anh Luis Suarez và tin tưởng vào khả năng mình sẽ cải thiện."
+    },
+    {
+      "doc_id": "vlsp_train_111",
+      "rouge1": 64.9616368286445,
+      "rouge2": 28.791773778920305,
+      "rougeL": 27.621483375959077,
+      "len_ratio": 0.6588380716934487,
+      "output": "Tóm tắt: \n\n- PSY mặc đồ bơi biểu diễn \"Single Ladies\" gây tranh cãi.\n- PSY thừa nhận đánh mất lòng tự trọng khi biểu diễn.\n- Màn trình diễn gây tranh cãi, bị chỉ trích.\n- PSY cho biết đã xé quần áo sau khi mặc đồ bơi.\n- PSY mời Lee Byung Hun tham gia MV \"I Luv It\".\n- PSY trở lại sau 5 năm vắng bóng với album \"Psy 9\".\n- Ca khúc \"That That\" lọt vào bảng xếp hạng Billboard Hot 100.\n- PSY đạt top 2 Billboard Global 200.\n- Ca khúc mới của PSY \"That That\" đạt top 80 Billboard Hot 100.\n- PSY cảm ơn khán giả sau khi đạt thành tích mới."
+    },
+    {
+      "doc_id": "vlsp_train_65",
+      "rouge1": 71.14427860696519,
+      "rouge2": 51.0,
+      "rougeL": 38.805970149253724,
+      "len_ratio": 0.5762304921968787,
+      "output": "Facebook sắp trở thành \"TikTok thứ hai\": Thay đổi nguồn cấp dữ liệu, chỉ hiển thị nội dung dựa trên sở thích để giữ chân người dùng. Facebook đang thay đổi cách hiển thị các bài đăng và video trên mạng xã hội, tập trung vào việc thu hút người dùng xem những nội dung từ tài khoản họ chưa theo dõi. Đây được coi là một cách cạnh tranh trực tiếp với ứng dụng video ngắn TikTok. Thay đổi này bắt đầu từ hôm nay, song phần lớn nội dung vẫn đến từ các tài khoản mà người dùng theo dõi."
+    },
+    {
+      "doc_id": "vlsp_train_112",
+      "rouge1": 66.35071090047393,
+      "rouge2": 37.717908082408876,
+      "rougeL": 34.12322274881516,
+      "len_ratio": 0.6168455821635013,
+      "output": "### Tóm tắt\n\n- **Truyện tranh**: Một cô gái 8 tuổi bị bạo hành và tử vong, người cha và người tình bị truy tố.\n- **Xét xử**: Ngày 21/7, Tòa gia đình và người chưa thành niên xét xử sơ thẩm.\n- **Pháp luật**: Bị cáo Nguyễn Võ Quỳnh Trang và Nguyễn Kim Trung Thái bị truy tố về tội \"Giết người\" và \"Hành hạ người khác\".\n- **Nghệ thuật**: Sự phẫn nộ của dư luận và sự quan tâm của người dân.\n- **Kế hoạch**: Nhà hàng ở Sóc Trăng đã chuẩn bị cả đêm để dự phiên tòa.\n- **Thẩm quyền**: Tòa gia đình và người chưa thành niên không có thẩm quyền giải quyết vụ án, đề nghị chuyển sang Tòa hình sự.\n- **Khám phá**: Đề nghị xác định tỷ lệ thương tật của nạn nhân trước ngày 22/12/2021.\n- **Quá trình**: HĐXX hoãn phiên tòa xét xử vụ án bạo hành bé gái 8 tuổi."
+    },
+    {
+      "doc_id": "vlsp_train_88",
+      "rouge1": 77.65293383270912,
+      "rouge2": 47.05882352941176,
+      "rougeL": 41.69787765293383,
+      "len_ratio": 1.0042444821731749,
+      "output": "Dựa trên tài liệu bạn cung cấp, dưới đây là một tóm tắt ngắn gọn về tình hình nhân viên y tế xin thôi việc, bỏ việc:\n\n- Tính từ đầu năm 2021 đến 6 tháng đầu năm 2022, có tổng cộng 9.397 viên chức y tế xin thôi việc, bỏ việc.\n\n- Nguyên nhân chủ yếu bao gồm:\n  1. Thu nhập thấp.\n  2. Tự chủ kinh phí chi thường xuyên.\n  3. Chính sách thu hút nhân viên y tế chưa đủ mạnh.\n  4. Phát triển mạnh mẽ của hệ thống y tế tư nhân.\n  5. Áp lực công việc cao, ảnh hưởng từ vi phạm quy định đấu thầu.\n  6. Môi trường làm việc đặc thù của ngành y tế.\n  7. Lý do gia đình, công tác xa nhà, hoàn cảnh gia đình khó khăn.\n  8. Sức khỏe không đảm bảo, tự nguyện nghỉ việc.\n\n- Đề xuất từ phía Công đoàn Y tế Việt Nam bao gồm:\n  1. Nâng mức phụ cấp ưu đãi từ 40%-70% lên 100% cho nhân viên y tế chuyên môn.\n  2. Động viên tăng cường cung ứng dịch vụ y tế, tăng nguồn thu sự nghiệp.\n  3. Cung cấp đầy đủ thuốc và trang thiết bị cho bệnh nhân tham gia bảo hiểm y tế.\n  4. Xây dựng cơ chế cân bằng giữa kinh phí và nhu cầu y tế.\n\nThông tin này cho thấy tình hình nhân viên y tế đang gặp nhiều khó khăn trong việc tìm kiếm việc làm ổn định, đồng thời cũng phản ánh xu hướng phát triển của ngành y tế hiện nay."
+    },
+    {
+      "doc_id": "vlsp_train_264",
+      "rouge1": 76.61971830985917,
+      "rouge2": 35.31073446327683,
+      "rougeL": 30.985915492957744,
+      "len_ratio": 1.128780487804878,
+      "output": "**Tóm tắt:**\n\n- **Sức đề kháng của trẻ suy giảm**: Hệ miễn dịch của trẻ sơ sinh có hệ thống kháng thể từ mẹ, nhưng sau 6 tháng, kháng thể giảm mạnh. Từ 6 tháng trở lên, hệ miễn dịch chưa hoàn thiện, cần đến 3-4 tuổi mới đủ kháng thể.\n\n- **Nguyên nhân**: Hệ miễn dịch suy giảm do thiếu kháng thể từ mẹ, đặc biệt là trong 6 tháng đầu tiên.\n\n- **Biện pháp**: Bắt đầu từ 6 tháng, trẻ cần được bú mẹ hoàn toàn để tiếp tục cung cấp kháng thể.\n\n- **Dịch bệnh**: Trẻ dễ mắc các bệnh như tiêu chảy, viêm đường hô hấp (viêm họng, viêm mũi, viêm thanh quản), viêm phổi, và viêm pharyngitis (viêm phế quản).\n\n- **Triệu chứng cụ thể**:\n  - Viêm họng cấp: Sốt, ho, nuốt đau.\n  - Viêm thanh quản và viêm thanh khí phế quản cấp: Khàn tiếng, tắt tiếng, khò khè, thở rít, co lõm hõm ức.\n  - Viêm phổi: Xảy ra ở mọi lứa tuổi, nguyên nhân chủ yếu là vi khuẩn.\n  - Viêm pharyngitis: Thường gặp ở trẻ 2 tuổi, biểu hiện là thở nhanh bất thường, ho kèm khò khè.\n\n- **Phương pháp điều trị**: Cần cấp cứu kịp thời nếu có dấu hiệu sốt cao, thở mệt, lừ đừ.\n\n- **Giải thích**: Sự suy giảm của hệ miễn dịch làm tăng nguy cơ mắc các bệnh nhiễm trùng, đặc biệt là các bệnh về đường hô hấp."
+    },
+    {
+      "doc_id": "vlsp_train_39",
+      "rouge1": 57.14285714285715,
+      "rouge2": 26.45739910313901,
+      "rougeL": 28.125,
+      "len_ratio": 0.43592436974789917,
+      "output": "Tóm tắt: \n\nGiải bóng rổ chuyên nghiệp Việt Nam (VBA) đang chứng minh sức hấp dẫn lớn với người xem thông qua các trận đấu hấp dẫn và tính giải trí cao. Các trận đấu thường xuyên diễn ra trong các nhà thi đấu lớn như Nhà thi đấu quận Tây Hồ, thu hút hàng nghìn khán giả. Giá vé cho các trận đấu cao hơn so với các giải đấu khác, nhưng thu nhập từ vé và các sản phẩm lưu niệm vẫn không đủ bù chi cho công tác tổ chức."
+    },
+    {
+      "doc_id": "vlsp_train_154",
+      "rouge1": 60.48109965635739,
+      "rouge2": 29.757785467128027,
+      "rougeL": 32.98969072164948,
+      "len_ratio": 0.5375626043405676,
+      "output": "**Tóm tắt:**\n\nMột bé gái 5 tuổi ở TP.HCM bị lạc trên quốc lộ 1, huyện Bình Chánh. Phát hiện tại Bến xe Phương Trang, cô bé lang thang và sợ hãi. Tổ CSGT đưa bé về trụ sở, mua nước, sữa và thức ăn. Sau đó, CSGT và công an xã Tân Kiên liên hệ với gia đình để đón bé về. Gia đình bé đã đi tìm suốt ngày, nhưng không gặp được."
+    },
+    {
+      "doc_id": "vlsp_train_130",
+      "rouge1": 65.20874751491054,
+      "rouge2": 29.940119760479046,
+      "rougeL": 33.39960238568588,
+      "len_ratio": 0.8476605005440696,
+      "output": "Dưới đây là tóm tắt các mẫu xe bán chạy nhất tháng 6/2022:\n\n1. **Toyota Corolla Cross**: Doanh số tăng 266 xe so với tháng trước nhưng vẫn giữ vị trí số 1.\n2. **Ford Ranger**: Doanh số giảm nhẹ 265 xe so với tháng 5 nhưng vẫn giữ vị trí số 2.\n3. **VinFast Fadil**: Doanh số giảm 571 xe so với tháng trước nhưng vẫn giữ vị trí số 3.\n4. **Hyundai Accent**: Doanh số giảm 738 xe so với tháng 5 nhưng vẫn giữ vị trí số 4.\n5. **Kia Sonet**: Lần đầu tiên góp mặt trong nhóm 10 xe bán chạy nhất, giữ vị trí số 5.\n6. **Hyundai Creta**: Doanh số giảm 260 xe so với tháng 5 nhưng vẫn giữ vị trí số 6.\n7. **Mitsubishi Triton**: Doanh số tăng 268 xe so với tháng trước nhưng vẫn giữ vị trí số 7.\n\nNhững mẫu xe này đều có mức doanh số cao hơn so với các đối thủ cạnh tranh trong tháng 6/2022."
+    },
+    {
+      "doc_id": "vlsp_train_274",
+      "rouge1": 75.0,
+      "rouge2": 41.60206718346253,
+      "rougeL": 35.051546391752574,
+      "len_ratio": 0.7055909412597311,
+      "output": "**Tóm tắt**: \n\n- Kết quả của công tác phòng chống tham nhũng đạt được những thành tựu đáng chú ý:\n  - Xử lý kỷ luật nhiều cán bộ cấp cao và sĩ quan cấp tướng.\n  - Thúc đẩy công tác xây dựng Đảng và phòng chống tham nhũng.\n  - Tăng cường công tác kiểm tra và xử lý vi phạm.\n  - Phát hiện và xử lý nhiều vụ án tham nhũng, lạm quyền.\n\n- Các vụ việc nổi bật:\n  - Chủ tịch Trung ương Đảng Nguyễn Phú Trọng chủ trì họp kỷ luật Ban Thường vụ Đảng ủy Cảnh sát biển Việt Nam.\n  - Vụ việc của thiếu tướng và 7 tướng lĩnh Cảnh sát biển Việt Nam.\n\n- Kết quả: Tiếp tục tăng cường công tác phòng chống tham nhũng, kiên quyết đấu tranh với tham nhũng.\n\n- Quá trình: Đạt được kết quả tích cực thông qua việc kiên trì, liên tục, không ngừng cải thiện và nâng cao hiệu quả công tác.\n\n- Nội dung: Công tác xây dựng Đảng, chỉnh đốn Đảng, phòng chống tham nhũng, tiêu cực đã đạt được sự chuyển biến tích cực, tạo nên sức ép cho mọi người dân và các tổ chức thực hiện tốt quy tắc đạo đức và trách nhiệm trước pháp luật."
+    },
+    {
+      "doc_id": "vlsp_train_256",
+      "rouge1": 58.08383233532935,
+      "rouge2": 26.506024096385538,
+      "rougeL": 32.93413173652694,
+      "len_ratio": 0.5422647527910686,
+      "output": "Tóm tắt: \n\nAnh Tú và Diệu Nhi đã công khai mối quan hệ tình cảm với nhau thông qua việc đăng tải hình ảnh và video trên mạng xã hội. Sự xuất hiện của họ đã gây sốc cho nhiều người, đặc biệt là đối với fan của Diệu Nhi. Họ đã chia sẻ niềm vui và buồn bã về tình cảm của mình, đồng thời cũng gây tranh cãi và bàn tán sôi nổi trên mạng xã hội."
+    },
+    {
+      "doc_id": "vlsp_train_209",
+      "rouge1": 74.40381558028616,
+      "rouge2": 39.55342902711323,
+      "rougeL": 30.52464228934818,
+      "len_ratio": 1.2357894736842105,
+      "output": "**Tóm tắt:**\n\n- **Tiêu đề:** Phim Hàn Quốc \"Extraordinary Attorney Woo\" gây tranh cãi vì nội dung về ung thư.\n  \n- **Nội dung chính:**\n  - Tập cuối cùng của phim gây tranh cãi vì việc nhân vật Woo Young Woo đến thăm bệnh nhân ung thư.\n  - Sự so sánh tỷ lệ sống sót sau phẫu thuật với tỷ lệ sống sót sau ung thư được cho là gây tranh cãi.\n  - Nhân vật Woo Young Woo tự hào về tỷ lệ sống sót cao nhưng bị bác sĩ Jung Myeong Seok giải thích khác.\n  - Nội dung gây tranh cãi về tỷ lệ sống sót sau ung thư được cho là \"coi nhẹ\" hoặc \"làm trò đùa\".\n  \n- **Khó hiểu:** Lời giải thích của Woo Young Woo về tỷ lệ sống sót sau ung thư bị cho là gây hiểu lầm.\n  \n- **Ý nghĩa:** Phản ánh vấn đề về cách tiếp cận với bệnh ung thư trong xã hội hiện đại.\n\n- **Tác động:** Phim đã bị chỉ trích vì nội dung gây tranh cãi về tỷ lệ sống sót sau ung thư.\n\n- **Xuất phát:** Extraordinary Attorney Woo là một trong những phim thành công nhất năm 2022 tại Hàn Quốc.\n\n- **Quá trình:** Bộ phim bắt đầu với rating thấp nhưng dần được khán giả đón nhận và yêu thích. Tuy nhiên, trong những tập cuối cùng, nó đối mặt với nhiều ý kiến trái chiều xoay quanh nội dung kịch bản và cách phát triển nhân vật."
+    },
+    {
+      "doc_id": "vlsp_train_57",
+      "rouge1": 77.52442996742671,
+      "rouge2": 42.48366013071895,
+      "rougeL": 30.61889250814332,
+      "len_ratio": 0.9419831223628692,
+      "output": "### Tóm tắt\n\nTrong tháng 5/2022, Trung ương Đoàn TNCS Hồ Chí Minh, Trung ương Hội Liên hiệp thanh niên Việt Nam và Trung ương Hội thầy thuốc trẻ Việt Nam tổ chức Hành trình \"Thầy thuốc trẻ làm theo lời Bác, tình nguyện vì sức khỏe cộng đồng năm 2022 – Chăm sóc sức khỏe hậu COVID-19\". Chương trình nhằm hỗ trợ hàng triệu người dân bị ảnh hưởng bởi dịch COVID-19, bao gồm tư vấn, khám bệnh, chăm sóc và phục hồi sức khỏe.\n\nChương trình được tổ chức tại Trường Quốc học Huế, với sự tham dự của các quan chức và nhân dân địa phương. Đây là dịp để ghi nhận kỷ niệm 132 năm ngày sinh Chủ tịch Hồ Chí Minh và chào mừng Đại hội Đoàn các cấp tiến tới Đại hội Đại biểu toàn quốc lần thứ XII.\n\nHành trình này đánh dấu sự tiếp nối thành công của các kỳ hành trình trước, đồng thời thể hiện tinh thần tình nguyện và trách nhiệm của thanh thiếu niên trong việc phòng, chống và kiểm soát dịch bệnh COVID-19."
+    },
+    {
+      "doc_id": "vlsp_train_163",
+      "rouge1": 71.95767195767195,
+      "rouge2": 49.5575221238938,
+      "rougeL": 45.14991181657848,
+      "len_ratio": 0.6850393700787402,
+      "output": "Một số điểm chính trong bài viết:\n\n1. Máy bay không người lái của Ukraine đã đạt được hiệu quả cao trong việc đối phó với xe tăng và thiết giáp Nga.\n\n2. Lực lượng Nga đã nhanh chóng rút kinh nghiệm từ những tháng đầu của cuộc chiến.\n\n3. Các chuyên gia cho rằng máy bay không người lái ngày càng trở nên kém hiệu quả do Nga đã cải tiến hệ thống phòng thủ.\n\n4. Nga đang sử dụng radar cảnh báo sớm, hệ thống tác chiến điện tử, và nhiều loại vũ khí khác để bắn hạ máy bay không người lái của Ukraine.\n\n5. Ukraine đã nhận được khoảng 50 máy bay không người lái TB2 từ Thổ Nhĩ Kỳ kể từ khi cuộc chiến bắt đầu.\n\n6. Mặc dù máy bay không người lái TB2 có giá cao, nhưng Ukraine vẫn tiếp tục sử dụng chúng."
+    },
+    {
+      "doc_id": "vlsp_train_107",
+      "rouge1": 56.11510791366906,
+      "rouge2": 35.180722891566255,
+      "rougeL": 37.410071942446045,
+      "len_ratio": 0.5583333333333333,
+      "output": "**Tóm tắt:**\n\n- Nhà đầu tư chứng khoán sắp được giao dịch vào ngày T+2, thay vì T+3.\n- Thời gian hoàn tất thanh toán chứng khoán và ngân hàng thanh toán được rút ngắn từ 15h30 - 16h lên 11h30 - 12h.\n- Dự thảo quy chế thay thế quy chế hoạt động bù trừ và thanh toán giao dịch chứng khoán đã được VSD công bố.\n- Dự thảo quy chế thay thế đang được lấy ý kiến của các cơ quan liên quan.\n- Nhà đầu tư có thể thực hiện giao dịch chứng khoán sớm hơn 1 ngày so với quy định cũ."
+    },
+    {
+      "doc_id": "vlsp_train_278",
+      "rouge1": 38.554216867469876,
+      "rouge2": 17.433414043583536,
+      "rougeL": 25.542168674698797,
+      "len_ratio": 0.28952772073921973,
+      "output": "Tổng thống Joe Biden yêu cầu Quốc hội phê duyệt hợp đồng mua vũ khí trị giá 1,1 tỷ USD cho Đài Loan, bao gồm 60 tên lửa Harpoon và 100 tên lửa Sidewinder. Việc mua bán này có thể gặp khó khăn do Quốc hội đang nghỉ hè. Trung Quốc phản đối và yêu cầu Mỹ ngừng bán vũ khí cho Đài Loan."
+    },
+    {
+      "doc_id": "vlsp_train_225",
+      "rouge1": 58.10810810810811,
+      "rouge2": 18.552036199095028,
+      "rougeL": 28.82882882882883,
+      "len_ratio": 0.6686602870813397,
+      "output": "Tài liệu tóm tắt:\n\n- Anh Phan Thanh Sang bị truy tố oan trong vụ án cố ý làm hư tài sản.\n- Anh đã nhiều lần rơi nước mắt kể về oan ức và oán giận.\n- Anh trải qua nhiều áp lực từ dư luận và gia đình.\n- Anh đã suy nghĩ về việc tự sát nhưng cuối cùng không thực hiện.\n- Anh đã gặp nhiều khó khăn trong hành trình đi kêu oan suốt hơn 2 năm.\n- Anh đã gặp nhiều khó khăn trong việc tìm kiếm sự giúp đỡ từ pháp luật và gia đình.\n- Anh đã suy nghĩ về việc tự sát nhưng cuối cùng không thực hiện.\n- Anh đã gặp nhiều khó khăn trong hành trình đi kêu oan suốt hơn 2 năm."
+    },
+    {
+      "doc_id": "vlsp_train_179",
+      "rouge1": 58.17307692307692,
+      "rouge2": 32.367149758454104,
+      "rougeL": 28.846153846153843,
+      "len_ratio": 0.5244988864142539,
+      "output": "Tóm tắt: \n\n- HIMARS (High Mobility Artillery Rocket System) là hệ thống pháo phản lực tầm trung của Ukraine.\n- Nó có tầm bắn xa, giúp Ukraine tấn công từ xa mà không bị đối phó.\n- Ukraine đã sử dụng HIMARS để phá hủy kho vũ khí của Nga tại Nova Kakhovka.\n- Hệ thống này được coi là trung tâm phòng thủ của Ukraine trong cuộc chiến với Nga.\n- HIMARS có khả năng phóng nhiều tên lửa dẫn đường, tăng hiệu quả tấn công.\n- Ukraine đang tiếp tục mua thêm hệ thống HIMARS từ Mỹ."
+    },
+    {
+      "doc_id": "vlsp_train_266",
+      "rouge1": 47.201946472019465,
+      "rouge2": 26.405867970660147,
+      "rougeL": 28.223844282238442,
+      "len_ratio": 0.32989690721649484,
+      "output": "**Tóm tắt:**\n\nU20 Việt Nam bổ sung 7 cầu thủ mới từ CLB Phố Hiến, trong đó có Thanh Nhàn (đánh 4 bàn) là người nổi bật. Các cầu thủ sẽ tập trung tại Nhật Bản trước khi tham gia vòng loại U20 châu Á 2023 vào tháng 9. Việc bổ sung cầu thủ nhằm giúp U20 Việt Nam tăng cường lực lượng và chuẩn bị cho trận đấu với Indonesia."
+    },
+    {
+      "doc_id": "vlsp_train_109",
+      "rouge1": 70.58823529411765,
+      "rouge2": 35.43307086614173,
+      "rougeL": 34.90196078431373,
+      "len_ratio": 1.4059561128526645,
+      "output": "**Tóm tắt:**\n\n- **Cảnh cáo**: Tập 2 của bộ phim \"Đấu trí\" tiếp tục kể về vụ việc hối lộ lớn.\n- **Mô tả vụ việc**: Một giám đốc CDC nhận hối lộ hàng chục tỷ từ Khải Tuấn, gây lo lắng cho nhiều nhân viên.\n- **Thời tiết**: Vụ án diễn ra trong bối cảnh công ty Khải Tuấn chuẩn bị ký kết hợp đồng hàng trăm tỷ về kit test.\n- **Quan hệ nhân vật**: Bà Bằng (Doãn Quốc Đam) và Tuấn (Anh Tuấn) đối mặt với sự lo lắng khi vụ án nghi ngờ liên quan đến họ.\n- **Cuộc chiến**: Đại tá Giang (Trung Anh) và Vũ (Thanh Sơn) cùng tham gia vào vụ án, với Vũ dặn Phong (Phòng) làm việc kín để tránh lộ thông tin.\n- **Tiềm năng**: Tập 2 sẽ lên sóng vào ngày 19/7 trên kênh VTV1.\n\n**Nội dung chính:**\n1. Vụ án hối lộ lớn giữa giám đốc CDC và Khải Tuấn.\n2. Lo lắng của nhân viên trong tập 2 của \"Đấu trí\".\n3. Sự tham gia của các nhân vật chính trong vụ án.\n4. Dự báo về tương lai của vụ án và tác động đến nhân vật chính."
+    },
+    {
+      "doc_id": "vlsp_train_105",
+      "rouge1": 54.545454545454554,
+      "rouge2": 27.956989247311824,
+      "rougeL": 28.342245989304814,
+      "len_ratio": 0.4571773220747889,
+      "output": "U19 Việt Nam giành chiến thắng trước U19 Thái Lan ở trận tranh hạng 3 giải U19 Đông Nam Á 2022, sau khi đối đầu với U19 Malaysia và U19 Lào. Trong trận đấu, U19 Việt Nam đã hòa 1-1 với U19 Thái Lan, buộc phải thi đấu thêm loạt luân lưu để quyết định vị trí. Kết quả cuối cùng là U19 Việt Nam giành chiến thắng 5-3 trong loạt luân lưu, giúp đội tuyển giành được danh hiệu danh dự."
+    },
+    {
+      "doc_id": "vlsp_train_102",
+      "rouge1": 62.54295532646048,
+      "rouge2": 33.103448275862064,
+      "rougeL": 34.02061855670103,
+      "len_ratio": 0.5264116575591985,
+      "output": "Tóm tắt: \n\n- Bác sĩ mới ra trường có thu nhập khoảng 4,8 triệu đồng, không đủ để giữ chân họ.\n- Nhiều bác sĩ nghỉ việc hoặc bỏ việc, chủ yếu do thu nhập thấp.\n- Doanh thu từ y tế ngoài công lập cao hơn nhiều so với y tế công lập.\n- Chính sách thu hút nhân lực chưa tốt, tạo ít hấp dẫn cho nhân viên y tế.\n- Thêm nữa, do ảnh hưởng của đại dịch, y tế ngoài công lập thu ngân sách nhiều hơn.\n- Thu nhập của nhân viên y tế công lập thấp hơn nhiều so với y tế ngoài công lập.\n- Một số nguyên nhân khác bao gồm: thu nhập thấp, giá dịch vụ y tế cao, và chính sách thu hút nhân lực kém."
+    },
+    {
+      "doc_id": "vlsp_train_159",
+      "rouge1": 68.3127572016461,
+      "rouge2": 38.429752066115704,
+      "rougeL": 37.03703703703703,
+      "len_ratio": 0.7425629290617849,
+      "output": "**Tóm tắt:**\n\nPGS.TS Trần Minh Điển, giám đốc Bệnh viện Nhi Trung ương, thông báo rằng 50% trẻ mắc COVID-19 bị MIS-C (Malignant Infantile Multisystem Inflammatory Syndrome) phải nằm hồi sức, thường xuyên thở máy, lọc máu hoặc ECMO. Hầu hết các trường hợp MIS-C chưa tiêm vaccine COVID-19. Hội chứng MIS-C liên quan đến nhiều cơ quan trong cơ thể, gây ra tình trạng đáp ứng viêm quá mức. Hiện nay, đã có phác đồ điều trị nhưng nếu không chẩn đoán sớm, có thể gây nguy hiểm đến tính mạng trẻ. Mis-c đang trở thành bệnh học mới, phát hiện từ tháng 4/2020. Việc tiêm vaccine COVID-19 không chỉ giúp tránh MIS-C, mà còn giảm mức độ nặng khi trẻ mắc bệnh."
+    },
+    {
+      "doc_id": "vlsp_train_249",
+      "rouge1": 57.45454545454546,
+      "rouge2": 22.71062271062271,
+      "rougeL": 29.09090909090909,
+      "len_ratio": 1.476958525345622,
+      "output": "Johnny Depp trở thành đạo diễn của \"Modigliani\", bộ phim do Al Pacino sản xuất. Bộ phim dựa trên vở kịch của Dennis McIntyre, được chuyển thể từ kịch bản của Jerzy và Mary Kromolowski. Phim kể về cuộc sống của nghệ sĩ Amedeo Modigliani, nổi tiếng với vẻ đẹp thanh lịch và tư duy độc đáo. Johnny Depp, trong vai trò đạo diễn mới, cho rằng bộ phim phản ánh cuộc sống của một người nghệ sĩ gặp nhiều khó khăn nhưng cuối cùng đạt được thành công. Anh còn tham gia vai diễn vua Louis XV trong bộ phim \"Jeanne du Barry\". Ngoài ra, Johnny Depp cũng tham gia vai diễn phù thủy Gellert Grindelwald trong \"Fantastic Beasts: The Secrets of Dumbledore\"."
+    },
+    {
+      "doc_id": "vlsp_train_30",
+      "rouge1": 43.13725490196079,
+      "rouge2": 16.748768472906406,
+      "rougeL": 23.03921568627451,
+      "len_ratio": 0.3515704154002026,
+      "output": "Anthony Martial sẽ tiếp tục chơi chủ công cho Manchester United dưới sự dẫn dắt của HLV Erik Ten Hag. Anh đã ghi nhiều bàn thắng cho đội tuyển quốc gia Pháp trước đó và đang được kỳ vọng sẽ tiếp tục đóng góp vào hàng công của Quỷ Đỏ. Ten Hag đã đánh giá cao phong độ Martial và dự kiến sẽ sử dụng anh như một cầu thủ quan trọng trong mùa giải mới."
+    }
+  ],
+  "Baseline_Filter": [
+    {
+      "doc_id": "vlsp_train_238",
+      "rouge1": 61.86440677966102,
+      "rouge2": 23.40425531914894,
+      "rougeL": 30.93220338983051,
+      "len_ratio": 0.6073825503355704,
+      "output": "Tóm tắt: Taliban đã không tuân thủ các cam kết đưa ra sau khi nắm quyền, đặc biệt là về quyền của phụ nữ. Họ áp đặt nhiều sắc lệnh hạn chế đối với phụ nữ, bao gồm việc yêu cầu họ che kín toàn thân, không cho phép họ ra ngoài không có người giám hộ nam, và giới hạn thời gian ra ngoài tùy thuộc giới tính. Taliban cho rằng họ đang lo lắng về an ninh của phụ nữ, nhưng các học giả và giáo lý Hồi giáo khác cho rằng họ đang vi phạm Hồi giáo. Taliban cũng đã hạn chế quyền tiếp cận việc làm cho phụ nữ, đặc biệt là trong lĩnh vực giáo dục và y tế."
+    },
+    {
+      "doc_id": "vlsp_train_96",
+      "rouge1": 61.199999999999996,
+      "rouge2": 34.93975903614458,
+      "rougeL": 33.6,
+      "len_ratio": 0.6090909090909091,
+      "output": "Brad Pitt trải qua thời gian cô độc sau ly hôn Angelina Jolie, cố gắng thay đổi bản thân bằng cách cai nghiện rượu và từ bỏ thuốc lá. Anh đã có cuộc phỏng vấn độc quyền với tờ GQ và cho biết nỗi buồn và sự cô đơn là điều tất yếu trong cuộc sống. Brad Pitt đã quyết định cai nghiện rượu và từ bỏ thuốc lá, thay vào đó nhai kẹo cao su có hương nicotine. Anh cũng không còn hẹn hò người phụ nữ nào khác kể từ khi ly hôn. Brad Pitt và Angelina Jolie có 6 người con chung. Anh đã kiện vợ cũ lên tòa án thượng thẩm Los Angeles vì việc bán toàn bộ cổ phần của cô tại nhà máy sản xuất rượu vang Chateau Miraval."
+    },
+    {
+      "doc_id": "vlsp_train_8",
+      "rouge1": 47.465437788018434,
+      "rouge2": 24.999999999999993,
+      "rougeL": 25.80645161290323,
+      "len_ratio": 0.36131013306038895,
+      "output": "Tóm tắt: \n\nBên cạnh những thuận lợi, đơn vị cũng gặp không ít khó khăn trong quá trình triển khai nhiệm vụ nhập, xuất hàng dự trữ quốc gia. Tuy nhiên, kết quả đã được đánh giá là đáng ghi nhận. Đặc biệt, đơn vị đã hoàn thành xuất sắc nhiệm vụ nhập hàng DTQG với 10.500 tấn gạo, đạt tiêu chuẩn chất lượng và được đưa vào nhập kho DTQG tại 2 chi cục DTNN."
+    },
+    {
+      "doc_id": "vlsp_train_206",
+      "rouge1": 51.59914712153518,
+      "rouge2": 24.839400428265527,
+      "rougeL": 28.997867803837952,
+      "len_ratio": 0.38293838862559243,
+      "output": "Tóm tắt: \n\n- TPHCM cần tăng động lực cho khu vực công bằng chính sách hấp dẫn.\n- Cần cải thiện thu nhập cho cán bộ công chức, đánh giá cán bộ thực chất.\n- Hệ thống quản trị thực thi cần được xây dựng để phân bổ biên chế rõ ràng.\n- TPHCM đã tiên phong trong việc trả lương theo năng suất lao động, nhưng vẫn còn vấn đề về thu nhập.\n- Cần cải thiện chính sách thu nhập để tạo động lực cho cán bộ công chức."
+    },
+    {
+      "doc_id": "vlsp_train_263",
+      "rouge1": 44.03669724770642,
+      "rouge2": 23.204419889502763,
+      "rougeL": 27.88990825688073,
+      "len_ratio": 0.32816326530612244,
+      "output": "Tóm tắt: \n\nTP Hà Nội đã ban hành Chỉ thị về nâng cao PCI năm 2022, nhìn nhận những mặt được và chưa được, đặc biệt là các chỉ số thành phần giảm hạng. TP đã tiến hành phân tích và đề xuất giải pháp khắc phục, tập trung vào việc cải thiện chất lượng hành chính và môi trường kinh doanh. Các giải pháp bao gồm đơn giản hóa thủ tục hành chính, giảm chi phí, tăng kiểm tra và xử lý các hành vi nhũng nhiễu."
+    },
+    {
+      "doc_id": "vlsp_train_282",
+      "rouge1": 42.487046632124354,
+      "rouge2": 18.75,
+      "rougeL": 22.27979274611399,
+      "len_ratio": 0.2862098872506505,
+      "output": "Luis Suarez khuyên Darwin Nunez về hành vi không phù hợp trong trận đấu với Crystal Palace. Nunez đã bị thẻ đỏ và mất khả năng thi đấu trong 3 trận tiếp theo. Liverpool gặp khó khăn do nhiều trường hợp chấn thương và hậu quả từ thẻ đỏ. Nunez nhận được sự động viên từ Luis Suarez và tin tưởng vào khả năng tái phát triển của mình."
+    },
+    {
+      "doc_id": "vlsp_train_111",
+      "rouge1": 64.9616368286445,
+      "rouge2": 28.791773778920305,
+      "rougeL": 27.621483375959077,
+      "len_ratio": 0.6588380716934487,
+      "output": "Tóm tắt: \n\n- PSY mặc đồ bơi biểu diễn \"Single Ladies\" gây tranh cãi.\n- PSY thừa nhận đánh mất lòng tự trọng khi biểu diễn.\n- Màn trình diễn gây tranh cãi, bị chỉ trích.\n- PSY cho biết đã xé quần áo sau khi mặc đồ bơi.\n- PSY mời Lee Byung Hun tham gia MV \"I Luv It\".\n- PSY trở lại sau 5 năm vắng bóng với album \"Psy 9\".\n- Ca khúc \"That That\" lọt vào bảng xếp hạng Billboard Hot 100.\n- PSY đạt top 2 Billboard Global 200.\n- Ca khúc mới của PSY \"That That\" đạt top 80 Billboard Hot 100.\n- PSY cảm ơn khán giả sau khi đạt thành tích mới."
+    },
+    {
+      "doc_id": "vlsp_train_65",
+      "rouge1": 71.14427860696519,
+      "rouge2": 51.0,
+      "rougeL": 38.805970149253724,
+      "len_ratio": 0.5762304921968787,
+      "output": "Facebook sắp trở thành \"TikTok thứ hai\": Thay đổi nguồn cấp dữ liệu, chỉ hiển thị nội dung dựa trên sở thích để giữ chân người dùng. Facebook đang thay đổi cách hiển thị các bài đăng và video trên mạng xã hội, tập trung vào việc thu hút người dùng xem những nội dung từ tài khoản họ chưa theo dõi. Đây được coi là một cách cạnh tranh trực tiếp với ứng dụng video ngắn TikTok. Thay đổi này bắt đầu từ hôm nay, song phần lớn nội dung vẫn đến từ các tài khoản mà người dùng theo dõi."
+    },
+    {
+      "doc_id": "vlsp_train_112",
+      "rouge1": 67.58409785932722,
+      "rouge2": 34.04907975460122,
+      "rougeL": 31.19266055045871,
+      "len_ratio": 0.6919900908340215,
+      "output": "### Tóm tắt\n\n- **Người bị hại**: Bé gái 8 tuổi bị bạo hành.\n- **Người chủ nghịch**: Bạn gái của người cha.\n- **Người cha**: Ông bố của nạn nhân.\n- **Pháp luật**: Vi phạm tội \"Giết người\" và \"Hành hạ người khác\".\n- **Tòa án**: Tòa gia đình và người chưa thành niên xét xử sơ thẩm.\n- **Nghiệp vụ**: Xét xử bị cáo và trả hồ sơ điều tra bổ sung.\n- **Thời gian**: Ngày 21/7, Tòa gia đình và người chưa thành niên xét xử sơ thẩm.\n- **Địa điểm**: Tòa án TP Hồ Chí Minh.\n- **Lý lịch**: Chủ nghịch và ông bố đều ở địa phương.\n- **Khói sôi**: Sự phẫn nộ của dư luận xã hội.\n- **Hình ảnh**: Một bà cụ 73 tuổi tham gia phiên tòa.\n- **Quá trình**: Phiên tòa thu hút sự chú ý của dư luận, có nhiều nhà hảo tâm chuẩn bị bữa ăn cho bị hại.\n- **Kết quả**: HĐXX quyết định trả hồ sơ để điều tra bổ sung.\n- **Tiếp theo**: Có thể có phiên tòa xét xử bổ sung."
+    },
+    {
+      "doc_id": "vlsp_train_88",
+      "rouge1": 77.65293383270912,
+      "rouge2": 47.05882352941176,
+      "rougeL": 41.69787765293383,
+      "len_ratio": 1.0042444821731749,
+      "output": "Dựa trên tài liệu bạn cung cấp, dưới đây là một tóm tắt ngắn gọn về tình hình nhân viên y tế xin thôi việc, bỏ việc:\n\n- Tính từ đầu năm 2021 đến 6 tháng đầu năm 2022, có tổng cộng 9.397 viên chức y tế xin thôi việc, bỏ việc.\n\n- Nguyên nhân chủ yếu bao gồm:\n  1. Thu nhập thấp.\n  2. Tự chủ kinh phí chi thường xuyên.\n  3. Chính sách thu hút nhân viên y tế chưa đủ mạnh.\n  4. Phát triển mạnh mẽ của hệ thống y tế tư nhân.\n  5. Áp lực công việc cao, ảnh hưởng từ vi phạm quy định đấu thầu.\n  6. Môi trường làm việc đặc thù của ngành y tế.\n  7. Lý do gia đình, công tác xa nhà, hoàn cảnh gia đình khó khăn.\n  8. Sức khỏe không đảm bảo, tự nguyện nghỉ việc.\n\n- Đề xuất từ phía Công đoàn Y tế Việt Nam bao gồm:\n  1. Nâng mức phụ cấp ưu đãi từ 40%-70% lên 100% cho nhân viên y tế chuyên môn.\n  2. Động viên tăng cường cung ứng dịch vụ y tế, tăng nguồn thu sự nghiệp.\n  3. Cung cấp đầy đủ thuốc và trang thiết bị cho bệnh nhân tham gia bảo hiểm y tế.\n  4. Xây dựng cơ chế cân bằng giữa kinh phí và nhu cầu y tế.\n\nThông tin này cho thấy tình hình nhân viên y tế đang gặp nhiều khó khăn trong việc tìm kiếm việc làm ổn định, đồng thời cũng phản ánh xu hướng phát triển của ngành y tế hiện nay."
+    },
+    {
+      "doc_id": "vlsp_train_264",
+      "rouge1": 76.61971830985917,
+      "rouge2": 35.31073446327683,
+      "rougeL": 30.985915492957744,
+      "len_ratio": 1.128780487804878,
+      "output": "**Tóm tắt:**\n\n- **Sức đề kháng của trẻ suy giảm**: Hệ miễn dịch của trẻ sơ sinh có hệ thống kháng thể từ mẹ, nhưng sau 6 tháng, kháng thể giảm mạnh. Từ 6 tháng trở lên, hệ miễn dịch chưa hoàn thiện, cần đến 3-4 tuổi mới đủ kháng thể.\n\n- **Nguyên nhân**: Hệ miễn dịch suy giảm do thiếu kháng thể từ mẹ, đặc biệt là trong 6 tháng đầu tiên.\n\n- **Biện pháp**: Bắt đầu từ 6 tháng, trẻ cần được bú mẹ hoàn toàn để tiếp tục cung cấp kháng thể.\n\n- **Dịch bệnh**: Trẻ dễ mắc các bệnh như tiêu chảy, viêm đường hô hấp (viêm họng, viêm mũi, viêm thanh quản), viêm phổi, và viêm pharyngitis (viêm phế quản).\n\n- **Triệu chứng cụ thể**:\n  - Viêm họng cấp: Sốt, ho, nuốt đau.\n  - Viêm thanh quản và viêm thanh khí phế quản cấp: Khàn tiếng, tắt tiếng, khò khè, thở rít, co lõm hõm ức.\n  - Viêm phổi: Xảy ra ở mọi lứa tuổi, nguyên nhân chủ yếu là vi khuẩn.\n  - Viêm pharyngitis: Thường gặp ở trẻ 2 tuổi, biểu hiện là thở nhanh bất thường, ho kèm khò khè.\n\n- **Phương pháp điều trị**: Cần cấp cứu kịp thời nếu có dấu hiệu sốt cao, thở mệt, lừ đừ.\n\n- **Giải thích**: Sự suy giảm của hệ miễn dịch làm tăng nguy cơ mắc các bệnh nhiễm trùng, đặc biệt là các bệnh về đường hô hấp."
+    },
+    {
+      "doc_id": "vlsp_train_39",
+      "rouge1": 57.14285714285715,
+      "rouge2": 26.45739910313901,
+      "rougeL": 28.125,
+      "len_ratio": 0.43592436974789917,
+      "output": "Tóm tắt: \n\nGiải bóng rổ chuyên nghiệp Việt Nam (VBA) đang chứng minh sức hấp dẫn lớn với người xem thông qua các trận đấu hấp dẫn và tính giải trí cao. Các trận đấu thường xuyên diễn ra trong các nhà thi đấu lớn như Nhà thi đấu quận Tây Hồ, thu hút hàng nghìn khán giả. Giá vé cho các trận đấu cao hơn so với các giải đấu khác, nhưng thu nhập từ vé và các sản phẩm lưu niệm vẫn không đủ bù chi cho công tác tổ chức."
+    },
+    {
+      "doc_id": "vlsp_train_154",
+      "rouge1": 58.74125874125874,
+      "rouge2": 31.690140845070424,
+      "rougeL": 30.069930069930066,
+      "len_ratio": 0.4974958263772955,
+      "output": "**Tóm tắt:**\n\nMột bé gái 5 tuổi ở TP.HCM đi lạc trên quốc lộ 1, mất khoảng 10km. Phát hiện tại Bến xe Phương Trang. Tổ CSGT An Lạc đã đưa bé về trụ sở, mua nước, sữa và thức ăn. Sau đó, đưa về trụ sở Công an xã Tân Kiên để ghi nhận thông tin. Cha mẹ bé gái đang đi tìm. Bé gái nói muốn về nhà chơi."
+    },
+    {
+      "doc_id": "vlsp_train_130",
+      "rouge1": 65.20874751491054,
+      "rouge2": 29.940119760479046,
+      "rougeL": 33.39960238568588,
+      "len_ratio": 0.8476605005440696,
+      "output": "Dưới đây là tóm tắt các mẫu xe bán chạy nhất tháng 6/2022:\n\n1. **Toyota Corolla Cross**: Doanh số tăng 266 xe so với tháng trước nhưng vẫn giữ vị trí số 1.\n2. **Ford Ranger**: Doanh số giảm nhẹ 265 xe so với tháng 5 nhưng vẫn giữ vị trí số 2.\n3. **VinFast Fadil**: Doanh số giảm 571 xe so với tháng trước nhưng vẫn giữ vị trí số 3.\n4. **Hyundai Accent**: Doanh số giảm 738 xe so với tháng 5 nhưng vẫn giữ vị trí số 4.\n5. **Kia Sonet**: Lần đầu tiên góp mặt trong nhóm 10 xe bán chạy nhất, giữ vị trí số 5.\n6. **Hyundai Creta**: Doanh số giảm 260 xe so với tháng 5 nhưng vẫn giữ vị trí số 6.\n7. **Mitsubishi Triton**: Doanh số tăng 268 xe so với tháng trước nhưng vẫn giữ vị trí số 7.\n\nNhững mẫu xe này đều có mức doanh số cao hơn so với các đối thủ cạnh tranh trong tháng 6/2022."
+    },
+    {
+      "doc_id": "vlsp_train_274",
+      "rouge1": 45.45454545454545,
+      "rouge2": 25.67567567567568,
+      "rougeL": 27.94612794612794,
+      "len_ratio": 0.3043170559094126,
+      "output": "**Tóm tắt**: \n\n- Kết quả của công tác phòng chống tham nhũng đạt được nhiều thành tựu đáng chú ý.\n- Nhiều cán bộ cấp cao bị xử lý kỷ luật hoặc khởi tố.\n- Số vụ án tham nhũng tăng lên, đặc biệt là các vụ án nghiêm trọng.\n- Vụ việc của cảnh sát biển Việt Nam đã dẫn đến việc khai trừ đảng và cách toàn bộ chức vụ cho 9 vị tướng lĩnh.\n- Công tác này cảnh tỉnh mọi người về nguy cơ tham nhũng và tạo áp lực cho các cá nhân và tổ chức."
+    },
+    {
+      "doc_id": "vlsp_train_256",
+      "rouge1": 40.143369175627235,
+      "rouge2": 21.660649819494584,
+      "rougeL": 27.240143369175623,
+      "len_ratio": 0.3094098883572568,
+      "output": "Tóm tắt: Một số fan của Anh Tú (diễn viên) đã liên tục gọi chồng của cô ấy là \"chồng\", gây ra tranh cãi. Cô đã công khai tình cảm với Diệu Nhi (singer), và cả hai đang chuẩn bị tổ chức đám cưới."
+    },
+    {
+      "doc_id": "vlsp_train_209",
+      "rouge1": 71.27272727272727,
+      "rouge2": 29.92700729927007,
+      "rougeL": 29.454545454545457,
+      "len_ratio": 0.9705263157894737,
+      "output": "**Tóm tắt:**\n\n- **Tiêu đề:** Phim Hàn Quốc \"Extraordinary Attorney Woo\" gây tranh cãi vì nội dung về ung thư.\n  \n- **Nội dung chính:**\n  - Tập cuối cùng của phim gây tranh cãi vì việc nhân vật Woo Young Woo đến thăm bệnh nhân ung thư.\n  - Sự so sánh tỷ lệ sống sót sau phẫu thuật với tỷ lệ sống sót sau ung thư.\n  - Nội dung gây tranh cãi về tỷ lệ sống sót sau ung thư và cách diễn đạt của nhân vật.\n\n- **Khó hiểu:** Lối diễn đạt khó hiểu và sự so sánh giữa tỷ lệ sống sót sau phẫu thuật và ung thư.\n\n- **Ý nghĩa:** Phản ánh vấn đề về cách diễn đạt trong phim và sự coi thường bệnh ung thư.\n\n- **Xử lý:** Cần cải thiện cách diễn đạt để tránh sự coi thường bệnh ung thư.\n\n- **Tác động:** Có thể ảnh hưởng tiêu cực đến cộng đồng y tế và xã hội.\n\n- **Quá trình:** Phim đã được khán giả đón nhận nhưng vẫn còn tranh cãi về nội dung.\n\n- **Chú ý:** Cần cân nhắc kỹ lưỡng trong việc sử dụng bệnh ung thư để tạo hiệu ứng cho phim."
+    },
+    {
+      "doc_id": "vlsp_train_57",
+      "rouge1": 64.2126789366053,
+      "rouge2": 31.21149897330595,
+      "rougeL": 31.492842535787325,
+      "len_ratio": 0.5843881856540084,
+      "output": "### Tóm tắt\n\n- **Ngày:**\n- **Nội dung:**\n  - Hàng triệu người dân được chăm sóc, phục hồi và cải thiện sức khỏe hậu COVID-19.\n  - Chương trình \"Thầy thuốc trẻ làm theo lời Bác\" nhằm hỗ trợ người dân sau đại dịch COVID-19.\n  - Đồng chí Trần Tuấn Anh, Ủy viên Bộ Chính trị, chủ trì chương trình.\n  - Phát biểu khai mạc nhấn mạnh việc tiếp nối thành công của các kỳ hành trình về phòng chống dịch.\n  - Đây là dịp kỷ niệm 132 năm ngày sinh Chủ tịch Hồ Chí Minh và chuẩn bị cho Đại hội Đảng.\n  - Chương trình tập trung vào việc chăm sóc sức khỏe hậu COVID-19."
+    },
+    {
+      "doc_id": "vlsp_train_163",
+      "rouge1": 78.90499194847021,
+      "rouge2": 59.12762520193861,
+      "rougeL": 46.37681159420289,
+      "len_ratio": 0.8494094488188977,
+      "output": "Một số điểm chính trong bài viết:\n\n1. Máy bay không người lái của Ukraine đã đạt được hiệu quả cao trong việc đối phó với xe tăng và thiết giáp Nga.\n\n2. Lực lượng Nga đã nhanh chóng rút kinh nghiệm từ những tháng đầu của cuộc chiến.\n\n3. Các chuyên gia cho rằng máy bay không người lái ngày càng trở nên kém hiệu quả do Nga đã cải tiến hệ thống phòng thủ.\n\n4. Nga đang sử dụng radar cảnh báo sớm, hệ thống tác chiến điện tử, và nhiều loại vũ khí khác để bắn hạ máy bay không người lái của Ukraine.\n\n5. Ukraine đã nhận được khoảng 50 máy bay không người lái TB2 từ công ty vũ khí Thổ Nhĩ Kỳ kể từ khi cuộc chiến bắt đầu.\n\n6. Mặc dù máy bay không người lái đã đạt được hiệu quả cao trong những ngày đầu của cuộc chiến, nhưng quân đội Ukraine đang giảm sử dụng TB2 do quân đội Nga dễ cản trở chúng hơn và để mất máy bay không người lái có thể rất tốn kém với Ukraine."
+    },
+    {
+      "doc_id": "vlsp_train_107",
+      "rouge1": 75.32956685499059,
+      "rouge2": 50.28355387523629,
+      "rougeL": 41.431261770244824,
+      "len_ratio": 0.925,
+      "output": "**Tóm tắt**: \n\n- Nhà đầu tư chứng khoán sắp được giao dịch vào ngày T+2, thay vì chờ đến T+3.\n- Dự thảo quy chế mới của Trung tâm Lưu ký Chứng khoán Việt Nam (VSD) điều chỉnh thời gian giao dịch từ T+3 xuống T+2.\n- Điều này giúp nhà đầu tư có thể bán cổ phiếu sớm hơn 1 ngày và nhận tiền sớm hơn 1 ngày.\n- Dự thảo quy chế có thêm các quy trình thay đổi đáng chú ý, bao gồm việc xác nhận tiền hoặc thiếu tiền thanh toán giao dịch chứng khoán.\n- VSD sẽ hoàn tất thanh toán chứng khoán và ngân hàng thanh toán (NHTT) vào ngày T+1.5.\n- TVLK cần thực hiện phân bổ tiền và chứng khoán cho khách hàng sau khi VSD hoàn tất thanh toán chứng khoán và NHTT hoàn tất thanh toán tiền.\n- Dự thảo quy chế thay thế đang được VSD lấy ý kiến các cơ quan liên quan và sẽ được công bố vào tháng 7."
+    },
+    {
+      "doc_id": "vlsp_train_278",
+      "rouge1": 42.890442890442884,
+      "rouge2": 19.672131147540984,
+      "rougeL": 23.310023310023308,
+      "len_ratio": 0.351129363449692,
+      "output": "Tổng thống Joe Biden yêu cầu Quốc hội thông qua hợp đồng vũ khí trị giá 1,1 tỷ USD cho Đài Loan, bao gồm 60 tên lửa Harpoon và 100 tên lửa Sidewinder. Hợp đồng còn bao gồm gia hạn hợp đồng radar. Nhiều nước khác phản đối việc bán vũ khí cho Đài Loan, đặc biệt là Trung Quốc. Tình hình xung quanh Đài Loan leo thang sau chuyến thăm của Pelosi."
+    },
+    {
+      "doc_id": "vlsp_train_225",
+      "rouge1": 58.10810810810811,
+      "rouge2": 18.552036199095028,
+      "rougeL": 28.82882882882883,
+      "len_ratio": 0.6686602870813397,
+      "output": "Tài liệu tóm tắt:\n\n- Anh Phan Thanh Sang bị truy tố oan trong vụ án cố ý làm hư tài sản.\n- Anh đã nhiều lần rơi nước mắt kể về oan ức và oán giận.\n- Anh trải qua nhiều áp lực từ dư luận và gia đình.\n- Anh đã suy nghĩ về việc tự sát nhưng cuối cùng không thực hiện.\n- Anh đã gặp nhiều khó khăn trong hành trình đi kêu oan suốt hơn 2 năm.\n- Anh đã gặp nhiều khó khăn trong việc tìm kiếm sự giúp đỡ từ pháp luật và gia đình.\n- Anh đã suy nghĩ về việc tự sát nhưng cuối cùng không thực hiện.\n- Anh đã gặp nhiều khó khăn trong hành trình đi kêu oan suốt hơn 2 năm."
+    },
+    {
+      "doc_id": "vlsp_train_179",
+      "rouge1": 70.703125,
+      "rouge2": 33.725490196078425,
+      "rougeL": 33.203125,
+      "len_ratio": 0.8775055679287305,
+      "output": "Tóm tắt: \n\n- HIMARS (High Mobility Artillery Rocket System) là hệ thống pháo phản lực tầm trung của Ukraine.\n- Nó có tầm bắn 80km, giúp Ukraine tấn công từ xa mà không bị đối phó.\n- Hệ thống này được Mỹ cung cấp cho Ukraine, và Ukraine đã sử dụng nó để tấn công các kho vũ khí của Nga.\n- HIMARS có lợi thế là tầm bắn xa, giúp Ukraine tấn công từ xa và tránh khỏi các cuộc tấn công đáp trả từ Nga.\n- Việc Ukraine sử dụng HIMARS đã dẫn đến việc phá hủy một kho vũ khí của Nga ở thành phố Nova Kakhovka.\n- HIMARS có thể được sử dụng từ xa, giúp Ukraine bảo vệ các vị trí quan trọng và tránh bị tấn công.\n- Sự xuất hiện của HIMARS đã tạo ra một sự thay đổi đáng kể trong chiến tranh giữa Ukraine và Nga, giúp Ukraine bảo vệ các vị trí quan trọng và giảm thiểu nguy hiểm cho quân nhân Ukraine."
+    },
+    {
+      "doc_id": "vlsp_train_266",
+      "rouge1": 57.14285714285714,
+      "rouge2": 30.4635761589404,
+      "rougeL": 34.28571428571428,
+      "len_ratio": 0.45979381443298967,
+      "output": "**Tóm tắt:**\n\nU20 Việt Nam bổ sung 7 cầu thủ mới từ CLB Phố Hiến, tăng cường lực lượng trước chuyến tập huấn Nhật Bản vào tháng 9. Các cầu thủ này thi đấu thường xuyên cho Phố Hiến trong giải hạng Nhất 2022, dẫn đầu danh sách ghi bàn. U20 sẽ tập trung sau chuyến tập huấn ở Nhật Bản, tiếp theo là chuẩn bị cho vòng loại U20 châu Á 2023. Việc bổ sung cầu thủ nhằm đáp ứng lịch thi đấu của giải hạng Nhất và chuẩn bị cho trận tái đấu với Indonesia."
+    },
+    {
+      "doc_id": "vlsp_train_109",
+      "rouge1": 59.2797783933518,
+      "rouge2": 28.412256267409468,
+      "rougeL": 29.916897506925206,
+      "len_ratio": 0.7115987460815048,
+      "output": "### Tóm tắt\n\n- **Tiêu đề**: Tập 2: Đấu trí - Sự kiện nhận hối lộ lớn\n- **Nội dung**:\n  - Vụ trưởng CDC Giang nắm thông tin về nhận hối lộ từ Khải Tuấn.\n  - Khải Tuấn rút lui khỏi thương vụ kit test, gây lo lắng cho Vụ trưởng Bằng.\n  - Đại tá Giang và Vũ phối hợp điều tra, Phó trưởng phòng Cảnh sát kinh tế PC03 lên \"tuyến đầu\".\n  - Bà Hạnh lo lắng về con trai, muốn Vũ tính lại công việc nếu kết hôn với Lam.\n  - Tập 2 lên sóng ngày 19/7 trên kênh VTV1."
+    },
+    {
+      "doc_id": "vlsp_train_105",
+      "rouge1": 71.79487179487181,
+      "rouge2": 37.47072599531616,
+      "rougeL": 33.1002331002331,
+      "len_ratio": 0.6489746682750301,
+      "output": "**Tóm tắt:**\n\nU19 Việt Nam đã giành chiến thắng trước U19 Thái Lan ở trận tranh hạng 3 giải U19 Đông Nam Á 2022, sau khi vượt qua loạt luân lưu. Đây là lần đầu tiên U19 Việt Nam giành danh hiệu danh dự tại giải đấu này. Tuy nhiên, đội tuyển đã gặp khó khăn ở vòng bán kết, để thua U19 Malaysia với tỷ số 0-3. Trong trận tranh hạng 3, U19 Việt Nam đã hòa U19 Thái Lan 1-1, đồng nghĩa với việc họ phải đối mặt với U19 Thái Lan ở trận tranh hạng 3. Sau trận đấu, U19 Việt Nam đã phải đối mặt với áp lực tâm lý lớn do thất bại ở vòng bán kết."
+    },
+    {
+      "doc_id": "vlsp_train_102",
+      "rouge1": 62.54295532646048,
+      "rouge2": 33.103448275862064,
+      "rougeL": 34.02061855670103,
+      "len_ratio": 0.5264116575591985,
+      "output": "Tóm tắt: \n\n- Bác sĩ mới ra trường có thu nhập khoảng 4,8 triệu đồng, không đủ để giữ chân họ.\n- Nhiều bác sĩ nghỉ việc hoặc bỏ việc, chủ yếu do thu nhập thấp.\n- Doanh thu từ y tế ngoài công lập cao hơn nhiều so với y tế công lập.\n- Chính sách thu hút nhân lực chưa tốt, tạo ít hấp dẫn cho nhân viên y tế.\n- Thêm nữa, do ảnh hưởng của đại dịch, y tế ngoài công lập thu ngân sách nhiều hơn.\n- Thu nhập của nhân viên y tế công lập thấp hơn nhiều so với y tế ngoài công lập.\n- Một số nguyên nhân khác bao gồm: thu nhập thấp, giá dịch vụ y tế cao, và chính sách thu hút nhân lực kém."
+    },
+    {
+      "doc_id": "vlsp_train_159",
+      "rouge1": 68.3127572016461,
+      "rouge2": 38.429752066115704,
+      "rougeL": 37.03703703703703,
+      "len_ratio": 0.7425629290617849,
+      "output": "**Tóm tắt:**\n\nPGS.TS Trần Minh Điển, giám đốc Bệnh viện Nhi Trung ương, thông báo rằng 50% trẻ mắc COVID-19 bị MIS-C (Malignant Infantile Multisystem Inflammatory Syndrome) phải nằm hồi sức, thường xuyên thở máy, lọc máu hoặc ECMO. Hầu hết các trường hợp MIS-C chưa tiêm vaccine COVID-19. Hội chứng MIS-C liên quan đến nhiều cơ quan trong cơ thể, gây ra tình trạng đáp ứng viêm quá mức. Hiện nay, đã có phác đồ điều trị nhưng nếu không chẩn đoán sớm, có thể gây nguy hiểm đến tính mạng trẻ. Mis-c đang trở thành bệnh học mới, phát hiện từ tháng 4/2020. Việc tiêm vaccine COVID-19 không chỉ giúp tránh MIS-C, mà còn giảm mức độ nặng khi trẻ mắc bệnh."
+    },
+    {
+      "doc_id": "vlsp_train_249",
+      "rouge1": 53.06122448979592,
+      "rouge2": 23.287671232876715,
+      "rougeL": 28.57142857142857,
+      "len_ratio": 1.619815668202765,
+      "output": "Johnny Depp trở thành đạo diễn của \"Modigliani\", bộ phim do Al Pacino sản xuất. Bộ phim dựa trên vở kịch cùng tên của một nghệ sĩ người Italia, kể về cuộc sống của Amedeo Modigliani, một họa sĩ nổi tiếng vào thế kỷ 20. Phim được thực hiện bởi IN.2, một studio phim châu Âu. Johnny Depp nói rằng việc đạo diễn Modigliani là một vinh hạnh và mô tả cuộc sống của ông như một câu chuyện về con người mang tính toàn cầu. Anh cũng tham gia vai diễn vua Louis XV trong bộ phim \"Jeanne du Barry\". Anh còn tham gia vai phù thủy Gellert Grindelwald trong \"Fantastic Beasts: The Secrets of Dumbledore\" và thay thế cho Madds Mikkelson trong vai thuyền trưởng Jack Sparrow trong loạt phim \"Pirates of the Caribbean\"."
+    },
+    {
+      "doc_id": "vlsp_train_30",
+      "rouge1": 43.13725490196079,
+      "rouge2": 16.748768472906406,
+      "rougeL": 23.03921568627451,
+      "len_ratio": 0.3515704154002026,
+      "output": "Anthony Martial sẽ tiếp tục chơi chủ công cho Manchester United dưới sự dẫn dắt của HLV Erik Ten Hag. Anh đã ghi nhiều bàn thắng cho đội tuyển quốc gia Pháp trước đó và đang được kỳ vọng sẽ tiếp tục đóng góp vào hàng công của Quỷ Đỏ. Ten Hag đã đánh giá cao phong độ Martial và dự kiến sẽ sử dụng anh như một cầu thủ quan trọng trong mùa giải mới."
+    }
+  ],
+  "Standard_DPO": [
+    {
+      "doc_id": "vlsp_train_238",
+      "rouge1": 50.0,
+      "rouge2": 19.402985074626862,
+      "rougeL": 23.26732673267327,
+      "len_ratio": 0.3926174496644295,
+      "output": "Tóm tắt: Taliban không tuân thủ cam kết đưa ra trước đó, đặc biệt là về quyền phụ nữ. Họ áp đặt nhiều sắc lệnh hạn chế đối với phụ nữ, bao gồm việc che kín toàn thân, giới hạn thời gian ra ngoài, và bãi nhiệm các vị trí lãnh đạo. Taliban cho rằng họ đang lo lắng về an ninh, nhưng các học giả và giáo lý Hồi giáo khác cho rằng họ vi phạm quyền phụ nữ."
+    },
+    {
+      "doc_id": "vlsp_train_96",
+      "rouge1": 40.487804878048784,
+      "rouge2": 17.64705882352941,
+      "rougeL": 23.902439024390244,
+      "len_ratio": 0.29797979797979796,
+      "output": "**Tóm tắt**: Brad Pitt, nam diễn viên nổi tiếng, chia sẻ về cuộc sống sau ly hôn với Angelina Jolie. Anh kể về nỗi cô đơn, buồn bã trước khi ly dị và cách đối phó với nó. Anh cũng chia sẻ về cuộc sống hiện tại, bao gồm việc tiếp tục đấu tranh pháp lý và tìm kiếm sự hỗ trợ từ gia đình và bạn bè."
+    },
+    {
+      "doc_id": "vlsp_train_8",
+      "rouge1": 44.54545454545455,
+      "rouge2": 20.547945205479454,
+      "rougeL": 23.63636363636364,
+      "len_ratio": 0.3725690890481064,
+      "output": "Tóm tắt: \n\n- Vượt qua khó khăn, Cục Dự trữ Nhà nước TP.HCM hoàn thành tốt nhiệm vụ nhập, xuất hàng dự trữ quốc gia, đặc biệt là mua gạo 10.500 tấn.\n\n- Đánh giá cao kết quả, nhưng cũng gặp khó khăn như đấu thầu mua gạo qua mạng, bảo hiểm không cung cấp báo giá.\n\n- Phát huy thuận lợi, khắc phục khó khăn, đơn vị đã hoàn thành xuất sắc nhiệm vụ 6 tháng đầu năm 2022."
+    },
+    {
+      "doc_id": "vlsp_train_206",
+      "rouge1": 13.29639889196676,
+      "rouge2": 7.242339832869081,
+      "rougeL": 11.0803324099723,
+      "len_ratio": 0.07014218009478673,
+      "output": "**Tóm tắt**: Tăng động lực cho khu vực công và cải thiện hệ thống quản lý."
+    },
+    {
+      "doc_id": "vlsp_train_263",
+      "rouge1": 19.383259911894275,
+      "rouge2": 13.274336283185843,
+      "rougeL": 15.859030837004404,
+      "len_ratio": 0.11183673469387755,
+      "output": "Tóm tắt: Chỉ thị nâng cao PCI Hà Nội năm 2022, nhìn nhận hạn chế, bứt phá cải cách hành chính, tăng điểm PCI, phấn đấu giữ vị trí top 10."
+    },
+    {
+      "doc_id": "vlsp_train_282",
+      "rouge1": 36.856368563685635,
+      "rouge2": 13.079019073569484,
+      "rougeL": 18.428184281842817,
+      "len_ratio": 0.23070251517779705,
+      "output": "**Tóm tắt**:  \n- **Lịch sử**: Cú thẻ đỏ của Luis Suarez và hậu quả cho Darwin Nunez.\n- **Nỗi buồn**: Sự mất mát về mặt nhân sự và tài năng.\n- **Hướng đi**: Đánh giá và khuyến nghị từ đàn anh Luis Suarez.\n- **Kết luận**: Cần học hỏi từ sai lầm và tiếp tục phát triển."
+    },
+    {
+      "doc_id": "vlsp_train_111",
+      "rouge1": 45.87155963302752,
+      "rouge2": 16.615384615384617,
+      "rougeL": 20.183486238532115,
+      "len_ratio": 0.4276885043263288,
+      "output": "Tóm tắt: \n\n- PSY mặc đồ bơi biểu diễn \"Gangnam Style\" gây tranh cãi.\n- Màn cover \"Single Ladies\" đã gây tranh cãi trước đó.\n- PSY cho biết cảm xúc khi mặc đồ bơi và mời Lee Byung Hun tham gia MV.\n- Album mới của PSY đạt top Billboard Hot 100 và trở lại BXH Billboard sau 7 năm.\n- Ca khúc mới \"That That\" đạt top Billboard và Billboard Global 200."
+    },
+    {
+      "doc_id": "vlsp_train_65",
+      "rouge1": 56.353591160220994,
+      "rouge2": 29.444444444444446,
+      "rougeL": 33.70165745856353,
+      "len_ratio": 0.43577430972388953,
+      "output": "**Tóm tắt**: Facebook chuẩn bị thay đổi phương thức hiển thị nội dung, chuyển hướng sang \"Home\" để theo dõi sở thích cá nhân. Thay thế cho \"For You\", ứng dụng này dự kiến sẽ tập trung vào nội dung phù hợp với sở thích cá nhân, giảm lượng thông tin từ các tài khoản khác. Facebook hy vọng sẽ thu hút hơn 1 tỷ người dùng hàng tháng, cạnh tranh trực tiếp với TikTok."
+    },
+    {
+      "doc_id": "vlsp_train_112",
+      "rouge1": 29.350104821802937,
+      "rouge2": 17.26315789473684,
+      "rougeL": 20.964360587002098,
+      "len_ratio": 0.21056977704376548,
+      "output": "**Tóm tắt**:  \n- Bạo hành bé gái 8 tuổi ở TP.HCM: HĐXX trả hồ sơ điều tra bổ sung.  \n- Cha đẻ và người tình bị truy tố.  \n- Phiên tòa thu hút sự chú ý của dư luận.  \n- Đề nghị xác định tỷ lệ thương tật và thay đổi tội danh.  \n- HĐXX hoãn phiên tòa xét xử."
+    },
+    {
+      "doc_id": "vlsp_train_88",
+      "rouge1": 36.86274509803922,
+      "rouge2": 22.834645669291337,
+      "rougeL": 25.882352941176475,
+      "len_ratio": 0.267402376910017,
+      "output": "**Tóm tắt**: \n\n- Nhiều nhân viên y tế ở Việt Nam đang nghỉ việc, bỏ việc.\n- Nguyên nhân: thu nhập thấp, chính sách hấp dẫn kém, môi trường làm việc艰苦。\n- Đề xuất: tăng phụ cấp, tăng giá dịch vụ y tế, hỗ trợ người bệnh.\n\n---\n\n**Kết luận**: Tình trạng này gây ảnh hưởng nghiêm trọng tới hệ thống y tế và công tác y tế."
+    },
+    {
+      "doc_id": "vlsp_train_264",
+      "rouge1": 43.07692307692307,
+      "rouge2": 14.569536423841061,
+      "rougeL": 23.736263736263737,
+      "len_ratio": 0.3678048780487805,
+      "output": "**Tóm tắt:**\n- **Sức đề kháng suy giảm**: Hệ miễn dịch trẻ em yếu, đặc biệt trong đầu 6 tháng.\n- **Nguyên nhân**: Bé bú mẹ ít, kháng thể giảm.\n- **Rủi ro**: Bệnh hô hấp (viêm họng, viêm phổi), tiêu chảy, dị ứng.\n- **Phương pháp**: Nâng cao chế độ ăn uống, bổ sung vitamin C, uống sữa, tiêm phòng.\n- **Chăm sóc**: Kiểm tra định kỳ, tuân thủ lịch tiêm chủng, giữ vệ sinh cá nhân."
+    },
+    {
+      "doc_id": "vlsp_train_39",
+      "rouge1": 39.17525773195876,
+      "rouge2": 19.17098445595855,
+      "rougeL": 21.64948453608248,
+      "len_ratio": 0.3182773109243697,
+      "output": "**Tóm tắt**:  \n- **Giải VBA**: Sức hút lớn của giải đấu bóng rổ chuyên nghiệp Việt Nam.\n- **Sản phẩm**: Sốt vé, vật phẩm, quảng cáo.\n- **Thời gian**: Ngày 12/7, Nhà thi đấu quận Tây Hồ.\n- **Người chơi**: Thang Long Warriors, Hanoi Buffaloes.\n- **Mô tả**: Khán giả đông đảo, thu nhập từ bán vé, vật phẩm."
+    },
+    {
+      "doc_id": "vlsp_train_154",
+      "rouge1": 40.1673640167364,
+      "rouge2": 20.253164556962027,
+      "rougeL": 25.10460251046025,
+      "len_ratio": 0.24373956594323873,
+      "output": "**Tóm tắt**: Một bé gái 5 tuổi mất tích trên quốc lộ 1 ở TP.HCM, được phát hiện và đưa về trụ sở cảnh sát. Cảnh sát đã giúp cô bé tìm được cha mẹ."
+    },
+    {
+      "doc_id": "vlsp_train_130",
+      "rouge1": 66.95095948827291,
+      "rouge2": 33.40471092077088,
+      "rougeL": 33.262260127931775,
+      "len_ratio": 0.7149075081610446,
+      "output": "Dựa trên dữ liệu thống kê, dưới đây là các mẫu xe bán chạy nhất tháng 6/2022 tại thị trường Việt Nam:\n\n1. **Toyota Corolla Cross** - 1.451 xe, giảm 266 xe so với tháng trước.\n2. **Ford Ranger** - 1.410 xe, giảm 265 xe so với tháng trước.\n3. **VinFast Fadil** - 1.338 xe, giảm 571 xe so với tháng trước.\n4. **Hyundai Accent** - 1.086 xe, giảm 738 xe so với tháng trước.\n5. **Kia Sonet** - 887 xe, lần đầu tiên góp mặt trong nhóm 10 xe bán chạy nhất.\n6. **Hyundai Creta** - 830 xe, lần đầu tiên góp mặt trong nhóm 10 xe bán chạy nhất.\n\nNhững mẫu xe này đều có mức doanh số cao hơn so với các đối thủ cạnh tranh, đặc biệt là trong nhóm xe hạng A và SUV cỡ nhỏ."
+    },
+    {
+      "doc_id": "vlsp_train_274",
+      "rouge1": 47.50830564784054,
+      "rouge2": 28.666666666666668,
+      "rougeL": 28.23920265780731,
+      "len_ratio": 0.3651804670912951,
+      "output": "**Tóm tắt**: \n\n- **Tiêu đề**: Tóm tắt về việc cảnh tỉnh về tham nhũng.\n- **Mục tiêu**: Đánh giá kết quả của việc đấu tranh tham nhũng.\n- **Thành tựu**: \n  - Xử lý kỷ luật nhiều cán bộ cấp cao.\n  - Thúc đẩy công tác phòng chống tham nhũng.\n  - Tăng cường kỷ luật trong Đảng.\n  - Khởi tố nhiều vụ án tham nhũng.\n- **Cuộc tấn công**: Tiếp tục tăng cường, không có ngoại lệ.\n- **Vụ điển hình**: Chủ tịch Trung ương Đảng Nguyễn Phú Trọng bị kỷ luật.\n\n**Khó khăn**: Cần tiếp tục tăng cường công tác phòng chống tham nhũng."
+    },
+    {
+      "doc_id": "vlsp_train_256",
+      "rouge1": 65.48672566371681,
+      "rouge2": 26.706231454005934,
+      "rougeL": 34.21828908554573,
+      "len_ratio": 0.5917065390749602,
+      "output": "Tóm tắt: \n\n- Anh Tú và Diệu Nhi công khai mối quan hệ tình cảm.\n- Diệu Nhi bất lực khi phải chứng kiến chồng của mình bị nhiều cô gái khác gọi là chồng.\n- Cặp đôi đang chuẩn bị đám cưới và nhận được nhiều sự quan tâm từ dư luận.\n- Anh Tú gây chú ý với hình ảnh \"chất lượng cao\" trên Facebook cá nhân.\n- Diệu Nhi phản ứng với bình luận \"chồng ơi\" bằng biểu tượng mặt cười."
+    },
+    {
+      "doc_id": "vlsp_train_209",
+      "rouge1": 47.31182795698924,
+      "rouge2": 21.62162162162162,
+      "rougeL": 24.73118279569892,
+      "len_ratio": 0.3431578947368421,
+      "output": "**Tóm tắt**:  \n- **Tiêu điểm**: Phim Extraordinary Attorney Woo bị chỉ trích vì nội dung về ung thư.\n- **Nội dung chính**:  \n  - Tác phẩm bị chỉ trích vì việc sử dụng tỷ lệ sống sót cao để tạo hiệu ứng hài hước.\n  - Sự phản ứng tiêu cực của khán giả và nhà sản xuất.\n  - Câu chuyện về bệnh ung thư và cách diễn đạt trong phim."
+    },
+    {
+      "doc_id": "vlsp_train_57",
+      "rouge1": 47.88732394366197,
+      "rouge2": 20.056497175141242,
+      "rougeL": 28.732394366197177,
+      "len_ratio": 1.360759493670886,
+      "output": "**Tóm tắt**: \n\n- **Hành trình Thầy thuốc trẻ**: Tọa đàm về chăm sóc sức khỏe hậu COVID-19.\n- **Ngày 14/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" tại Huế.\n- **Học sinh, thanh niên tham gia**: 63 tỉnh thành.\n- **Hình thức**: Khám, tư vấn, hỗ trợ sức khỏe hậu COVID-19.\n- **Ngày 14/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\".\n- **Ngày 15/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở Hà Nội.\n- **Ngày 17/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở Đà Nẵng.\n- **Ngày 22/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở Quảng Ninh.\n- **Ngày 23/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở Hải Phòng.\n- **Ngày 24/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở Cần Thơ.\n- **Ngày 25/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở HCM.\n- **Ngày 26/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở Bình Dương.\n- **Ngày 27/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở Đồng Nai.\n- **Ngày 28/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở Long An.\n- **Ngày 29/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở Tiền Giang.\n- **Ngày 30/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở Tây Ninh.\n- **Ngày 31/5**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở Gia Lai.\n- **Ngày 1/6**: Hành trình \"Thầy thuốc trẻ làm theo lời Bác\" ở Đắk L"
+    },
+    {
+      "doc_id": "vlsp_train_163",
+      "rouge1": 28.287841191067,
+      "rouge2": 17.45635910224439,
+      "rougeL": 19.35483870967742,
+      "len_ratio": 0.19094488188976377,
+      "output": "Một bài viết ngắn gọn về việc máy bay không người lái của Ukraine đã đạt được hiệu quả cao trong trận đánh với Nga, nhưng tình hình đã thay đổi khi Nga đã cải thiện hệ thống phòng thủ và vũ khí."
+    },
+    {
+      "doc_id": "vlsp_train_107",
+      "rouge1": 45.33333333333333,
+      "rouge2": 18.230563002680967,
+      "rougeL": 29.33333333333334,
+      "len_ratio": 0.4083333333333333,
+      "output": "**Tóm tắt**:  \n- **Sáng kiến**: Nhà đầu tư có thể giao dịch sớm hơn 1 ngày.\n- **Chuẩn bị**: VSD điều chỉnh thời gian thanh toán chứng khoán.\n- **Mục tiêu**: Giảm thời gian giao dịch và tăng hiệu quả giao dịch.\n- **Quá trình**: Dự thảo quy chế thay thế, VSD và các cơ quan liên quan.\n- **Cuối cùng**: Nhà đầu tư có thể giao dịch sớm hơn 1 ngày."
+    },
+    {
+      "doc_id": "vlsp_train_278",
+      "rouge1": 46.47887323943662,
+      "rouge2": 19.339622641509433,
+      "rougeL": 23.943661971830984,
+      "len_ratio": 0.3490759753593429,
+      "output": "**Tóm tắt**:  \n- Hợp đồng vũ khí trị giá 1,1 tỷ USD cho Đài Loan được đề xuất bởi chính quyền Biden.\n- Đài Loan phản đối và yêu cầu Mỹ dừng bán vũ khí.\n- Trung Quốc kịch liệt phản đối và tăng cường quân sự gần Đài Loan.\n- Hợp đồng có thể bị trì hoãn do Quốc hội Mỹ nghỉ giải lao.\n- Tình hình xung đột leo thang sau thăm Đài Loan của Pelosi."
+    },
+    {
+      "doc_id": "vlsp_train_225",
+      "rouge1": 28.391167192429023,
+      "rouge2": 14.603174603174605,
+      "rougeL": 22.712933753943222,
+      "len_ratio": 0.17464114832535885,
+      "output": "Tóm tắt: Một người đàn ông bị oan nghiệt ngã trong vụ án cố ý làm hư tài sản, trải qua nhiều tháng oán khổ, mất mát về mặt vật chất lẫn tinh thần."
+    },
+    {
+      "doc_id": "vlsp_train_179",
+      "rouge1": 42.32804232804233,
+      "rouge2": 26.063829787234045,
+      "rougeL": 25.92592592592593,
+      "len_ratio": 0.3741648106904232,
+      "output": "Tóm tắt: <HUMAN_NAME> viết về lợi ích của hệ thống HIMARS (High Mobility Artillery Rocket System) trong việc hỗ trợ Ukraine trong cuộc chiến chống lại Nga. HIMARS có tầm bắn xa, giúp Ukraine tấn công từ xa mà không bị đối phó, và có thể được vận hành nhanh chóng. Hệ thống này được coi là \"chìa khóa\" trong chiến lược phòng thủ Ukraine."
+    },
+    {
+      "doc_id": "vlsp_train_266",
+      "rouge1": 55.55555555555556,
+      "rouge2": 31.162790697674414,
+      "rougeL": 31.018518518518523,
+      "len_ratio": 0.4247422680412371,
+      "output": "**Tóm tắt**: \n\n- **U20 Việt Nam bổ sung 7 cầu thủ mới**\n- **Tập huấn Nhật Bản**, **Rời Indonesia vào tháng 9**\n- **Những cầu thủ nổi bật**: Thanh Nhàn, Hải Nam, Hiểu Minh, Sơn, Bắc, Phú, Quân\n- **Hợp tác với CLB Phố Hiến**, **Xếp hạng 3 giải hạng Nhất**\n- **Thay đổi lịch thi đấu giải hạng Nhất**, **Tăng cường lực lượng trước trận đấu**\n- **Hướng tới vòng loại U20 châu Á 2023**, **Một số cầu thủ được kỳ vọng**"
+    },
+    {
+      "doc_id": "vlsp_train_109",
+      "rouge1": 37.54512635379061,
+      "rouge2": 20.363636363636363,
+      "rougeL": 25.27075812274368,
+      "len_ratio": 0.274294670846395,
+      "output": "**Tóm tắt**: Tập 2 của bộ phim \"Đấu trí\" đưa ra những tình huống phức tạp, bao gồm việc giám đốc CDC nhận hối lộ, vụ án liên quan đến kit test, và sự lo lắng của các nhân vật."
+    },
+    {
+      "doc_id": "vlsp_train_105",
+      "rouge1": 65.87112171837708,
+      "rouge2": 34.53237410071943,
+      "rougeL": 31.980906921241047,
+      "len_ratio": 0.6200241254523522,
+      "output": "Tóm tắt: \n\n- U19 Việt Nam giành chiến thắng trước U19 Thái Lan ở trận tranh hạng 3 U19 Đông Nam Á.\n- Hạng 3 là danh hiệu \"danh dự\" cho U19 Việt Nam.\n- Các đội gặp nhau ở trận tranh hạng 3, U19 Việt Nam vượt qua U19 Thái Lan 1-0.\n- Giải đấu chứng kiến nhiều bất ngờ, U19 Việt Nam và U19 Thái Lan gặp nhau ở trận cuối cùng.\n- Kết quả 1-1 dẫn đến loạt luân lưu, U19 Việt Nam vượt qua U19 Thái Lan 5-3.\n- Bài viết mô tả kinh nghiệm của U19 Việt Nam trong trận đấu, nhấn mạnh vai trò của các cầu thủ trẻ trong đội hình."
+    },
+    {
+      "doc_id": "vlsp_train_102",
+      "rouge1": 35.93073593073593,
+      "rouge2": 20.434782608695652,
+      "rougeL": 23.376623376623378,
+      "len_ratio": 0.22313296903460839,
+      "output": "Tóm tắt: \n\n- Thu nhập thấp khiến bác sĩ không thể duy trì công việc lâu dài.\n- Nguyên nhân chính là do mức lương thấp và phụ cấp ít.\n- Ngoài ra còn do dịch bệnh và xu hướng chuyển đổi ngành nghề.\n- Cần cải thiện chính sách thu hút nhân lực y tế."
+    },
+    {
+      "doc_id": "vlsp_train_159",
+      "rouge1": 61.304347826086946,
+      "rouge2": 26.637554585152838,
+      "rougeL": 32.173913043478265,
+      "len_ratio": 0.6556064073226545,
+      "output": "**Tóm tắt**:  \n- **MIS-C (Multisystem Inflammatory Syndrome in Children)**: Hội chứng nghiêm trọng liên quan đến nhiễm trùng SARS-CoV-2 ở trẻ em, đặc biệt ở những người chưa tiêm vắc-x.\n- **Hậu quả**: Nhiều ca phải nằm hồi sức, thở máy, lọc máu hoặc ECMO.\n- **Nâng cao nhận thức**: Cần tiêm vắc-x để giảm nguy cơ mắc MIS-C và tăng khả năng sống sót nếu mắc.\n- **Phân tích**: Phản ứng viêm quá mức do virus gây ra, ảnh hưởng toàn bộ cơ thể, đặc biệt đến hệ tim mạch và gan.\n- **Yếu tố quan trọng**: Tiêm vắc-x là yếu tố quan trọng trong việc ngăn chặn và giảm nguy cơ MIS-C."
+    },
+    {
+      "doc_id": "vlsp_train_249",
+      "rouge1": 62.34817813765182,
+      "rouge2": 33.46938775510204,
+      "rougeL": 36.43724696356275,
+      "len_ratio": 1.3571428571428572,
+      "output": "Tóm tắt: \n\n- Johnny Depp đạo diễn phim \"Modigliani\" với Al Pacino (nhà sản xuất) và Barry Navidi.\n- Bộ phim dựa trên vở kịch của Dennis McIntyre, kể về cuộc đời nghệ sĩ Amedeo Modigliani.\n- Phim được đánh giá cao vì đề cập đến cuộc sống khó khăn và thăng trầm của nghệ sĩ.\n- Johnny Depp nổi tiếng với vai trò thuyền trưởng Jack Sparrow trong loạt phim \"Pirates of the Caribbean\".\n- Anh tham gia vai diễn vua Louis XV trong phim \"Jeanne du Barry\", và thay thế Madds Mikkelson trong vai phù thủy Gellert Grindelwald.\n- \"Modigliani\" đánh dấu sự hợp tác trở lại giữa Al Pacino và Barry Navidi."
+    },
+    {
+      "doc_id": "vlsp_train_30",
+      "rouge1": 44.278606965174134,
+      "rouge2": 15.5,
+      "rougeL": 23.383084577114428,
+      "len_ratio": 0.3323201621073962,
+      "output": "Tóm tắt: \n\n- Martial sẽ tiếp tục chơi chủ công cho MU dưới thời Ten Hag.\n- Martial đã ghi nhiều bàn cho MU trong giai đoạn khởi động.\n- Ten Hag dự định trao vai trò chủ công cho Martial.\n- Ten Hag kỳ vọng Martial sẽ giúp MU trở lại là cỗ máy chuyền bóng.\n- Ten Hag sẽ giúp MU trở lại là cỗ máy chuyền bóng và kiểm soát thế trận."
+    }
+  ],
+  "OGPSA_DPO": [
+    {
+      "doc_id": "vlsp_train_238",
+      "rouge1": 33.52272727272727,
+      "rouge2": 12.0,
+      "rougeL": 19.886363636363637,
+      "len_ratio": 0.2181208053691275,
+      "output": "**Tóm tắt**: Taliban không tuân thủ cam kết đưa ra trước đây, đặc biệt là về quyền phụ nữ. Họ áp đặt nhiều sắc lệnh hạn chế đối với nữ giới, gây tranh cãi giữa các chuyên gia tôn giáo và học giả."
+    },
+    {
+      "doc_id": "vlsp_train_96",
+      "rouge1": 35.56701030927835,
+      "rouge2": 19.170984455958546,
+      "rougeL": 23.195876288659793,
+      "len_ratio": 0.23737373737373738,
+      "output": "**Tóm tắt**: Brad Pitt, nam diễn viên nổi tiếng, trải qua thời gian cô độc sau ly hôn Angelina Jolie. Anh cố gắng thay đổi bằng cách cai nghiện nhưng vẫn tiếp tục gặp khó khăn. Nam diễn viên chia sẻ về nỗi cô đơn và nỗ lực để vượt qua."
+    },
+    {
+      "doc_id": "vlsp_train_8",
+      "rouge1": 27.821522309711288,
+      "rouge2": 11.609498680738787,
+      "rougeL": 17.322834645669293,
+      "len_ratio": 0.17707267144319344,
+      "output": "**Tóm tắt**: Tóm tắt nội dung tài liệu về việc hoàn thành nhiệm vụ nhập, xuất hàng dự trữ quốc gia trong 6 tháng đầu năm 2022, bao gồm cả các khó khăn và thuận lợi gặp phải."
+    },
+    {
+      "doc_id": "vlsp_train_206",
+      "rouge1": 42.824601366742606,
+      "rouge2": 22.42562929061785,
+      "rougeL": 25.968109339407746,
+      "len_ratio": 0.32132701421800947,
+      "output": "**Tóm tắt**:  \n- **Tăng động lực cho khu vực công**: Cần cải thiện thu nhập và đánh giá cán bộ.\n- **Đánh giá cán bộ thực chất**: Nhu cầu về thu nhập và đánh giá chính thức.\n- **Hệ thống quản trị thực thi**: Hệ thống thông tin và đánh giá kết quả công việc.\n- **Chính sách đặc thù về thu nhập**: Tăng cường thu nhập cho cán bộ và công chức."
+    },
+    {
+      "doc_id": "vlsp_train_263",
+      "rouge1": 25.79281183932346,
+      "rouge2": 18.683651804670916,
+      "rougeL": 21.564482029598313,
+      "len_ratio": 0.16244897959183674,
+      "output": "**Tóm tắt**:  \nTP Hà Nội ban hành Chỉ thị nâng cao PCI năm 2022, nhìn nhận hạn chế, bứt phá cải cách hành chính. Nâng cao năng lực cạnh tranh, TP đặt mục tiêu cải thiện môi trường đầu tư, kinh doanh."
+    },
+    {
+      "doc_id": "vlsp_train_282",
+      "rouge1": 27.74566473988439,
+      "rouge2": 9.883720930232558,
+      "rougeL": 15.028901734104046,
+      "len_ratio": 0.20034692107545535,
+      "output": "**Tóm tắt**:  \n- **Luis Suarez** khuyên **Darwin Nunez** về hành vi không phù hợp.\n- **Nunez** nhận thẻ đỏ và bị treo giò.\n- **Liverpool** gặp tổn thất lớn do Nunez.\n- **Suarez** khuyên Nunez và khẳng định không có gì nghiêm trọng."
+    },
+    {
+      "doc_id": "vlsp_train_111",
+      "rouge1": 40.12738853503185,
+      "rouge2": 16.025641025641026,
+      "rougeL": 22.929936305732483,
+      "len_ratio": 0.4215080346106304,
+      "output": "**Tóm tắt**:  \n- **Gangnam Style**: Hit trở lại Billboard, **That That** lọt Top 100 Billboard Hot 100.\n- **Psy**: Mở màn comeback với **That That**, đạt top 100 Billboard Hot 100.\n- **Psy**: Ca khúc Latin đầy sức sống, đạt top 2 Billboard Global 200.\n- **Psy**: Chia sẻ cảm xúc về màn trình diễn \"Single Ladies\", nhận chỉ trích từ khán giả."
+    },
+    {
+      "doc_id": "vlsp_train_65",
+      "rouge1": 28.57142857142857,
+      "rouge2": 16.43835616438356,
+      "rougeL": 21.08843537414966,
+      "len_ratio": 0.19447779111644659,
+      "output": "**Tóm tắt**: **Meta** thay đổi cách hiển thị nội dung trên Facebook, chuyển sang \"Home\" để theo dõi và tìm kiếm nội dung phù hợp, cạnh tranh trực tiếp với TikTok."
+    },
+    {
+      "doc_id": "vlsp_train_112",
+      "rouge1": 25.862068965517242,
+      "rouge2": 15.151515151515152,
+      "rougeL": 18.103448275862068,
+      "len_ratio": 0.16845582163501238,
+      "output": "**Tóm tắt**:  \n- Bạo hành bé gái 8 tuổi: Tòa xét xử sơ thẩm;  \n- Cha đẻ và người tình bị truy tố;  \n- Đề nghị xác định tỷ lệ thương tật và thay đổi tội danh;  \n- Phiên tòa thu hút sự quan tâm của dư luận."
+    },
+    {
+      "doc_id": "vlsp_train_88",
+      "rouge1": 50.18050541516246,
+      "rouge2": 32.608695652173914,
+      "rougeL": 34.29602888086642,
+      "len_ratio": 0.4397283531409168,
+      "output": "**Tóm tắt**:  \n- **Thời gian**: Từ đầu năm 2021 đến 6 tháng đầu năm 2022  \n- **Số lượng**: 9.397 nhân viên y tế xin thôi việc  \n- **Giải thích**:  \n  - Thuộc nhiều đơn vị khác nhau  \n  - Do thu nhập thấp  \n  - Chính sách thu hút kém  \n  - Phát triển của y tế tư nhân  \n  - Môi trường làm việc đặc biệt  \n  - Cán bộ y tế tự nguyện  \n  - Người bệnh tham gia bảo hiểm  \n- **Hướng dẫn**:  \n  - Nâng mức phụ cấp  \n  - Tính đúng giá dịch vụ  \n  - Động viên cán bộ y tế  \n  - Bảo vệ sức khỏe nhân viên  \n  - Hỗ trợ người bệnh"
+    },
+    {
+      "doc_id": "vlsp_train_264",
+      "rouge1": 39.729119638826184,
+      "rouge2": 16.780045351473923,
+      "rougeL": 24.830699774266364,
+      "len_ratio": 0.3278048780487805,
+      "output": "**Tóm tắt:**\n- **Sức đề kháng suy giảm**: Hệ miễn dịch trẻ dễ bị suy giảm, đặc biệt trong 6 tháng đầu đời.\n- **Nguyên nhân**: Bé bú mẹ ít, hệ miễn dịch chưa hoàn thiện.\n- **Dịch bệnh**: Viêm họng cấp, viêm thanh quản, viêm phổi, viêm phổi, viêm pharynx.\n- **Phòng ngừa**: Nâng cao chế độ ăn uống, bổ sung vitamin C, tăng cường vận động."
+    },
+    {
+      "doc_id": "vlsp_train_39",
+      "rouge1": 31.318681318681318,
+      "rouge2": 15.469613259668508,
+      "rougeL": 21.97802197802198,
+      "len_ratio": 0.20903361344537816,
+      "output": "**Tóm tắt**:  \n- **Giải VBA**: Sức hút lớn với khán giả  \n- **Sốc vé**: Vé bán chạy, giá cao  \n- **Nhận xét**: Thu nhập từ vé, vật phẩm đáng mừng  \n- **Thống kê**: Khán giả tăng mạnh so với năm ngoái"
+    },
+    {
+      "doc_id": "vlsp_train_154",
+      "rouge1": 42.32365145228216,
+      "rouge2": 23.430962343096233,
+      "rougeL": 26.556016597510375,
+      "len_ratio": 0.2604340567612688,
+      "output": "**Tóm tắt**: Một bé gái 5 tuổi mất tích trên quốc lộ 1 ở TP.HCM, được phát hiện và đưa về trụ sở. Tổ CSGT và công an địa phương phối hợp để tìm kiếm cha mẹ."
+    },
+    {
+      "doc_id": "vlsp_train_130",
+      "rouge1": 24.571428571428573,
+      "rouge2": 12.068965517241379,
+      "rougeL": 14.285714285714285,
+      "len_ratio": 0.4591947769314472,
+      "output": "**Tóm tắt**: \n\n- **Top 8** mẫu xe bán chạy nhất tháng 6/2022:\n  1. **Toyota Corolla Cross** - 1.451 xe.\n  2. **Ford Ranger** - 1.410 xe.\n  3. **VinFast Fadil** - 1.338 xe.\n  4. **Hyundai Accent** - 1.086 xe.\n  5. **Kia Sonet** - 887 xe.\n  6. **Hyundai Creta** - 830 xe.\n  7. **Mitsubishi Triton** - 793 xe.\n\n---\n\n**Note**: The text is cut off at the end due to space constraints. Please provide more information if needed."
+    },
+    {
+      "doc_id": "vlsp_train_274",
+      "rouge1": 50.1628664495114,
+      "rouge2": 26.47058823529412,
+      "rougeL": 28.33876221498371,
+      "len_ratio": 0.38075017692852087,
+      "output": "**Tóm tắt**: **Lời cảnh tỉnh về tham nhũng**\n\n- Kết quả tích cực: Xây dựng Đảng, phòng chống tham nhũng.\n- Tác động: Răn đe, thúc đẩy thay đổi.\n- Công tác: Liên tục, không ngơi nghỉ.\n- Kết quả nổi bật:\n  - Xử lý, kiến nghị kỷ luật.\n  - Thúc đẩy công tác phòng chống tham nhũng.\n  - Thi hành kỷ luật cấp cao.\n  - Nghiên cứu mới, mở rộng điều tra.\n\n- Quá trình: Không có vùng cấm, bất kể cấp độ.\n- Đặc điểm: Tiếp tục tăng cường, không ngừng.\n- Kết quả: Khởi tố, điều tra, mở rộng điều tra.\n- Vụ việc: Chủ tịch Trung ương Đảng, Bộ Chính trị."
+    },
+    {
+      "doc_id": "vlsp_train_256",
+      "rouge1": 60.126582278481024,
+      "rouge2": 29.299363057324847,
+      "rougeL": 31.645569620253166,
+      "len_ratio": 0.5279106858054227,
+      "output": "**Tóm tắt**:  \n- **Diệu Nhi** bất lực trước tình trạng \"đàn ông đẹp trai\" của Anh Tú.\n- **Anh Tú** công khai tình cảm với Diệu Nhi, trở thành cặp đôi được yêu thích nhất.\n- **Diệu Nhi** phản ứng với việc Anh Tú có vợ, dùng biểu tượng \"haha\".\n- **Anh Tú** và Diệu Nhi chuẩn bị tổ chức đám cưới, nhận được sự quan tâm lớn từ dư luận."
+    },
+    {
+      "doc_id": "vlsp_train_209",
+      "rouge1": 67.67895878524945,
+      "rouge2": 27.886710239651418,
+      "rougeL": 28.633405639913228,
+      "len_ratio": 0.6357894736842106,
+      "output": "**Tóm tắt**:  \n- **Tiêu đề**: Phim Hàn Quốc Extraordinary Attorney Woo: Sự phản ứng xã hội đối với nội dung gây tranh cãi  \n- **Nội dung**:  \n  - **Giới thiệu**: Một bộ phim Hàn Quốc nổi bật về một luật sư bị ung thư.\n  - **Rất phản ứng**: Tác phẩm bị chỉ trích vì việc sử dụng tỷ lệ sống sót thấp để tạo hiệu ứng hài hước.\n  - **Xử lý**: Nhân vật bị cho rằng đã \"thổi\" tỷ lệ sống sót cao để tạo hiệu ứng.\n  - **Ý kiến khác**: Nhiều người cho rằng phim không tôn trọng sức khỏe của bệnh nhân.\n  - **Hình thức**: Bộ phim được đánh giá cao về chất lượng nhưng vẫn nhận được phản hồi tiêu cực từ công chúng."
+    },
+    {
+      "doc_id": "vlsp_train_57",
+      "rouge1": 57.06214689265536,
+      "rouge2": 18.980169971671387,
+      "rougeL": 30.225988700564976,
+      "len_ratio": 1.501054852320675,
+      "output": "**Tóm tắt**:  \n- **Hình thức**: Tóm tắt văn bản  \n- **Nội dung**: Thông báo về Hành trình \"Thầy thuốc trẻ làm theo lời Bác\"  \n- **Ngày tháng**: 14/5, 2022  \n- **Địa điểm**: Trường Quốc học Huế, TP Huế  \n- **Nhân vật**: Đồng chí Trần Tuấn Anh, Trưởng Ban Kinh tế Trung ương  \n- **Hình thức**: Hành trình nhằm chăm sóc sức khỏe hậu COVID-19  \n- **Ngày sinh**: Chủ tịch Hồ Chí Minh  \n- **Hình thức**: Hành trình nhằm chăm sóc sức khỏe hậu COVID-19  \n- **Ngày tháng**: 14/5, 2022  \n- **Địa điểm**: Trường Quốc học Huế, TP Huế  \n- **Nhân vật**: Đồng chí Trần Tuấn Anh, Trưởng Ban Kinh tế Trung ương  \n- **Hình thức**: Hành trình nhằm chăm sóc sức khỏe hậu COVID-19  \n- **Ngày tháng**: 14/5, 2022  \n- **Địa điểm**: Trường Quốc học Huế, TP Huế  \n- **Nhân vật**: Đồng chí Trần Tuấn Anh, Trưởng Ban Kinh tế Trung ương  \n- **Hình thức**: Hành trình nhằm chăm sóc sức khỏe hậu COVID-19  \n- **Ngày tháng**: 14/5, 2022  \n- **Địa điểm**: Trường Quốc học Huế, TP Huế  \n- **Nhân vật**: Đồng chí Trần Tuấn Anh, Trưởng Ban Kinh tế Trung ương  \n- **Hình thức**: Hành trình nhằm chăm sóc sức khỏe hậu COVID-19  \n- **Ngày tháng**: 14/5, 2022  \n- **Địa điểm**: Trường Quốc học Huế, TP Huế  \n- **Nhân vật**: Đồng chí Trần Tuấn Anh, Trưởng Ban Kinh tế Trung ương  \n- **Hình thức**: Hành trình nhằm chăm sóc sức khỏe hậu COVID-19  \n- **Ngày tháng**: 14/5, 2022  \n- **Địa điểm**: Trường Quốc học Huế, TP Huế  \n- **Nhân vật**: Đồng chí Trần Tuấn Anh,"
+    },
+    {
+      "doc_id": "vlsp_train_163",
+      "rouge1": 27.500000000000004,
+      "rouge2": 15.577889447236181,
+      "rougeL": 18.0,
+      "len_ratio": 0.19389763779527558,
+      "output": "**Tóm tắt**: \n\nMột số thông tin đáng chú ý về việc sử dụng máy bay không người lái của Ukraine trong cuộc chiến ở Ukraine: hiệu quả ban đầu, nhưng sau đó bị giảm do sự phản ứng nhanh chóng của Nga."
+    },
+    {
+      "doc_id": "vlsp_train_107",
+      "rouge1": 45.52845528455285,
+      "rouge2": 19.61852861035423,
+      "rougeL": 28.726287262872624,
+      "len_ratio": 0.3892857142857143,
+      "output": "**Tóm tắt**:  \n- **Quá trình**: Nhà đầu tư có thể giao dịch sớm hơn 1 ngày.\n- **Chuẩn bị**: VSD điều chỉnh thời gian thanh toán chứng khoán.\n- **Mục tiêu**: Giảm thời gian giao dịch và tăng hiệu quả giao dịch.\n- **Nội dung**: Thay đổi quy trình thanh toán và bù trừ.\n- **Cuối cùng**: Nhà đầu tư có thể giao dịch sớm hơn 1 ngày."
+    },
+    {
+      "doc_id": "vlsp_train_278",
+      "rouge1": 37.4384236453202,
+      "rouge2": 17.326732673267326,
+      "rougeL": 21.182266009852217,
+      "len_ratio": 0.2792607802874743,
+      "output": "**Tóm tắt**:  \nHợp đồng vũ khí trị giá 1,1 tỷ USD cho Đài Loan được đề xuất bởi chính quyền Biden. Hiệp định bao gồm tên lửa Harpoon và Sidewinder, và có thể bị trì hoãn do Quốc hội Mỹ nghỉ lễ. Trung Quốc phản đối và yêu cầu Mỹ đình chỉ các hoạt động quân sự gần Đài Loan."
+    },
+    {
+      "doc_id": "vlsp_train_225",
+      "rouge1": 43.50282485875706,
+      "rouge2": 14.204545454545455,
+      "rougeL": 25.98870056497175,
+      "len_ratio": 0.33373205741626794,
+      "output": "Tóm tắt:  \n- Anh Phan Thanh Sang bị oan ức hơn 2 năm qua.\n- Nhiều người dân địa phương và gia đình anh bị thị phi.\n- Anh bị cấm đi khỏi nơi cư trú và phải ăn ít nhất 100.000 đồng mỗi ngày.\n- Anh bị rối loạn trầm cảm do áp lực.\n- Anh đã ra tòa 2 lần nhưng không đủ cơ sở buộc tội."
+    },
+    {
+      "doc_id": "vlsp_train_179",
+      "rouge1": 60.18518518518518,
+      "rouge2": 26.51162790697674,
+      "rougeL": 30.555555555555557,
+      "len_ratio": 0.5712694877505567,
+      "output": "**Tóm tắt**:  \n- **HIMARS**: Hệ thống pháo phản lực của Ukraine.\n- **Ưu điểm**: Tầm bắn xa, ít bị đối phó.\n- **Hình thức tấn công**: Phun đạn từ xa, gây ra nhiều vụ nổ.\n- **Ngày càng quan trọng**: Trung tâm phòng thủ Ukraine, hỗ trợ đòn tấn công.\n- **Hệ thống mới**: Được chuyển giao từ Mỹ, tăng cường uy lực.\n- **Ưu điểm**: Dễ vận hành, tiết kiệm đạn dược.\n\n**Kết luận**: HIMARS đóng vai trò quan trọng trong chiến lược phòng thủ Ukraine, góp phần tạo nên lợi thế chiến lược trong cuộc chiến giữa Ukraine và Nga."
+    },
+    {
+      "doc_id": "vlsp_train_266",
+      "rouge1": 47.268408551068894,
+      "rouge2": 15.476190476190476,
+      "rougeL": 30.16627078384798,
+      "len_ratio": 1.8371134020618556,
+      "output": "**Tóm tắt**: \n\n- **CLB Phố Hiến** bổ sung 7 cầu thủ mới cho U20 Việt Nam.\n- **Tập huấn Nhật Bản** dự kiến vào tháng 9.\n- **Rally**: 7 cầu thủ sẽ thay thế các trụ cột trong đội hình hiện tại.\n- **Những cầu thủ nổi bật**: Thanh Nhàn, Hải Nam, Hiểu Minh, Ngọc Sơn.\n- **Thời gian tập huấn**: Từ 12/8 đến 26/8.\n- **Hình thức**: Tăng cường lực lượng trước trận đấu với Indonesia vào tháng 9.\n\n---\n\n**Thông tin chi tiết**: \n\n- **Tổng số cầu thủ**: 7 cầu thủ.\n- **Ngày tập huấn**: 12/8 - 26/8.\n- **Hình thức tập huấn**: Tại Nhật Bản.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng 9.\n- **Hình thức tăng cường**: Trước trận đấu với Indonesia vào tháng"
+    },
+    {
+      "doc_id": "vlsp_train_109",
+      "rouge1": 61.6504854368932,
+      "rouge2": 25.365853658536587,
+      "rougeL": 32.52427184466019,
+      "len_ratio": 1.0830721003134796,
+      "output": "**Tóm tắt**:  \n- **Tiêu đề**: <HUMAN_NAME> bị phát hiện nhận hối lộ<br>\n- **Nội dung**:  \n  - Phát hiện Giám đốc CDC nhận hối lộ<br>\n  - Vụ trưởng Vụ thiết bị vật tư y tế lo lắng<br>\n  - Bà Hạnh lo lắng về con trai<br>\n  - Tập 2: <HUMAN_NAME> và bà Bằng đối phó<br>\n\n---\n\n**Dịch sang tiếng Việt**:  \n- **Title**: <HUMAN_NAME> bị phát hiện nhận hối lộ<br>\n- **Content**:  \n  - Phát hiện Giám đốc CDC nhận hối lộ<br>\n  - Vụ trưởng Vụ thiết bị vật tư y tế lo lắng<br>\n  - Bà Hạnh lo lắng về con trai<br>\n  - Tập 2: <HUMAN_NAME> và bà Bằng đối phó<br>\n\n---\n\n**Note**: Đây là một mô tả ngắn gọn và chính xác của nội dung tài liệu, phù hợp để sử dụng trong các mục tiêu như tìm kiếm hoặc đánh giá."
+    },
+    {
+      "doc_id": "vlsp_train_105",
+      "rouge1": 40.121580547112465,
+      "rouge2": 22.018348623853214,
+      "rougeL": 28.57142857142857,
+      "len_ratio": 0.316043425814234,
+      "output": "**Tóm tắt**: \n\n- **Giải đấu**: Giải U19 Đông Nam Á 2022.\n- **Hạng 3**: U19 Việt Nam giành chiến thắng trước U19 Thái Lan.\n- **Chia sẻ**: Hạng 3 được chia cho U19 Việt Nam.\n- **Nội dung chính**: Chiến thắng trước U19 Thái Lan, trận tranh hạng 3, và áp lực tâm lý."
+    },
+    {
+      "doc_id": "vlsp_train_102",
+      "rouge1": 50.191570881226056,
+      "rouge2": 23.46153846153846,
+      "rougeL": 27.58620689655172,
+      "len_ratio": 0.41894353369763204,
+      "output": "**Tóm tắt**:  \n- **Mức lương thấp**: Bác sĩ mới ra trường nhận khoảng 4,8 triệu đồng/tháng.\n- **Người lao động rời ngành**: Nhiều bác sĩ nghỉ việc, bỏ việc hoặc chuyển sang y tế ngoài công lập.\n- **Rối loạn thu nhập**: Thu nhập thấp so với y tế ngoài công lập, thiếu chính sách thu hút.\n- **Động lực lao động**: Chính sách thu hút chưa đủ mạnh, tạo động lực cho lao động.\n- **Khó khăn**: Nhu cầu cao về lương, thu nhập thấp, và môi trường làm việc khắc nghiệt."
+    },
+    {
+      "doc_id": "vlsp_train_159",
+      "rouge1": 53.333333333333336,
+      "rouge2": 24.88038277511962,
+      "rougeL": 27.142857142857142,
+      "len_ratio": 0.5160183066361556,
+      "output": "**Tóm tắt**:  \n- **MIS-C (Mild Infectious Syndrome)**: Hội chứng nghiêm trọng do nhiễm SARS-CoV-2 gây ra ở trẻ em, đòi hỏi chăm sóc đặc biệt.\n- **Hậu COVID-19**: Nhiều bệnh nhân gặp MIS-C, chủ yếu ở trẻ em dưới 5 tuổi.\n- **Pháp lý**: Phác đồ điều trị phức tạp, tốn kém; tiêm vaccine giúp giảm nguy cơ MIS-C và tăng khả năng sống sót.\n- **Nghiên cứu**: Tiêm vaccine Pfizer giúp giảm nguy cơ MIS-C ở trẻ em, bảo vệ họ trước hậu quả nặng nề của COVID-19."
+    },
+    {
+      "doc_id": "vlsp_train_249",
+      "rouge1": 20.588235294117645,
+      "rouge2": 4.477611940298507,
+      "rougeL": 13.23529411764706,
+      "len_ratio": 0.4147465437788018,
+      "output": "**Tóm tắt**:  \n- **Title**: Johnny Depp Produces 'Modigliani' with Al Pacino  \n- **Summary**: Johnny Depp directs a film based on Modigliani's life, starring Al Pacino as producer."
+    },
+    {
+      "doc_id": "vlsp_train_30",
+      "rouge1": 30.645161290322587,
+      "rouge2": 16.216216216216218,
+      "rougeL": 19.892473118279568,
+      "len_ratio": 0.23505572441742653,
+      "output": "**Tóm tắt**: \n\n- **Martial**: Tiền đạo ghi bàn liên tục, được HLV Ten Hag chọn làm chủ công.\n- **MU**: Dự kiến chuyển hướng từ kiểm soát bóng sang tấn công.\n- **Van de Beek**: Có thể không được triệu tập vì khả năng cao rời Everton."
+    }
+  ]
+}

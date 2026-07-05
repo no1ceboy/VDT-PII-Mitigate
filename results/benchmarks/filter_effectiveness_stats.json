@@ -1,0 +1,686 @@
+{
+  "dpo_chosen_purity_test": {
+    "total_tested": 96,
+    "leaked_after_filter": 0,
+    "leakage_rate": 0.0,
+    "details": [
+      {
+        "doc_id": "meddies_004040_21a83996",
+        "original_summary": "**Thông Tin**: Sarah Elizabeth Johnson, nữ, 38 tuổi, sinh ngày 15/08/1986, sống tại TP. Hồ Chí Minh. \n\n**Dịch Vụ**: Thăm khám sức khỏe định kỳ.\n\n**Triệu Chứng**: \n- Tăng huyết áp giai đoạn 2 (nguy cơ cao).\n- Đái tháo đường type 2 không kiểm soát tốt.\n- Rối loạn mỡ máu hỗn hợp.\n\n**Khám**: \n- Huyết áp: 145/90 mmHg (tay phải).\n- Nhịp tim: 88 bpm, đều.\n- Nhiệt độ: 36.8°C.\n- SpO2: 97%.\n- Cân nặng: 72 kg, Chiều cao: 168 cm, BMI: 25.5.\n\n**Xét nghiệm**: \n- Đường huyết đói",
+        "redacted_summary": "**Thông Tin**: <HUMAN_NAME>, nữ, 38 tuổi, sinh ngày <DATE>, sống tại TP. Hồ Chí Minh. \n\n**Dịch Vụ**: Thăm khám sức khỏe định kỳ.\n\n**Triệu Chứng**: \n- Tăng huyết áp giai đoạn 2 (nguy cơ cao).\n- Đái tháo đường type 2 không kiểm soát tốt.\n- Rối loạn mỡ máu hỗn hợp.\n\n**Khám**: \n- Huyết áp: 145/90 mmHg (tay phải).\n- Nhịp tim: 88 bpm, đều.\n- Nhiệt độ: 36.8°C.\n- SpO2: 97%.\n- Cân nặng: 72 kg, Chiều cao: 168 cm, BMI: 25.5.\n\n**Xét nghiệm**: \n- Đường huyết đói",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/12)"
+      },
+      {
+        "doc_id": "meddies_004046_2a6ed909",
+        "original_summary": "### Tóm tắt:\n\n- **Người qua đời**: Nguyễn Văn A, nam giới, 68 tuổi, dân tộc Kinh, quốc tịch Việt Nam.\n- **Ngày tháng**: Ngày 15/08/2024, thời gian tử vong là 10 giờ 45 phút.\n- **Địa điểm**: Khoa Hồi sức tích cực, Bệnh viện Đa khoa Tâm Anh, Hà Nội.\n- **Lý do tử vong**: Do tai nạn, xem xét theo yêu cầu của gia đình.\n- **Thông tin cá nhân**: Người qua đời sống tại nhà, số CMND/CCCD: 001234567890, địa chỉ: Số 12, Ngõ 5, Đường Kim Mã, Phường Kim Mã, Quận Ba Đình, Hà Nội.\n- **Trạng thái tử thi**: Được cấp cứu.\n- **Triệu",
+        "redacted_summary": "### Tóm tắt:\n\n- **Người qua đời**: <HUMAN_NAME>, nam giới, 68 tuổi, dân tộc Kinh, quốc tịch Việt Nam.\n- **Ngày tháng**: Ngày <DATE>, thời gian tử vong là 10 giờ 45 phút.\n- **Địa điểm**: Khoa Hồi sức tích cực, Bệnh viện Đa khoa Tâm Anh, Hà Nội.\n- **Lý do tử vong**: Do tai nạn, xem xét theo yêu cầu của gia đình.\n- **Thông tin cá nhân**: Người qua đời sống tại nhà, số CMND/CCCD: <ID_NUMBER>, địa chỉ: <ADDRESS>.\n- **Trạng thái tử thi**: Được cấp cứu.\n- **Triệu",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/27)"
+      },
+      {
+        "doc_id": "meddies_004072_269efbf4",
+        "original_summary": "### Tóm tắt:\n\n**Tên bệnh nhân:** Kim Min-ji  \n**Tuổi:** 39  \n**Quốc tịch:** Hàn Quốc  \n**Số điện thoại:** +84 38 555 2211  \n**Email:** minji.kim.hcm@koreamed.vn  \n\n**Thông tin liên hệ khẩn cấp:**  \n- Người liên hệ: Park Yoona  \n- Quan hệ: Con gái  \n- Số điện thoại: +84 90 333 4455  \n\n**Chẩn đoán chính:**  \n1. Đái tháo đường type 2 (ICD-10: E11.9)  \n2. Tăng huyết áp vô căn giai đoạn 1 (ICD-10: I10)  \n3. Rối loạn lipid máu hỗn hợp (ICD-10: E78.2)  \n\n**Diễn biến",
+        "redacted_summary": "### Tóm tắt:\n\n**Tên bệnh nhân:** <HUMAN_NAME>  \n**Tuổi:** 39  \n**Quốc tịch:** Hàn Quốc  \n**Số điện thoại:** <PHONE_NUMBER>  \n**Email:** <EMAIL_ADDRESS>  \n\n**Thông tin liên hệ khẩn cấp:**  \n- Người liên hệ: <HUMAN_NAME>  \n- Quan hệ: Con gái  \n- Số điện thoại: <PHONE_NUMBER>  \n\n**Chẩn đoán chính:**  \n1. Đái tháo đường type 2 (ICD-10: E11.9)  \n2. Tăng huyết áp vô căn giai đoạn 1 (ICD-10: I10)  \n3. Rối loạn lipid máu hỗn hợp (ICD-10: E78.2)  \n\n**Diễn biến",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/22)"
+      },
+      {
+        "doc_id": "meddies_004075_f68c7c57",
+        "original_summary": "Trần Văn Bình, nam, 68 tuổi, vào viện vì các triệu chứng khó thở, ho khan, phù, mệt mỏi, kèm tăng huyết áp và đái tháo đường type 2 không phụ thuộc insulin. Sau 10 ngày điều trị tại Bệnh viện Đa khoa Quốc tế Hà Nội, tình trạng của ông đã được cải thiện đáng kể. Ông đã được điều trị với các loại thuốc như thuốc ức chế beta, ức chế men chuyển, và thuốc giảm đau. Kết quả xét nghiệm cho thấy ông bị suy tim độ II, rung nhĩ thất não, tăng huyết áp độ 2, đái tháo đường type 2 không phụ thuộc insulin, và bệnh phổi tắc nghẽn mạn tính (COPD) giai đoạn ổn định. Ông đã được tái khám tại các khoa khác để tiếp tục điều trị.",
+        "redacted_summary": "<HUMAN_NAME>, nam, 68 tuổi, vào viện vì các triệu chứng khó thở, ho khan, phù, mệt mỏi, kèm tăng huyết áp và đái tháo đường type 2 không phụ thuộc insulin. Sau 10 ngày điều trị tại Bệnh viện Đa khoa Quốc tế Hà Nội, tình trạng của ông đã được cải thiện đáng kể. Ông đã được điều trị với các loại thuốc như thuốc ức chế beta, ức chế men chuyển, và thuốc giảm đau. Kết quả xét nghiệm cho thấy ông bị suy tim độ II, rung nhĩ thất não, tăng huyết áp độ 2, đái tháo đường type 2 không phụ thuộc insulin, và bệnh phổi tắc nghẽn mạn tính (COPD) giai đoạn ổn định. Ông đã được tái khám tại các khoa khác để tiếp tục điều trị.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/10)"
+      },
+      {
+        "doc_id": "meddies_004082_813792df",
+        "original_summary": "### Tóm tắt:\n\n**I. Thông tin bệnh nhân:**\n- Họ và tên: Lê Văn Mường\n- Ngày sinh: 5/5/1970\n- Giới tính: Nam\n- Số CCCD/CMND: 001202003456\n- Số hồ sơ: BVHM-2024-147890\n- Ngày giờ tiếp nhận: 08/11/2024 09:15\n\n**II. Thông tin liên hệ người nhà:**\n- Người đại diện: Lê Thị Thanh Huyền\n- Quan hệ: Con gái\n- Số điện thoại: 0912345678\n- Địa chỉ email: lethanhuyen.saigon@gmail.com\n\n**III. Chẩn đoán trước thủ thuật:**\n1. Hẹp van hai lá nặng (Thể Trạng: MiTral",
+        "redacted_summary": "### Tóm tắt:\n\n**I. Thông tin bệnh nhân:**\n- Họ và tên: Lê Văn Mường\n- Ngày sinh: 5/5/1970\n- Giới tính: Nam\n- Số CCCD/CMND: <ID_NUMBER>\n- Số hồ sơ: <ID_NUMBER>\n- Ngày giờ tiếp nhận: <DATE> <DATE>\n\n**II. Thông tin liên hệ người nhà:**\n- Người đại diện: <HUMAN_NAME>\n- Quan hệ: Con gái\n- Số điện thoại: <PHONE_NUMBER>\n- Địa chỉ email: <EMAIL_ADDRESS>\n\n**III. Chẩn đoán trước thủ thuật:**\n1. Hẹp van hai lá nặng (Thể Trạng: MiTral",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/22)"
+      },
+      {
+        "doc_id": "meddies_004093_895ef109",
+        "original_summary": "Tóm tắt nội dung tài liệu:\n\n- **Thông tin bệnh nhân:** Nguyễn Văn Bình, nam, 59 tuổi, sinh ngày 15/08/1965.\n- **Ngày nhập viện:** 15/01/2024.\n- **Bệnh lý:** \n  - Tăng huyết áp mạn tính, tiểu đường type 2, béo phì.\n  - Có hút thuốc lá 10 điếu/ngày trong 20 năm, đã bỏ 5 năm.\n  - Có hút rượu 2-3 lần/tuần, 20-30ml/lần.\n- **Dịch vụ y tế điện tử:** Được khám tại Phòng khám chuyên khoa.\n- **Thời gian nhập viện:** Từ ngày 15/01/2024.\n- **Khoa đăng ký:** Khoa Nội tim mạch.\n- **Bác sĩ chỉ định:** BS",
+        "redacted_summary": "Tóm tắt nội dung tài liệu:\n\n- **Thông tin bệnh nhân:** <HUMAN_NAME>, nam, 59 tuổi, sinh ngày <DATE>.\n- **Ngày nhập viện:** 15/01/2024.\n- **Bệnh lý:** \n  - Tăng huyết áp mạn tính, tiểu đường type 2, béo phì.\n  - Có hút thuốc lá 10 điếu/ngày trong 20 năm, đã bỏ 5 năm.\n  - Có hút rượu 2-3 lần/tuần, 20-30ml/lần.\n- **Dịch vụ y tế điện tử:** Được khám tại Phòng khám chuyên khoa.\n- **Thời gian nhập viện:** Từ ngày 15/01/2024.\n- **Khoa đăng ký:** Khoa Nội tim mạch.\n- **Bác sĩ chỉ định:** BS",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/29)"
+      },
+      {
+        "doc_id": "meddies_004102_5f1b8d35",
+        "original_summary": "**Tóm tắt**\n\n- **Tên bệnh nhân**: Trần Văn Nam\n- **Ngày sinh**: 15/08/1968\n- **Ngày nhập viện**: 10/04/2024\n- **Ngày ra viện**: 18/04/2024\n- **Chẩn đoán chính**: Tiền sử tăng huyết áp type II, biến chứng suy tim sung huyết.\n- **Chẩn đoán phụ**: Đái tháo đường type 2 không ổn định.\n- **Diễn biến**: \n  - Ngày 10/04/2024: Khám lâm sàng, tăng huyết áp 170/100 mmHg, nhịp tim 92/s, phù chi dưới, siêu âm tim phình thất trái, EF 45%.\n  - Ngày 11/04/2024: Đánh",
+        "redacted_summary": "**Tóm tắt**\n\n- **Tên bệnh nhân**: <HUMAN_NAME>\n- **Ngày sinh**: <DATE>\n- **Ngày nhập viện**: <DATE>\n- **Ngày ra viện**: <DATE>\n- **Chẩn đoán chính**: Tiền sử tăng huyết áp type II, biến chứng suy tim sung huyết.\n- **Chẩn đoán phụ**: Đái tháo đường type 2 không ổn định.\n- **Diễn biến**: \n  - Ngày <DATE>: Khám lâm sàng, tăng huyết áp 170/100 mmHg, nhịp tim 92/s, phù chi dưới, siêu âm tim phình thất trái, EF 45%.\n  - Ngày 11/04/2024: Đánh",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/22)"
+      },
+      {
+        "doc_id": "meddies_004122_91eecba3",
+        "original_summary": "### Tóm tắt\n\n- **Tên người tử vong:** Phạm Thị Thanh Hà  \n- **Ngày, tháng, năm sinh:** 12/04/1965  \n- **Tuổi:** 59  \n- **Giới tính:** Nam  \n- **Địa chỉ:** Số 15 Ngõ 89 Đường Khuất Duy Tiến, Phường Thanh Xuân Trung, Quận Thanh Xuân, Hà Nội  \n- **Số CCCD:** 079204001234  \n- **Số thẻ BHYT:** HC20248855123456  \n- **Mã số tử thi:** T20240825  \n- **Mã vạch:** 1234567890123  \n- **Ngày, giờ tử vong:** 17:45 ngày",
+        "redacted_summary": "### Tóm tắt\n\n- **Tên người tử vong:** <HUMAN_NAME>  \n- **Ngày, tháng, năm sinh:** <DATE>  \n- **Tuổi:** 59  \n- **Giới tính:** Nam  \n- **Địa chỉ:** <ADDRESS>  \n- **Số CCCD:** <ID_NUMBER>  \n- **Số thẻ BHYT:** <ID_NUMBER>  \n- **Mã số tử thi:** <ID_NUMBER>  \n- **Mã vạch:** <ID_NUMBER>  \n- **Ngày, giờ tử vong:** <DATE> ngày",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/40)"
+      },
+      {
+        "doc_id": "meddies_004116_ea48ad99",
+        "original_summary": "### Tóm tắt:\n\n**Thông Tin Kế Hoạch Phục Hồi Chức Năng**\n\n- **Bệnh Nhân**: Lý Thị Mai, 66 tuổi, nữ, đột ngột đau đầu dữ dội, nôn ói, lơ mơ tại nhà.\n- **Chẩn Đoán**: Hậu quả liệt nửa người do xuất huyết não (I64), tăng huyết áp mãn tính (I10), đái tháo đường type 2 (E11).\n- **Mô Tộc Hiện Tại**: Liệt nửa người trái (Hemiplegia), mất khả năng ngôn ngữ (Aphasia), nuốt khó.\n- **Mục Tiêu Điều Trị**: Khôi phục khả năng tự vận động cơ chi, cải thiện nuốt, giao tiếp.\n  \n**Lịch Sinh Hiệu Và Tiêu Chuẩn Đánh Giá**\n\n- **Huyết Áp**: 135/8",
+        "redacted_summary": "### Tóm tắt:\n\n**Thông Tin Kế Hoạch Phục Hồi Chức Năng**\n\n- **Bệnh Nhân**: <HUMAN_NAME>, 66 tuổi, nữ, đột ngột đau đầu dữ dội, nôn ói, lơ mơ tại nhà.\n- **Chẩn Đoán**: Hậu quả liệt nửa người do xuất huyết não (I64), tăng huyết áp mãn tính (I10), đái tháo đường type 2 (E11).\n- **Mô Tộc Hiện Tại**: Liệt nửa người trái (Hemiplegia), mất khả năng ngôn ngữ (Aphasia), nuốt khó.\n- **Mục Tiêu Điều Trị**: Khôi phục khả năng tự vận động cơ chi, cải thiện nuốt, giao tiếp.\n  \n**Lịch Sinh Hiệu Và Tiêu Chuẩn Đánh Giá**\n\n- **Huyết Áp**: 135/8",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/22)"
+      },
+      {
+        "doc_id": "meddies_004129_99d109a3",
+        "original_summary": "**Thông Tin Bệnh Nhân:**\n- **Tên:** Lê Thị Mùi  \n- **Tuổi:** 79 tuổi  \n- **Giới tính:** Nữ  \n\n**Chẩn Đoán Trước Phẫu Thuật:**\n- **Thoái Hóa Cột Sống Thắt Lương (M47.2)**\n\n**Thời Gian Dự Kiến Phẫu Thuật:**\n- **Ngày:** 25/10/2024  \n- **Thời Gian:** 08 giờ 30 phút  \n\n**Phòng Mổ:** Phòng Mổ Số 02, Tầng 5, Khu Phẫu Thuật  \n\n**Bác Sĩ Phẫu Thuật:** Trần Văn Nam  \n**Bác Sĩ Gây Mê:** Nguyễn Thị Hà",
+        "redacted_summary": "**Thông Tin Bệnh Nhân:**\n- **Tên:** <HUMAN_NAME>  \n- **Tuổi:** 79 tuổi  \n- **Giới tính:** Nữ  \n\n**Chẩn Đoán Trước Phẫu Thuật:**\n- **Thoái Hóa Cột Sống Thắt Lương (M47.2)**\n\n**Thời Gian Dự Kiến Phẫu Thuật:**\n- **Ngày:** <DATE>  \n- **Thời Gian:** 08 giờ 30 phút  \n\n**Phòng Mổ:** Phòng Mổ Số 02, Tầng 5, Khu Phẫu Thuật  \n\n**Bác Sĩ Phẫu Thuật:** <HUMAN_NAME>  \n**Bác Sĩ Gây Mê:** <HUMAN_NAME>",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/11)"
+      },
+      {
+        "doc_id": "meddies_004130_aae0d522",
+        "original_summary": "**Tóm tắt:** \n\n- **Người bệnh**: Robert Kim, nam, 45 tuổi\n- **Ngày khám**: 15/10/2023\n- **Diện tích khám**: Bệnh viện Quốc tế Time City, phòng khám tổng hợp\n- **Phòng khám**: Phòng khám Nội Tổng Hợp\n- **Bác sĩ**: Dr. Kenjiro Tanaka\n- **Ngày khám**: 15/10/2023\n- **Số bệnh án**: VNN-8493-2910\n- **Ngày tái khám**: 20/11/2023\n- **Xét nghiệm**: \n  - Glucose: 8.9 mmol/L\n  - HbA1c: 7.8%\n  - Creatinine: 110 µmol/L\n  - AST: 45 U/L\n",
+        "redacted_summary": "**Tóm tắt:** \n\n- **Người bệnh**: <HUMAN_NAME>, nam, 45 tuổi\n- **Ngày khám**: <DATE>\n- **Diện tích khám**: Bệnh viện Quốc tế Time City, phòng khám tổng hợp\n- **Phòng khám**: Phòng khám Nội Tổng Hợp\n- **Bác sĩ**: <HUMAN_NAME>\n- **Ngày khám**: <DATE>\n- **Số bệnh án**: <ID_NUMBER>\n- **Ngày tái khám**: <DATE>\n- **Xét nghiệm**: \n  - Glucose: 8.9 mmol/L\n  - HbA1c: 7.8%\n  - Creatinine: 110 µmol/L\n  - AST: 45 U/L\n",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/22)"
+      },
+      {
+        "doc_id": "meddies_004128_1731596c",
+        "original_summary": "**Thông Tin Bệnh Nhân**\n\n- Họ và tên: Trần Văn Bình  \n- Ngày sinh: 15/08/1940  \n- Giới tính: Nam  \n- Địa chỉ: Số 42, Đường Lê Duẩn, Phường Bến Nghé, Quận 1  \n- Số điện thoại liên lạc: 0903 555 123  \n- Mã số bệnh nhân: BN-1940-THA-8821  \n- Số bảo hiểm y tế: GH750 000 01234  \n\n**Thời Gian Xét Nghiệm**\n\n- Thời điểm xét nghiệm: Khoa Nội Tim Mạch, Bệnh viện Đa Khoa Thành phố Hồ Chí Minh  \n- Bác sĩ chỉ định: BS. Nguyễn Thanh Tùng  \n- Mã số y bác sĩ: BS-2020-NTT-0485\n\n**",
+        "redacted_summary": "**Thông Tin Bệnh Nhân**\n\n- Họ và tên: <HUMAN_NAME>  \n- Ngày sinh: <DATE>  \n- Giới tính: Nam  \n- Địa chỉ: <ADDRESS>  \n- Số điện thoại liên lạc: <PHONE_NUMBER>  \n- Mã số bệnh nhân: <ID_NUMBER>  \n- Số bảo hiểm y tế: <ID_NUMBER>  \n\n**Thời Gian Xét Nghiệm**\n\n- Thời điểm xét nghiệm: Khoa Nội Tim Mạch, Bệnh viện Đa Khoa Thành phố Hồ Chí Minh  \n- Bác sĩ chỉ định: <HUMAN_NAME>  \n- Mã số y bác sĩ: <ID_NUMBER>\n\n**",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/14)"
+      },
+      {
+        "doc_id": "meddies_004134_3f9ee38e",
+        "original_summary": "### Tóm tắt tài liệu:\n\n**Thông tin bệnh nhân:**\n\n- Họ và tên: TRẦN VĂN BÁ\n- Ngày sinh: 15/08/1945 (78 tuổi)\n- Giới tính: Nam\n- Địa chỉ: Số 45, Đường Lê Lợi, Phường 4, Quận 1, TP.HCM\n- Số điện thoại liên hệ: 0903 123 456 (Con trai: TRẦN VĂN NAM)\n\n**Tiền sử bệnh:**\n\n- Tim mạch:\n  - Đặt stent nhánh trước descending năm 2018.\n  - Tăng huyết áp từ năm 2010, hiện kiểm soát ổn định.\n  - Tiểu đường type 2 từ năm 2015 (HbA1c hiện tại 7.2%).\n\n- Hô hấp:\n  - Viêm ph",
+        "redacted_summary": "### Tóm tắt tài liệu:\n\n**Thông tin bệnh nhân:**\n\n- Họ và tên: <HUMAN_NAME>\n- Ngày sinh: <DATE> (78 tuổi)\n- Giới tính: Nam\n- Địa chỉ: <ADDRESS>\n- Số điện thoại liên hệ: <PHONE_NUMBER> (Con trai: <HUMAN_NAME>)\n\n**Tiền sử bệnh:**\n\n- Tim mạch:\n  - Đặt stent nhánh trước descending năm 2018.\n  - Tăng huyết áp từ năm 2010, hiện kiểm soát ổn định.\n  - Tiểu đường type 2 từ năm 2015 (HbA1c hiện tại 7.2%).\n\n- Hô hấp:\n  - Viêm ph",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/9)"
+      },
+      {
+        "doc_id": "meddies_004157_e7f67fdc",
+        "original_summary": "**Thông Tin Bệnh Nhân**\n\n- **Tên**: Trần Văn Bình\n- **Ngày Sinh**: 15/08/1972\n- **Giới Tính**: Nam\n- **Số Điện Thoại**: 0918 555 789\n- **Địa Chỉ Liên Hệ**: Số 12, Đường Lê Lợi, Phường Bến Nghé, Q1, TP.HCM\n- **Số Hồ Sơ Bệnh Án (MRN)**: VM-BN-2024-88456\n- **Số BHYT**: HD7510203456789\n- **CMND/CCCD**: 025899012345\n\n**Chuyên Khoa / Bác Sĩ Chỉ Định**\n- **Chuyên Khoa**: Bác sĩ Chuyên khoa",
+        "redacted_summary": "**Thông Tin Bệnh Nhân**\n\n- **Tên**: <HUMAN_NAME>\n- **Ngày Sinh**: <DATE>\n- **Giới Tính**: Nam\n- **Số Điện Thoại**: <PHONE_NUMBER>\n- **Địa Chỉ Liên Hệ**: <ADDRESS>\n- **Số Hồ Sơ Bệnh Án (MRN)**: <ID_NUMBER>\n- **Số BHYT**: <ID_NUMBER>\n- **CMND/CCCD**: <ID_NUMBER>\n\n**Chuyên Khoa / Bác Sĩ Chỉ Định**\n- **Chuyên Khoa**: Bác sĩ Chuyên khoa",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/18)"
+      },
+      {
+        "doc_id": "meddies_004187_998d6d9d",
+        "original_summary": "Phiếu kết quả xét nghiệm chuyên khoa cho bệnh nhân Lê Thị Ngọc Diệp Khánh Giang:\n\n- **Sinh hóa huyết học:**\n  - Hồng cầu: 3.8 x 10^12/L (Tham chiếu: 3.9 - 5.2)\n  - Bạch cầu: 14.5 x 10^9/L (Tham chiếu: 4.0 - 10.0) - **Tăng**\n  - Tiểu cầu: 245 x 10^9/L\n  - Hemoglobin: 10.5 g/dL (Tham chiếu: 12.0 - 16.0) - **Thấp**\n  - Hematocrit: 32% (Tham chiếu: 36% - 46%)\n\n- **Sinh hóa miễn dịch:**\n  - Glucose: 9.8 mmol/L (",
+        "redacted_summary": "Phiếu kết quả xét nghiệm chuyên khoa cho bệnh nhân <HUMAN_NAME>:\n\n- **Sinh hóa huyết học:**\n  - Hồng cầu: 3.8 x 10^12/L (Tham chiếu: 3.9 - 5.2)\n  - Bạch cầu: 14.5 x 10^9/L (Tham chiếu: 4.0 - 10.0) - **Tăng**\n  - Tiểu cầu: 245 x 10^9/L\n  - Hemoglobin: 10.5 g/dL (Tham chiếu: 12.0 - 16.0) - **Thấp**\n  - Hematocrit: 32% (Tham chiếu: 36% - 46%)\n\n- **Sinh hóa miễn dịch:**\n  - Glucose: 9.8 mmol/L (",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/13)"
+      },
+      {
+        "doc_id": "meddies_004195_7f6e980f",
+        "original_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân**: Lê Văn Hòa\n- **Ngày sinh**: 15/05/2021\n- **Tuổi**: 2 tuổi\n- **Địa chỉ**: Số 45 Đường 12, Khu Phố 3, Phường An Thạnh, Quận 7, TP.HCM\n- **Số điện thoại**: 0938.555.123\n- **Số BHYT**: HI1234567890123\n- **Mã bệnh nhân**: BN202178945\n- **Thời gian nhập liệu**: 08:45:15 Ngày 20/10/2023\n- **Thông tin về tiền sử**: \n  - Dị ứng thức ăn: Tôm, cua (nổi mề đay",
+        "redacted_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân**: <HUMAN_NAME>\n- **Ngày sinh**: <DATE>\n- **Tuổi**: 2 tuổi\n- **Địa chỉ**: <ADDRESS>\n- **Số điện thoại**: <PHONE_NUMBER>\n- **Số BHYT**: <ID_NUMBER>\n- **Mã bệnh nhân**: <ID_NUMBER>\n- **Thời gian nhập liệu**: 08:45:15 Ngày 20/10/2023\n- **Thông tin về tiền sử**: \n  - Dị ứng thức ăn: Tôm, cua (nổi mề đay",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/14)"
+      },
+      {
+        "doc_id": "meddies_004191_770e4faf",
+        "original_summary": "### Tóm tắt\n\n#### 1. Thông tin bệnh nhân:\n- Họ và tên: Trần Văn Nam\n- Ngày sinh: 15/08/1965\n- Giới tính: Nam\n- Số hồ sơ/MRN: BV750198654\n- Số CCCD/CMND: 02587643219\n- Địa chỉ thường trú: Số 45, Đường Lý Thái Tổ, Phường 10, Quận 3, TP.HCM\n- Điện thoại liên lạc: 0987654321\n\n#### 2. Ngày vào viện: 20/10/2023\n- Ngày giờ ra viện dự kiến: 25/10/2023\n- Đơn vị điều trị: Khoa Nội Tim Mạc - Bệnh viện Quận 3\n- Bác sĩ điều trị chính:",
+        "redacted_summary": "### Tóm tắt\n\n#### 1. Thông tin bệnh nhân:\n- Họ và tên: <HUMAN_NAME>\n- Ngày sinh: <DATE>\n- Giới tính: Nam\n- Số hồ sơ/MRN: <ID_NUMBER>\n- Số CCCD/CMND: <ID_NUMBER>\n- Địa chỉ thường trú: <ADDRESS>\n- Điện thoại liên lạc: <PHONE_NUMBER>\n\n#### 2. Ngày vào viện: <DATE>\n- Ngày giờ ra viện dự kiến: 25/10/2023\n- Đơn vị điều trị: Khoa Nội Tim Mạc - Bệnh viện Quận 3\n- Bác sĩ điều trị chính:",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/16)"
+      },
+      {
+        "doc_id": "meddies_004203_2cb20e70",
+        "original_summary": "**Tóm tắt**: \n\n- **Thông tin bệnh nhân**: Nguyễn Văn A, nam, 75 tuổi, dân tộc Kinh, sống tại Hà Nội.\n- **Dịch bệnh**: Đái tháo đường type 2, tăng huyết áp, suy gan mật.\n- **Thuốc đang dùng**: Metformin 500mg, Amlodipin 5mg.\n- **Thời gian điều trị**: Ngày 15/10/2023.\n- **Thuốc điều trị**:\n  - Neo-codin (giảm ho): tối (20:00), liều lượng 5ml/lần.\n  - Paracetamol (giảm đau, hạ sốt): khi cần thiết (nếu sốt > 38.5°C), liều lượng 1 viên (500mg)/lần.\n- **Theo dõi sinh tồn**: \n  -",
+        "redacted_summary": "**Tóm tắt**: \n\n- **Thông tin bệnh nhân**: <HUMAN_NAME>, nam, 75 tuổi, dân tộc Kinh, sống tại Hà Nội.\n- **Dịch bệnh**: Đái tháo đường type 2, tăng huyết áp, suy gan mật.\n- **Thuốc đang dùng**: Metformin 500mg, Amlodipin 5mg.\n- **Thời gian điều trị**: Ngày 15/10/2023.\n- **Thuốc điều trị**:\n  - Neo-codin (giảm ho): tối (20:00), liều lượng 5ml/lần.\n  - Paracetamol (giảm đau, hạ sốt): khi cần thiết (nếu sốt > 38.5°C), liều lượng 1 viên (500mg)/lần.\n- **Theo dõi sinh tồn**: \n  -",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/22)"
+      },
+      {
+        "doc_id": "meddies_004229_eb35453d",
+        "original_summary": "**Thông Tin Bệnh Nhân:**\n- Họ và tên: Phạm Thị Thúy Hằng\n- Ngày sinh: 15/04/1978\n- Số điện thoại: +84 98 765 4321\n- Email: hang.pham.1978@medicemail.vn\n- Địa chỉ thường trú: Số 14, Ngõ 89, Đường Thanh Lân, Phường Quang Trung, Quận Hoàng Mai, Hà Nội\n- Địa chỉ liên hệ: Nguyễn Văn A, 0912 345 678\n\n**Thông Tin Cơ sở Y tế:**\n- Phòng khám Đa khoa Quốc tế Hà Nội Thăng Long\n- Mã số doanh nghiệp: 0101234567\n- Địa chỉ trụ sở: Tầng 5, Tòa nhà, Số 105 Đường L",
+        "redacted_summary": "**Thông Tin Bệnh Nhân:**\n- Họ và tên: <HUMAN_NAME>\n- Ngày sinh: <DATE>\n- Số điện thoại: <PHONE_NUMBER>\n- Email: <EMAIL_ADDRESS>\n- Địa chỉ thường trú: <ADDRESS>, Hà Nội\n- Địa chỉ liên hệ: <HUMAN_NAME>, <PHONE_NUMBER>\n\n**Thông Tin Cơ sở Y tế:**\n- Phòng khám Đa khoa Quốc tế Hà Nội Thăng Long\n- Mã số doanh nghiệp: <ID_NUMBER>\n- Địa chỉ trụ sở: Tầng 5, Tòa nhà, Số 105 Đường L",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/20)"
+      },
+      {
+        "doc_id": "meddies_004243_1e51c1d8",
+        "original_summary": "### Tóm tắt:\n\n- **Người bệnh:** Trần Văn Khoa, nam, 78 tuổi, số MRN: TVK240515001.\n- **Chẩn đoán chính:** Tai biến mạch máu não cấp (Thể nhồi máu não) - I63.9.\n- **Chẩn đoán kèm theo:** Cao huyết áp mạn tính, Đái tháo đường type 2, Rối loạn lipid máu.\n- **Tiền sử bệnh:** \n  - Cao huyết áp 10 năm, đang dùng thuốc Amlodipin 5mg.\n  - Đái tháo đường 5 năm, khám định kỳ tại Phòng khám Nội tiết.\n  - Không có tiền sử dị ứng thuốc.\n- **Tiền sử gia đình:** Bố/mẹ có tiền sử đột quỵ.\n- **Tiền sử cá nhân:** Hút thuốc lá 20 năm (đã bỏ",
+        "redacted_summary": "### Tóm tắt:\n\n- **Người bệnh:** <HUMAN_NAME>, nam, 78 tuổi, số MRN: <ID_NUMBER>.\n- **Chẩn đoán chính:** Tai biến mạch máu não cấp (Thể nhồi máu não) - I63.9.\n- **Chẩn đoán kèm theo:** Cao huyết áp mạn tính, Đái tháo đường type 2, Rối loạn lipid máu.\n- **Tiền sử bệnh:** \n  - Cao huyết áp 10 năm, đang dùng thuốc Amlodipin 5mg.\n  - Đái tháo đường 5 năm, khám định kỳ tại Phòng khám Nội tiết.\n  - Không có tiền sử dị ứng thuốc.\n- **Tiền sử gia đình:** Bố/mẹ có tiền sử đột quỵ.\n- **Tiền sử cá nhân:** Hút thuốc lá 20 năm (đã bỏ",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/12)"
+      },
+      {
+        "doc_id": "meddies_004282_2b73bfc9",
+        "original_summary": "Tóm tắt:\n\n- **Bệnh nhân**: Nguyễn Văn Bình Minh, nam, 77 tuổi, ngụ tại Hà Nội.\n- **Dịch vụ**: Điều trị tại Khoa Nội Tim Mạch, Bệnh viện Bạch Mai.\n- **Chẩn đoán**: Suy tim cấp tính mất bù, tăng huyết áp nền, đái tháo đường type 2, viêm phế quản mạn tính.\n- **Diễn biến**: Ngày 22/01: khó thở, phù nhẹ; ngày 23/01: cải thiện; ngày 24/01: ổn định, ăn uống được.\n- **Thuốc điều trị**: \n  - Thuốc hạ huyết áp: Losartan 50mg, Furosemide 40mg, Isosorbide mononitrate 20mg.\n  - Thuốc lợi tiểu: Không có.\n  - Thuốc làm giãn mạch vành: Không",
+        "redacted_summary": "Tóm tắt:\n\n- **Bệnh nhân**: <HUMAN_NAME>, nam, 77 tuổi, ngụ tại Hà Nội.\n- **Dịch vụ**: Điều trị tại Khoa Nội Tim Mạch, Bệnh viện Bạch Mai.\n- **Chẩn đoán**: Suy tim cấp tính mất bù, tăng huyết áp nền, đái tháo đường type 2, viêm phế quản mạn tính.\n- **Diễn biến**: Ngày 22/01: khó thở, phù nhẹ; ngày 23/01: cải thiện; ngày 24/01: ổn định, ăn uống được.\n- **Thuốc điều trị**: \n  - Thuốc hạ huyết áp: Losartan 50mg, Furosemide 40mg, Isosorbide mononitrate 20mg.\n  - Thuốc lợi tiểu: Không có.\n  - Thuốc làm giãn mạch vành: Không",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/16)"
+      },
+      {
+        "doc_id": "meddies_004290_113b7ff9",
+        "original_summary": "### Tóm tắt tài liệu:\n\n**Thông tin bệnh nhân:**\n- Họ và tên: Lý Thị Mai\n- Ngày sinh: 15/08/1992\n- Giới tính: Nam\n- Mã số bệnh nhân (MRN): BN920815LM01\n- Số CCCD: 079202003456\n- Số BHYT: KH89202003456789\n- Địa chỉ liên lạc: Số 25, Đường Lê Duẩn, Phường Bến Thành, Quận 1, TP.HCM\n- Số điện thoại: 0938123456\n- Email: mai.ly1992@email.com\n- Người giám hộ/Đồng hành: Nguyễn Văn A (Điện thoại: 0908123456)\n\n**Tiền sử bệnh lý",
+        "redacted_summary": "### Tóm tắt tài liệu:\n\n**Thông tin bệnh nhân:**\n- Họ và tên: <HUMAN_NAME>\n- Ngày sinh: <DATE>\n- Giới tính: Nam\n- Mã số bệnh nhân (MRN): <ID_NUMBER>\n- Số CCCD: <ID_NUMBER>\n- Số BHYT: <ID_NUMBER>\n- Địa chỉ liên lạc: <ADDRESS>\n- Số điện thoại: <PHONE_NUMBER>\n- Email: <EMAIL_ADDRESS>\n- Người giám hộ/Đồng hành: <HUMAN_NAME> (Điện thoại: <PHONE_NUMBER>)\n\n**Tiền sử bệnh lý",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/24)"
+      },
+      {
+        "doc_id": "meddies_004305_df8c992d",
+        "original_summary": "### Tóm tắt tài liệu:\n\n**Tên bệnh nhân:** Trần Văn Nam  \n**Giới tính:** Nam  \n**Tuổi:** 78 tuổi  \n**Ngày sinh:** 15/03/1946  \n**Dân tộc:** Kinh  \n**Tôn giáo:** Không  \n**CCCD:** 001203004567  \n**BHYT:** HC-2000123456789  \n**Địa chỉ thường trú:** Số 45 Phố Huế, Phường Ngô Thì Nhậm, Quận Hai Bà Trưng, Hà Nội  \n**Người nhà:** Trần Thị Hương  \n**SĐT:** 0912345678  \n**Ngày giờ nhập viện:** 17/10/2024 14:30  \n**Chuyên khoa:** Nội Tim Mạch  \n**B",
+        "redacted_summary": "### Tóm tắt tài liệu:\n\n**Tên bệnh nhân:** <HUMAN_NAME>  \n**Giới tính:** Nam  \n**Tuổi:** 78 tuổi  \n**Ngày sinh:** <DATE>  \n**Dân tộc:** Kinh  \n**Tôn giáo:** Không  \n**CCCD:** <ID_NUMBER>  \n**BHYT:** <ID_NUMBER>  \n**Địa chỉ thường trú:** <ADDRESS>  \n**Người nhà:** <HUMAN_NAME>  \n**SĐT:** <PHONE_NUMBER>  \n**Ngày giờ nhập viện:** <DATE>  \n**Chuyên khoa:** Nội Tim Mạch  \n**B",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/17)"
+      },
+      {
+        "doc_id": "meddies_004311_eea2b1b2",
+        "original_summary": "**Tóm tắt**: \n\n- **Tên bệnh nhân**: Lý Thị Thanh Tùng\n- **Tuổi**: 38 tuổi\n- **Giới tính**: Nữ\n- **Địa chỉ**: Biên Hòa, Đồng Nai\n- **Số CCCD/CMND**: 025896001458\n- **Số BHYT**: TH8880001234569\n- **Số điện thoại**: 0918 555 0142\n- **Email**: tung.lt@companyVN.com\n- **Người thân**: Nguyễn Văn Hùng (Chồng)\n\n- **Bệnh nhân có tiền sử cao huyết áp đang điều trị ổn định**\n- **Chẩn đoán trước phẫu thuật**: \n  1. ACL (dây chằng chéo trước) đầu gối trái (Mức độ III).\n  2",
+        "redacted_summary": "**Tóm tắt**: \n\n- **Tên bệnh nhân**: <HUMAN_NAME>\n- **Tuổi**: 38 tuổi\n- **Giới tính**: Nữ\n- **Địa chỉ**: Biên Hòa, Đồng Nai\n- **Số CCCD/CMND**: <ID_NUMBER>\n- **Số BHYT**: <ID_NUMBER>\n- **Số điện thoại**: <PHONE_NUMBER>\n- **Email**: <EMAIL_ADDRESS>\n- **Người thân**: <HUMAN_NAME> (Chồng)\n\n- **Bệnh nhân có tiền sử cao huyết áp đang điều trị ổn định**\n- **Chẩn đoán trước phẫu thuật**: \n  1. ACL (dây chằng chéo trước) đầu gối trái (Mức độ III).\n  2",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/19)"
+      },
+      {
+        "doc_id": "meddies_004337_d79df4bc",
+        "original_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân**: Nguyễn Văn A  \n- **Ngày sinh**: 15/03/1978  \n- **Số CMND**: 025789456789  \n- **Địa chỉ**: 45/2Bis Đường Lê Duẩn, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh  \n- **Số điện thoại**: 0912 345 678  \n- **Người thân liên hệ**: Nguyễn Thị B (Vợ) - ĐT: 0903 987 654  \n\n- **Chẩn đoán**: Viêm ruột thừa hoại tử  \n- **Phương pháp**: Phẫu thuật nội soi lấy ruột thừa  \n\n- **Mục tiêu**: Can thiệp ngoại khoa tối thiểu, ít xâm lấn, thời gian hồi",
+        "redacted_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân**: <HUMAN_NAME>  \n- **Ngày sinh**: <DATE>  \n- **Số CMND**: <ID_NUMBER>  \n- **Địa chỉ**: <ADDRESS>  \n- **Số điện thoại**: <PHONE_NUMBER>  \n- **Người thân liên hệ**: <HUMAN_NAME> (Vợ) - ĐT: <PHONE_NUMBER>  \n\n- **Chẩn đoán**: Viêm ruột thừa hoại tử  \n- **Phương pháp**: Phẫu thuật nội soi lấy ruột thừa  \n\n- **Mục tiêu**: Can thiệp ngoại khoa tối thiểu, ít xâm lấn, thời gian hồi",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/15)"
+      },
+      {
+        "doc_id": "meddies_004392_21e30b2d",
+        "original_summary": "**Tóm tắt:** \n\nMichael Johnson, nam 61 tuổi, nhập viện với triệu chứng đau ngực và đói. Trong quá trình điều trị, ông bị đột quỵ tim do viêm cơ tim cấp, gây ra bởi phản ứng viêm toàn thân. Ông đã trải qua 3 cuộc phẫu thuật để giải phóng nhánh động mạch nhánh nhạy cảm của trái tim, nhưng cuối cùng ông đã ngưng tim đột ngột. Các bác sĩ đã phải sử dụng các phương pháp cấp cứu như truyền nitroglycerin, heparin, và amiodarone để duy trì sự sống.",
+        "redacted_summary": "**Tóm tắt:** \n\n<HUMAN_NAME>, nam 61 tuổi, nhập viện với triệu chứng đau ngực và đói. Trong quá trình điều trị, ông bị đột quỵ tim do viêm cơ tim cấp, gây ra bởi phản ứng viêm toàn thân. Ông đã trải qua 3 cuộc phẫu thuật để giải phóng nhánh động mạch nhánh nhạy cảm của trái tim, nhưng cuối cùng ông đã ngưng tim đột ngột. Các bác sĩ đã phải sử dụng các phương pháp cấp cứu như truyền nitroglycerin, heparin, và amiodarone để duy trì sự sống.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/15)"
+      },
+      {
+        "doc_id": "meddies_004413_a5e1dc64",
+        "original_summary": "Đây là một bản tóm tắt ngắn gọn từ tài liệu đã cung cấp:\n\n- **Tên bệnh nhân**: Trần Văn Hùng\n- **Ngày sinh**: 15/05/1985\n- **Địa chỉ**: 123 Đường Lê Lợi, Phường Bến Nghé, Quận 1, TP.HCM\n- **Số điện thoại**: 0909 555 123\n- **Mã số BHYT**: DN789456123456\n- **Tên bác sĩ**: ThS.BS. Nguyễn Minh Tâm\n- **Mã số bác sĩ**: BS12345\n- **Tên phòng khám**: Phòng Khám Đa Khoa Quận 1\n- **Email xác nhận**: hung.tv@example.com\n- **Ngày tái khám**: 20/12/2023\n- **",
+        "redacted_summary": "Đây là một bản tóm tắt ngắn gọn từ tài liệu đã cung cấp:\n\n- **Tên bệnh nhân**: <HUMAN_NAME>\n- **Ngày sinh**: <DATE>\n- **Địa chỉ**: <ADDRESS>\n- **Số điện thoại**: <PHONE_NUMBER>\n- **Mã số BHYT**: <ID_NUMBER>\n- **Tên bác sĩ**: <HUMAN_NAME>\n- **Mã số bác sĩ**: <ID_NUMBER>\n- **Tên phòng khám**: Phòng Khám Đa Khoa Quận 1\n- **Email xác nhận**: <EMAIL_ADDRESS>\n- **Ngày tái khám**: <DATE>\n- **",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/21)"
+      },
+      {
+        "doc_id": "meddies_004428_4230a4dd",
+        "original_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân**: Phạm Thị Hồng (Phiếu trước ghi sai là Phạm Thị Hằng).\n- **Ngày sinh**: 15/08/1968, 56 tuổi.\n- **Số BHYT**: HT7890123456789.\n- **Địa chỉ**: Số 8, Đường Lê Duẩn, P. Bến Nghé, Q.1.\n- **Số điện thoại**: 0903 555 123.\n- **Người liên hệ**: Nguyễn Văn Bình (con trai).\n- **Số điện thoại liên hệ**: 0918 444 567.\n- **BS điều trị**: Trần Minh Tuấn.\n\n- **Thời gian 24/10/2024**:\n  - **Huyết áp**: 130/8",
+        "redacted_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân**: <HUMAN_NAME> (Phiếu trước ghi sai là Phạm Thị Hằng).\n- **Ngày sinh**: <DATE>, 56 tuổi.\n- **Số BHYT**: <ID_NUMBER>.\n- **Địa chỉ**: <ADDRESS>.\n- **Số điện thoại**: <PHONE_NUMBER>.\n- **Người liên hệ**: <HUMAN_NAME> (con trai).\n- **Số điện thoại liên hệ**: <PHONE_NUMBER>.\n- **BS điều trị**: <HUMAN_NAME>.\n\n- **Thời gian 24/10/2024**:\n  - **Huyết áp**: 130/8",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/14)"
+      },
+      {
+        "doc_id": "meddies_004435_a9ff1397",
+        "original_summary": "**Thông Tin Bệnh Nhân**\n\n- **Tên**: Trần Văn Nam\n- **Ngày Sinh**: 15/08/1958\n- **Giới Tính**: Nam\n- **Địa Chỉ**: Số 12, Đường Số 7, Ấp Thới An, Xã Trung An, Huyện Củ Chi, TP.HCM\n- **Số Điện Thoại**: 0908 555 123\n- **Số CCCD**: 079205800123\n- **Mã Số BHYT**: HT5012345678901\n- **Mã Hồ Sơ Bệnh Án (MRN)**: HCTCM-1958-008291\n- **Mã Định Danh Sinh Trắc Học (FPID)**: FP-NAM",
+        "redacted_summary": "**Thông Tin Bệnh Nhân**\n\n- **Tên**: <HUMAN_NAME>\n- **Ngày Sinh**: 15/08/1958\n- **Giới Tính**: Nam\n- **Địa Chỉ**: Số 12, Đường Số 7, Ấp Thới An, Xã Trung An, Huyện Củ Chi, TP.HCM\n- **Số Điện Thoại**: 0908 555 123\n- **Số CCCD**: 079205800123\n- **Mã Số BHYT**: HT5012345678901\n- **Mã Hồ Sơ Bệnh Án (MRN)**: HCTCM-1958-008291\n- **Mã Định Danh Sinh Trắc Học (FPID)**: FP-NAM",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/4)"
+      },
+      {
+        "doc_id": "meddies_004445_76c799a1",
+        "original_summary": "Phan Thị Thanh Tuyền, 78 tuổi, đã được chẩn đoán với đái tháo đường type 2 và tăng huyết áp essentials. Đề nghị thuốc Metformin 500mg, Gliclazide MR 60mg, Amlodipin 5mg, và PMS-Metformin. Cần hạn chế tinh bột và đường ngọt, tái khám sau 1 tháng. BS. Nguyễn Văn A sẽ theo dõi.",
+        "redacted_summary": "<HUMAN_NAME>, 78 tuổi, đã được chẩn đoán với đái tháo đường type 2 và tăng huyết áp essentials. Đề nghị thuốc Metformin 500mg, Gliclazide MR 60mg, Amlodipin 5mg, và PMS-Metformin. Cần hạn chế tinh bột và đường ngọt, tái khám sau 1 tháng. <HUMAN_NAME> sẽ theo dõi.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/108)"
+      },
+      {
+        "doc_id": "meddies_004439_0ffe311e",
+        "original_summary": "**Tóm tắt:** Phạm Nguyễn Gia Huy Bảo Ngọc, nam, 45 tuổi, đã nhập viện vì tình trạng suy mạn tính độ B, tăng huyết áp và đái tháo đường type 2. Nguyên nhân của việc chuyển viện là cần điều trị chuyên sâu về lọc máu cấp cứu và theo dõi suy thận mạn giai đoạn cuối. Hiện tại, anh có tiền sử mắc đái tháo đường và tăng huyết áp, cùng với tình trạng suy thận mạn độ 3. Tình trạng sức khỏe hiện tại bao gồm: tinh thần ổn định, da nhăn, hô hấp bình thường, tim mạch ổn định, tiêu hóa bình thường, thận hoạt động tốt, nhưng có vấn đề về chức năng gan và tim.",
+        "redacted_summary": "**Tóm tắt:** <HUMAN_NAME>, nam, 45 tuổi, đã nhập viện vì tình trạng suy mạn tính độ B, tăng huyết áp và đái tháo đường type 2. Nguyên nhân của việc chuyển viện là cần điều trị chuyên sâu về lọc máu cấp cứu và theo dõi suy thận mạn giai đoạn cuối. Hiện tại, anh có tiền sử mắc đái tháo đường và tăng huyết áp, cùng với tình trạng suy thận mạn độ 3. Tình trạng sức khỏe hiện tại bao gồm: tinh thần ổn định, da nhăn, hô hấp bình thường, tim mạch ổn định, tiêu hóa bình thường, thận hoạt động tốt, nhưng có vấn đề về chức năng gan và tim.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/10)"
+      },
+      {
+        "doc_id": "meddies_004440_17632ce9",
+        "original_summary": "**Tóm tắt**: \n\nTrần Văn Hùng, nam, 78 tuổi, bị đái tháo đường type 2 và tăng huyết áp, đã nhập viện với tình trạng lơ mơ, tăng huyết áp cao, và suy thận mạn. Sau khi bàn giao cho BS. Phạm Văn B, bệnh nhân được chẩn đoán đợt cấp tăng huyết áp và được chỉ định dùng các loại thuốc như Anlodipin, Clopidogrel, Metformin. Hiện tại, tình hình của bệnh nhân ổn định, nhưng cần theo dõi sát huyết áp và đường huyết. BS. Nguyễn Văn A sẽ tiếp nhận bệnh nhân và tiến hành các biện pháp điều trị cho bệnh nhân.",
+        "redacted_summary": "**Tóm tắt**: \n\n<HUMAN_NAME>, nam, 78 tuổi, bị đái tháo đường type 2 và tăng huyết áp, đã nhập viện với tình trạng lơ mơ, tăng huyết áp cao, và suy thận mạn. Sau khi bàn giao cho BS. <HUMAN_NAME>, bệnh nhân được chẩn đoán đợt cấp tăng huyết áp và được chỉ định dùng các loại thuốc như Anlodipin, Clopidogrel, Metformin. Hiện tại, tình hình của bệnh nhân ổn định, nhưng cần theo dõi sát huyết áp và đường huyết. BS. <HUMAN_NAME> sẽ tiếp nhận bệnh nhân và tiến hành các biện pháp điều trị cho bệnh nhân.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/10)"
+      },
+      {
+        "doc_id": "meddies_004464_a7297137",
+        "original_summary": "### Tóm tắt tài liệu:\n\n#### Thông Tin Về Bệnh Nhân:\n\n- **Tên bệnh nhân:** Trần Văn Nam\n- **Ngày sinh:** 15/08/1985\n- **Tuổi:** 38 tuổi\n- **Giới tính:** Nam\n- **Số điện thoại:** 0968851234\n- **Địa chỉ:** Khu công nghiệp Hòa Xuân, Đà Nẵng\n- **Số CCCD/CMND:** 030085001234\n- **Số BHYT:** HT001234567890\n- **Người thân/bảo lãnh:** Nguyễn Thị Hoa (Vợ)\n\n#### Thông Tin Về Bệnh Sống:\n\n- **Lý do nhập viện:** Bệnh nhân vào lúc 14h30 ngày 25/10/2023 với triệu chứng ho",
+        "redacted_summary": "### Tóm tắt tài liệu:\n\n#### Thông Tin Về Bệnh Nhân:\n\n- **Tên bệnh nhân:** <HUMAN_NAME>\n- **Ngày sinh:** 15/08/1985\n- **Tuổi:** 38 tuổi\n- **Giới tính:** Nam\n- **Số điện thoại:** <PHONE_NUMBER>\n- **Địa chỉ:** Khu công nghiệp Hòa Xuân, Đà Nẵng\n- **Số CCCD/CMND:** <ID_NUMBER>\n- **Số BHYT:** <ID_NUMBER>\n- **Người thân/bảo lãnh:** <HUMAN_NAME> (Vợ)\n\n#### Thông Tin Về Bệnh Sống:\n\n- **Lý do nhập viện:** Bệnh nhân vào lúc 14h30 ngày 25/10/2023 với triệu chứng ho",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/11)"
+      },
+      {
+        "doc_id": "meddies_004480_449a057b",
+        "original_summary": "**Tóm tắt**: \n\n- **Tên bệnh nhân**: Lê Văn Minh, 49 tuổi, sinh ngày 15/08/1974, có mã số BHYT TE1975651234567.\n- **Dịch vụ**: Phẫu thuật mở sọ để khâu phình mạch máu não.\n- **Triển khai**: Bác sĩ chỉ định Trần Văn Hùng, phẫu thuật chính Nguyễn Thị Mai Linh, ngày 10/04/2024, giờ 09:30 AM.\n- **Thông tin bệnh nhân**: Bệnh nhân có tăng huyết áp, hút thuốc lá, không dị ứng với thuốc.\n- **Tiền sử**: Bệnh nhân đã có tiền sử tăng huyết áp 10 năm, điều trị không đều.\n- **Triệu chứng**: Bệnh nhân nhập viện với triệu chứng đau đầu dữ dội, buồn nôn, nôn nhiều",
+        "redacted_summary": "**Tóm tắt**: \n\n- **Tên bệnh nhân**: <HUMAN_NAME>, 49 tuổi, sinh ngày <DATE>, có mã số BHYT <ID_NUMBER>.\n- **Dịch vụ**: Phẫu thuật mở sọ để khâu phình mạch máu não.\n- **Triển khai**: Bác sĩ chỉ định <HUMAN_NAME>, phẫu thuật chính <HUMAN_NAME>, ngày <DATE>, giờ 09:30 AM.\n- **Thông tin bệnh nhân**: Bệnh nhân có tăng huyết áp, hút thuốc lá, không dị ứng với thuốc.\n- **Tiền sử**: Bệnh nhân đã có tiền sử tăng huyết áp 10 năm, điều trị không đều.\n- **Triệu chứng**: Bệnh nhân nhập viện với triệu chứng đau đầu dữ dội, buồn nôn, nôn nhiều",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/18)"
+      },
+      {
+        "doc_id": "meddies_004479_33e4ab27",
+        "original_summary": "**Tóm tắt**\n\n- **Thông tin bệnh nhân**: Nguyễn Văn A, nam, 58 tuổi, đang dùng thuốc Metformin.\n- **Chức năng thận**: Urea: 6.5 mmol/L, Creatinine: 102 µmol/L, GFR: 75 ml/min/1.73m² (>60).\n- **Chức năng gan**: AST: 32 U/L, ALT: 28 U/L, Bilirubin: 12.5 µmol/L, Direct Bilirubin: 4.2 µmol/L.\n- **Đường huyết và mỡ máu**: Glucose: 7.8 mmol/L, HbA1c: 7.2%, Total Cholesterol: 5.8 mmol/L, Triglyceride: 2.4 mmol/L, HDL: 1.1 mmol/L, LDL: 3",
+        "redacted_summary": "**Tóm tắt**\n\n- **Thông tin bệnh nhân**: <HUMAN_NAME>, nam, 58 tuổi, đang dùng thuốc Metformin.\n- **Chức năng thận**: Urea: 6.5 mmol/L, Creatinine: 102 µmol/L, GFR: 75 ml/min/1.73m² (>60).\n- **Chức năng gan**: AST: 32 U/L, ALT: 28 U/L, Bilirubin: 12.5 µmol/L, Direct Bilirubin: 4.2 µmol/L.\n- **Đường huyết và mỡ máu**: Glucose: 7.8 mmol/L, HbA1c: 7.2%, Total Cholesterol: 5.8 mmol/L, Triglyceride: 2.4 mmol/L, HDL: 1.1 mmol/L, LDL: 3",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/21)"
+      },
+      {
+        "doc_id": "meddies_004485_ca91aae4",
+        "original_summary": "**Tóm tắt**:  \nPhạm Văn Mười, nam, 56 tuổi, đã vào viện vì ho khan kéo dài 3 tháng, khó thở khi gắng sức, đau tức vùng thượng vị. Ông có tiền sử tăng huyết áp 10 năm, tiểu đường type 2 5 năm, hút thuốc lá 30 năm giảm xuống 5 điếu/ngày. Triển khai chụp CT scan lồng ngực - thượng vị - bụng có thuốc tương phản để đánh giá tổn thương phổi, khảo sát thực quản và dạ dày dưới lồng ngực. Kết quả cho thấy hai phế trường có ranh nốt rải rác, có một nốt sodcalcified nhỏ tại phế trường trên phải; hình ảnh hạch rốn phổi phải tăng sinh kích thước 12mm; không thấy u phổi dạng khối lớn; không phát hiện tổn thương xương ở lồng ngực; không thấy tổn thương trong thực",
+        "redacted_summary": "**Tóm tắt**:  \n<HUMAN_NAME>, nam, 56 tuổi, đã vào viện vì ho khan kéo dài 3 tháng, khó thở khi gắng sức, đau tức vùng thượng vị. Ông có tiền sử tăng huyết áp 10 năm, tiểu đường type 2 5 năm, hút thuốc lá 30 năm giảm xuống 5 điếu/ngày. Triển khai chụp CT scan lồng ngực - thượng vị - bụng có thuốc tương phản để đánh giá tổn thương phổi, khảo sát thực quản và dạ dày dưới lồng ngực. Kết quả cho thấy hai phế trường có ranh nốt rải rác, có một nốt sodcalcified nhỏ tại phế trường trên phải; hình ảnh hạch rốn phổi phải tăng sinh kích thước 12mm; không thấy u phổi dạng khối lớn; không phát hiện tổn thương xương ở lồng ngực; không thấy tổn thương trong thực",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/11)"
+      },
+      {
+        "doc_id": "meddies_004514_a89d4d3d",
+        "original_summary": "### Tóm tắt\n\n**Ngày: 17/05/2024 14:30**\n**Bác sĩ: Dr. Kenjiro Tanaka (BS-7789)**\n\n**Thông tin bệnh nhân:**\n- Tên: Michael Chen\n- Ngày sinh: 25/11/1984 (Tuổi 39)\n- Mã số bệnh nhân: HMI-2024-89443\n- Số chứng từ: E12345678\n- Địa chỉ liên hệ: michael.chen@techcorp.vn / +84 90 1234 567\n- Bảo hiểm: BH00238492 (Đã hoạt động)\n\n**Kết quả khám:**\n- Chiều cao cân nặng: 178 cm / 78 kg. BMI: 24.",
+        "redacted_summary": "### Tóm tắt\n\n**Ngày: 17/05/2024 14:30**\n**Bác sĩ: <HUMAN_NAME> (BS-7789)**\n\n**Thông tin bệnh nhân:**\n- Tên: <HUMAN_NAME>\n- Ngày sinh: 25/11/1984 (Tuổi 39)\n- Mã số bệnh nhân: <ID_NUMBER>\n- Số chứng từ: <ID_NUMBER>\n- Địa chỉ liên hệ: <EMAIL_ADDRESS> / <PHONE_NUMBER>\n- Bảo hiểm: <ID_NUMBER> (Đã hoạt động)\n\n**Kết quả khám:**\n- Chiều cao cân nặng: 178 cm / 78 kg. BMI: 24.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/17)"
+      },
+      {
+        "doc_id": "meddies_004546_5746c6e4",
+        "original_summary": "### Tóm tắt:\n\nLý Thị Mai, 65 tuổi, bị đái tháo đường type 2, tăng huyết áp nền và viêm loét dạ dày tátrang cấp tính. Bệnh nhân đã được điều trị tại các khoa: Nội, Tiêu hóa, Tim mạch, Thần kinh và Dinh dưỡng. Hiện tại, bệnh nhân đã ổn định và có thể ra viện. Cần tuân thủ phác đồ điều trị và tái khám định kỳ.",
+        "redacted_summary": "### Tóm tắt:\n\n<HUMAN_NAME>, 65 tuổi, bị đái tháo đường type 2, tăng huyết áp nền và viêm loét dạ dày tátrang cấp tính. Bệnh nhân đã được điều trị tại các khoa: Nội, Tiêu hóa, Tim mạch, Thần kinh và Dinh dưỡng. Hiện tại, bệnh nhân đã ổn định và có thể ra viện. Cần tuân thủ phác đồ điều trị và tái khám định kỳ.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/9)"
+      },
+      {
+        "doc_id": "meddies_004562_124b40ae",
+        "original_summary": "### Tóm tắt:\n\n#### Thông tin bệnh nhân:\n- Họ và tên: Lý Văn M\n- Giới tính: Nam\n- Ngày sinh: 15/03/1968 (57 tuổi)\n- Số CMND: 001234567890\n- Số BHYT: TN1234567890123\n- Người nhà liên hệ: Lý Thị Hạnh\n- Điện thoại người nhà: 0912.345.678\n\n#### Thông tin đơn vị chuyển tuyến:\n- Đơn vị chuyển tuyến: Bệnh viện Đa khoa Quận Cầu Giấy\n- Khoa khám bệnh: Khoa Nội Tổng hợp\n- Bác sĩ điều trị: Nguyễn Văn A (Thạc sĩ, Bác sĩ CKI)\n- Ngày tiếp nhận: 10/04/2025\n- Giờ tiếp nhận: ",
+        "redacted_summary": "### Tóm tắt:\n\n#### Thông tin bệnh nhân:\n- Họ và tên: <HUMAN_NAME>\n- Giới tính: Nam\n- Ngày sinh: <DATE> (57 tuổi)\n- Số CMND: <ID_NUMBER>\n- Số BHYT: <ID_NUMBER>\n- Người nhà liên hệ: <HUMAN_NAME>\n- Điện thoại người nhà: <PHONE_NUMBER>\n\n#### Thông tin đơn vị chuyển tuyến:\n- Đơn vị chuyển tuyến: Bệnh viện Đa khoa Quận Cầu Giấy\n- Khoa khám bệnh: Khoa Nội Tổng hợp\n- Bác sĩ điều trị: <HUMAN_NAME> (Thạc sĩ, Bác sĩ CKI)\n- Ngày tiếp nhận: <DATE>\n- Giờ tiếp nhận: ",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/13)"
+      },
+      {
+        "doc_id": "meddies_004594_9ba8731c",
+        "original_summary": "- **Biểu mẫu chuyển tuyến bệnh nhân**\n  - **Ngày tháng:** 25/10/2023\n  - **Tên bệnh nhân:** Robert Amer (Nguyễn Văn A)\n  - **Ngày sinh:** 15/03/1980\n  - **Giới tính:** Nam\n  - **Nước ngoài:** Hoa Kỳ\n  - **Số hộ chiếu:** B12345678\n  - **Email:** robert.amer_vn@example.com\n  - **Địa chỉ:** Số 12, Đường Phó Đức Chính, Phường Nguyễn Thái Bình, Quận 1\n  - **Người giám hộ:** Nguyen Thi Linh (Vợ)\n  - **Đơn vị chuyển tuyến:** Bệnh viện Đa khoa Quốc tế Happy Health\n  - **Trạng thái:** Trở về từ điều trị\n  - **Ngày giờ:** ",
+        "redacted_summary": "- **Biểu mẫu chuyển tuyến bệnh nhân**\n  - **Ngày tháng:** <DATE>\n  - **Tên bệnh nhân:** <HUMAN_NAME> (Nguyễn Văn A)\n  - **Ngày sinh:** <DATE>\n  - **Giới tính:** Nam\n  - **Nước ngoài:** Hoa Kỳ\n  - **Số hộ chiếu:** <ID_NUMBER>\n  - **Email:** <EMAIL_ADDRESS>\n  - **Địa chỉ:** <ADDRESS>\n  - **Người giám hộ:** <HUMAN_NAME> (Vợ)\n  - **Đơn vị chuyển tuyến:** Bệnh viện Đa khoa Quốc tế Happy Health\n  - **Trạng thái:** Trở về từ điều trị\n  - **Ngày giờ:** ",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/14)"
+      },
+      {
+        "doc_id": "meddies_004602_60e2b795",
+        "original_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân:** Lê Văn Mười\n- **Ngày, giờ tử vong:** 15/10/2024, 14h30\n- **Địa điểm tử vong:** ICU, Khoa Nội Tổng Hợp\n- **Thông tin bệnh nhân:** Tuổi 68, nam giới, dân tộc Kinh, quốc tịch Việt Nam, đã hút thuốc lá khoảng 20 điếu/ngày trong 30 năm\n- **Tiền sử bệnh tật:** tăng huyết áp, đái tháo đường type 2, ít tuân thủ điều trị, hút thuốc lá\n- **Bệnh tật hiện tại:** Đột ngột đau ngực dữ dội, vã mồ hôi, khó thở\n- **Chẩn đoán ban đầu:** Hoại tử cơ tim cấp (Stemi Inferior), sốc tim\n- **Diễn biến:**",
+        "redacted_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân:** <HUMAN_NAME>\n- **Ngày, giờ tử vong:** <DATE>, <DATE>\n- **Địa điểm tử vong:** ICU, Khoa Nội Tổng Hợp\n- **Thông tin bệnh nhân:** Tuổi 68, nam giới, dân tộc Kinh, quốc tịch Việt Nam, đã hút thuốc lá khoảng 20 điếu/ngày trong 30 năm\n- **Tiền sử bệnh tật:** tăng huyết áp, đái tháo đường type 2, ít tuân thủ điều trị, hút thuốc lá\n- **Bệnh tật hiện tại:** Đột ngột đau ngực dữ dội, vã mồ hôi, khó thở\n- **Chẩn đoán ban đầu:** Hoại tử cơ tim cấp (Stemi Inferior), sốc tim\n- **Diễn biến:**",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/13)"
+      },
+      {
+        "doc_id": "meddies_004606_98094b39",
+        "original_summary": "**Tóm tắt**: \n\n- **Thông tin bệnh nhân**: Lê Văn Nam, nam, 57 tuổi, số điện thoại: 0905123456, địa chỉ: TP.HCM.\n- **Chẩn đoán**: Xuất huyết tiêu hóa do loét dạ dày tá tràng, hẹp môn vị nghi ngờ.\n- **Can thiệp**: Được thuyên tắc mạch máu qua nội soi (EVCC).\n- **Phẫu thuật**: Phẫu thuật cắt dạ dày bán phần (Pylorus-preserving gastrectomy) + Khâu lỗ thủng + Laparoscopic-assisted vagal neurectomy (LAVN). \n- **Nguy cơ**: ASA score III, cao nguy cơ tim mạch, cao nguy cơ nhiễm trùng.\n- **Kết quả**: Phẫu thuật thành công, ngừng chảy máu hoàn toàn.",
+        "redacted_summary": "**Tóm tắt**: \n\n- **Thông tin bệnh nhân**: <HUMAN_NAME>, nam, 57 tuổi, số điện thoại: <PHONE_NUMBER>, địa chỉ: TP.HCM.\n- **Chẩn đoán**: Xuất huyết tiêu hóa do loét dạ dày tá tràng, hẹp môn vị nghi ngờ.\n- **Can thiệp**: Được thuyên tắc mạch máu qua nội soi (EVCC).\n- **Phẫu thuật**: Phẫu thuật cắt dạ dày bán phần (Pylorus-preserving gastrectomy) + Khâu lỗ thủng + Laparoscopic-assisted vagal neurectomy (LAVN). \n- **Nguy cơ**: ASA score III, cao nguy cơ tim mạch, cao nguy cơ nhiễm trùng.\n- **Kết quả**: Phẫu thuật thành công, ngừng chảy máu hoàn toàn.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/20)"
+      },
+      {
+        "doc_id": "meddies_004656_9e53ed3f",
+        "original_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân**: Lý Thị Thanh Tùng\n- **Tuổi**: 52 tuổi\n- **Giới tính**: Nữ\n- **Địa chỉ**: Số 42, Ngõ 12 Đường Kim Mã Thượng, Phường Cống Vị, Quận Ba Đình\n- **Số điện thoại**: 0988451236\n- **Email**: tungltvneecon@gmail.com\n- **CMND/CCCD**: 07920400123\n- **BHYT**: TN7890123456789\n- **Mã số BN**: XNH-2024-884921\n- **Mã xét nghiệm**: LAB-XN-240518-77391\n- **BS chỉ định**: BS. Nguyễn Văn H",
+        "redacted_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân**: <HUMAN_NAME>\n- **Tuổi**: 52 tuổi\n- **Giới tính**: Nữ\n- **Địa chỉ**: <ADDRESS>\n- **Số điện thoại**: <PHONE_NUMBER>\n- **Email**: tungltvneecon@gmail.com\n- **CMND/CCCD**: <ID_NUMBER>\n- **BHYT**: <ID_NUMBER>\n- **Mã số BN**: <ID_NUMBER>\n- **Mã xét nghiệm**: <ID_NUMBER>\n- **BS chỉ định**: BS. Nguyễn Văn H",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/16)"
+      },
+      {
+        "doc_id": "meddies_004694_cf7f2708",
+        "original_summary": "### Tóm tắt\n\n- Mã định danh bệnh án: `HCM-PN-8892-2024-VG`\n- Mã số an sinh xã hội: `07930488291`\n- Mã bệnh nhân: `PID-VN-77621`\n- Họ và tên: Lý Thị Kim Dung\n- Tuổi: 56 tuổi\n- Giới tính: Nữ\n- Địa chỉ: Số 12, Đường Nguyễn Trãi, Phường Bến Thành, Quận 1, TP.HCM\n- Điện thoại di động: +84 93 882 7762\n- Email: dungltk_health@example.com\n- Người giám hộ: Lý Văn Minh (con trai)\n- Ngày sinh: 15/04/1968\n- Tuổi: 56 tuổi\n- Giới tính: Nữ\n- Ngôn",
+        "redacted_summary": "### Tóm tắt\n\n- Mã định danh bệnh án: `<ID_NUMBER>`\n- Mã số an sinh xã hội: `<ID_NUMBER>`\n- Mã bệnh nhân: `<ID_NUMBER>`\n- Họ và tên: <HUMAN_NAME>\n- Tuổi: 56 tuổi\n- Giới tính: Nữ\n- Địa chỉ: <ADDRESS>\n- Điện thoại di động: <PHONE_NUMBER>\n- Email: <EMAIL_ADDRESS>\n- Người giám hộ: <HUMAN_NAME>\n- Ngày sinh: <DATE>\n- Tuổi: 56 tuổi\n- Giới tính: Nữ\n- Ngôn",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/20)"
+      },
+      {
+        "doc_id": "meddies_004706_6ff66652",
+        "original_summary": "Park Ji-sung, nam 45 tuổi, Hàn Quốc, sẽ undergo Total Knee Arthroplasty tại Bệnh viện Đa khoa Quốc tế Vinmec vào ngày 25/10/2023 do Dr. Trần Văn A chỉ định. Bệnh nhân bị thoái hóa khớp gối độ 4, đã phẫu thuật nội soi khớp gối trái cách đây 5 năm. Các xét nghiệm cho thấy bệnh nhân có triệu chứng đau dai dẳng vùng trước gối trái, hạn chế vận động và nghe tiếng lục khục khi đi lại. Bệnh nhân đã điều trị nội khoa và vật lý trị liệu nhưng không hiệu quả. Thời gian phẫu thuật dự kiến từ 120 phút. Bệnh nhân cần chuẩn bị sức khỏe để vào phòng mổ, bao gồm: mạch 78 lần/phút, huyết áp 130/80 mmHg, nhịp thở 18 lần/phút",
+        "redacted_summary": "<HUMAN_NAME>, nam 45 tuổi, Hàn Quốc, sẽ undergo Total Knee Arthroplasty tại Bệnh viện Đa khoa Quốc tế Vinmec vào ngày <DATE> do Dr. <HUMAN_NAME> chỉ định. Bệnh nhân bị thoái hóa khớp gối độ 4, đã phẫu thuật nội soi khớp gối trái cách đây 5 năm. Các xét nghiệm cho thấy bệnh nhân có triệu chứng đau dai dẳng vùng trước gối trái, hạn chế vận động và nghe tiếng lục khục khi đi lại. Bệnh nhân đã điều trị nội khoa và vật lý trị liệu nhưng không hiệu quả. Thời gian phẫu thuật dự kiến từ 120 phút. Bệnh nhân cần chuẩn bị sức khỏe để vào phòng mổ, bao gồm: mạch 78 lần/phút, huyết áp 130/80 mmHg, nhịp thở 18 lần/phút",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/16)"
+      },
+      {
+        "doc_id": "meddies_004711_ab81ed72",
+        "original_summary": "**Tóm tắt**:  \nTrần Văn Nam, 48 tuổi, bị viêm ruột thừa hoại tử (ICD-10 K35.3). Bệnh nhân đã được chẩn đoán trước phẫu thuật với huyết áp cao và tiểu đường. Sau khi thăm dò, bệnh nhân có triệu chứng đau bụng dữ dội, buồn nôn và sốt. CT scan cho thấy ruột thừa dày và có dịch. Bệnh nhân đồng ý thực hiện phẫu thuật nội soi lấy sỏi ruột thừa vào ngày 16/10/2023.",
+        "redacted_summary": "**Tóm tắt**:  \n<HUMAN_NAME>, 48 tuổi, bị viêm ruột thừa hoại tử (ICD-10 K35.3). Bệnh nhân đã được chẩn đoán trước phẫu thuật với huyết áp cao và tiểu đường. Sau khi thăm dò, bệnh nhân có triệu chứng đau bụng dữ dội, buồn nôn và sốt. CT scan cho thấy ruột thừa dày và có dịch. Bệnh nhân đồng ý thực hiện phẫu thuật nội soi lấy sỏi ruột thừa vào ngày <DATE>.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/18)"
+      },
+      {
+        "doc_id": "meddies_004724_a9e75243",
+        "original_summary": "**Tóm tắt**: Nguyễn Văn An, nam, 65 tuổi, bị tăng huyết áp, đái tháo đường type 2, thoái hóa cột sống thắt lưng, đã từng phẫu thuật nhồi máu cơ tim/testify. Hiện có dấu hiệu tăng huyết áp, đái tháo đường, thoái hóa cột sống thắt lưng, và đang điều trị với amlodipin, metformin, và rivaroxaban. Bệnh nhân tỉnh táo, mạch ổn định, nhưng có triệu chứng tăng huyết áp và đái tháo đường. Bệnh nhân từ chối dùng rifaxoxaban vì sợ chảy máu. Sau khi tiêm furosemide, bệnh nhân đi tiểu nhiều, tình trạng phù chi cải thiện.",
+        "redacted_summary": "**Tóm tắt**: <HUMAN_NAME>, nam, 65 tuổi, bị tăng huyết áp, đái tháo đường type 2, thoái hóa cột sống thắt lưng, đã từng phẫu thuật nhồi máu cơ tim/testify. Hiện có dấu hiệu tăng huyết áp, đái tháo đường, thoái hóa cột sống thắt lưng, và đang điều trị với amlodipin, metformin, và rivaroxaban. Bệnh nhân tỉnh táo, mạch ổn định, nhưng có triệu chứng tăng huyết áp và đái tháo đường. Bệnh nhân từ chối dùng rifaxoxaban vì sợ chảy máu. Sau khi tiêm furosemide, bệnh nhân đi tiểu nhiều, tình trạng phù chi cải thiện.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/19)"
+      },
+      {
+        "doc_id": "meddies_004766_cea04527",
+        "original_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân**: Lý Văn Mướp\n- **Tuổi**: 75 tuổi\n- **Số điện thoại**: 0938.555.012\n- **Diện tích sống**: Số 42, Đường Lý Tự Trọng, Phường Bến Thành, Quận 1\n- **Mã số định danh**: BN20238855401\n- **Mã số BHYT**: HD7899001111112\n- **Email**: lyvanmuop.bv@gmail.com\n\n- **Tiền sử**: \n  - Đột quỵ (Cha mất năm 2005)\n  - Ung thư phổi (Mẹ mất năm 2010)\n  - Tăng huyết áp 15 năm, Đái tháo đường type 2 10 năm, Nhồi",
+        "redacted_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân**: <HUMAN_NAME>\n- **Tuổi**: 75 tuổi\n- **Số điện thoại**: <PHONE_NUMBER>\n- **Diện tích sống**: <ADDRESS>\n- **Mã số định danh**: <ID_NUMBER>\n- **Mã số BHYT**: <ID_NUMBER>\n- **Email**: <EMAIL_ADDRESS>\n\n- **Tiền sử**: \n  - Đột quỵ (Cha mất năm 2005)\n  - Ung thư phổi (Mẹ mất năm 2010)\n  - Tăng huyết áp 15 năm, Đái tháo đường type 2 10 năm, Nhồi",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/12)"
+      },
+      {
+        "doc_id": "meddies_004777_56e8c5c2",
+        "original_summary": "### Tóm tắt:\n\n- **Bệnh nhân**: Trần Văn Mạnh, nam, 50 tuổi, quốc tịch Việt Nam, mã bệnh nhân BN24H001789.\n- **Chẩn đoán**: Huyết áp cao độ 2, nguy cơ cao; tiểu đường type 2 không biến chứng; rối loạn mỡ máu hỗn hợp.\n- **Lý do vào viện**: Mệt mỏi, ho khan kéo dài, khó thở, đau ngực.\n- **Diễn biến trong viện**: \n  - Ngày 20/10: Huyết áp 160/95 mmHg, troponin tăng, cholesterol cao.\n  - Ngày 22/10: Huyết áp ổn định, troponin giảm, đường huyết ổn định.\n  - Ngày 25/10: Bệnh nhân tỉnh táo, không đau ngực, huyết áp 130/",
+        "redacted_summary": "### Tóm tắt:\n\n- **Bệnh nhân**: <HUMAN_NAME>, nam, 50 tuổi, quốc tịch Việt Nam, mã bệnh nhân <ID_NUMBER>.\n- **Chẩn đoán**: Huyết áp cao độ 2, nguy cơ cao; tiểu đường type 2 không biến chứng; rối loạn mỡ máu hỗn hợp.\n- **Lý do vào viện**: Mệt mỏi, ho khan kéo dài, khó thở, đau ngực.\n- **Diễn biến trong viện**: \n  - Ngày 20/10: Huyết áp 160/95 mmHg, troponin tăng, cholesterol cao.\n  - Ngày 22/10: Huyết áp ổn định, troponin giảm, đường huyết ổn định.\n  - Ngày 25/10: Bệnh nhân tỉnh táo, không đau ngực, huyết áp 130/",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/19)"
+      },
+      {
+        "doc_id": "meddies_004792_b512a093",
+        "original_summary": "### Tóm tắt\n\n**I. Thông tin chung**\n- **Đơn vị điều trị**: Khoa Cấp cứu, Bệnh viện Đa khoa Tâm Anh\n- **Người bàn giao**: BS. CKII Lê Thị Mai\n- **Người nhận**: BS. Nội Tim Mạch Nguyễn Văn Bình\n- **Số biên bản**: 2023/BN/CC/8945\n\n**II. Thông tin bệnh nhân**\n- **Tên bệnh nhân**: Trần Văn Hùng\n- **Ngày sinh**: 15/03/1978 (45 tuổi)\n- **Số CCCD**: 079203001234\n- **Số thẻ BHYT**: GD8546987654321\n- **Mã số BN (MRN)**: TAH-198742\n- **",
+        "redacted_summary": "### Tóm tắt\n\n**I. Thông tin chung**\n- **Đơn vị điều trị**: Khoa Cấp cứu, Bệnh viện Đa khoa Tâm Anh\n- **Người bàn giao**: BS. CKII <HUMAN_NAME>\n- **Người nhận**: BS. Nội Tim Mạch <HUMAN_NAME>\n- **Số biên bản**: 2023/BN/CC/8945\n\n**II. Thông tin bệnh nhân**\n- **Tên bệnh nhân**: <HUMAN_NAME>\n- **Ngày sinh**: <DATE> (45 tuổi)\n- **Số CCCD**: <ID_NUMBER>\n- **Số thẻ BHYT**: <ID_NUMBER>\n- **Mã số BN (MRN)**: <ID_NUMBER>\n- **",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/13)"
+      },
+      {
+        "doc_id": "meddies_004799_15d443e1",
+        "original_summary": "**Thông Tin Về Bệnh Nhân**\n\n- Họ và tên: TRẦN VĂN BẢO\n- Tuổi: 78 tuổi\n- Giới tính: Nam\n\n**Tiền Sử Tiêm Chống Bệnh**\n\n- Đã tiêm đầy đủ các loại vắc-xin trong Chương trình Tiêm Chủng Mở Nước Thời Thơ.\n- Tiền Sử Dị Ngụyd: Không rõ.\n- Bệnh Nền:\n\n  + Tăng Huyết Áp: Đã Điều Trị ổn Định.\n  + Đái Tháo Đường Type 2: Kiểm Soát bằng Thuốc và Chế Độ Ăn.\n  + Viêm Khớp Gối Mạn Tính.\n\n**Lịch Sử Tiêm Chống Năm 2023 - 2024**\n\n- **Mũi 1 - Vắc-Xin COVID-19 (Pfizer Comirnaty):**\n  - Ngày Ti",
+        "redacted_summary": "**Thông Tin Về Bệnh Nhân**\n\n- Họ và tên: <HUMAN_NAME>\n- Tuổi: 78 tuổi\n- Giới tính: Nam\n\n**Tiền Sử Tiêm Chống Bệnh**\n\n- Đã tiêm đầy đủ các loại vắc-xin trong Chương trình Tiêm Chủng Mở Nước Thời Thơ.\n- Tiền Sử Dị Ngụyd: Không rõ.\n- Bệnh Nền:\n\n  + Tăng Huyết Áp: Đã Điều Trị ổn Định.\n  + Đái Tháo Đường Type 2: Kiểm Soát bằng Thuốc và Chế Độ Ăn.\n  + Viêm Khớp Gối Mạn Tính.\n\n**Lịch Sử Tiêm Chống Năm 2023 - 2024**\n\n- **Mũi 1 - Vắc-Xin COVID-19 (Pfizer Comirnaty):**\n  - Ngày Ti",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/20)"
+      },
+      {
+        "doc_id": "meddies_004824_2378596a",
+        "original_summary": "**Tóm tắt**:  \n- **Người báo tin**: Trần Văn Bình  \n- **Ngày báo tin**: 05/10/2023  \n- **Chẩn đoán chính**: Suy hô hấp cấp do COPD, tăng huyết áp  \n- **Nguyên nhân tử vong**: J96.0 - Suy hô hấp cấp  \n- **Kết luận**: BS. Nguyễn Văn A đánh giá cao nỗ lực hồi sức, BS. Phạm Thị B đề xuất cải tiến chẩn đoán COPD, BS. Trần Văn C xác nhận tăng huyết áp, ĐD. Lê Thị D báo cáo thuốc, KS. Nguyễn Văn E chia sẻ men gan, BS. Ngô Thị F đánh giá phim X-quang.",
+        "redacted_summary": "**Tóm tắt**:  \n- **Người báo tin**: <HUMAN_NAME>  \n- **Ngày báo tin**: 05/10/<DATE>  \n- **Chẩn đoán chính**: Suy hô hấp cấp do COPD, tăng huyết áp  \n- **Nguyên nhân tử vong**: J96.0 - Suy hô hấp cấp  \n- **Kết luận**: <HUMAN_NAME> đánh giá cao nỗ lực hồi sức, <HUMAN_NAME> đề xuất cải tiến chẩn đoán COPD, <HUMAN_NAME> xác nhận tăng huyết áp, <HUMAN_NAME> báo cáo thuốc, <HUMAN_NAME> chia sẻ men gan, <HUMAN_NAME> đánh giá phim X-quang.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/19)"
+      },
+      {
+        "doc_id": "meddies_004863_fe2925e3",
+        "original_summary": "**Tóm tắt:**  \nLý Thị Thanh Tuyền, nữ, 47 tuổi, đã tiêm vắc-xin cúm mùa (Influvax Tetra) vào ngày 14/11/2023 tại BV Tâm Anh Hà Nội. Sau tiêm, bệnh nhân có phản ứng như đau tại vị trí tiêm, nổi mẩn đỏ kích thước 3x3 cm, tăng huyết áp và nhịp tim cao. Hiện tại tình trạng sức khỏe của bệnh nhân ổn định.",
+        "redacted_summary": "**Tóm tắt:**  \n<HUMAN_NAME>, nữ, 47 tuổi, đã tiêm vắc-xin cúm mùa (Influvax Tetra) vào ngày <DATE> tại BV Tâm Anh Hà Nội. Sau tiêm, bệnh nhân có phản ứng như đau tại vị trí tiêm, nổi mẩn đỏ kích thước 3x3 cm, tăng huyết áp và nhịp tim cao. Hiện tại tình trạng sức khỏe của bệnh nhân ổn định.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/23)"
+      },
+      {
+        "doc_id": "meddies_004861_1f8f12ea",
+        "original_summary": "### Tóm tắt\n\n- **Thông tin cá nhân**:\n  - Mã số: VN-748291-K75\n  - Họ và tên: Nguyễn Văn Bình Minh Quý\n  - Ngày sinh: 15/08/1968\n  - Tuổi: 78\n  - Giới tính: Nam\n  - Số điện thoại: 0987654321\n  - Địa chỉ: Số 42, Đường Lý Tự Trọng, Phường Bến Thành, Quận 1, TP.HCM\n  - Email: nguyen.v.b.minh.quy@example.com\n  - Cơ sở y tế: Bệnh viện Đa khoa Tâm Anh Sài Gòn\n  - Khoa điều trị: Khoa Nội Tim Mạch\n  - Mã hồ sơ: HMVN-1122334455\n  - Ngày vào viện: 12",
+        "redacted_summary": "### Tóm tắt\n\n- **Thông tin cá nhân**:\n  - Mã số: <ID_NUMBER>\n  - Họ và tên: <HUMAN_NAME>\n  - Ngày sinh: <DATE>\n  - Tuổi: 78\n  - Giới tính: Nam\n  - Số điện thoại: <PHONE_NUMBER>\n  - Địa chỉ: <ADDRESS>\n  - Email: <EMAIL_ADDRESS>\n  - Cơ sở y tế: Bệnh viện Đa khoa Tâm Anh Sài Gòn\n  - Khoa điều trị: Khoa Nội Tim Mạch\n  - Mã hồ sơ: <ID_NUMBER>\n  - Ngày vào viện: 12",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/11)"
+      },
+      {
+        "doc_id": "meddies_004871_a4089841",
+        "original_summary": "### Tóm tắt\n\n- **Tên bệnh nhân**: Nguyễn Văn Bình  \n- **Ngày sinh**: 12/04/1958  \n- **Số điện thoại**: 0938 555 123  \n- **Địa chỉ**: 123 Đường 3/2, P.8, Q.5  \n- **Mã số BHYT**: HT001234567890  \n- **Tiền sử dị ứng**: Penicillin (nổi mề đay), Cefeclor (sốc phản vệ năm 2019)\n\n- **Thời gian nhập viện**: 15/11/2023 09:30  \n- **Chẩn đoán**: STEMI NôngIORDA (nhồi máu cơ tim cấp thành trước rộng), suy tim độ II  \n- **Diễn biến lâm",
+        "redacted_summary": "### Tóm tắt\n\n- **Tên bệnh nhân**: <HUMAN_NAME>  \n- **Ngày sinh**: <DATE>  \n- **Số điện thoại**: <PHONE_NUMBER>  \n- **Địa chỉ**: <ADDRESS>  \n- **Mã số BHYT**: <ID_NUMBER>  \n- **Tiền sử dị ứng**: Penicillin (nổi mề đay), Cefeclor (sốc phản vệ năm 2019)\n\n- **Thời gian nhập viện**: <DATE>  \n- **Chẩn đoán**: STEMI NôngIORDA (nhồi máu cơ tim cấp thành trước rộng), suy tim độ II  \n- **Diễn biến lâm",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/15)"
+      },
+      {
+        "doc_id": "meddies_004885_52bc1f00",
+        "original_summary": "**Thông Tin Người BỆNH:**\n- Họ và tên: Trần Văn Nam\n- Ngày sinh: 12/05/1972 (51 tuổi)\n- Giới tính: Nam\n- Địa chỉ: Số 45 Ngõ 12 Đường Láng Hạ, P. Láng Hạ, Q. Đống Đa\n- Số BHYT: HT2048490012801 (Hạn: 31/12/2024)\n- Số CCCD: 001202030456\n\n**Thời Gian Nhập Vịn:**\n- Ngày: 14/10/2023\n- Thời gian: 08:30\n- Khoa: Khoa Nội Tim Mạch\n- Bác sĩ: BS. Nguyễn Văn Huy\n- Buồng: P.K30",
+        "redacted_summary": "**Thông Tin Người BỆNH:**\n- Họ và tên: <HUMAN_NAME>\n- Ngày sinh: 12/05/1972 (51 tuổi)\n- Giới tính: Nam\n- Địa chỉ: <ADDRESS>\n- Số BHYT: <ID_NUMBER> (Hạn: 31/12/2024)\n- Số CCCD: <ID_NUMBER>\n\n**Thời Gian Nhập Vịn:**\n- Ngày: 14/10/2023\n- Thời gian: 08:30\n- Khoa: Khoa Nội Tim Mạch\n- Bác sĩ: <HUMAN_NAME>\n- Buồng: P.K30",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/14)"
+      },
+      {
+        "doc_id": "meddies_004897_9a5137c9",
+        "original_summary": "Trần Văn Hùng, nam, sinh ngày 15/08/1976, sống tại số 25, Đường Lê Lợi, Phường 4, Quận Tân Bình, TP.HCM. Ông có lịch sử y tế bao gồm tăng huyết áp 10 năm và đái tháo đường type 2 5 năm. Sau khi vào viện, ông được chẩn đoán mắc suy tim cấp và nhiễm trùng hô hấp cấp tính. Trong quá trình điều trị, tình trạng của ông đã được cải thiện đáng kể, đặc biệt là qua việc triển khai phương pháp lọc máu và thực hiện siêu âm tim. Hiện nay, ông đang tỉnh táo, có thể tự chăm sóc bản thân và đang tiếp tục theo dõi tại phòng khám tâm mạch.",
+        "redacted_summary": "<HUMAN_NAME>, nam, sinh ngày <DATE>, sống tại <ADDRESS>. Ông có lịch sử y tế bao gồm tăng huyết áp 10 năm và đái tháo đường type 2 5 năm. Sau khi vào viện, ông được chẩn đoán mắc suy tim cấp và nhiễm trùng hô hấp cấp tính. Trong quá trình điều trị, tình trạng của ông đã được cải thiện đáng kể, đặc biệt là qua việc triển khai phương pháp lọc máu và thực hiện siêu âm tim. Hiện nay, ông đang tỉnh táo, có thể tự chăm sóc bản thân và đang tiếp tục theo dõi tại phòng khám tâm mạch.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/17)"
+      },
+      {
+        "doc_id": "meddies_004910_02358c55",
+        "original_summary": "**Thông Tin Bệnh Nhân**\n- Họ và tên: Phạm Thị Hằng\n- Ngày sinh: 12/05/1948\n- Giới tính: Nữ\n- Mã bệnh nhân (MRN): BN7482910\n- Mã y tế quốc gia (VHI): VHI-8491029384\n- Số CCCD: 079203004991\n- Địa chỉ: Tổ 8, Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội\n\n**Chỉ Định Theo Dõi Lâm Sáng**\n- Thời gian theo dõi: 6 lần/ngày\n- Huyết áp: 130/80 mmHg\n- Nhịp tim: 78 lần/phút\n- Spo2: 97%\n\n**Lịch Sử Dư Cực Hợp (Allergy",
+        "redacted_summary": "**Thông Tin Bệnh Nhân**\n- Họ và tên: <HUMAN_NAME>\n- Ngày sinh: <DATE>\n- Giới tính: Nữ\n- Mã bệnh nhân (MRN): <ID_NUMBER>\n- Mã y tế quốc gia (VHI): <ID_NUMBER>\n- Số CCCD: <ID_NUMBER>\n- Địa chỉ: <ADDRESS>\n\n**Chỉ Định Theo Dõi Lâm Sáng**\n- Thời gian theo dõi: 6 lần/ngày\n- Huyết áp: 130/80 mmHg\n- Nhịp tim: 78 lần/phút\n- Spo2: 97%\n\n**Lịch Sử Dư Cực Hợp (Allergy",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/33)"
+      },
+      {
+        "doc_id": "meddies_004930_5fdfe1a7",
+        "original_summary": "**Tóm tắt:** \n\n- **Tên bệnh nhân**: Trần Văn Bình\n- **Ngày sinh**: 15/08/1945\n- **Địa chỉ**: TP. Hồ Chí Minh\n- **Số CCCD**: 079204001234\n- **Số thẻ BHYT**: GD7890123456789\n- **Mã số MRN**: BN885521\n- **Ngày tiếp nhận**: 15/04/2024\n- **Ngày trả kết quả**: 15/04/2024\n- **Người chỉ định**: Bs. Nguyễn Phạm Quốc Hùng\n- **Người liên hệ**: Trần Thị Mai (con gái)\n\n**Thông tin bệnh nhân**: Mệt mỏi, ho khan kéo dài 2 tuần, khó thở khi gắng sức",
+        "redacted_summary": "**Tóm tắt:** \n\n- **Tên bệnh nhân**: <HUMAN_NAME>\n- **Ngày sinh**: <DATE>\n- **Địa chỉ**: TP. Hồ Chí Minh\n- **Số CCCD**: <ID_NUMBER>\n- **Số thẻ BHYT**: <ID_NUMBER>\n- **Mã số MRN**: <ID_NUMBER>\n- **Ngày tiếp nhận**: 15/04/2024\n- **Ngày trả kết quả**: 15/04/2024\n- **Người chỉ định**: Bs. <HUMAN_NAME>\n- **Người liên hệ**: <HUMAN_NAME> (con gái)\n\n**Thông tin bệnh nhân**: Mệt mỏi, ho khan kéo dài 2 tuần, khó thở khi gắng sức",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/16)"
+      },
+      {
+        "doc_id": "meddies_004976_6123a216",
+        "original_summary": "**Tóm tắt**\n\nTrần Văn Quang, nam, 65 tuổi, đã đến khoa cấp cứu với triệu chứng hoang tưởng và ảo giác. Bệnh nhân đã từng mắc đái tháo đường và tăng huyết áp trong suốt 15 năm. Hiện tại, Quang đang bị rối loạn lo âu cấp tính do đột quỵ tâm thần. \n\nQuá trình thăm khám cho thấy Quang có thể tỉnh táo nhưng hoang mang. Các xét nghiệm như CBC, glucose, electrolyte, và chụp CT scan sọ não chưa được thực hiện. Quá trình điều trị dự kiến gồm việc tiêm INJ. Haloperidol và INJ. Promethazin để giảm kích động và hỗ trợ giấc ngủ. Ngoài ra, cần phải điều chỉnh chế độ ăn uống và dùng metformin để quản lý đái tháo đường và amlodipin để điều chỉnh huyết áp.",
+        "redacted_summary": "**Tóm tắt**\n\n<HUMAN_NAME>, nam, 65 tuổi, đã đến khoa cấp cứu với triệu chứng hoang tưởng và ảo giác. Bệnh nhân đã từng mắc đái tháo đường và tăng huyết áp trong suốt 15 năm. Hiện tại, Quang đang bị rối loạn lo âu cấp tính do đột quỵ tâm thần. \n\nQuá trình thăm khám cho thấy Quang có thể tỉnh táo nhưng hoang mang. Các xét nghiệm như CBC, glucose, electrolyte, và chụp CT scan sọ não chưa được thực hiện. Quá trình điều trị dự kiến gồm việc tiêm INJ. Haloperidol và INJ. Promethazin để giảm kích động và hỗ trợ giấc ngủ. Ngoài ra, cần phải điều chỉnh chế độ ăn uống và dùng metformin để quản lý đái tháo đường và amlodipin để điều chỉnh huyết áp.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/11)"
+      },
+      {
+        "doc_id": "meddies_004979_67c56697",
+        "original_summary": "**Thông Tin Bệnh Nhân:**\n\n- Họ và tên: Trần Văn Nam\n- Ngày sinh: 15/08/1947 (77 tuổi)\n- Giới tính: Nam\n- Mã số bệnh nhân: BN2024001234\n- Số điện thoại: 0905123456\n- Địa chỉ: Số 45 đường 3/2, phường 11, quận 10, TPHCM\n\n**Chẩn Đoán Điều Trị:**\n\n- Chẩn đoán chính: Tai biến mạch máu não cấp (I63.9)\n- Chẩn đoán kèm theo: Tiểu đường type 2 (E11.9), Tăng huyết áp (I10)\n\n**Theo dõi Sinh Hiệu Ngày 20/11/2024:**\n\n| Thời gian | Huyết áp (mmHg)",
+        "redacted_summary": "**Thông Tin Bệnh Nhân:**\n\n- Họ và tên: <HUMAN_NAME>\n- Ngày sinh: <DATE> (77 tuổi)\n- Giới tính: Nam\n- Mã số bệnh nhân: <ID_NUMBER>\n- Số điện thoại: <PHONE_NUMBER>\n- Địa chỉ: <ADDRESS>\n\n**Chẩn Đoán Điều Trị:**\n\n- Chẩn đoán chính: Tai biến mạch máu não cấp (I63.9)\n- Chẩn đoán kèm theo: Tiểu đường type 2 (E11.9), Tăng huyết áp (I10)\n\n**Theo dõi Sinh Hiệu Ngày <DATE>:**\n\n| Thời gian | Huyết áp (mmHg)",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/18)"
+      },
+      {
+        "doc_id": "meddies_004993_77d00431",
+        "original_summary": "### Tóm tắt\n\n- **Tên bệnh nhân:** Trần Văn M., NS: 14/06/1945\n- **Địa chỉ:** Số 42, Đường Lý Tự Trọng, Phường Bến Thành, Q1, TP.HCM\n- **Người liên hệ:** Nguyễn Văn B, Tel: 0903555123\n- **Ngày vào viện:** 08/05/2024\n- **Lịch sử:** Tăng HA (+) 20 năm, Đái tháo đường type 2 (+) 15 năm, Thoái hóa cột sống\n- **Yêu cầu chẩn đoán:** CT Scan Sọ não không cản quang + CTA Circle of Willis\n- **Phát hiện:** Nhồi máu não cấp tính, diện tích ước tính ~3.5x2.8cm, không có hình ảnh",
+        "redacted_summary": "### Tóm tắt\n\n- **Tên bệnh nhân:** Trần Văn M., NS: 14/06/1945\n- **Địa chỉ:** <ADDRESS>\n- **Người liên hệ:** <HUMAN_NAME>, Tel: <PHONE_NUMBER>\n- **Ngày vào viện:** 08/05/2024\n- **Lịch sử:** Tăng HA (+) 20 năm, Đái tháo đường type 2 (+) 15 năm, Thoái hóa cột sống\n- **Yêu cầu chẩn đoán:** CT Scan Sọ não không cản quang + CTA Circle of Willis\n- **Phát hiện:** Nhồi máu não cấp tính, diện tích ước tính ~3.5x2.8cm, không có hình ảnh",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/5)"
+      },
+      {
+        "doc_id": "meddies_004990_b0bda1bf",
+        "original_summary": "**Thông Tin Bệnh Nhân**\n\n- Họ và tên: Nguyễn Văn Mười\n- Ngày sinh: 15/04/1948\n- Giới tính: Nam\n- Số CCCD: 001204005678\n- Số BHYT: HT0023456789001\n- Mã người bệnh (MRN): BN7604150012\n- Nơi sống: Thôn 5, Xã Thanh Thùy, Huyện Thanh Oai, Thành phố Hà Nội\n- Người nhà liên hệ: Nguyễn Thị Lan (Con gái)\n\n**Chẩn Đoán Vào Viên**\n\n- Thấp khớp cấp thể viêm khớp cấp tính\n- Tiểu đường type 2 không biến chứng\n\n**Tiền Sử Bệnh**\n\n- Tiền sử nội khoa: \n  - Tăng huyết áp 15 năm, đã",
+        "redacted_summary": "**Thông Tin Bệnh Nhân**\n\n- Họ và tên: <HUMAN_NAME>\n- Ngày sinh: <DATE>\n- Giới tính: Nam\n- Số CCCD: <ID_NUMBER>\n- Số BHYT: <ID_NUMBER>\n- Mã người bệnh (MRN): <ID_NUMBER>\n- Nơi sống: <ADDRESS>\n- Người nhà liên hệ: <HUMAN_NAME> (Con gái)\n\n**Chẩn Đoán Vào Viên**\n\n- Thấp khớp cấp thể viêm khớp cấp tính\n- Tiểu đường type 2 không biến chứng\n\n**Tiền Sử Bệnh**\n\n- Tiền sử nội khoa: \n  - Tăng huyết áp 15 năm, đã",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/14)"
+      },
+      {
+        "doc_id": "meddies_004997_bc99f0af",
+        "original_summary": "### Tóm tắt:\n\n**Tên bệnh nhân**: Trần Văn Nam  \n**Ngày sinh**: 15/08/1976  \n**Giới tính**: Nam  \n**Số CCCD/Hộ chiếu**: 001201003456  \n**Số BHYT**: HC2300001234567  \n**Người đại diện**: Trần Thị Hương  \n\n**Chẩn đoán lâm sàng**: Viêm tụy cấp nghi thể tích lớn (Pancreatitis nặng)  \n\n**Thời gian dự kiến**: 15/08/2024 lúc 14h00  \n\n**Phương pháp vô cảm**: Gây tê tủy sống + tiền mê  \n\n**Diễn biến**:  \n1. 14h00: Bệnh nhân vào phòng mổ  \n2. 14h15: Rửa sạch vùng da bụng",
+        "redacted_summary": "### Tóm tắt:\n\n**Tên bệnh nhân**: <HUMAN_NAME>  \n**Ngày sinh**: <DATE>  \n**Giới tính**: Nam  \n**Số CCCD/Hộ chiếu**: <ID_NUMBER>  \n**Số BHYT**: <ID_NUMBER>  \n**Người đại diện**: <HUMAN_NAME>  \n\n**Chẩn đoán lâm sàng**: Viêm tụy cấp nghi thể tích lớn (Pancreatitis nặng)  \n\n**Thời gian dự kiến**: <DATE> lúc 14h00  \n\n**Phương pháp vô cảm**: Gây tê tủy sống + tiền mê  \n\n**Diễn biến**:  \n1. 14h00: Bệnh nhân vào phòng mổ  \n2. 14h15: Rửa sạch vùng da bụng",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/17)"
+      },
+      {
+        "doc_id": "meddies_005023_4c675186",
+        "original_summary": "**Tóm tắt:** \n\n- **Thông tin bệnh nhân**: Trần Văn Nam, nam giới, sinh năm 1978, số CMND/CCCD: 001078004589.\n- **Những kết quả xét nghiệm**: \n  - Hemoglobin: 142 g/l (<-)\n  - Hematocrit: 0.42 L/L (<-)\n  - Số lượng bạch cầu: 7.8 x 10^9/L (<-)\n  - Số lượng hồng cầu: 4.85 x 10^12/L (<-)\n  - Đại thể: Vàng nhạt (<-)\n  - Lechocyte: Âm tính (<-)\n  - Nitrite: Âm tính (<-)\n  - Protein: <100 mg/L (<-)\n  - Glucose: Âm tính (<-)\n  - Ketone",
+        "redacted_summary": "**Tóm tắt:** \n\n- **Thông tin bệnh nhân**: <HUMAN_NAME>, nam giới, sinh năm 1978, số CMND/CCCD: <ID_NUMBER>.\n- **Những kết quả xét nghiệm**: \n  - Hemoglobin: 142 g/l (<-)\n  - Hematocrit: 0.42 L/L (<-)\n  - Số lượng bạch cầu: 7.8 x 10^9/L (<-)\n  - Số lượng hồng cầu: 4.85 x 10^12/L (<-)\n  - Đại thể: Vàng nhạt (<-)\n  - Lechocyte: Âm tính (<-)\n  - Nitrite: Âm tính (<-)\n  - Protein: <100 mg/L (<-)\n  - Glucose: Âm tính (<-)\n  - Ketone",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/23)"
+      },
+      {
+        "doc_id": "meddies_005018_2268332e",
+        "original_summary": "**Tóm tắt:** \n\n- **Tên bệnh nhân:** Nguyễn Văn Bình\n- **Tuổi:** 65 tuổi\n- **Diện tích bệnh:** Bệnh lý mạch máu não mạn tính (I67.9)\n- **Tiền sử:** \n  - Tăng huyết áp 15 năm (đã có biến chứng suy thận độ I)\n  - Đái tháo đường type 2 10 năm\n  - Xơ vữa động mạch cảnh mức độ vừa\n  - Tiền sử dị ứng: Penicillin\n- **Thuốc điều trị (ngày 23/10/2023):**\n  - Amlodipin: 10 mg\n  - Metformin: 500 mg\n  - Clopidogrel: 75 mg\n  - Atorvastatin: 20 mg\n  - Furosemid: 40 mg\n",
+        "redacted_summary": "**Tóm tắt:** \n\n- **Tên bệnh nhân:** <HUMAN_NAME>\n- **Tuổi:** 65 tuổi\n- **Diện tích bệnh:** Bệnh lý mạch máu não mạn tính (I67.9)\n- **Tiền sử:** \n  - Tăng huyết áp 15 năm (đã có biến chứng suy thận độ I)\n  - Đái tháo đường type 2 10 năm\n  - Xơ vữa động mạch cảnh mức độ vừa\n  - Tiền sử dị ứng: Penicillin\n- **Thuốc điều trị (ngày 23/10/2023):**\n  - Amlodipin: 10 mg\n  - Metformin: 500 mg\n  - Clopidogrel: 75 mg\n  - Atorvastatin: 20 mg\n  - Furosemid: 40 mg\n",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/15)"
+      },
+      {
+        "doc_id": "meddies_005036_2c5068a5",
+        "original_summary": "```markdown\n# BÁO CÁO KẾT QUẢ CHẨN ĐOÁN HÌNH ẢNH\n\n**Bệnh nhân:** Nguyễn Văn A (ID: 123456789)\n\n**Ngày sinh:** 10/05/1989  \n**Tuổi:** 35  \n**Địa chỉ:** Khu công nghiệp Hòa Khánh, TP. Đà Nẵng  \n**Đơn vị công tác:** Công ty TNHH Giày Da quốc tế  \n**Ngày thực hiện:** 15/10/2023  \n**Bác sĩ chỉ định:** Phạm Văn C (dr.c@hospital.org)  \n**Bác sĩ đọc phim:** Trần Văn B  \n**Email liên hệ:** planb@company.com  \n**Số điện thoại:** 0236 888 999  \n\n### Phân tích hình ảnh\nChất lượng hình",
+        "redacted_summary": "```markdown\n# BÁO CÁO KẾT QUẢ CHẨN ĐOÁN HÌNH ẢNH\n\n**Bệnh nhân:** <HUMAN_NAME> (ID: <ID_NUMBER>)\n\n**Ngày sinh:** <DATE>  \n**Tuổi:** 35  \n**Địa chỉ:** <ADDRESS>, TP. Đà Nẵng  \n**Đơn vị công tác:** Công ty TNHH Giày Da quốc tế  \n**Ngày thực hiện:** <DATE>  \n**Bác sĩ chỉ định:** <HUMAN_NAME> (<EMAIL_ADDRESS>)  \n**Bác sĩ đọc phim:** <HUMAN_NAME>  \n**Email liên hệ:** <EMAIL_ADDRESS>  \n**Số điện thoại:** <PHONE_NUMBER>  \n\n### Phân tích hình ảnh\nChất lượng hình",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/20)"
+      },
+      {
+        "doc_id": "meddies_032305_24ab697f",
+        "original_summary": "### Tóm tắt:\n\n- **Bệnh nhân**: Lý Thị Thanh, nữ, 47 tuổi, sống tại Hà Nội.\n- **Nguyên nhân**: Lú lẫn, tăng tiết nước bọt, co giật cơ không tự chủ.\n- **Địa điểm gửi**: Phòng Khám Đa Khoa Văn Chương.\n- **Bác sĩ điều trị**: Nguyễn Văn Hùng, BSCKI. Nội tổng quát.\n- **Địa điểm nhận**: Bệnh viện Hữu Nghị Việt Đức, Cấp cứu Thần kinh.\n- **Tiền sử**: Không có bệnh nền tim mạch rõ ràng.\n- **Địa điểm ghi nhận**: 15/10/2024, 14:30.\n- **Lý do chuyển tuyến**: Bệnh nhân có triệu chứng lú lẫn, tăng tiết nước bọt, co giật cơ không tự chủ.\n- **Tổng kết tiền sử**: Bệnh nhân làm",
+        "redacted_summary": "### Tóm tắt:\n\n- **Bệnh nhân**: <HUMAN_NAME>, nữ, 47 tuổi, sống tại Hà Nội.\n- **Nguyên nhân**: Lú lẫn, tăng tiết nước bọt, co giật cơ không tự chủ.\n- **Địa điểm gửi**: Phòng Khám Đa Khoa Văn Chương.\n- **Bác sĩ điều trị**: <HUMAN_NAME>, BSCKI. Nội tổng quát.\n- **Địa điểm nhận**: Bệnh viện Hữu Nghị Việt Đức, Cấp cứu Thần kinh.\n- **Tiền sử**: Không có bệnh nền tim mạch rõ ràng.\n- **Địa điểm ghi nhận**: <DATE>, 14:30.\n- **Lý do chuyển tuyến**: Bệnh nhân có triệu chứng lú lẫn, tăng tiết nước bọt, co giật cơ không tự chủ.\n- **Tổng kết tiền sử**: Bệnh nhân làm",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/13)"
+      },
+      {
+        "doc_id": "meddies_032308_1b44eac5",
+        "original_summary": "**Thông tin bệnh nhân:**\n- Họ và tên: TRẦN VĂN BẢO\n- Ngày sinh: 03/08/1975\n- Giới tính: Nam\n- Số điện thoại: 0965432189\n- Địa chỉ: Số 18, Đường Lê Lợi, Phường 4, Quận 1, TP.HCM\n- Email: tranvanbao.email@example.com\n- Mã số định danh: CCCD-849201023456\n- Số bảo hiểm y tế: HT7382901928371\n- Mã bệnh án (MRN): BN-2023-XQ-99182\n\n**Lý do nhập viện:**\n- Bệnh nhân nhập viện vì đau ngực dữ dội vùng thượng vị kéo dài 4 giờ, không đáp ứng với thuốc giãn mạch",
+        "redacted_summary": "**Thông tin bệnh nhân:**\n- Họ và tên: <HUMAN_NAME>\n- Ngày sinh: <DATE>\n- Giới tính: Nam\n- Số điện thoại: <PHONE_NUMBER>\n- Địa chỉ: <ADDRESS>\n- Email: <EMAIL_ADDRESS>\n- Mã số định danh: <ID_NUMBER>\n- Số bảo hiểm y tế: <ID_NUMBER>\n- Mã bệnh án (MRN): <ID_NUMBER>\n\n**Lý do nhập viện:**\n- Bệnh nhân nhập viện vì đau ngực dữ dội vùng thượng vị kéo dài 4 giờ, không đáp ứng với thuốc giãn mạch",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/17)"
+      },
+      {
+        "doc_id": "meddies_032336_874c6fa6",
+        "original_summary": "**Tóm tắt:** \n\n- **Tên bệnh nhân**: Lê Thị Mai\n- **Ngày sinh**: 15/08/1985\n- **Tuổi**: 38 tuổi\n- **Giới tính**: Nữ\n- **Số điện thoại**: 0968.754.123\n- **Địa chỉ**: Số 25 Đường 3/2, Phường 11, Quận 10, TP.HCM\n- **Số BHYT**: HC8756321985001\n- **Mã bệnh nhân**: BN20237584\n\n- **Chẩn đoán**: Viêm hang vị dạ dày cấp tính, Trào ngược dạ dày thực quản (GERD) nghi ngờ\n\n- **Pháp chế**: Thuốc Omeprazole 20mg, Domperidone 10mg, Gast",
+        "redacted_summary": "**Tóm tắt:** \n\n- **Tên bệnh nhân**: <HUMAN_NAME>\n- **Ngày sinh**: <DATE>\n- **Tuổi**: 38 tuổi\n- **Giới tính**: Nữ\n- **Số điện thoại**: <PHONE_NUMBER>\n- **Địa chỉ**: <ADDRESS>\n- **Số BHYT**: <ID_NUMBER>\n- **Mã bệnh nhân**: <ID_NUMBER>\n\n- **Chẩn đoán**: Viêm hang vị dạ dày cấp tính, Trào ngược dạ dày thực quản (GERD) nghi ngờ\n\n- **Pháp chế**: Thuốc Omeprazole 20mg, Domperidone 10mg, Gast",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/11)"
+      },
+      {
+        "doc_id": "meddies_032337_92e7cb55",
+        "original_summary": "### Tóm tắt tài liệu:\n\n#### I. Thông Tin Bệnh Nhân:\n- Họ và tên: Trần Văn Nam\n- Ngày sinh: 15/03/1978\n- Giới tính: Nam\n- Số điện thoại: 0908555123\n- Địa chỉ: Số 12 Đường 3/2, Phường 11, Quận 10\n- Mã BN (MRN): BN-780422-K\n- Chẩn đoán chính: Di chứng nhồi máu não (I69.3), Tăng huyết áp (I10)\n- Chẩn đoán phụ: Đái tháo đường type 2 (E11), Thoái hóa khớp gối (M17)\n\n#### II. Tóm tắt Béthuế và Diễn Biến:\n- Ngày nhập viện: 10/09/2024\n- Ngày",
+        "redacted_summary": "### Tóm tắt tài liệu:\n\n#### I. Thông Tin Bệnh Nhân:\n- Họ và tên: <HUMAN_NAME>\n- Ngày sinh: <DATE>\n- Giới tính: Nam\n- Số điện thoại: <PHONE_NUMBER>\n- Địa chỉ: <ADDRESS>\n- Mã BN (MRN): <ID_NUMBER>\n- Chẩn đoán chính: Di chứng nhồi máu não (I69.3), Tăng huyết áp (I10)\n- Chẩn đoán phụ: Đái tháo đường type 2 (E11), Thoái hóa khớp gối (M17)\n\n#### II. Tóm tắt Béthuế và Diễn Biến:\n- Ngày nhập viện: <DATE>\n- Ngày",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/17)"
+      },
+      {
+        "doc_id": "meddies_032349_ec28a684",
+        "original_summary": "**Thông Tin Bệnh Nhân:**\n- Họ và tên: Trần Thị Mai\n- Ngày sinh: 15/08/1946 (Tuổi: 78)\n- Giới tính: Nữ\n- Địa chỉ: Phường Thới Hòa, Thị xã Bến Cát, Tỉnh Bình Dương\n- Số điện thoại: 0935 678 912\n- Người liên hệ: Trần Văn Bình (Con trai)\n\n**Chẩn Đoán:**\n- Cao huyết áp: 15 năm nay, đang điều trị tại Phòng khám đa khoa khu vực Thới Hòa.\n- Đái tháo đường type 2: 8 năm, đang dùng Metformin 500mg, Glipizide 5mg.\n\n**Triệu chứng hiện tại:**\n- Mệt mỏi, hơi mệt.\n- Đau đầu nhẹ vùng trán.\n- Da niêm mạc",
+        "redacted_summary": "**Thông Tin Bệnh Nhân:**\n- Họ và tên: <HUMAN_NAME>\n- Ngày sinh: 15/08/1946 (Tuổi: 78)\n- Giới tính: Nữ\n- Địa chỉ: Phường Thới Hòa, Thị xã Bến Cát, Tỉnh Bình Dương\n- Số điện thoại: <PHONE_NUMBER>\n- Người liên hệ: <HUMAN_NAME> (Con trai)\n\n**Chẩn Đoán:**\n- Cao huyết áp: 15 năm nay, đang điều trị tại Phòng khám đa khoa khu vực Thới Hòa.\n- Đái tháo đường type 2: 8 năm, đang dùng Metformin 500mg, Glipizide 5mg.\n\n**Triệu chứng hiện tại:**\n- Mệt mỏi, hơi mệt.\n- Đau đầu nhẹ vùng trán.\n- Da niêm mạc",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/10)"
+      },
+      {
+        "doc_id": "meddies_032368_2e893a4e",
+        "original_summary": "**Tóm tắt**: \n\n- Bệnh nhân là Lê Văn Hùng, nam, 55 tuổi, bị tăng huyết áp và đái tháo đường.\n- Ngày 10/10, bệnh nhân vào viện với triệu chứng tai biến mạch não cấp tính, đờm xanh, khó thở.\n- Ngày 12/10, tình trạng tiến triển, phát hiện nhiễm khuẩn phổi hít, điều trị bằng kháng sinh.\n- Ngày 14/10, bệnh nhân tái phát, tình trạng hô hấp xấu đi, cần can thiệp thở máy.\n- Ngày 15/10, tình trạng tiến triển, bệnh nhân có thể nói nhưng vẫn có liệt nửa người.\n- Hội chẩn liên khoa Thần kinh - Hô hấp - Tim mạch.\n- Kết luận: Tình trạng bệnh tiến triển phức tạp, cần chăm sóc đặc biệt về hô hấp và thần kinh.",
+        "redacted_summary": "**Tóm tắt**: \n\n- Bệnh nhân là <HUMAN_NAME>, nam, 55 tuổi, bị tăng huyết áp và đái tháo đường.\n- Ngày 10/10, bệnh nhân vào viện với triệu chứng tai biến mạch não cấp tính, đờm xanh, khó thở.\n- Ngày 12/10, tình trạng tiến triển, phát hiện nhiễm khuẩn phổi hít, điều trị bằng kháng sinh.\n- Ngày 14/10, bệnh nhân tái phát, tình trạng hô hấp xấu đi, cần can thiệp thở máy.\n- Ngày 15/10, tình trạng tiến triển, bệnh nhân có thể nói nhưng vẫn có liệt nửa người.\n- Hội chẩn liên khoa Thần kinh - Hô hấp - Tim mạch.\n- Kết luận: Tình trạng bệnh tiến triển phức tạp, cần chăm sóc đặc biệt về hô hấp và thần kinh.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/11)"
+      },
+      {
+        "doc_id": "meddies_032375_4db465cb",
+        "original_summary": "**Tóm tắt:** \n\n- **Người bệnh**: Nguyễn Văn Nam, 68 tuổi, nam giới.\n- **Thời gian vào khoa**: 18h45 ngày 15/10/2023.\n- **Thông tin bệnh nhân trước khi chuyển**: Bệnh nhân có tiền sử huyết áp cao 10 năm, tiểu đường type 2 5 năm, đã ký theo dõi tại phòng khám đại học y Hà Nội.\n- **Trạng thái lúc nhập khoa**: Bệnh nhân ăn tối bình thường, không uống rượu. \n- **Trạng thái sức khỏe lúc nhập khoa**: Đau ngực rất nặng, đau lan ra cánh tay trái kèm áng vang, khói mồ hôi lạnh, khó thở.\n- **Giới thiệu gia đình cấp cứu**: Trần Thị Hương, vợ của bệnh nhân, số điện thoại 0912345678.\n-",
+        "redacted_summary": "**Tóm tắt:** \n\n- **Người bệnh**: <HUMAN_NAME>, 68 tuổi, nam giới.\n- **Thời gian vào khoa**: 18h45 ngày 15/10/2023.\n- **Thông tin bệnh nhân trước khi chuyển**: Bệnh nhân có tiền sử huyết áp cao 10 năm, tiểu đường type 2 5 năm, đã ký theo dõi tại phòng khám đại học y Hà Nội.\n- **Trạng thái lúc nhập khoa**: Bệnh nhân ăn tối bình thường, không uống rượu. \n- **Trạng thái sức khỏe lúc nhập khoa**: Đau ngực rất nặng, đau lan ra cánh tay trái kèm áng vang, khói mồ hôi lạnh, khó thở.\n- **Giới thiệu gia đình cấp cứu**: <HUMAN_NAME>, vợ của bệnh nhân, số điện thoại <PHONE_NUMBER>.\n-",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/13)"
+      },
+      {
+        "doc_id": "meddies_032400_653f003e",
+        "original_summary": "**Tóm tắt:**  \n- **Thông tin bệnh nhân:** Phạm Thị Thu Hà, nữ, 58 tuổi, nhập viện vì đau bụng, nôn ói nhiều, khó thở nhẹ.  \n- **Chẩn đoán:** Viêm loét dạ dày cấp tính, viêm amidan mạn tính cấp tính.  \n- **Dịch vụ y tế:**  \n  1. Phí giường nội khoa: 500,000 VND/ngày × 3 ngày = 1,500,000 VND  \n  2. Phí giường ngoại khoa: 650,000 VND/ngày × 2 ngày = 1,300,000 VND  \n  3. Phí phẫu thuật/giảm đau: 8,500,000 VND  \n  4. Xét nghiệm: AMYLASE: 1",
+        "redacted_summary": "**Tóm tắt:**  \n- **Thông tin bệnh nhân:** <HUMAN_NAME>, nữ, 58 tuổi, nhập viện vì đau bụng, nôn ói nhiều, khó thở nhẹ.  \n- **Chẩn đoán:** Viêm loét dạ dày cấp tính, viêm amidan mạn tính cấp tính.  \n- **Dịch vụ y tế:**  \n  1. Phí giường nội khoa: 500,000 VND/ngày × 3 ngày = 1,500,000 VND  \n  2. Phí giường ngoại khoa: 650,000 VND/ngày × 2 ngày = 1,300,000 VND  \n  3. Phí phẫu thuật/giảm đau: 8,500,000 VND  \n  4. Xét nghiệm: AMYLASE: 1",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/17)"
+      },
+      {
+        "doc_id": "meddies_032410_831f2cd4",
+        "original_summary": "**Tóm tắt**: Phạm Thị Lan, 82 tuổi, bị suy tim mạn tính ổn định, xơ vữa mạch máu lan tỏa, rối loạn lipid máu, và tiểu đường type 2 không phụ thuộc insulin. Bệnh nhân có triệu chứng mệt mỏi, khó thở, phù nhẹ, và ho. Sau điều trị, bệnh nhân đã giảm đau mỏi vai gáy sau xoa bóp. Hiện tình trạng tạm ổn, nhưng cần kiểm tra lại liều furosemid và xét nghiệm đường huyết và điện giải đồ định kỳ. BS. Trần Văn Bình.",
+        "redacted_summary": "**Tóm tắt**: <HUMAN_NAME>, 82 tuổi, bị suy tim mạn tính ổn định, xơ vữa mạch máu lan tỏa, rối loạn lipid máu, và tiểu đường type 2 không phụ thuộc insulin. Bệnh nhân có triệu chứng mệt mỏi, khó thở, phù nhẹ, và ho. Sau điều trị, bệnh nhân đã giảm đau mỏi vai gáy sau xoa bóp. Hiện tình trạng tạm ổn, nhưng cần kiểm tra lại liều furosemid và xét nghiệm đường huyết và điện giải đồ định kỳ. BS. <HUMAN_NAME>.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/9)"
+      },
+      {
+        "doc_id": "meddies_032460_02cf9b4a",
+        "original_summary": "1. **Patient Information**\n   - Name: Nguyễn Thị Mai\n   - Date of Birth: 15/04/1948\n   - Medical Record Number: BN-2024-5678\n   - Address: Số 12, Đường Láng Hạ, Quận Đống Đa, Hà Nội\n   - Contact Person: Trần Thị Lan\n   - Phone Number: 0912345678\n\n2. **Medical Staff**\n   - Doctor: BS. Phạm Văn Hùng\n   - Physical Therapist: KTV. Lê Thị Thanh\n\n3. **Facility**\n   - Hospital: Bệnh viện Đa khoa Quốc tế Hà Nội\n   - Room: Phòng Vật lý trị liệu số 3\n\n4. **Plan Details**\n   - Diagnosis: Hemiparesis post-stroke\n   - Goal: Improve walking and reduce pain\n   - Frequency: 3",
+        "redacted_summary": "1. **Patient Information**\n   - Name: <HUMAN_NAME>\n   - Date of Birth: <DATE>\n   - Medical Record Number: <ID_NUMBER>\n   - Address: <ADDRESS>\n   - Contact Person: <HUMAN_NAME>\n   - Phone Number: <PHONE_NUMBER>\n\n2. **Medical Staff**\n   - Doctor: BS. <HUMAN_NAME>\n   - Physical Therapist: KTV. <HUMAN_NAME>\n\n3. **Facility**\n   - Hospital: Bệnh viện Đa khoa Quốc tế Hà Nội\n   - Room: Phòng Vật lý trị liệu số 3\n\n4. **Plan Details**\n   - Diagnosis: Hemiparesis post-stroke\n   - Goal: Improve walking and reduce pain\n   - Frequency: 3",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/11)"
+      },
+      {
+        "doc_id": "meddies_032507_6fc401e5",
+        "original_summary": "**Thông Tin Bệnh Nhân**\n\n- **Tên bệnh nhân:** Trần Văn Mười  \n- **Tuổi:** 68  \n- **Giới tính:** Nam  \n- **Địa chỉ:** Số 42, Đường Võ Văn Kiệt, P. An Hòa, Q. Ninh Kiều, TP. Cần Thơ  \n- **Số điện thoại:** 0918.555.012  \n- **Mã bệnh nhân (MRN):** BN88492  \n- **BHYT:** HT7600123456789  \n- **Hạn sử dụng:** 12/2024  \n- **Người nhà:** Trần Thị Hà  \n- **SDT người nhà:** 0939.888.777  \n- **Email bệnh nhân:** tranvanmuoi.cantho@email.com  \n\n**Thông Tin Chuyển Khoa",
+        "redacted_summary": "**Thông Tin Bệnh Nhân**\n\n- **Tên bệnh nhân:** <HUMAN_NAME>  \n- **Tuổi:** 68  \n- **Giới tính:** Nam  \n- **Địa chỉ:** <ADDRESS>  \n- **Số điện thoại:** <PHONE_NUMBER>  \n- **Mã bệnh nhân (MRN):** <ID_NUMBER>  \n- **BHYT:** <ID_NUMBER>  \n- **Hạn sử dụng:** 12/2024  \n- **Người nhà:** <HUMAN_NAME>  \n- **SDT người nhà:** <PHONE_NUMBER>  \n- **Email bệnh nhân:** <EMAIL_ADDRESS>  \n\n**Thông Tin Chuyển Khoa",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/14)"
+      },
+      {
+        "doc_id": "meddies_032526_502a788e",
+        "original_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân:** Phạm Thị Hoa, 72 tuổi, nữ.\n- **Ngày vào viện:** 20/10/2023, 07:45 AM.\n- **Chẩn đoán:** \n  - Hồi sức tim phổi cấp (CPR).\n  - Thrombophlebitis mạch trung tâm (STEMI): vách trái xuống ngọn.\n  - Rối loạn nhịp nhanh thất (SVT): block nhánh phải hoàn toàn.\n  - Tiểu đường type 2 không kiểm soát.\n- **Diễn biến:** \n  - Bệnh nhân bị mất ý thức tại nhà vào 07:15 AM.\n  - Được đưa vào Khoa Cấp cứu vào 07:50 AM, có biểu hiện tím tái, ngưng tuần hoàn hô hấp.\n  - Được đặt ống nội khí quản (ETT 7",
+        "redacted_summary": "### Tóm tắt:\n\n- **Tên bệnh nhân:** <HUMAN_NAME>, 72 tuổi, nữ.\n- **Ngày vào viện:** 20/10/2023, 07:45 AM.\n- **Chẩn đoán:** \n  - Hồi sức tim phổi cấp (CPR).\n  - Thrombophlebitis mạch trung tâm (STEMI): vách trái xuống ngọn.\n  - Rối loạn nhịp nhanh thất (SVT): block nhánh phải hoàn toàn.\n  - Tiểu đường type 2 không kiểm soát.\n- **Diễn biến:** \n  - Bệnh nhân bị mất ý thức tại nhà vào 07:15 AM.\n  - Được đưa vào Khoa Cấp cứu vào 07:50 AM, có biểu hiện tím tái, ngưng tuần hoàn hô hấp.\n  - Được đặt ống nội khí quản (ETT 7",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/8)"
+      },
+      {
+        "doc_id": "meddies_032530_a51dca00",
+        "original_summary": "### Tóm tắt\n\n#### Thông Tin Bệnh Nhân\n- **Tên**: Nguyễn Thị Mai  \n- **Sổ bệnh**: BN-2405-THX  \n- **Ngày ký**: 14/06/2024  \n- **Giáo trình**: Laparoscopic Appendectomy  \n\n#### Chẩn Đoán\n- **Chẩn đoán**: Ruột thừa viêm hoại tử (Appendicitis phlegmonous)\n- **Triệu chứng**: \n  - Hố chậu phải đau quằn quại, ấn đau dương tính, sốt nhẹ 38 độ  \n  - Chẩn đoán hình ảnh: CT Scanner ổ bụng chụp ngày 13/06/2024 cho thấy ruột thừa dãn >10mm, dày manh tràng, ít dịch tự do hố chậu  \n\n#### Thuận lợi/Khó khăn (Kế hoạch phẫu thuật)\n- **Thuận lợi**",
+        "redacted_summary": "### Tóm tắt\n\n#### Thông Tin Bệnh Nhân\n- **Tên**: <HUMAN_NAME>  \n- **Sổ bệnh**: <ID_NUMBER>  \n- **Ngày ký**: <DATE>  \n- **Giáo trình**: Laparoscopic Appendectomy  \n\n#### Chẩn Đoán\n- **Chẩn đoán**: Ruột thừa viêm hoại tử (Appendicitis phlegmonous)\n- **Triệu chứng**: \n  - Hố chậu phải đau quằn quại, ấn đau dương tính, sốt nhẹ 38 độ  \n  - Chẩn đoán hình ảnh: CT Scanner ổ bụng chụp ngày <DATE> cho thấy ruột thừa dãn >10mm, dày manh tràng, ít dịch tự do hố chậu  \n\n#### Thuận lợi/Khó khăn (Kế hoạch phẫu thuật)\n- **Thuận lợi**",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/8)"
+      },
+      {
+        "doc_id": "meddies_032545_0b340ac6",
+        "original_summary": "- **Tên bệnh nhân**: Phạm Văn Hùng  \n- **Ngày sinh**: 12/04/1965 (68 tuổi)  \n- **Số ĐK KCB/BHYT**: HC1234567890123  \n- **Số điện thoại**: 0912 345 678  \n- **Địa chỉ**: Ngõ 45, Đường Tôn Thất Thuyết, Cầu Giấy  \n- **Nghề nghiệp**: Cán bộ hưu trí  \n- **Người bảo hộ**: Phạm Thị Lan (Vợ)\n\n- **Lý do vào viện**: Ho nhiều đờm xanh, khó thở tăng dần 3 ngày nay  \n- **Diễn biến lâm sàng**:  \n  - Ho khan chuyển sang ho có đờm màu xanh đậm, sốt nhẹ về chiều (38 độ C).  \n ",
+        "redacted_summary": "- **Tên bệnh nhân**: <HUMAN_NAME>  \n- **Ngày sinh**: 12/04/1965 (68 tuổi)  \n- **Số ĐK KCB/BHYT**: <ID_NUMBER>  \n- **Số điện thoại**: 0912 345 678  \n- **Địa chỉ**: Ngõ 45, Đường Tôn Thất Thuyết, Cầu Giấy  \n- **Nghề nghiệp**: Cán bộ hưu trí  \n- **Người bảo hộ**: <HUMAN_NAME> (Vợ)\n\n- **Lý do vào viện**: Ho nhiều đờm xanh, khó thở tăng dần 3 ngày nay  \n- **Diễn biến lâm sàng**:  \n  - Ho khan chuyển sang ho có đờm màu xanh đậm, sốt nhẹ về chiều (38 độ C).  \n ",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/7)"
+      },
+      {
+        "doc_id": "meddies_032594_95e1ea50",
+        "original_summary": "### Tóm tắt\n\n- **Tên bệnh nhân**: Nguyễn Văn A\n- **Năm sinh**: 1942\n- **CMND**: 01234567891\n- **Địa chỉ**: Số 45, Đường Lê Lợi, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh\n- **Ngày nhập viện**: 15/01/2024\n- **Người lập hồ sơ**: BS. Nguyễn Văn C\n- **Chẩn đoán**: Viêm phổi hít\n- **Điều trị**: Ceftriaxon 1g, Pantoprazol 40mg\n- **Ngày xuất viện**: 20/01/2024\n- **Dịch vụ dược sĩ**: BS. Lê Thị D\n- **Email bệnh viện**: benhviendt@example.com",
+        "redacted_summary": "### Tóm tắt\n\n- **Tên bệnh nhân**: <HUMAN_NAME>\n- **Năm sinh**: 1942\n- **CMND**: <ID_NUMBER>\n- **Địa chỉ**: <ADDRESS>\n- **Ngày nhập viện**: <DATE>\n- **Người lập hồ sơ**: <HUMAN_NAME>\n- **Chẩn đoán**: Viêm phổi hít\n- **Điều trị**: Ceftriaxon 1g, Pantoprazol 40mg\n- **Ngày xuất viện**: <DATE>\n- **Dịch vụ dược sĩ**: <HUMAN_NAME>\n- **Email bệnh viện**: <EMAIL_ADDRESS>",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/13)"
+      },
+      {
+        "doc_id": "meddies_032601_cee0edc7",
+        "original_summary": "**Thông Tin Người Bị:**  \n- Họ và tên: Trần Văn Nam  \n- Sinh năm: 1962  \n- Tuổi: 61  \n- Giới tính: Nam  \n- Nơi sinh: TP.HCM  \n- Nơi thường trú: TP.HCM  \n- Nghề nghiệp: Kỹ sư xây dựng  \n- Số CCCD/CMND: 079302XXXXXX  \n- Mã số BHYT: GD701XXXXXX  \n- Mã số Bệnh án: BVQT_2023_849210  \n- Mã vân tay xác nhận: 849210_FINGERPRINT_01  \n\n**Chẩn Đoán:**  \n- Cục máu đông phổi nghi ngờ (Pulmonary Embolism)  \n- Suy tim cấp độ III (NYHA)  \n- Tắc nhánh phổi thứ cấp do huyết khối sâu chi",
+        "redacted_summary": "**Thông Tin Người Bị:**  \n- Họ và tên: <HUMAN_NAME>  \n- Sinh năm: 1962  \n- Tuổi: 61  \n- Giới tính: Nam  \n- Nơi sinh: TP.HCM  \n- Nơi thường trú: TP.HCM  \n- Nghề nghiệp: Kỹ sư xây dựng  \n- Số CCCD/CMND: 079302XXXXXX  \n- Mã số BHYT: GD701XXXXXX  \n- Mã số Bệnh án: BVQT_2023_849210  \n- Mã vân tay xác nhận: 849210_FINGERPRINT_01  \n\n**Chẩn Đoán:**  \n- Cục máu đông phổi nghi ngờ (Pulmonary Embolism)  \n- Suy tim cấp độ III (NYHA)  \n- Tắc nhánh phổi thứ cấp do huyết khối sâu chi",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/5)"
+      },
+      {
+        "doc_id": "meddies_032621_342d28f1",
+        "original_summary": "**Thông Tin Bệnh Nhân**\n\n- **Tên**: Kim Min-joon\n- **Ngày Sinh**: 15/08/1988\n- **Giới Tính**: Nam\n- **Quốc Tịch**: Hàn Quốc\n- **Địa Chỉ Thường Trú**: Tầng 12, Tòa Nhà Thăng Long Number One, 88 Láng Hạ, Phường Láng Hạ, Quận Đống Đa\n- **Số Điện Thoại**: 84-90-1234-5678\n- **Email Liên Hệ**: kim.minjoon.seoul@email.com\n- **Số Hộ Chứng/CCCD**: C123456789\n- **Mã Số BHYT**: GD1234567890123\n- **Mã Bệnh Nhân (MRN)**: HJK2",
+        "redacted_summary": "**Thông Tin Bệnh Nhân**\n\n- **Tên**: <HUMAN_NAME>\n- **Ngày Sinh**: <DATE>\n- **Giới Tính**: Nam\n- **Quốc Tịch**: Hàn Quốc\n- **Địa Chỉ Thường Trú**: <ADDRESS>\n- **Số Điện Thoại**: <PHONE_NUMBER>\n- **Email Liên Hệ**: <EMAIL_ADDRESS>\n- **Số Hộ Chứng/CCCD**: <ID_NUMBER>\n- **Mã Số BHYT**: <ID_NUMBER>\n- **Mã Bệnh Nhân (MRN)**: HJK2",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/19)"
+      },
+      {
+        "doc_id": "meddies_032610_55fec92a",
+        "original_summary": "**Tóm tắt**:  \nTrần Văn Mến, nam 58 tuổi, đến bệnh viện vào ngày 18/05/2024 vì các triệu chứng đau bụng, đi ngoài phân lỏng nhiều, ăn uống khó khăn, không sốt, không ói. Bệnh nhân đã khám tại bệnh viện đa khoa TP.HCM. Hiện trạng sức khỏe: huyết áp 145/85 mmHg, nhịp tim 88 lần/phút, nhiệt độ 37.1 độ C, SpO2 98%. Hệ tiêu hóa: bụng mềm, ấn đau vùng hố chậu, tiếng ruột hơi giảm, gan lách không to, không trướng bụng. Các xét nghiệm: CBC: WBC 12.5, Hb 13.5 g/dL, Hct 40%, PLT 250.000; CBC sinh hóa:",
+        "redacted_summary": "**Tóm tắt**:  \n<HUMAN_NAME>, nam 58 tuổi, đến bệnh viện vào ngày <DATE> vì các triệu chứng đau bụng, đi ngoài phân lỏng nhiều, ăn uống khó khăn, không sốt, không ói. Bệnh nhân đã khám tại bệnh viện đa khoa TP.HCM. Hiện trạng sức khỏe: huyết áp 145/85 mmHg, nhịp tim 88 lần/phút, nhiệt độ 37.1 độ C, SpO2 98%. Hệ tiêu hóa: bụng mềm, ấn đau vùng hố chậu, tiếng ruột hơi giảm, gan lách không to, không trướng bụng. Các xét nghiệm: CBC: WBC 12.5, Hb 13.5 g/dL, Hct 40%, PLT 250.000; CBC sinh hóa:",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/15)"
+      },
+      {
+        "doc_id": "meddies_032637_3470d58d",
+        "original_summary": "**Tóm tắt:** \n\n- **Tên bệnh nhân**: Trần Văn Bình\n- **Ngày sinh**: 15/08/1985\n- **Giới tính**: Nam\n- **Địa chỉ**: Lô F3, Khu Công Nghiệp Mỹ Phước 2, Thị xã Bến Cát, Tỉnh Bình Dương\n- **Số điện thoại**: 0918 555 123\n- **Email**: tranbinh.f3@company.com\n- **Mã bệnh nhân**: BH-850815-00456\n- **Số bảo hiểm y tế**: HD9876543210987\n- **Ngày tiếp nhận**: 15/10/2023 08:30\n- **Bác sĩ chỉ định**: Thạc sĩ. Nguyễn Thị Lan\n- **",
+        "redacted_summary": "**Tóm tắt:** \n\n- **Tên bệnh nhân**: <HUMAN_NAME>\n- **Ngày sinh**: 15/08/1985\n- **Giới tính**: Nam\n- **Địa chỉ**: Lô F3, Khu Công Nghiệp Mỹ Phước 2, Thị xã Bến Cát, Tỉnh Bình Dương\n- **Số điện thoại**: <PHONE_NUMBER>\n- **Email**: <EMAIL_ADDRESS>\n- **Mã bệnh nhân**: <ID_NUMBER>\n- **Số bảo hiểm y tế**: <ID_NUMBER>\n- **Ngày tiếp nhận**: 15/10/2023 08:30\n- **Bác sĩ chỉ định**: Thạc sĩ. Nguyễn Thị Lan\n- **",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/12)"
+      },
+      {
+        "doc_id": "meddies_032648_fb7de3e2",
+        "original_summary": "Dữ liệu y tế giả lập về bệnh nhân Lê Thị Minh Châu:\n\n- Mã hồ sơ: MRN: 749281; ID Thanh toán: BH-2024-99812\n- Ngày sinh: 15/08/1976; Tuổi: 48 tuổi; Giới tính: Nàng\n- Địa chỉ liên hệ: Số 12, Đường Lý Thường Kiệt, P.14, Q. Tân Bình; Số điện thoại: 0938.554.112; Email xác nhận: chau.le.76@medcare.vn\n- Ngày giờ nhập viện: 08:30, 24/10/2024; Khoa chỉ định: Khoa Gây mê hồi sức; Bác sĩ chỉ định: BS. Nguyễn Văn Hùng\n\nBệnh nhân có triệu chứng đau thượng vị dữ",
+        "redacted_summary": "Dữ liệu y tế giả lập về bệnh nhân <HUMAN_NAME>:\n\n- Mã hồ sơ: MRN: <ID_NUMBER>; ID Thanh toán: <ID_NUMBER>\n- Ngày sinh: <DATE>; Tuổi: 48 tuổi; Giới tính: Nàng\n- Địa chỉ liên hệ: <ADDRESS>; Số điện thoại: <PHONE_NUMBER>; Email xác nhận: <EMAIL_ADDRESS>\n- Ngày giờ nhập viện: <DATE>; Khoa chỉ định: Khoa Gây mê hồi sức; Bác sĩ chỉ định: <HUMAN_NAME>\n\nBệnh nhân có triệu chứng đau thượng vị dữ",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/13)"
+      },
+      {
+        "doc_id": "meddies_032666_5f4b3163",
+        "original_summary": "**Thông Tin Cá Nhân:**\n- **Tên:** Lý Thị Thuý Hằng  \n- **Ngày Sinh:** 30/11/2016  \n- **Tuổi:** 7 năm  \n- **Giới Tính:** Nữ  \n- **Điện Thoại:** 0975 112 233  \n- **Địa Chỉ Thường Trú:** Ngách 12/43/51/7 Hẻm 120 Đường 3/2, P.15, Q.8  \n- **Số CCCD/Mã BN:** 849201654321  \n- **Người Giám hộ:** Ông Lý Văn Mão (Cha Ruột)  \n- **Liên Lạc Khẩn Cấp:** Bà Nguyễn Thị Mười (Bà Ngoại)\n\n**Lịch Sử Tiêm Chủng Cơ Bản:**\n- **Lao",
+        "redacted_summary": "**Thông Tin Cá Nhân:**\n- **Tên:** <HUMAN_NAME>  \n- **Ngày Sinh:** <DATE>  \n- **Tuổi:** 7 năm  \n- **Giới Tính:** Nữ  \n- **Điện Thoại:** <PHONE_NUMBER>  \n- **Địa Chỉ Thường Trú:** <ADDRESS>  \n- **Số CCCD/Mã BN:** <ID_NUMBER>  \n- **Người Giám hộ:** <HUMAN_NAME> (Cha Ruột)  \n- **Liên Lạc Khẩn Cấp:** <HUMAN_NAME> (Bà Ngoại)\n\n**Lịch Sử Tiêm Chủng Cơ Bản:**\n- **Lao",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/18)"
+      },
+      {
+        "doc_id": "meddies_032658_f4fe0bea",
+        "original_summary": "### Tóm tắt:\n\nTrần Văn Mạnh, nam, 78 tuổi, bị ngưng tuần hoàn sau nhồi máu cơ tim cấp dưới đoạn inferior (STEMI). Có tiền sử cao huyết áp 15 năm, đang dùng losartan 50mg. Có COPD GOLD C, hút thuốc lá lá >40 năm (bỏ thuốc 5 năm trước). Nhồi máu cơ tim cấp lần 1 vào năm 2019, đã can thiệp stent LAD. \n\nNgày 15/10/2023, 10:15, bệnh nhân vào viện với tình trạng tím tái, SpO2 75%, khó thở dữ dội, vã mồ hôi. Đặt catheter tĩnh mạch trung ương, truyền dịch Noradrenaline 0.05 mcg/kg/min. \n\nECG: ST chênh lênird tại D",
+        "redacted_summary": "### Tóm tắt:\n\n<HUMAN_NAME>, nam, 78 tuổi, bị ngưng tuần hoàn sau nhồi máu cơ tim cấp dưới đoạn inferior (STEMI). Có tiền sử cao huyết áp 15 năm, đang dùng losartan 50mg. Có COPD GOLD C, hút thuốc lá lá >40 năm (bỏ thuốc 5 năm trước). Nhồi máu cơ tim cấp lần 1 vào năm 2019, đã can thiệp stent LAD. \n\nNgày 15/10/<DATE>, <DATE>, bệnh nhân vào viện với tình trạng tím tái, SpO2 75%, khó thở dữ dội, vã mồ hôi. Đặt catheter tĩnh mạch trung ương, truyền dịch Noradrenaline 0.05 mcg/kg/min. \n\nECG: ST chênh lênird tại D",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/13)"
+      },
+      {
+        "doc_id": "meddies_032699_59fad269",
+        "original_summary": "**Thông Tin Bệnh Nhân**\n\n- **Tên**: Lê Thanh Tuấn  \n- **Ngày Sinh**: 15/08/1992  \n- **Giới Tính**: Nam  \n- **Địa Chỉ**: Số 45, Đường Lê Văn Sỹ, Phường 2, Quận 3, TP.HCM  \n- **Số Điện Thoại**: 0903 555 7891  \n- **Địa Chỉ Email**: tuan.le.1992@outlook.com  \n- **Mã Bệnh Nhân (MRN)**: MH-1992-RES-8842  \n- **Số Bảo Hiểm Y Tế**: HD9876543210123  \n- **CMND/CCCD**: 079203004999  \n- **Số Hồ Sơ Tiêm",
+        "redacted_summary": "**Thông Tin Bệnh Nhân**\n\n- **Tên**: <HUMAN_NAME>  \n- **Ngày Sinh**: <DATE>  \n- **Giới Tính**: Nam  \n- **Địa Chỉ**: <ADDRESS>  \n- **Số Điện Thoại**: <PHONE_NUMBER>  \n- **Địa Chỉ Email**: <EMAIL_ADDRESS>  \n- **Mã Bệnh Nhân (MRN)**: <ID_NUMBER>  \n- **Số Bảo Hiểm Y Tế**: <ID_NUMBER>  \n- **CMND/CCCD**: <ID_NUMBER>  \n- **Số Hồ Sơ Tiêm",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/33)"
+      },
+      {
+        "doc_id": "meddies_032719_c72e0524",
+        "original_summary": "Robert Johnson, quốc tịch Mỹ, đã vào viện tại Trung tâm Y khoa Quốc tế Alpha vào ngày 14/08/2024. Ông bị chẩn đoán có cơn đau thắt ngực không ổn định (unstable angina), tăng huyết áp độ 2 và đái tháo đường type 2 không kiểm soát. Bệnh nhân đã được điều trị bằng cách đặt catheter động mạch vành với stent LAD và được hướng dẫn tái khám đúng hẹn, kiêng hút thuốc lá, uống aspirin và clopidogrel, và dùng atorvastatin và bisoprolol. Tổng chi phí cho các dịch vụ y tế là 125 triệu đồng.",
+        "redacted_summary": "<HUMAN_NAME>, quốc tịch Mỹ, đã vào viện tại Trung tâm Y khoa Quốc tế Alpha vào ngày <DATE>. Ông bị chẩn đoán có cơn đau thắt ngực không ổn định (unstable angina), tăng huyết áp độ 2 và đái tháo đường type 2 không kiểm soát. Bệnh nhân đã được điều trị bằng cách đặt catheter động mạch vành với stent LAD và được hướng dẫn tái khám đúng hẹn, kiêng hút thuốc lá, uống aspirin và clopidogrel, và dùng atorvastatin và bisoprolol. Tổng chi phí cho các dịch vụ y tế là 125 triệu đồng.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/17)"
+      },
+      {
+        "doc_id": "meddies_032727_d90b0518",
+        "original_summary": "### Tóm tắt\n\n#### Hồ sơ bệnh án:\n\n**Tên bệnh nhân**: Phạm Thị Mai  \n**Ngày sinh**: 15/08/1958  \n**Giới tính**: Nữ  \n**Địa chỉ**: Ngách 12/43/51 Hẻm 78, Đường Số 12, Phường Hiệp Bình Chánh, Quận Thủ Đức, TP. Hồ Chí Minh  \n**Số điện thoại**: 0905 123 456  \n**Người liên hệ**: Nguyễn Văn Bình (0987 654 321)\n\n#### Yêu cầu đặc biệt:\n- Địa chỉ \"hẻm sâu\": Ngách 12/43/51 Hẻm 78, Đường Số 12, Phường Hiệp Bình Chánh, Quận Thủ Đức, TP. Hồ Chí Minh  \n- Không dán nhãn sai vào các chỉ số",
+        "redacted_summary": "### Tóm tắt\n\n#### Hồ sơ bệnh án:\n\n**Tên bệnh nhân**: <HUMAN_NAME>  \n**Ngày sinh**: <DATE>  \n**Giới tính**: Nữ  \n**Địa chỉ**: <ADDRESS>  \n**Số điện thoại**: <PHONE_NUMBER>  \n**Người liên hệ**: <HUMAN_NAME> (<PHONE_NUMBER>)\n\n#### Yêu cầu đặc biệt:\n- Địa chỉ \"hẻm sâu\": <ADDRESS>  \n- Không dán nhãn sai vào các chỉ số",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/9)"
+      },
+      {
+        "doc_id": "meddies_032742_9533d1ee",
+        "original_summary": "### Tóm tắt\n\n#### 1. Thông Tin Hành Chính\n- **Tên**: Trần Văn Hùng, Nguyễn Thị Lan\n- **Ngày Sinh**: 15/08/1968, 10/15/2023\n- **Mã BN**: 00123456789, BH-123456\n- **Địa Chỉ**: Số 18, Ngõ 5, Thôn 3, Xã Thanh Sơn, Huyện Tam Đảo, Tỉnh Vĩnh Phúc\n- **Người Bảo Lãnh**: Bà Nguyễn Thị Lan (Vợ)\n\n#### 2. Lịch Sử BỆNH TẬP TRUNG\n- **Ngày Tiếp Nhận**: 14/10/2023\n- **Ngày Tiếp Nhận Ban Đầu Tiên**: 14/10/2023\n-",
+        "redacted_summary": "### Tóm tắt\n\n#### 1. Thông Tin Hành Chính\n- **Tên**: <HUMAN_NAME>, <HUMAN_NAME>\n- **Ngày Sinh**: <DATE>, <DATE>\n- **Mã BN**: <ID_NUMBER>, <ID_NUMBER>\n- **Địa Chỉ**: <ADDRESS>\n- **Người Bảo Lãnh**: <HUMAN_NAME> (Vợ)\n\n#### 2. Lịch Sử BỆNH TẬP TRUNG\n- **Ngày Tiếp Nhận**: <DATE>\n- **Ngày Tiếp Nhận Ban Đầu Tiên**: <DATE>\n-",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/29)"
+      },
+      {
+        "doc_id": "meddies_032740_7e66efd6",
+        "original_summary": "**Tóm tắt**:  \n- **Tên bệnh nhân**: Trịnh Hoàng Gia Huy Hưng  \n- **Ngày sinh**: 15/08/1978  \n- **Số hồ sơ**: VN-HOSP-8849201  \n- **Số CMND/CCCD**: 025984001448  \n- **Địa chỉ thường trú**: Số 42, Đường Lý Thái Tổ, Phường 2, Quận 10, TP. Hồ Chí Minh  \n- **Email**: huyhung.trinh@domainhospital.com  \n- **Người đại diện**: Bà Nguyễn Thị Thanh Tuyền  \n- **Số điện thoại**: 0987 654 321",
+        "redacted_summary": "**Tóm tắt**:  \n- **Tên bệnh nhân**: <HUMAN_NAME>  \n- **Ngày sinh**: <DATE>  \n- **Số hồ sơ**: <ID_NUMBER>  \n- **Số CMND/CCCD**: <ID_NUMBER>  \n- **Địa chỉ thường trú**: <ADDRESS>  \n- **Email**: <EMAIL_ADDRESS>  \n- **Người đại diện**: <HUMAN_NAME>  \n- **Số điện thoại**: <PHONE_NUMBER>",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/14)"
+      },
+      {
+        "doc_id": "meddies_032755_7a125678",
+        "original_summary": "### Tóm tắt:\n\n- **Thông tin bệnh nhân**: Nguyễn Văn A, 78 tuổi, nam giới, sinh ngày 15/08/1963, đang ở tại địa chỉ số 45 Đường 3/2, Phường 11, Quận 10, TP. Hồ Chí Minh.\n- **Ngày chỉ định**: 20/11/2023, do tăng huyết áp và đái tháo đường type 2.\n- **Loại khảo sát**: CT Scan não và lồng ngực.\n- **Phương pháp chụp**: Sử dụng máy Siemens Somatom Drive 128 slices.\n- **Thông số kỹ thuật**: KV 120, mAs 250, FOV 300mm.\n- **Triệu chứng lâm sàng**: Giai đoạn cấp tính, bệnh nhân ý thức lơ mơ, đờ mắt, nôn ói, huyết",
+        "redacted_summary": "### Tóm tắt:\n\n- **Thông tin bệnh nhân**: Nguyễn Văn A, 78 tuổi, nam giới, sinh ngày <DATE>, đang ở tại địa chỉ <ADDRESS>.\n- **Ngày chỉ định**: <DATE>, do tăng huyết áp và đái tháo đường type 2.\n- **Loại khảo sát**: CT Scan não và lồng ngực.\n- **Phương pháp chụp**: Sử dụng máy Siemens Somatom Drive 128 slices.\n- **Thông số kỹ thuật**: KV 120, mAs 250, FOV 300mm.\n- **Triệu chứng lâm sàng**: Giai đoạn cấp tính, bệnh nhân ý thức lơ mơ, đờ mắt, nôn ói, huyết",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/15)"
+      },
+      {
+        "doc_id": "meddies_032738_1cefcb05",
+        "original_summary": "**Tóm tắt**: \n\nTrên bệnh nhân Trần Văn Nam, 58 tuổi, có tiền sử tăng huyết áp 10 năm, đang điều trị với telmisartan 40mg. Recent symptoms include chest pain on exertion and shortness of breath. Các test siêu âm cho thấy teo cơ tim và rối loạn vận động vách cơ tim trái. Cần theo dõi và điều trị phù hợp.",
+        "redacted_summary": "**Tóm tắt**: \n\nTrên bệnh nhân <HUMAN_NAME>, 58 tuổi, có tiền sử tăng huyết áp 10 năm, đang điều trị với telmisartan 40mg. Recent symptoms include chest pain on exertion and shortness of breath. Các test siêu âm cho thấy teo cơ tim và rối loạn vận động vách cơ tim trái. Cần theo dõi và điều trị phù hợp.",
+        "still_leaked_pii": false,
+        "leak_details": "No PII leaked (0/12)"
+      }
+    ]
+  },
+  "raw_documents_test": {
+    "total_tested": 0,
+    "leaked_after_filter": 0,
+    "details": []
+  }
+}
