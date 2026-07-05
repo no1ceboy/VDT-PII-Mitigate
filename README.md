@@ -1,14 +1,12 @@
-# Mitigating Natural PII Leakage in Vietnamese Clinical Summarization via Capability-Protected Preference Optimization
+# VDT-PII-Mitigate: Mitigating Natural PII Leakage in Vietnamese Clinical Summarization
 
-This repository is the official open-source implementation for our ACL/EMNLP submission: **"Mitigating Natural PII Leakage in Vietnamese Clinical Summarization via Capability-Protected Preference Optimization"**.
+This repository is an open-source project and evaluation toolkit designed to detect and mitigate **Natural PII Leakage** in Vietnamese clinical document summarization.
 
-We investigate the critical vulnerability of **Natural PII Leakage** in low-resource abstractive clinical summarization. Unlike artificial adversarial prompt injection, natural leakage occurs when a compact language model ($\le 7\text{B}$ parameters) natively reproduces sensitive patient identifiers (names, admission dates, phone numbers, national IDs) from unstructured medical case notes during routine summarization.
+Unlike adversarial prompt injection or jailbreak attacks, natural leakage occurs when compact language models ($\le 7\text{B}$ parameters) natively repeat sensitive patient identifiers—such as patient names, admission dates, contact phone numbers, and national identification numbers—from unstructured clinical case notes during routine abstractive summarization.
 
-## 🌟 Overview
-
-1. **Extrinsic Defenses:** We evaluate zero-shot instruction guardrailing and inference-time heuristic filters (regex + NER masking wrappers) in low-resource clinical summarization workflows.
-2. **Intrinsic Parametric Alignment via DPO:** We introduce `vdt_pii_dpo`, an empirically curated contrastive preference dataset of 489 clinical pairs. Parameter-Efficient Fine-Tuning via Direct Preference Optimization (QLoRA DPO) internalizes a redaction policy directly into the model weights ($\pi_\theta$) without auxiliary middleware processing.
-3. **The Privacy-Utility Pareto Frontier (OGPSA-DPO):** To mitigate the **Alignment Tax** (loss of general summarization capability), we implement **Orthogonal Gradient Projection for Subspace Alignment (OGPSA-DPO)** using an anchor corpus from VLSP to project preference updates orthogonally away from the general language subspace.
+This project implements and evaluates two parameter-efficient alignment strategies to suppress natural leakage directly in model weights without relying on inference-time middleware filters:
+1. **Standard QLoRA DPO:** Direct Preference Optimization fine-tuning using curated contrastive clinical preference pairs (`vdt_pii_dpo`).
+2. **Capability-Protected Alignment (OGPSA-DPO):** Orthogonal Gradient Projection for Subspace Alignment, which constrains preference gradient updates to remain orthogonal to general Vietnamese language capabilities (anchored on VLSP summarization data) to prevent catastrophic forgetting.
 
 ---
 
@@ -16,31 +14,29 @@ We investigate the critical vulnerability of **Natural PII Leakage** in low-reso
 
 ```text
 VDT-PII-Mitigate/
-├── README.md                  # This document
+├── README.md                  # Project documentation
 ├── requirements.txt           # Python dependency specifications
-├── docs/                      # LaTeX manuscript, custom BibTeX, and figures
-│   └── ACL_Template_VDT/      # Complete ACL/EMNLP LaTeX paper source
 ├── ogpsa_patches/             # Compatibility patches for SunGL001/OGPSA
-├── scripts/                   # PowerShell scripts to reproduce all experiments
+├── scripts/                   # Automated execution pipelines
 │   ├── 01_prepare_datasets.ps1 # Generate contrastive DPO & VLSP anchor datasets
 │   ├── 02_train_models.ps1    # Train Standard DPO and OGPSA-DPO LoRA adapters
-│   └── 03_run_evaluations.ps1 # Run holdout benchmarks & compute table metrics
-├── src/                       # Core research codebase
+│   └── 03_run_evaluations.ps1 # Execute privacy benchmarks and evaluation metrics
+├── src/                       # Core project codebase
 │   ├── pii_leakage_evaluator.py # Exact-match PII entity leakage calculation
 │   ├── generate_natural_dpo.py  # Curation pipeline for vdt_pii_dpo dataset
 │   ├── train_defense.py       # QLoRA DPO and custom OGPSA SVD trainer
 │   ├── openai_privacy_filter.py # Inference-time baseline regex + NER wrapper
 │   ├── survey_natural_leakage.py# Baseline leakage benchmark on Meddies holdout
-│   ├── survey_prompt_defense.py # Zero-shot HIPAA guardrail benchmark
+│   ├── survey_prompt_defense.py # Zero-shot instruction guardrail benchmark
 │   ├── survey_filter_effectiveness.py # Baseline filter benchmark
 │   ├── evaluate_defense.py    # Holdout evaluation for trained LoRA adapters
 │   ├── evaluate_capability.py # ROUGE and verbosity evaluation on VLSP
 │   ├── evaluate_ragas_judge.py  # LLM-as-a-Judge semantic quality scoring
-│   ├── calculate_real_stats.py  # Calculates Table 1 dataset properties
-│   └── calculate_table2_metrics.py # Calculates Table 2 privacy metrics
+│   ├── calculate_real_stats.py  # Calculates dataset properties
+│   └── calculate_table2_metrics.py # Calculates privacy mitigation metrics
 └── results/                   # Experimental logs and benchmark archives
-    ├── benchmarks/            # Raw JSON reports for evaluation tables
-    └── figures/               # High-resolution training dynamics diagrams
+    ├── benchmarks/            # JSON evaluation reports
+    └── figures/               # Training dynamics diagrams
 ```
 
 ---
@@ -70,25 +66,25 @@ pip install -e ./OGPSA
 
 ---
 
-## 📊 Reproducing the Paper's Benchmarks
+## 📊 Running Pipelines & Benchmarks
 
-All datasets, training trajectories, and benchmark evaluations can be reproduced using our automated scripts in `scripts/`.
+All datasets, training runs, and evaluation benchmarks can be executed using the automated scripts in `scripts/`.
 
-### Step 1: Prepare Datasets (`Table 1`)
+### Step 1: Prepare Datasets
 Generates the contrastive clinical preference pairs (`vdt_pii_dpo`) and formats the general domain summarization examples from VLSP:
 ```powershell
 .\scripts\01_prepare_datasets.ps1
 python src/calculate_real_stats.py
 ```
 
-### Step 2: Train Privacy-Aligned Models (`Figure 2`)
-Fine-tunes `Qwen/Qwen2.5-1.5B-Instruct` using Standard QLoRA DPO and Orthogonal Gradient Projection (OGPSA-DPO), logging loss curves and reward margins:
+### Step 2: Train Privacy-Aligned Models
+Fine-tunes `Qwen/Qwen2.5-1.5B-Instruct` using Standard QLoRA DPO and Orthogonal Gradient Projection (OGPSA-DPO):
 ```powershell
 .\scripts\02_train_models.ps1
 ```
 
-### Step 3: Run Out-of-Distribution Benchmarks (`Table 2`, `Table 3`, `Table 4`)
-Evaluates all defense paradigms on our unseen holdout clinical evaluation benchmark and general domain VLSP test set:
+### Step 3: Run Privacy & Capability Benchmarks
+Evaluates baseline models, heuristic filters, and trained DPO adapters on holdout clinical datasets and general domain summaries:
 ```powershell
 .\scripts\03_run_evaluations.ps1
 ```
