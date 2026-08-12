@@ -28,6 +28,13 @@ def get_doc_map(dataset="vlsp", limit=500):
             docs = dl._load_vlsp(limit=limit)
         elif dataset == "vietnews":
             docs = dl._load_vietnews(limit=limit)
+        elif dataset == "medical":
+            try:
+                from src.survey_natural_leakage import load_from_hf
+                docs = load_from_hf(dataset_name="Meddies/meddies-pii", config_name="vietnamese", split="train", limit=limit, offset=2000)
+            except Exception as e:
+                print(f"[WARN] Failed to fetch HF holdout set: {e}. Falling back to local medical holdout...")
+                docs = dl.load_all(["medical"], limit_per_dataset=limit)
         else:
             docs = dl.load_all([dataset], limit_per_dataset=limit)
     except Exception as e:

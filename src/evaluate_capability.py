@@ -146,11 +146,19 @@ def main():
     # Load dataset
     data_loader = DataLoader("datasets")
     if args.dataset == "vlsp":
-        docs = data_loader._load_vlsp(limit=args.limit * 2)
+        docs = data_loader._load_vlsp(limit=args.limit * 2 if not args.score_existing_file else 1000)
     elif args.dataset == "vietnews":
-        docs = data_loader._load_vietnews(limit=args.limit * 2)
+        docs = data_loader._load_vietnews(limit=args.limit * 2 if not args.score_existing_file else 1000)
+    elif args.dataset == "medical":
+        try:
+            from src.survey_natural_leakage import load_from_hf
+            docs = load_from_hf(dataset_name="Meddies/meddies-pii", config_name="vietnamese", split="train", limit=args.limit * 2 if not args.score_existing_file else 500, offset=2000)
+            print(f"[INFO] Loaded medical holdout from Hugging Face.")
+        except Exception as e:
+            print(f"[WARN] Failed to fetch HF holdout set: {e}. Falling back to local medical holdout...")
+            docs = data_loader.load_all(["medical"], limit_per_dataset=args.limit * 2 if not args.score_existing_file else 1000)
     else:
-        docs = data_loader.load_all([args.dataset], limit_per_dataset=args.limit * 2)
+        docs = data_loader.load_all([args.dataset], limit_per_dataset=args.limit * 2 if not args.score_existing_file else 1000)
         
     # Take the last `limit` documents as unseen holdout
     if len(docs) > args.limit:
