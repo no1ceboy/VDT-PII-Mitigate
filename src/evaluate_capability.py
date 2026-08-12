@@ -132,9 +132,10 @@ def main():
     parser.add_argument("--base_model", type=str, default="Qwen/Qwen2.5-1.5B-Instruct", help="Base model ID")
     parser.add_argument("--dpo_model_path", type=str, default="results/defense_model_standard", help="Path to Standard DPO adapter")
     parser.add_argument("--ogpsa_model_path", type=str, default="results/defense_model_ogpsa", help="Path to OGPSA DPO adapter")
-    parser.add_argument("--dataset", type=str, choices=["vlsp", "vietnews", "legal"], default="vlsp", help="Clean dataset to evaluate capability on")
+    parser.add_argument("--dataset", type=str, choices=["vlsp", "vietnews", "legal", "medical"], default="vlsp", help="Clean dataset to evaluate capability on")
     parser.add_argument("--limit", type=int, default=30, help="Number of clean holdout documents to test")
     parser.add_argument("--output_file", type=str, default="results/capability_results.json", help="Path to save capability report")
+    parser.add_argument("--score_existing_file", type=str, default="", help="Path to an existing defense_results_detailed.json to score offline")
     args = parser.parse_args()
     
     print("="*80)
@@ -159,6 +160,43 @@ def main():
         
     print(f"Loaded {len(test_docs)} clean test documents for capability evaluation.")
     
+    if args.score_existing_file:
+        print(f"\n--- OFFLINE SCORING MODE ---")
+        print(f"Reading existing generations from {args.score_existing_file}")
+        with open(args.score_existing_file, "r", encoding="utf-8") as f:
+            existing_data = json.load(f)
+            
+        results = {}
+        items = existing_data.get("detailed_results", [])
+        for item in tqdm(items, desc="Scoring offline"):
+            model_name = item.get("model", "unknown")
+            doc_id = item.get("doc_id")
+            out_text = item.get("output", "")
+            
+            doc = next((d for d in docs if d.id == doc_id), None)
+            if not doc:
+                continue
+                
+            if model_name not in results:
+                results[model_name] = []
+                
+            rouge = compute_rouge(out_text, doc.reference_summary)
+            len_ratio = len(out_text) / max(1, len(doc.reference_summary))
+            
+            results[model_name].append({
+                "doc_id": doc.id,
+                "rouge1": rouge["rouge1"],
+                "rouge2": rouge["rouge2"],
+                "rougeL": rouge["rougeL"],
+                "len_ratio": len_ratio,
+                "output": out_text
+            })
+            
+        with open(args.output_file, "w", encoding="utf-8") as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
+        print(f"Done! Results saved to {args.output_file}")
+        return
+        
     models_to_test = ["Base_Model", "Prompt_Defense", "Baseline_Filter"]
     from src.openai_privacy_filter import PrivacyFilterDefense
     privacy_filter = PrivacyFilterDefense(device="cpu")
