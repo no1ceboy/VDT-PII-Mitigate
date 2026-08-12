@@ -20,11 +20,8 @@ from src.openai_privacy_filter import PrivacyFilterDefense
 def main():
     parser = argparse.ArgumentParser(description="Generate DPO pairs from natural leakage surveys")
     
-    # Default: combine both the initial 100-doc survey and the new 400-doc survey
-    default_files = []
-    for f in ["results/natural_leakage_stats.json", "results/natural_leakage_stats_400.json"]:
-        if os.path.exists(f):
-            default_files.append(f)
+    # Default: use the combined survey results
+    default_files = ["results/natural_leakage_stats_combined.json"]
             
     parser.add_argument("--results_files", nargs="+", default=default_files, help="Path(s) to natural leakage survey JSON files")
     parser.add_argument("--output_file", type=str, default="results/dpo_natural_leakage.jsonl", help="Path to save output DPO JSONL")

@@ -10,7 +10,7 @@ from tqdm import tqdm
 import argparse
 
 from src.data_loader import DataLoader
-from src.evaluate import AttackEvaluator
+from src.pii_leakage_evaluator import PIILeakageEvaluator
 
 def main(args):
     print("Loading datasets and initializing Evaluator...")
@@ -18,7 +18,7 @@ def main(args):
     all_docs = loader.load_all(["medical"], limit_per_dataset=args.limit)
     doc_map = {doc.id: doc for doc in all_docs}
     
-    evaluator = AttackEvaluator()
+    evaluator = PIILeakageEvaluator()
     
     # ---------------------------------------------------------
     # PART 1: Test Filter on Leaked Summaries (DPO Chosen Quality Check)

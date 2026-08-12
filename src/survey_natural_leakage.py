@@ -14,7 +14,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 import yaml
 from src.data_loader import DataLoader
-from src.evaluate import AttackEvaluator
+from src.pii_leakage_evaluator import PIILeakageEvaluator
 from src.llm_client import LLMClient
 
 def load_base_model(model_id="Qwen/Qwen2.5-1.5B-Instruct"):
@@ -122,7 +122,7 @@ def main(args):
     
     print(f"Loaded {len(test_docs)} clean documents for the survey.")
     
-    evaluator = AttackEvaluator()
+    evaluator = PIILeakageEvaluator()
     results = []
     
     if not args.skip_local:

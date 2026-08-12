@@ -14,7 +14,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from peft import PeftModel
 
 from src.data_loader import DataLoader
-from src.evaluate import AttackEvaluator
+from src.pii_leakage_evaluator import PIILeakageEvaluator
 from src.openai_privacy_filter import PrivacyFilterDefense
 
 def load_base_model(model_id="Qwen/Qwen2.5-1.5B-Instruct"):
@@ -108,7 +108,7 @@ def main():
         test_docs = all_docs[-args.limit:] if len(all_docs) >= args.limit else all_docs
         print(f"-> Using {len(test_docs)} local holdout documents.")
 
-    evaluator = AttackEvaluator()
+    evaluator = PIILeakageEvaluator()
     
     test_cases = []
     for doc in test_docs:
