@@ -191,7 +191,7 @@ def main():
     parser.add_argument("--api_key", type=str, default="", help="API key (or set GOOGLE_API_KEY / OPENROUTER_API_KEY env var)")
     parser.add_argument("--use_ragas", action="store_true", help="Use RAGAS framework instead of direct structured prompt")
     parser.add_argument("--dataset", type=str, choices=["vlsp", "vietnews", "legal", "medical"], default="vlsp", help="Dataset to pull reference summaries from")
-    parser.add_argument("--limit", type=int, default=30, help="Max summaries to evaluate per model")
+    parser.add_argument("--limit", type=int, default=30, help="Max summaries to evaluate per model (set to 0 for no limit)")
     args = parser.parse_args()
     
     api_key = args.api_key
@@ -228,12 +228,12 @@ def main():
     
     summary_scores = {}
     
-    for model_key in ["Base_Model", "Baseline_Filter", "Standard_DPO", "OGPSA_DPO"]:
+    for model_key in ["Base_Model", "Baseline_Filter", "Prompt_Defense", "Standard_DPO", "OGPSA_DPO"]:
         items = data.get(model_key, [])
         if not items:
             continue
         
-        items_to_eval = items[:args.limit]
+        items_to_eval = items[:args.limit] if args.limit > 0 else items
         f_scores, r_scores, c_scores = [], [], []
         
         print(f"[Evaluating {model_key}...] (processing {len(items_to_eval)} samples)", end="", flush=True)
