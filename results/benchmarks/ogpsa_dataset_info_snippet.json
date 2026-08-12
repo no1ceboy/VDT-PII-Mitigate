@@ -1,0 +1,21 @@
+{
+  "vdt_pii_dpo": {
+    "file_name": "dpo_natural_leakage_alpaca.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "system": "system",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "vlsp_summarization_capability": {
+    "file_name": "vlsp_capability_200.json",
+    "columns": {
+      "prompt": "instruction",
+      "system": "system",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}
