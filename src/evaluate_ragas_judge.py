@@ -21,25 +21,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.data_loader import DataLoader
 
-def get_doc_map(dataset="vlsp", limit=500):
+def get_doc_map(limit=500):
     dl = DataLoader("datasets")
     try:
-        if dataset == "vlsp":
-            docs = dl._load_vlsp(limit=limit)
-        elif dataset == "vietnews":
-            docs = dl._load_vietnews(limit=limit)
-        elif dataset == "medical":
-            try:
-                from src.survey_natural_leakage import load_from_hf
-                docs = load_from_hf(dataset_name="Meddies/meddies-pii", config_name="vietnamese", split="train", limit=limit, offset=2000)
-            except Exception as e:
-                print(f"[WARN] Failed to fetch HF holdout set: {e}. Falling back to local medical holdout...")
-                docs = dl.load_all(["medical"], limit_per_dataset=limit)
-        else:
-            docs = dl.load_all([dataset], limit_per_dataset=limit)
+        docs = dl._load_vlsp(limit=limit)
     except Exception as e:
-        print(f"[WARN] Could not load via specific loader ({e}), trying load_all...")
-        docs = dl.load_all([dataset], limit_per_dataset=limit)
+        print(f"[WARN] Could not load via _load_vlsp ({e}), trying load_all...")
+        docs = dl.load_all(["vlsp"], limit_per_dataset=limit)
     return {doc.id: doc for doc in docs}
 
 def call_openrouter_judge(doc_text, ref_summary, cand_summary, model, api_key, provider="google"):
@@ -197,8 +185,7 @@ def main():
     parser.add_argument("--provider", type=str, default="google", choices=["google", "openrouter"], help="API provider (google or openrouter)")
     parser.add_argument("--api_key", type=str, default="", help="API key (or set GOOGLE_API_KEY / OPENROUTER_API_KEY env var)")
     parser.add_argument("--use_ragas", action="store_true", help="Use RAGAS framework instead of direct structured prompt")
-    parser.add_argument("--dataset", type=str, choices=["vlsp", "vietnews", "legal", "medical"], default="vlsp", help="Dataset to pull reference summaries from")
-    parser.add_argument("--limit", type=int, default=30, help="Max summaries to evaluate per model (set to 0 for no limit)")
+    parser.add_argument("--limit", type=int, default=30, help="Max summaries to evaluate per model")
     args = parser.parse_args()
     
     api_key = args.api_key
@@ -219,8 +206,8 @@ def main():
     with open(args.results_file, "r", encoding="utf-8") as f:
         data = json.load(f)
         
-    print(f"[INFO] Loading source document mapping from {args.dataset.upper()} corpus...")
-    doc_map = get_doc_map(args.dataset, limit=1000)
+    print(f"[INFO] Loading source document mapping from VLSP corpus...")
+    doc_map = get_doc_map()
     print(f"[INFO] Loaded {len(doc_map)} source documents.")
     
     if args.use_ragas:
@@ -240,7 +227,7 @@ def main():
         if not items:
             continue
         
-        items_to_eval = items[:args.limit] if args.limit > 0 else items
+        items_to_eval = items[:args.limit]
         f_scores, r_scores, c_scores = [], [], []
         
         print(f"[Evaluating {model_key}...] (processing {len(items_to_eval)} samples)", end="", flush=True)
