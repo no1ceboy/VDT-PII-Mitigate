@@ -160,8 +160,16 @@ def run_ragas_eval(items, model_str, api_key, provider="google"):
         data_dict["ground_truth"].append("")
         
     dataset = Dataset.from_dict(data_dict)
-    score = evaluate(dataset, metrics=final_metrics)
-    return score
+    
+    # Check if we should fail fast to protect continuation
+    try:
+        score = evaluate(dataset, metrics=final_metrics, raise_exceptions=False)
+        return score
+    except Exception as e:
+        print(f"\n[CRITICAL ERROR] RAGAS evaluation failed completely: {e}")
+        print("Exiting immediately to prevent saving corrupted scores.")
+        print("Run the script again later to resume exactly where you left off!")
+        sys.exit(1)
 
 def main():
     parser = argparse.ArgumentParser(description="Meddies specific LLM Judge (RAGAS + Coherence/Fluency)")
@@ -260,7 +268,12 @@ def main():
                     it["coherence"] = c_val
                     it["fluency"] = f_val
                     print(".", end="", flush=True)
-                time.sleep(4.0)
+                else:
+                    print("\n[CRITICAL ERROR] API returned None. Quota likely exhausted.")
+                    print("Exiting immediately to prevent saving corrupted 0.0 scores.")
+                    print("Run the script again later to resume exactly where you left off!")
+                    sys.exit(1)
+            time.sleep(4.0)
             print(" Done!")
             
             avg_c = sum(c_scores) / len(c_scores) if c_scores else 0.0
