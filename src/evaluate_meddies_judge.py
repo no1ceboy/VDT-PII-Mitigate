@@ -195,8 +195,21 @@ def main():
     print(f"{'Model Name':<20} | {'Faithful (RAGAS)':<18} | {'Coverage (RAGAS)':<18} | {'Coherence':<12} | {'Fluency':<12}")
     print("-" * 105)
     
+    out_file = "results/benchmarks/meddies_judge_scores.json"
+    os.makedirs(os.path.dirname(out_file), exist_ok=True)
+    
     summary_scores = {}
     detailed_scores = []
+    
+    if os.path.exists(out_file):
+        print(f"[INFO] Found existing results at {out_file}. Resuming evaluation...")
+        try:
+            with open(out_file, "r", encoding="utf-8") as f:
+                prev_data = json.load(f)
+                summary_scores = prev_data.get("summary", {})
+                detailed_scores = prev_data.get("detailed_results", [])
+        except Exception as e:
+            print(f"[WARN] Failed to load previous results: {e}. Starting fresh.")
     
     # We look for "detailed_results" array in the new format
     detailed_results = data.get("detailed_results", [])
@@ -215,6 +228,10 @@ def main():
         model_groups[m].append(item)
         
     for model_key, items in model_groups.items():
+        if model_key in summary_scores:
+            print(f"\n[SKIP] {model_key} already evaluated. Skipping...")
+            continue
+            
         items_to_eval = items[:args.limit] if args.limit > 0 else items
         
         # 1. Custom LLM for Coherence & Fluency
@@ -292,19 +309,18 @@ def main():
         
         # Add to detailed output list
         detailed_scores.extend(items_to_eval)
+        
+        # Incremental save
+        final_output = {
+            "summary": summary_scores,
+            "detailed_results": detailed_scores
+        }
+        with open(out_file, "w", encoding="utf-8") as f:
+            json.dump(final_output, f, indent=2, ensure_ascii=False)
+        print(f"[PROGRESS] Saved {model_key} scores to {out_file}")
     
     print("="*105)
-    out_file = "results/benchmarks/meddies_judge_scores.json"
-    os.makedirs(os.path.dirname(out_file), exist_ok=True)
-    
-    final_output = {
-        "summary": summary_scores,
-        "detailed_results": detailed_scores
-    }
-    
-    with open(out_file, "w", encoding="utf-8") as f:
-        json.dump(final_output, f, indent=2, ensure_ascii=False)
-    print(f"\n[SUCCESS] Meddies judge scores saved to {out_file}")
+    print(f"\n[SUCCESS] All evaluations completed! Meddies judge scores saved to {out_file}")
 
 if __name__ == "__main__":
     main()
