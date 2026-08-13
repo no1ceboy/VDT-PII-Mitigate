@@ -196,6 +196,7 @@ def main():
     print("-" * 105)
     
     summary_scores = {}
+    detailed_scores = []
     
     # We look for "detailed_results" array in the new format
     detailed_results = data.get("detailed_results", [])
@@ -223,8 +224,12 @@ def main():
             cand = it.get("generated_summary", it.get("output", ""))
             res = call_openrouter_judge(cand, args.model, api_key, provider=args.provider)
             if res is not None:
-                c_scores.append(float(res.get("coherence", 3)))
-                f_scores.append(float(res.get("fluency", 3)))
+                c_val = float(res.get("coherence", 3))
+                f_val = float(res.get("fluency", 3))
+                c_scores.append(c_val)
+                f_scores.append(f_val)
+                it["coherence"] = c_val
+                it["fluency"] = f_val
                 print(".", end="", flush=True)
             time.sleep(4.0)
         print(" Done!")
@@ -250,6 +255,19 @@ def main():
                         avg_cov = float(df["answer_relevancy"].mean())
                     elif "summary_score" in df.columns:
                         avg_cov = float(df["summary_score"].mean())
+                        
+                    # Map row-by-row scores back to items
+                    for idx, it in enumerate(items_to_eval):
+                        if idx < len(df):
+                            if "faithfulness" in df.columns:
+                                val = df.iloc[idx]["faithfulness"]
+                                it["faithfulness_ragas"] = float(val) if pd.notna(val) else None
+                            if "answer_relevancy" in df.columns:
+                                val = df.iloc[idx]["answer_relevancy"]
+                                it["coverage_ragas"] = float(val) if pd.notna(val) else None
+                            elif "summary_score" in df.columns:
+                                val = df.iloc[idx]["summary_score"]
+                                it["coverage_ragas"] = float(val) if pd.notna(val) else None
             except Exception:
                 pass
                 
@@ -271,12 +289,21 @@ def main():
             "fluency_llm": avg_f
         }
         print(f"{model_key:<20} | {avg_faith:>18.4f} | {avg_cov:>18.4f} | {avg_c:>12.2f} | {avg_f:>12.2f}")
+        
+        # Add to detailed output list
+        detailed_scores.extend(items_to_eval)
     
     print("="*105)
     out_file = "results/benchmarks/meddies_judge_scores.json"
     os.makedirs(os.path.dirname(out_file), exist_ok=True)
+    
+    final_output = {
+        "summary": summary_scores,
+        "detailed_results": detailed_scores
+    }
+    
     with open(out_file, "w", encoding="utf-8") as f:
-        json.dump(summary_scores, f, indent=2, ensure_ascii=False)
+        json.dump(final_output, f, indent=2, ensure_ascii=False)
     print(f"\n[SUCCESS] Meddies judge scores saved to {out_file}")
 
 if __name__ == "__main__":
