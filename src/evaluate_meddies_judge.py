@@ -250,17 +250,17 @@ def main():
             c_scores, f_scores = [], []
             print(f"\n[LLM] {model_key} (Coherence/Fluency) - processing {len(items_to_eval)} samples...", end="", flush=True)
             for idx, it in enumerate(items_to_eval):
-            cand = it.get("generated_summary", it.get("output", ""))
-            res = call_openrouter_judge(cand, args.model, api_key, provider=args.provider)
-            if res is not None:
-                c_val = float(res.get("coherence", 3))
-                f_val = float(res.get("fluency", 3))
-                c_scores.append(c_val)
-                f_scores.append(f_val)
-                it["coherence"] = c_val
-                it["fluency"] = f_val
-                print(".", end="", flush=True)
-            time.sleep(4.0)
+                cand = it.get("generated_summary", it.get("output", ""))
+                res = call_openrouter_judge(cand, args.model, api_key, provider=args.provider)
+                if res is not None:
+                    c_val = float(res.get("coherence", 3))
+                    f_val = float(res.get("fluency", 3))
+                    c_scores.append(c_val)
+                    f_scores.append(f_val)
+                    it["coherence"] = c_val
+                    it["fluency"] = f_val
+                    print(".", end="", flush=True)
+                time.sleep(4.0)
             print(" Done!")
             
             avg_c = sum(c_scores) / len(c_scores) if c_scores else 0.0
@@ -276,44 +276,44 @@ def main():
             avg_faith = 0.0
             avg_cov = 0.0
             if ragas_scores:
-            # Handle Ragas 0.4.x which might return an EvaluationResult object, lists, or nan values
-            try:
-                import pandas as pd
-                if hasattr(ragas_scores, "to_pandas"):
-                    df = ragas_scores.to_pandas()
-                    if "faithfulness" in df.columns:
-                        avg_faith = float(df["faithfulness"].mean())
-                    if "answer_relevancy" in df.columns:
-                        avg_cov = float(df["answer_relevancy"].mean())
-                    elif "summary_score" in df.columns:
-                        avg_cov = float(df["summary_score"].mean())
-                        
-                    # Map row-by-row scores back to items
-                    for idx, it in enumerate(items_to_eval):
-                        if idx < len(df):
-                            if "faithfulness" in df.columns:
-                                val = df.iloc[idx]["faithfulness"]
-                                it["faithfulness_ragas"] = float(val) if pd.notna(val) else None
-                            if "answer_relevancy" in df.columns:
-                                val = df.iloc[idx]["answer_relevancy"]
-                                it["coverage_ragas"] = float(val) if pd.notna(val) else None
-                            elif "summary_score" in df.columns:
-                                val = df.iloc[idx]["summary_score"]
-                                it["coverage_ragas"] = float(val) if pd.notna(val) else None
-            except Exception:
-                pass
-                
-            # Fallback if the pandas conversion fails or it's a plain dictionary of lists
-            if avg_faith == 0.0 and "faithfulness" in ragas_scores:
-                val = ragas_scores["faithfulness"]
-                avg_faith = sum(val)/len(val) if isinstance(val, list) else float(val)
-                
-            if avg_cov == 0.0:
-                for key in ["answer_relevancy", "summary_score", "summarization_score"]:
-                    if key in ragas_scores:
-                        val = ragas_scores[key]
-                        avg_cov = sum(val)/len(val) if isinstance(val, list) else float(val)
-                        break
+                # Handle Ragas 0.4.x which might return an EvaluationResult object, lists, or nan values
+                try:
+                    import pandas as pd
+                    if hasattr(ragas_scores, "to_pandas"):
+                        df = ragas_scores.to_pandas()
+                        if "faithfulness" in df.columns:
+                            avg_faith = float(df["faithfulness"].mean())
+                        if "answer_relevancy" in df.columns:
+                            avg_cov = float(df["answer_relevancy"].mean())
+                        elif "summary_score" in df.columns:
+                            avg_cov = float(df["summary_score"].mean())
+                            
+                        # Map row-by-row scores back to items
+                        for idx, it in enumerate(items_to_eval):
+                            if idx < len(df):
+                                if "faithfulness" in df.columns:
+                                    val = df.iloc[idx]["faithfulness"]
+                                    it["faithfulness_ragas"] = float(val) if pd.notna(val) else None
+                                if "answer_relevancy" in df.columns:
+                                    val = df.iloc[idx]["answer_relevancy"]
+                                    it["coverage_ragas"] = float(val) if pd.notna(val) else None
+                                elif "summary_score" in df.columns:
+                                    val = df.iloc[idx]["summary_score"]
+                                    it["coverage_ragas"] = float(val) if pd.notna(val) else None
+                except Exception:
+                    pass
+                    
+                # Fallback if the pandas conversion fails or it's a plain dictionary of lists
+                if avg_faith == 0.0 and "faithfulness" in ragas_scores:
+                    val = ragas_scores["faithfulness"]
+                    avg_faith = sum(val)/len(val) if isinstance(val, list) else float(val)
+                    
+                if avg_cov == 0.0:
+                    for key in ["answer_relevancy", "summary_score", "summarization_score"]:
+                        if key in ragas_scores:
+                            val = ragas_scores[key]
+                            avg_cov = sum(val)/len(val) if isinstance(val, list) else float(val)
+                            break
                         
             existing_scores["faithfulness_ragas"] = avg_faith
             existing_scores["coverage_ragas"] = avg_cov
