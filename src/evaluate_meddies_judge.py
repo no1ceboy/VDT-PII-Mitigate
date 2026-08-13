@@ -118,26 +118,37 @@ def run_ragas_eval(items, model_str, api_key, provider="google"):
             from langchain_openai import OpenAIEmbeddings
             embeddings = OpenAIEmbeddings(openai_api_key=api_key, openai_api_base="https://openrouter.ai/api/v1")
             
-    # Override LLM and Embeddings for all metrics
+    
+    # Ensure all metrics are instantiated objects (RAGAS 0.4.x requires objects, not classes)
+    final_metrics = []
     for m in metrics:
+        if isinstance(m, type):
+            final_metrics.append(m())
+        else:
+            final_metrics.append(m)
+
+    # Override LLM and Embeddings for all metrics
+    for m in final_metrics:
         if hasattr(m, "llm"): m.llm = llm
         if hasattr(m, "embeddings"): m.embeddings = embeddings
 
     data_dict = {
         "question": [], 
         "answer": [],   
-        "contexts": [], 
+        "contexts": [],
+        "reference_contexts": [],
         "ground_truth": [] 
     }
     for it in items:
         data_dict["question"].append("Hãy tóm tắt văn bản y khoa sau đây một cách súc tích và chính xác.")
         data_dict["answer"].append(it.get("generated_summary", it.get("output", "")))
         data_dict["contexts"].append([it.get("prompt", "")])
+        data_dict["reference_contexts"].append([it.get("prompt", "")])
         # Ragas AnswerRelevancy requires ground_truth to exist, even if it's empty or unused
         data_dict["ground_truth"].append("")
         
     dataset = Dataset.from_dict(data_dict)
-    score = evaluate(dataset, metrics=metrics)
+    score = evaluate(dataset, metrics=final_metrics)
     return score
 
 def main():
