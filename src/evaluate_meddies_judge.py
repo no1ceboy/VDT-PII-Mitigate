@@ -239,8 +239,18 @@ def main():
         avg_faith = 0.0
         avg_cov = 0.0
         if ragas_scores:
-            avg_faith = ragas_scores.get("faithfulness", 0.0)
-            avg_cov = ragas_scores.get("answer_relevancy", ragas_scores.get("summarization_score", 0.0))
+            try:
+                avg_faith = ragas_scores["faithfulness"]
+            except (KeyError, TypeError):
+                pass
+                
+            try:
+                avg_cov = ragas_scores["answer_relevancy"]
+            except (KeyError, TypeError):
+                try:
+                    avg_cov = ragas_scores["summary_score"]
+                except (KeyError, TypeError):
+                    pass
             
         summary_scores[model_key] = {
             "faithfulness_ragas": avg_faith,
