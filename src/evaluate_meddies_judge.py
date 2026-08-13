@@ -239,19 +239,31 @@ def main():
         avg_faith = 0.0
         avg_cov = 0.0
         if ragas_scores:
+            # Handle Ragas 0.4.x which might return an EvaluationResult object, lists, or nan values
             try:
-                avg_faith = ragas_scores["faithfulness"]
-            except (KeyError, TypeError):
+                import pandas as pd
+                if hasattr(ragas_scores, "to_pandas"):
+                    df = ragas_scores.to_pandas()
+                    if "faithfulness" in df.columns:
+                        avg_faith = float(df["faithfulness"].mean())
+                    if "answer_relevancy" in df.columns:
+                        avg_cov = float(df["answer_relevancy"].mean())
+                    elif "summary_score" in df.columns:
+                        avg_cov = float(df["summary_score"].mean())
+            except Exception:
                 pass
                 
-            try:
-                avg_cov = ragas_scores["answer_relevancy"]
-            except (KeyError, TypeError):
-                try:
-                    avg_cov = ragas_scores["summary_score"]
-                except (KeyError, TypeError):
-                    pass
-            
+            # Fallback if the pandas conversion fails or it's a plain dictionary of lists
+            if avg_faith == 0.0 and "faithfulness" in ragas_scores:
+                val = ragas_scores["faithfulness"]
+                avg_faith = sum(val)/len(val) if isinstance(val, list) else float(val)
+                
+            if avg_cov == 0.0:
+                for key in ["answer_relevancy", "summary_score", "summarization_score"]:
+                    if key in ragas_scores:
+                        val = ragas_scores[key]
+                        avg_cov = sum(val)/len(val) if isinstance(val, list) else float(val)
+                        break
         summary_scores[model_key] = {
             "faithfulness_ragas": avg_faith,
             "coverage_ragas": avg_cov,
