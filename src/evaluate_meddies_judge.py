@@ -170,6 +170,7 @@ def main():
     parser.add_argument("--provider", type=str, default="google", choices=["google", "openrouter"], help="API provider")
     parser.add_argument("--api_key", type=str, default="", help="API key")
     parser.add_argument("--limit", type=int, default=30, help="Max summaries to evaluate per model (0 for no limit)")
+    parser.add_argument("--task", type=str, default="all", choices=["all", "llm_judge", "ragas"], help="Which evaluation task to run")
     args = parser.parse_args()
     
     api_key = args.api_key
@@ -199,25 +200,25 @@ def main():
     os.makedirs(os.path.dirname(out_file), exist_ok=True)
     
     summary_scores = {}
-    detailed_scores = []
     
+    # Base load from input file
+    detailed_results = data.get("detailed_results", [])
+    if not detailed_results:
+        for k, v in data.items():
+            if isinstance(v, list) and k in ["Base_Model", "Baseline_Filter", "Pre_Filter", "Post_Filter", "Prompt_Defense", "Standard_DPO", "OGPSA_DPO"]:
+                detailed_results.extend([dict(item, model=k) for item in v])
+                
+    # Continuation load: override detailed_results to preserve previous task scores
     if os.path.exists(out_file):
         print(f"[INFO] Found existing results at {out_file}. Resuming evaluation...")
         try:
             with open(out_file, "r", encoding="utf-8") as f:
                 prev_data = json.load(f)
                 summary_scores = prev_data.get("summary", {})
-                detailed_scores = prev_data.get("detailed_results", [])
+                if prev_data.get("detailed_results"):
+                    detailed_results = prev_data["detailed_results"]
         except Exception as e:
             print(f"[WARN] Failed to load previous results: {e}. Starting fresh.")
-    
-    # We look for "detailed_results" array in the new format
-    detailed_results = data.get("detailed_results", [])
-    if not detailed_results:
-        # Fallback to old format where root keys are models
-        for k, v in data.items():
-            if isinstance(v, list) and k in ["Base_Model", "Baseline_Filter", "Pre_Filter", "Post_Filter", "Prompt_Defense", "Standard_DPO", "OGPSA_DPO"]:
-                detailed_results.extend([dict(item, model=k) for item in v])
     
     # Group by model
     model_groups = {}
@@ -228,16 +229,27 @@ def main():
         model_groups[m].append(item)
         
     for model_key, items in model_groups.items():
-        if model_key in summary_scores:
-            print(f"\n[SKIP] {model_key} already evaluated. Skipping...")
+        existing_scores = summary_scores.get(model_key, {})
+        has_llm = "coherence_llm" in existing_scores
+        has_ragas = "faithfulness_ragas" in existing_scores
+        
+        if args.task == "all" and has_llm and has_ragas:
+            print(f"\n[SKIP] {model_key} already fully evaluated. Skipping...")
+            continue
+        elif args.task == "llm_judge" and has_llm:
+            print(f"\n[SKIP] {model_key} LLM judge already evaluated. Skipping...")
+            continue
+        elif args.task == "ragas" and has_ragas:
+            print(f"\n[SKIP] {model_key} RAGAS already evaluated. Skipping...")
             continue
             
         items_to_eval = items[:args.limit] if args.limit > 0 else items
         
         # 1. Custom LLM for Coherence & Fluency
-        c_scores, f_scores = [], []
-        print(f"[LLM] {model_key} (Coherence/Fluency) - processing {len(items_to_eval)} samples...", end="", flush=True)
-        for idx, it in enumerate(items_to_eval):
+        if args.task in ["all", "llm_judge"] and not has_llm:
+            c_scores, f_scores = [], []
+            print(f"\n[LLM] {model_key} (Coherence/Fluency) - processing {len(items_to_eval)} samples...", end="", flush=True)
+            for idx, it in enumerate(items_to_eval):
             cand = it.get("generated_summary", it.get("output", ""))
             res = call_openrouter_judge(cand, args.model, api_key, provider=args.provider)
             if res is not None:
@@ -249,18 +261,21 @@ def main():
                 it["fluency"] = f_val
                 print(".", end="", flush=True)
             time.sleep(4.0)
-        print(" Done!")
-        
-        avg_c = sum(c_scores) / len(c_scores) if c_scores else 0.0
-        avg_f = sum(f_scores) / len(f_scores) if f_scores else 0.0
+            print(" Done!")
+            
+            avg_c = sum(c_scores) / len(c_scores) if c_scores else 0.0
+            avg_f = sum(f_scores) / len(f_scores) if f_scores else 0.0
+            existing_scores["coherence_llm"] = avg_c
+            existing_scores["fluency_llm"] = avg_f
         
         # 2. RAGAS for Faithfulness & Coverage
-        print(f"[RAGAS] {model_key} (Faithfulness/Coverage)...")
-        ragas_scores = run_ragas_eval(items_to_eval, args.model, api_key, provider=args.provider)
-        
-        avg_faith = 0.0
-        avg_cov = 0.0
-        if ragas_scores:
+        if args.task in ["all", "ragas"] and not has_ragas:
+            print(f"\n[RAGAS] {model_key} (Faithfulness/Coverage)...")
+            ragas_scores = run_ragas_eval(items_to_eval, args.model, api_key, provider=args.provider)
+            
+            avg_faith = 0.0
+            avg_cov = 0.0
+            if ragas_scores:
             # Handle Ragas 0.4.x which might return an EvaluationResult object, lists, or nan values
             try:
                 import pandas as pd
@@ -299,21 +314,17 @@ def main():
                         val = ragas_scores[key]
                         avg_cov = sum(val)/len(val) if isinstance(val, list) else float(val)
                         break
-        summary_scores[model_key] = {
-            "faithfulness_ragas": avg_faith,
-            "coverage_ragas": avg_cov,
-            "coherence_llm": avg_c,
-            "fluency_llm": avg_f
-        }
-        print(f"{model_key:<20} | {avg_faith:>18.4f} | {avg_cov:>18.4f} | {avg_c:>12.2f} | {avg_f:>12.2f}")
-        
-        # Add to detailed output list
-        detailed_scores.extend(items_to_eval)
+                        
+            existing_scores["faithfulness_ragas"] = avg_faith
+            existing_scores["coverage_ragas"] = avg_cov
+            
+        summary_scores[model_key] = existing_scores
+        print(f"{model_key:<20} | {existing_scores.get('faithfulness_ragas', 0.0):>18.4f} | {existing_scores.get('coverage_ragas', 0.0):>18.4f} | {existing_scores.get('coherence_llm', 0.0):>12.2f} | {existing_scores.get('fluency_llm', 0.0):>12.2f}")
         
         # Incremental save
         final_output = {
             "summary": summary_scores,
-            "detailed_results": detailed_scores
+            "detailed_results": detailed_results
         }
         with open(out_file, "w", encoding="utf-8") as f:
             json.dump(final_output, f, indent=2, ensure_ascii=False)
