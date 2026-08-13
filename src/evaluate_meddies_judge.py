@@ -15,7 +15,19 @@ import json
 import re
 import argparse
 import time
+import sys
+import types
 from pathlib import Path
+
+# --- KAGGLE COMPATIBILITY PATCH ---
+# Older versions of Ragas (like 0.1.0 on Kaggle) try to unconditionally import VertexAI from langchain_community.
+# Recent versions of Langchain removed it, causing a crash. This mock bypasses the crash.
+sys.modules['langchain_community.chat_models.vertexai'] = types.ModuleType('mock_chat_vertexai')
+sys.modules['langchain_community.chat_models.vertexai'].ChatVertexAI = None
+sys.modules['langchain_community.llms.vertexai'] = types.ModuleType('mock_llm_vertexai')
+sys.modules['langchain_community.llms.vertexai'].VertexAI = None
+# ----------------------------------
+
 
 def call_openrouter_judge(cand_summary, model, api_key, provider="google"):
     prompt = f"""Bạn là một chuyên gia ngôn ngữ đánh giá chất lượng tóm tắt văn bản tiếng Việt.
