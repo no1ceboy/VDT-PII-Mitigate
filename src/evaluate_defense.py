@@ -80,7 +80,7 @@ def main():
     parser.add_argument("--hf_offset", type=int, default=2000, help="Offset for HF dataset (use >=2000 to avoid the 1000-1400 training range)")
     parser.add_argument("--limit", type=int, default=50, help="Number of unseen documents to test")
     parser.add_argument("--output_file", type=str, default="results/defense_results_detailed.json", help="Path to save evaluation JSON report")
-    parser.add_argument("--methods", nargs="+", choices=["Base_Model", "Baseline_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense"], default=["Base_Model", "Baseline_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense"], help="List of defense methods to evaluate.")
+    parser.add_argument("--methods", nargs="+", choices=["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense"], default=["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense"], help="List of defense methods to evaluate.")
     args = parser.parse_args()
 
     # Backwards compatibility/convenience mapping
@@ -144,17 +144,17 @@ def main():
         })
     
     # ---------------------------------------------------------
-    # TEST 1, 2, & Prompt Defense: Base Model + Filter + Prompt
+    # TEST 1, 2, 3 & Prompt Defense: Base Model + Filters + Prompt
     # ---------------------------------------------------------
-    if any(m in args.methods for m in ["Base_Model", "Baseline_Filter", "Prompt_Defense"]):
+    if any(m in args.methods for m in ["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense"]):
         base_model, tokenizer = load_base_model(args.base_model)
         
         privacy_filter = None
-        if "Baseline_Filter" in args.methods:
+        if "Pre_Filter" in args.methods or "Post_Filter" in args.methods:
             print("\nInitializing Privacy Filter...")
             privacy_filter = PrivacyFilterDefense(device="cpu")
         
-        print("\n--- Evaluating Base Model, Baseline Filter, and Prompt Defense ---")
+        print("\n--- Evaluating Base Model, Filters, and Prompt Defense ---")
         for case in tqdm(test_cases):
             doc = case["doc"]
             input_text = case["input_text"]
@@ -176,8 +176,8 @@ def main():
                 )
                 log_result("Base_Model", res_base, doc, input_text, out_base)
                 
-            if "Baseline_Filter" in args.methods:
-                # Test 2: Baseline Filter (Scrub -> Base Model)
+            if "Pre_Filter" in args.methods:
+                # Test 2: Pre_Filter (Scrub Input -> Base Model)
                 scrubbed_text = privacy_filter.redact(input_text)
                 out_filter = run_generation(base_model, tokenizer, scrubbed_text)
                 res_filter = evaluator.evaluate(
@@ -188,7 +188,25 @@ def main():
                     gold_pii=gold_pii,
                     gold_pii_flat=gold_pii_flat
                 )
-                log_result("Baseline_Filter", res_filter, doc, scrubbed_text, out_filter)
+                log_result("Pre_Filter", res_filter, doc, scrubbed_text, out_filter)
+                
+            if "Post_Filter" in args.methods:
+                # Test 3: Post_Filter (Base Model -> Scrub Output)
+                if "Base_Model" in args.methods:
+                    raw_out = out_base
+                else:
+                    raw_out = run_generation(base_model, tokenizer, input_text)
+                    
+                post_scrubbed_summary = privacy_filter.redact(raw_out)
+                res_post = evaluator.evaluate(
+                    attack_category="pii_extraction",
+                    clean_summary=clean_sum,
+                    attacked_summary=post_scrubbed_summary,
+                    reference_summary=clean_sum,
+                    gold_pii=gold_pii,
+                    gold_pii_flat=gold_pii_flat
+                )
+                log_result("Post_Filter", res_post, doc, input_text, post_scrubbed_summary)
                 
             if "Prompt_Defense" in args.methods:
                 # Test Prompt_Defense: Base Model with strict system prompt

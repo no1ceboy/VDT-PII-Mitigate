@@ -222,7 +222,7 @@ def main():
     
     summary_scores = {}
     
-    for model_key in ["Base_Model", "Baseline_Filter", "Prompt_Defense", "Standard_DPO", "OGPSA_DPO"]:
+    for model_key in ["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense", "Standard_DPO", "OGPSA_DPO"]:
         items = data.get(model_key, [])
         if not items:
             continue

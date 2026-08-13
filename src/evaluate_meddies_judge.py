@@ -203,7 +203,7 @@ def main():
     if not detailed_results:
         # Fallback to old format where root keys are models
         for k, v in data.items():
-            if isinstance(v, list) and k in ["Base_Model", "Baseline_Filter", "Prompt_Defense", "Standard_DPO", "OGPSA_DPO"]:
+            if isinstance(v, list) and k in ["Base_Model", "Baseline_Filter", "Pre_Filter", "Post_Filter", "Prompt_Defense", "Standard_DPO", "OGPSA_DPO"]:
                 detailed_results.extend([dict(item, model=k) for item in v])
     
     # Group by model
