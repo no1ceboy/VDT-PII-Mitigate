@@ -161,9 +161,21 @@ def run_ragas_eval(items, model_str, api_key, provider="google"):
         
     dataset = Dataset.from_dict(data_dict)
     
+    # Strictly enforce 15 RPM limit (1 request per 4 seconds -> 4.1s to be safe)
+    import types
+    import asyncio
+    original_agenerate = llm._agenerate
+    async def rate_limited_agenerate(self, *args, **kwargs):
+        await asyncio.sleep(4.1)
+        return await original_agenerate(*args, **kwargs)
+    llm._agenerate = types.MethodType(rate_limited_agenerate, llm)
+    
     # Check if we should fail fast to protect continuation
     try:
-        score = evaluate(dataset, metrics=final_metrics, raise_exceptions=False)
+        from ragas.run_config import RunConfig
+        # Max workers = 1 ensures it processes sequentially, combined with sleep guarantees 15 RPM
+        rc = RunConfig(max_workers=1, timeout=120)
+        score = evaluate(dataset, metrics=final_metrics, raise_exceptions=False, run_config=rc)
         return score
     except Exception as e:
         print(f"\n[CRITICAL ERROR] RAGAS evaluation failed completely: {e}")
@@ -273,7 +285,9 @@ def main():
                     print("Exiting immediately to prevent saving corrupted 0.0 scores.")
                     print("Run the script again later to resume exactly where you left off!")
                     sys.exit(1)
-            time.sleep(4.0)
+                
+                # 4.1s sleep ensures we never exceed 15 RPM (60 / 15 = 4)
+                time.sleep(4.1)
             print(" Done!")
             
             avg_c = sum(c_scores) / len(c_scores) if c_scores else 0.0
