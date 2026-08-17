@@ -105,13 +105,17 @@ def length_reward_func(completions, **kwargs):
 # Data Preparation
 # ──────────────────────────────────────────────────────────────────────────────
 
-def prepare_dataset(model_name: str, split="train", limit=100):
+def prepare_dataset(model_name: str, split="train", limit=100, dataset_path=None):
     """
     Loads Meddies/meddies-pii and formats it for GRPO.
     GRPO expects a 'prompt' column (list of dicts) and we inject 'gold_pii_flat'.
     """
-    print(f"[GRPO] Loading Meddies/meddies-pii ({split})...")
-    ds = load_dataset("Meddies/meddies-pii", "vietnamese", split=split)
+    if dataset_path:
+        print(f"[GRPO] Loading dataset from local file: {dataset_path}")
+        ds = load_dataset("json", data_files=dataset_path, split=split)
+    else:
+        print(f"[GRPO] Loading Meddies/meddies-pii ({split})...")
+        ds = load_dataset("Meddies/meddies-pii", "vietnamese", split=split)
     
     if limit > 0:
         ds = ds.select(range(min(limit, len(ds))))
@@ -166,12 +170,12 @@ def main():
     parser.add_argument("--max_completion_length", type=int, default=512)
     parser.add_argument("--limit", type=int, default=200, help="Limit dataset size for fast testing")
     parser.add_argument("--use_vllm", action="store_true", help="Use vLLM for fast generation (requires vllm installed)")
+    parser.add_argument("--report_to", type=str, default="none", choices=["none", "wandb", "tensorboard"], help="Where to log training metrics")
+    parser.add_argument("--dataset_path", type=str, default=None, help="Path to local JSONL dataset (if None, downloads from HF)")
     args = parser.parse_args()
 
-    os.environ.setdefault("CUDA_VISIBLE_DEVICES", "0")
-
     # 1. Dataset
-    train_dataset = prepare_dataset(args.model_name, split="train", limit=args.limit)
+    train_dataset = prepare_dataset(args.model_name, split="train", limit=args.limit, dataset_path=args.dataset_path)
     
     # 2. Model & LoRA Config
     print(f"[GRPO] Loading model: {args.model_name}")
@@ -198,7 +202,7 @@ def main():
         "gradient_accumulation_steps": args.grad_accum,
         "num_train_epochs": args.epochs,
         "num_generations": args.num_generations,
-        "report_to": "wandb",
+        "report_to": args.report_to,
         "logging_steps": 1,
         "use_vllm": args.use_vllm,
         "save_steps": 50,

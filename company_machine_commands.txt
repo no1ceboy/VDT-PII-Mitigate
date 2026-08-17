@@ -1,0 +1,51 @@
+========================================================
+COMMANDS FOR SHARED COMPANY MACHINE
+========================================================
+
+1. GPU Allocation Checklist:
+--------------------------------------------------------
+- Run `nvidia-smi` to find an empty GPU (e.g., GPU 2).
+- Replace `CUDA_VISIBLE_DEVICES=X` below with your chosen GPU number.
+- Replace `/path/to/your/local/qwen/model` with the absolute path to your downloaded model weights.
+
+2. GRPO Training Command (Offline Mode):
+--------------------------------------------------------
+CUDA_VISIBLE_DEVICES=X python src/train_grpo.py \
+    --model_name "/path/to/your/local/qwen/model" \
+    --dataset_path "results/grpo_dataset.jsonl" \
+    --output_dir "results/grpo_defense_model" \
+    --epochs 1 \
+    --batch_size 2 \
+    --grad_accum 4 \
+    --lr 2e-5 \
+    --num_generations 4 \
+    --limit 200 \
+    --report_to "wandb"
+
+
+3. Standard DPO Command:
+--------------------------------------------------------
+CUDA_VISIBLE_DEVICES=X python src/train_defense.py \
+    --model_name "/path/to/your/local/qwen/model" \
+    --dataset_path "results/dpo_natural_leakage.jsonl" \
+    --output_dir "results/dpo_defense_model" \
+    --epochs 3 \
+    --batch_size 1 \
+    --grad_accum 4 \
+    --lr 5e-5 \
+    --report_to "wandb"
+
+
+4. OGPSA Command:
+--------------------------------------------------------
+CUDA_VISIBLE_DEVICES=X python src/train_defense.py \
+    --ogpsa \
+    --model_name "/path/to/your/local/qwen/model" \
+    --dataset_path "results/dpo_natural_leakage.jsonl" \
+    --output_dir "results/ogpsa_defense_model" \
+    --base_dataset "vlsp_summarization_capability" \
+    --epochs 3 \
+    --batch_size 1 \
+    --grad_accum 4 \
+    --lr 5e-5 \
+    --report_to "wandb"
