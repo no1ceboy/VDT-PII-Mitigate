@@ -124,8 +124,9 @@ def prepare_dataset(model_name: str, split="train", limit=100):
         "gold_pii_flat": []
     }
     
+    import json
     for row in ds:
-        doc = row["document"]
+        doc = row.get("raw", "")
         prompt = [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt_template.format(document=doc)}
@@ -135,9 +136,9 @@ def prepare_dataset(model_name: str, split="train", limit=100):
         
         # Flatten PII
         flat_pii = []
-        if row.get("gold_pii"):
+        if row.get("label"):
             try:
-                gold_dict = eval(row["gold_pii"]) if isinstance(row["gold_pii"], str) else row["gold_pii"]
+                gold_dict = json.loads(row["label"]) if isinstance(row["label"], str) else row["label"]
                 for pii_list in gold_dict.values():
                     if isinstance(pii_list, list):
                         flat_pii.extend(pii_list)
