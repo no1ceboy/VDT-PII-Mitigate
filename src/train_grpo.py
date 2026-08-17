@@ -190,30 +190,45 @@ def main():
     )
 
     # 3. GRPO Config
-    training_args = GRPOConfig(
-        output_dir=args.output_dir,
-        learning_rate=args.lr,
-        per_device_train_batch_size=args.batch_size,
-        gradient_accumulation_steps=args.grad_accum,
-        num_train_epochs=args.epochs,
-        max_prompt_length=args.max_prompt_length,
-        max_completion_length=args.max_completion_length,
-        num_generations=args.num_generations,
-        report_to="wandb",
-        logging_steps=1,
-        use_vllm=args.use_vllm,
-        save_steps=50,
-        bf16=True,
-    )
+    import inspect
+    config_kwargs = {
+        "output_dir": args.output_dir,
+        "learning_rate": args.lr,
+        "per_device_train_batch_size": args.batch_size,
+        "gradient_accumulation_steps": args.grad_accum,
+        "num_train_epochs": args.epochs,
+        "num_generations": args.num_generations,
+        "report_to": "wandb",
+        "logging_steps": 1,
+        "use_vllm": args.use_vllm,
+        "save_steps": 50,
+        "bf16": True,
+    }
+    
+    config_params = inspect.signature(GRPOConfig.__init__).parameters
+    if "max_prompt_length" in config_params:
+        config_kwargs["max_prompt_length"] = args.max_prompt_length
+    if "max_completion_length" in config_params:
+        config_kwargs["max_completion_length"] = args.max_completion_length
+        
+    training_args = GRPOConfig(**config_kwargs)
 
     # 4. Initialize Trainer
-    trainer = GRPOTrainer(
-        model=args.model_name,
-        reward_funcs=[privacy_reward_func, format_reward_func, length_reward_func],
-        args=training_args,
-        train_dataset=train_dataset,
-        peft_config=peft_config,
-    )
+    trainer_kwargs = {
+        "model": args.model_name,
+        "reward_funcs": [privacy_reward_func, format_reward_func, length_reward_func],
+        "args": training_args,
+        "train_dataset": train_dataset,
+        "peft_config": peft_config,
+    }
+    
+    trainer_params = inspect.signature(GRPOTrainer.__init__).parameters
+    if "max_prompt_length" in trainer_params:
+        trainer_kwargs["max_prompt_length"] = args.max_prompt_length
+    if "max_completion_length" in trainer_params:
+        trainer_kwargs["max_completion_length"] = args.max_completion_length
+        
+    trainer = GRPOTrainer(**trainer_kwargs)
 
     print("[GRPO] Starting training...")
     trainer.train()
