@@ -12,7 +12,7 @@ COMMANDS FOR SHARED COMPANY MACHINE
 --------------------------------------------------------
 CUDA_VISIBLE_DEVICES=X python src/train_grpo.py \
     --model_name "/path/to/your/local/qwen/model" \
-    --dataset_path "results/grpo_dataset.jsonl" \
+    --dataset_path "results/grpo_dataset.jsonl.gz" \
     --output_dir "results/grpo_defense_model" \
     --epochs 1 \
     --batch_size 2 \
