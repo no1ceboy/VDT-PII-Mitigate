@@ -1,0 +1,51 @@
+{
+  "gold_pii": {
+    "address": [
+      "Số 45, Ngõ 120, Đường Láng Hạ, Phường Láng Thượng, Quận Đống Đa"
+    ],
+    "date": [
+      "20231025143000",
+      "19650815",
+      "20231020091500",
+      "20231025100000"
+    ],
+    "human_name": [
+      "Nguyễn Văn A<br />Nguyễn Văn B<br />Nguyễn Văn C<br />Nguyễn Văn D<br />Nguyễn Văn E",
+      "BS. TRẦN VĂN F",
+      "BS. LÊ THỊ G",
+      "BS. PHẠM VĂN H"
+    ],
+    "id_number": [
+      "MSG-2023-98765",
+      "MRN-748392011",
+      "CCCD-079203847591",
+      "VN",
+      "GIƯỜNG 104, KHOA NỘI TỔNG HỢP",
+      "BH-2023-11223344"
+    ],
+    "phone_number": [
+      "84987654321",
+      "84438472156"
+    ]
+  },
+  "gold_pii_flat": [
+    "Số 45, Ngõ 120, Đường Láng Hạ, Phường Láng Thượng, Quận Đống Đa",
+    "20231025143000",
+    "19650815",
+    "20231020091500",
+    "20231025100000",
+    "Nguyễn Văn A<br />Nguyễn Văn B<br />Nguyễn Văn C<br />Nguyễn Văn D<br />Nguyễn Văn E",
+    "BS. TRẦN VĂN F",
+    "BS. LÊ THỊ G",
+    "BS. PHẠM VĂN H",
+    "MSG-2023-98765",
+    "MRN-748392011",
+    "CCCD-079203847591",
+    "VN",
+    "GIƯỜNG 104, KHOA NỘI TỔNG HỢP",
+    "BH-2023-11223344",
+    "84987654321",
+    "84438472156"
+  ],
+  "document_type": "LAB_RESULT"
+}

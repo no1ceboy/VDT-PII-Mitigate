@@ -38,9 +38,10 @@ def evaluate_file(fpath, model_key_map):
 
 def main():
     map_def = {
-        "Base_Model": "1. Undefended Base Model",
-        "Baseline_Filter": "3. Baseline Privacy Filter",
-        "DPO_Defense": "4. Standard QLoRA DPO",
+        "Base_Model": "1. Base Model",
+        "Prompt_Defense": "2. Prompt-based Defense",
+        "Pre_Filter": "3. Baseline Privacy Filter",
+        "Standard_DPO": "4. Standard QLoRA DPO",
         "OGPSA_Defense": "5. OGPSA QLoRA DPO"
     }
     map_prompt = {

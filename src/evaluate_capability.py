@@ -205,7 +205,7 @@ def main():
         print(f"Done! Results saved to {args.output_file}")
         return
         
-    models_to_test = ["Base_Model", "Prompt_Defense", "Baseline_Filter"]
+    models_to_test = ["Base_Model", "Prompt_Defense", "Pre_Filter"]
     from src.openai_privacy_filter import PrivacyFilterDefense
     privacy_filter = PrivacyFilterDefense(device="cpu")
     
@@ -266,7 +266,7 @@ def main():
         out_filter = run_generation(base_model, tokenizer, scrubbed_doc)
         rouge_f = compute_rouge(out_filter, doc.reference_summary)
         len_ratio_f = len(out_filter) / max(1, len(doc.reference_summary))
-        results["Baseline_Filter"].append({
+        results["Pre_Filter"].append({
             "doc_id": doc.id,
             "rouge1": rouge_f["rouge1"],
             "rouge2": rouge_f["rouge2"],

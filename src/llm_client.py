@@ -78,6 +78,8 @@ class LLMClient:
             return self._call_openrouter(system_prompt, user_prompt, model_id)
         elif provider == "google":
             return self._call_google(system_prompt, user_prompt, model_id)
+        elif provider == "local":
+            return self._call_local(system_prompt, user_prompt, model_id)
         else:
             return LLMResponse(
                 model=model_id,

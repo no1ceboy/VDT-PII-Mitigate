@@ -10,7 +10,8 @@ def main():
     
     order = [
         ("Base_Model", "1. Undefended Base Model"),
-        ("Baseline_Filter", "3. Baseline Privacy Filter"),
+        ("Prompt_Defense", "2. Zero-Shot Prompt Defense"),
+        ("Pre_Filter", "3. Baseline Privacy Filter"),
         ("Standard_DPO", "4. Standard QLoRA DPO"),
         ("OGPSA_DPO", "5. OGPSA QLoRA DPO")
     ]

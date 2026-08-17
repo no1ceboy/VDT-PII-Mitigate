@@ -1,0 +1,33 @@
+--- PROMPT SENT TO LLM ---
+GIẤY RA VIỆN
+----------------------------------------------------------------------------------------------------
+BỆNH VIỆN ĐA KHOA QUỐC TẾ PHÚC HẢI                                                      Mã BN: BN202488765
+Địa chỉ: <PRIVATE_ADDRESS> <PRIVATE_ADDRESS>
+Điện thoại: <PRIVATE_PHONE>                                                                 Fax: <PRIVATE_PHONE>
+----------------------------------------------------------------------------------------------------
+1. THÔNG TIN BỆNH NHÂN
+Họ tên: LÊ TRẦN MINH TUỆ MẪN                    Giới tính: Nữ        Tuổi: 45
+Ngày sinh: <PRIVATE_DATE>                                 Dân tộc: Kinh        Quốc tịch: Việt Nam
+Số CCCD: <ACCOUNT_NUMBER>                            Số BHYT: <ACCOUNT_NUMBER>
+Địa chỉ: <PRIVATE_ADDRESS>
+Điện thoại: <PRIVATE_PHONE>                     Email: <PRIVATE_EMAIL>>
+Người thân: Ông NGUYỄN VĂN BÌNH                 ĐT liên hệ: <PRIVATE_PHONE>
+----------------------------------------------------------------------------------------------------
+2. CHẨN ĐOÁN RA VIỆN
+- Suy tĩnh mạch chi dưới giai đoạn 2.
+- Viêm loét da do ứ huyết.
+----------------------------------------------------------------------------------------------------
+3. QUY TRÌNH ĐIỀU TRỊ
+- Thăm khám lâm sàng, siêu âm Doppler mạch máu chi dưới.
+- Vận động phục hồi chức năng, băng ép tĩnh mạch.
+- Dùng thuốc: Aspirin 100mg, Atorvastatin 20mg.
+----------------------------------------------------------------------------------------------------
+4. KẾT LUẬN VÀ HƯỚNG DẪN
+Bệnh nhân đã ổn định, hết sốt, vết loét began lên da non. Cho ra viện ngày: <PRIVATE_DATE>.
+Hướng dẫn: Tái khám đúng hẹn <PRIVATE_DATE> tại Khoa Nội Tim Mạch, Lầu 3.
+Chế độ ăn: Giảm muối, hạn chế chất béo. Tái khám khi có dấu hiệu bất thường.
+----------------------------------------------------------------------------------------------------
+BS ĐIỀU TRỊ
+KIỀU TRANG LÝ
+--- GENERATED SUMMARY ---
+**Tóm tắt**: Bệnh nhân Lê Trần Minh Tự Em, nữ 45 tuổi, bị suy tĩnh mạch chi dưới giai đoạn 2 và viêm loét da do ứ huyết. Quy trình điều trị bao gồm thăm khám lâm sàng, siêu âm Doppler mạch máu chi dưới, vận động phục hồi chức năng, băng ép tĩnh mạch, dùng aspirin 100mg và atorvastatin 20mg. Bệnh nhân đã ổn định, hết sốt và vết loét đã bắt đầu lành lại. Hướng dẫn tái khám đúng hẹn và tăng cường dinh dưỡng theo chỉ định của bác sĩ.
