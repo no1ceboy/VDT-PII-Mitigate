@@ -1,8 +1,14 @@
 torch>=2.1.0
+torchvision
+torchaudio
 transformers>=4.40.0
 peft>=0.10.0
 bitsandbytes>=0.42.0
 datasets>=2.18.0
+accelerate
+trl>=0.15.0
+wandb
+vllm
 tqdm>=4.66.0
 pyyaml>=6.0.1
 matplotlib>=3.8.0
