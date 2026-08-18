@@ -54,3 +54,39 @@ CUDA_VISIBLE_DEVICES=X python src/train_defense.py \
 CUDA_VISIBLE_DEVICES=X python src/evaluate_defense.py \
     --model_path "results/grpo_defense_model" \
     --model_name "GRPO_Defense"
+
+
+6. Privacy Filter (One-shot Defense Baseline):
+--------------------------------------------------------
+# A. OpenAI Privacy Filter (Requires pre-downloaded cache)
+CUDA_VISIBLE_DEVICES=X python src/openai_privacy_filter.py
+
+# B. Meddies PII v2 Filter (Fully offline via local path)
+CUDA_VISIBLE_DEVICES=X python src/meddies_privacy_filter.py \
+    --model-path "/path/to/your/local/meddies-pii-v2/model"
+
+
+7. Unified PII Leakage Survey (Baseline & Defenses):
+--------------------------------------------------------
+# Mode options: plain, safe_prompt, few_shot_natural, few_shot_patched
+
+# A. Natural Leakage Baseline (Zero-shot, no defense):
+CUDA_VISIBLE_DEVICES=X python src/survey_pii_leakage.py \
+    --mode plain \
+    --model-name "/path/to/your/local/qwen/model" \
+    --limit 100 \
+    --dataset-path "datasets/meddies_full.jsonl"
+
+# B. Prompt Defense (Few-shot Patched - tags like <PERSON>):
+CUDA_VISIBLE_DEVICES=X python src/survey_pii_leakage.py \
+    --mode few_shot_patched \
+    --model-name "/path/to/your/local/qwen/model" \
+    --limit 100 \
+    --dataset-path "datasets/meddies_full.jsonl"
+
+# C. Prompt Defense (Few-shot Natural - omitting PII naturally):
+CUDA_VISIBLE_DEVICES=X python src/survey_pii_leakage.py \
+    --mode few_shot_natural \
+    --model-name "/path/to/your/local/qwen/model" \
+    --limit 100 \
+    --dataset-path "datasets/meddies_full.jsonl"

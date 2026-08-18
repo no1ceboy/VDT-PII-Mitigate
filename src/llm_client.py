@@ -231,3 +231,57 @@ class LLMClient:
                         output="",
                         error=str(e),
                     )
+
+    # ------------------------------------------------------------------
+    # Local Company API (vLLM)
+    # ------------------------------------------------------------------
+
+    def _call_local(
+        self, system_prompt: str, user_prompt: str, model_id: str
+    ) -> LLMResponse:
+        """Call internal company API with retry logic."""
+        from openai import OpenAI
+        from src.local_api import OSS_MODEL, OSS_HOST, QWEN_MODEL, QWEN_HOST
+        
+        if model_id == OSS_MODEL:
+            host = OSS_HOST
+        elif model_id == QWEN_MODEL:
+            host = QWEN_HOST
+        else:
+            return LLMResponse(model=model_id, provider="local", output="", error=f"Unknown local model: {model_id}")
+            
+        import httpx
+        client = OpenAI(
+            base_url=f"{host.rstrip('/')}/v1",
+            api_key=os.environ.get("LOCAL_API_KEY", "sk-local"),
+            http_client=httpx.Client(verify=False)
+        )
+        
+        for attempt in range(1, self.max_retries + 1):
+            try:
+                start = time.time()
+                response = client.chat.completions.create(
+                    model=model_id,
+                    messages=[
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_prompt},
+                    ],
+                    temperature=self.temperature,
+                    max_tokens=self.max_tokens,
+                )
+                latency = time.time() - start
+                output = response.choices[0].message.content or ""
+                
+                time.sleep(self.request_delay)
+                return LLMResponse(
+                    model=model_id,
+                    provider="local",
+                    output=output.strip(),
+                    latency_seconds=round(latency, 2),
+                )
+            except Exception as e:
+                logger.warning(f"Local attempt {attempt}/{self.max_retries} failed: {e}")
+                if attempt < self.max_retries:
+                    time.sleep(self.retry_delay)
+                else:
+                    return LLMResponse(model=model_id, provider="local", output="", error=str(e))
