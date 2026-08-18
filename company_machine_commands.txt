@@ -10,9 +10,10 @@ COMMANDS FOR SHARED COMPANY MACHINE
 
 2. GRPO Training Command (Offline Mode):
 --------------------------------------------------------
+# NOTE: Make sure to extract datasets/grpo_dataset.zip first!
 CUDA_VISIBLE_DEVICES=X python src/train_grpo.py \
     --model_name "/path/to/your/local/qwen/model" \
-    --dataset_path "results/grpo_dataset.jsonl.gz" \
+    --dataset_path "datasets/grpo_dataset.jsonl" \
     --output_dir "results/grpo_defense_model" \
     --epochs 1 \
     --batch_size 2 \
