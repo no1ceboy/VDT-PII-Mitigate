@@ -10,18 +10,17 @@ COMMANDS FOR SHARED COMPANY MACHINE
 
 2. GRPO Training Command (Offline Mode):
 --------------------------------------------------------
-# NOTE: Make sure to extract datasets/grpo_dataset.zip first!
+# NOTE: Make sure to extract datasets/meddies_full.zip first!
 CUDA_VISIBLE_DEVICES=X python src/train_grpo.py \
     --model_name "/path/to/your/local/qwen/model" \
-    --dataset_path "datasets/grpo_dataset.jsonl" \
+    --dataset_path "datasets/meddies_full.jsonl" \
     --output_dir "results/grpo_defense_model" \
     --epochs 1 \
     --batch_size 2 \
     --grad_accum 4 \
     --lr 2e-5 \
     --num_generations 4 \
-    --limit 200 \
-    --report_to "wandb"
+    --limit 200
 
 
 3. Standard DPO Command:
@@ -33,8 +32,7 @@ CUDA_VISIBLE_DEVICES=X python src/train_defense.py \
     --epochs 3 \
     --batch_size 1 \
     --grad_accum 4 \
-    --lr 5e-5 \
-    --report_to "wandb"
+    --lr 5e-5
 
 
 4. OGPSA Command:
@@ -48,5 +46,11 @@ CUDA_VISIBLE_DEVICES=X python src/train_defense.py \
     --epochs 3 \
     --batch_size 1 \
     --grad_accum 4 \
-    --lr 5e-5 \
-    --report_to "wandb"
+    --lr 5e-5
+
+
+5. Evaluation Command:
+--------------------------------------------------------
+CUDA_VISIBLE_DEVICES=X python src/evaluate_defense.py \
+    --model_path "results/grpo_defense_model" \
+    --model_name "GRPO_Defense"

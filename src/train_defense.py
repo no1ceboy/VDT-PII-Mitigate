@@ -92,9 +92,6 @@ def run_standard_dpo(args):
     from peft import LoraConfig
     from trl import DPOTrainer, DPOConfig
 
-    # Disable DataParallel issues with bitsandbytes on multi-GPU hosts
-    os.environ.setdefault("CUDA_VISIBLE_DEVICES", "0")
-
     print(f"[DPO] Loading tokenizer: {args.model_name}")
     tokenizer = AutoTokenizer.from_pretrained(args.model_name)
     tokenizer.pad_token = tokenizer.eos_token
