@@ -226,7 +226,8 @@ def main():
     }
     
     if args.use_vllm:
-        config_kwargs["vllm_gpu_memory_utilization"] = 0.1
+        # Capping at 0.8 guarantees vLLM + PyTorch + your friend's process never exceeds 80% of the B200
+        config_kwargs["vllm_gpu_memory_utilization"] = 0.8
     
     config_params = inspect.signature(GRPOConfig.__init__).parameters
     if "max_prompt_length" in config_params:
