@@ -158,9 +158,14 @@ def prepare_dataset(model_name: str, split="train", limit=100, dataset_path=None
 # ──────────────────────────────────────────────────────────────────────────────
 
 def main():
+    import os
+    # Disable strict vLLM memory profiling assertion so it doesn't crash if other processes fluctuate GPU memory
+    os.environ["VLLM_TEST_MEMORY_PROFILE"] = "0"
+    
     parser = argparse.ArgumentParser(description="Train GRPO Privacy Defense Model")
     parser.add_argument("--model_name", type=str, default="Qwen/Qwen2.5-1.5B-Instruct")
     parser.add_argument("--output_dir", type=str, default="results/grpo_defense_model")
+    parser.add_argument("--finetuning_type", type=str, default="qlora", choices=["qlora", "lora", "fft"], help="Type of finetuning: qlora (4-bit), lora (16-bit), or fft (Full Fine-Tuning)")
     parser.add_argument("--epochs", type=int, default=1)
     parser.add_argument("--batch_size", type=int, default=2, help="Per device generation batch size")
     parser.add_argument("--grad_accum", type=int, default=4)
@@ -178,21 +183,32 @@ def main():
     train_dataset = prepare_dataset(args.model_name, split="train", limit=args.limit, dataset_path=args.dataset_path)
     
     # 2. Model & LoRA Config
-    print(f"[GRPO] Loading model: {args.model_name}")
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16,
-    )
+    print(f"[GRPO] Loading model: {args.model_name} with {args.finetuning_type}")
+    from transformers import AutoModelForCausalLM, BitsAndBytesConfig
+    from peft import LoraConfig
+    import torch
     
-    peft_config = LoraConfig(
-        r=16,
-        lora_alpha=32,
-        lora_dropout=0.05,
-        target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "up_proj", "down_proj", "gate_proj"],
-        task_type="CAUSAL_LM",
-    )
-
+    model_kwargs = {"device_map": "auto", "torch_dtype": torch.bfloat16}
+    peft_config = None
+    
+    if args.finetuning_type == "qlora":
+        model_kwargs["quantization_config"] = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_compute_dtype=torch.bfloat16,
+        )
+        
+    if args.finetuning_type in ["qlora", "lora"]:
+        peft_config = LoraConfig(
+            r=16,
+            lora_alpha=32,
+            lora_dropout=0.05,
+            target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "up_proj", "down_proj", "gate_proj"],
+            task_type="CAUSAL_LM",
+        )
+        
+    model = AutoModelForCausalLM.from_pretrained(args.model_name, **model_kwargs)
+    
     # 3. GRPO Config
     import inspect
     config_kwargs = {
@@ -209,6 +225,9 @@ def main():
         "bf16": True,
     }
     
+    if args.use_vllm:
+        config_kwargs["vllm_gpu_memory_utilization"] = 0.1
+    
     config_params = inspect.signature(GRPOConfig.__init__).parameters
     if "max_prompt_length" in config_params:
         config_kwargs["max_prompt_length"] = args.max_prompt_length
@@ -219,12 +238,14 @@ def main():
 
     # 4. Initialize Trainer
     trainer_kwargs = {
-        "model": args.model_name,
+        "model": model,
         "reward_funcs": [privacy_reward_func, format_reward_func, length_reward_func],
         "args": training_args,
         "train_dataset": train_dataset,
-        "peft_config": peft_config,
     }
+    
+    if peft_config is not None:
+        trainer_kwargs["peft_config"] = peft_config
     
     trainer_params = inspect.signature(GRPOTrainer.__init__).parameters
     if "max_prompt_length" in trainer_params:
