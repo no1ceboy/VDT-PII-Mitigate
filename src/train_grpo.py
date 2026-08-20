@@ -29,16 +29,16 @@ except ImportError:
 
 def privacy_reward_func(completions, gold_pii_flat, **kwargs):
     """
-    Penalizes the model for every piece of PII it leaks.
-    Reward = +1.0 if 0 leaks. -1.0 for each leaked item.
+    Penalizes the model heavily for leaking PII.
+    Reward = 0.0 if 0 leaks. -5.0 for each leaked item.
+    (We don't reward safe behavior, we only punish unsafe behavior to prevent reward hacking).
     """
     rewards = []
     for comp, pii_list in zip(completions, gold_pii_flat):
-        # Extract the actual generation (GRPO passes the full completion)
         gen_text = comp[0]["content"] if isinstance(comp, list) else str(comp)
         
         if not pii_list or str(pii_list).lower() == "nan":
-            rewards.append(1.0)
+            rewards.append(0.0)
             continue
             
         leak_count = 0
@@ -47,26 +47,24 @@ def privacy_reward_func(completions, gold_pii_flat, **kwargs):
             if not item_str or len(item_str) < 3:
                 continue
                 
-            # Exact match check
             escaped_item = re.escape(item_str)
-            # Use boundaries where applicable, but handle punctuation
             pattern = re.compile(rf"(?:\b|\s){escaped_item}(?:\b|\s|[.,!?;:])", re.IGNORECASE)
             
             if pattern.search(gen_text) or item_str.lower() in gen_text.lower():
                 leak_count += 1
                 
         if leak_count == 0:
-            rewards.append(1.0)
+            rewards.append(0.0)
         else:
-            rewards.append(-1.0 * leak_count)
+            rewards.append(-5.0 * leak_count)
             
     return rewards
 
 
 def format_reward_func(completions, **kwargs):
     """
-    Rewards the model for outputting valid Markdown structure (e.g., bullet points or headers)
-    common in clinical summaries.
+    Small reward for outputting valid Markdown structure.
+    Scaled down to prevent it from overpowering the KL penalty.
     """
     rewards = []
     for comp in completions:
@@ -74,9 +72,9 @@ def format_reward_func(completions, **kwargs):
         
         score = 0.0
         if re.search(r"^\s*[-*]\s+", gen_text, re.MULTILINE):
-            score += 0.5  # Used bullet points
+            score += 0.1
         if re.search(r"^\s*#+\s+", gen_text, re.MULTILINE) or re.search(r"\*\*(.+?)\*\*:", gen_text):
-            score += 0.5  # Used bold headers or markdown headers
+            score += 0.1
             
         rewards.append(score)
     return rewards
@@ -84,7 +82,7 @@ def format_reward_func(completions, **kwargs):
 
 def length_reward_func(completions, **kwargs):
     """
-    Penalizes extremely short summaries (e.g. models learning to just say 'No data' to protect privacy)
+    Penalizes extremely short summaries.
     """
     rewards = []
     for comp in completions:
@@ -92,13 +90,13 @@ def length_reward_func(completions, **kwargs):
         
         char_len = len(gen_text.strip())
         if char_len < 50:
-            rewards.append(-2.0)
-        elif char_len < 100:
-            rewards.append(-0.5)
+            rewards.append(-1.0)
         else:
-            rewards.append(0.5)
+            rewards.append(0.0)
             
     return rewards
+
+
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -223,6 +221,7 @@ def main():
         "use_vllm": args.use_vllm,
         "save_strategy": "epoch",
         "bf16": True,
+        "beta": 0.1,  # KL divergence penalty (increased to prevent catastrophic forgetting)
     }
     
     if args.use_vllm:
