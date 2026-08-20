@@ -340,15 +340,24 @@ def main():
     # TEST 5: GRPO-Aligned Model
     # ---------------------------------------------------------
     if "GRPO_Defense" in args.methods:
-        grpo_adapter_path = args.grpo_model_path
-        if not os.path.exists(os.path.join(grpo_adapter_path, "adapter_config.json")):
-            if os.path.exists(os.path.join(grpo_adapter_path, "final", "adapter_config.json")):
-                grpo_adapter_path = os.path.join(grpo_adapter_path, "final")
+        model_path = args.grpo_model_path
+        if not os.path.exists(os.path.join(model_path, "adapter_config.json")) and not os.path.exists(os.path.join(model_path, "config.json")):
+            if os.path.exists(os.path.join(model_path, "final", "adapter_config.json")) or os.path.exists(os.path.join(model_path, "final", "config.json")):
+                model_path = os.path.join(model_path, "final")
                 
-        if os.path.exists(os.path.join(grpo_adapter_path, "adapter_config.json")):
-            print(f"\n--- Evaluating GRPO-Aligned Model ({grpo_adapter_path}) ---")
-            base_model, tokenizer = load_base_model(args.base_model)
-            grpo_model = PeftModel.from_pretrained(base_model, grpo_adapter_path)
+        is_lora = os.path.exists(os.path.join(model_path, "adapter_config.json"))
+        is_fft = os.path.exists(os.path.join(model_path, "config.json"))
+
+        if is_lora or is_fft:
+            if is_lora:
+                print(f"\n--- Evaluating GRPO-Aligned Model (LoRA Adapter: {model_path}) ---")
+                base_model, tokenizer = load_base_model(args.base_model)
+                grpo_model = PeftModel.from_pretrained(base_model, model_path)
+            else:
+                print(f"\n--- Evaluating GRPO-Aligned Model (Full Model FFT: {model_path}) ---")
+                grpo_model, tokenizer = load_base_model(model_path)
+                base_model = None  # Not needed separately
+
             grpo_model.eval()
             
             for case in tqdm(test_cases):
@@ -370,9 +379,10 @@ def main():
                 log_result("GRPO_Defense", res_grpo, doc, input_text, out_grpo)
                     
             del grpo_model
-            del base_model
+            if base_model is not None:
+                del base_model
         else:
-            print(f"\n[WARNING] Trained GRPO adapter not found at {grpo_adapter_path}. Skipping GRPO_Defense test.")
+            print(f"\n[WARNING] Trained GRPO model (LoRA or FFT) not found at {model_path}. Skipping GRPO_Defense test.")
         
     free_memory()
     
