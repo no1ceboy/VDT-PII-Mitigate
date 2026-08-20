@@ -2,18 +2,28 @@
 COMMANDS FOR SHARED COMPANY MACHINE
 ========================================================
 
-1. GPU Allocation Checklist:
+1. Dataset Preparation & Splitting:
+--------------------------------------------------------
+# A. Extract your datasets if needed (e.g., unzip datasets/meddies_full.zip)
+# B. Split the dataset into train/val/test to guarantee ZERO leakage!
+python src/split_dataset.py \
+    --input_file "datasets/meddies_full.jsonl" \
+    --train_ratio 0.90 --val_ratio 0.05 --test_ratio 0.05 --seed 42
+
+
+2. GPU Allocation Checklist:
 --------------------------------------------------------
 - Run `nvidia-smi` to find an empty GPU (e.g., GPU 2).
 - Replace `CUDA_VISIBLE_DEVICES=X` below with your chosen GPU number.
 - Replace `/path/to/your/local/qwen/model` with the absolute path to your downloaded model weights.
 
-2. GRPO Training Command (Offline Mode):
+
+3. GRPO Training Command (Offline Mode):
 --------------------------------------------------------
-# NOTE: Make sure to extract datasets/meddies_full.zip first!
+# Notice we are using the freshly created _train split!
 CUDA_VISIBLE_DEVICES=X python src/train_grpo.py \
     --model_name "/path/to/your/local/qwen/model" \
-    --dataset_path "datasets/meddies_full.jsonl" \
+    --dataset_path "datasets/meddies_full_train.jsonl" \
     --output_dir "results/grpo_defense_model" \
     --finetuning_type fft \
     --epochs 1 \
@@ -21,10 +31,11 @@ CUDA_VISIBLE_DEVICES=X python src/train_grpo.py \
     --grad_accum 4 \
     --lr 2e-5 \
     --num_generations 4 \
-    --limit 200
+    --num_generations 4 \
+    --limit 0  # 0 means use all available data
 
 
-3. Standard DPO Command:
+4. Standard DPO Command:
 --------------------------------------------------------
 CUDA_VISIBLE_DEVICES=X python src/train_defense.py \
     --model_name "/path/to/your/local/qwen/model" \
@@ -36,7 +47,7 @@ CUDA_VISIBLE_DEVICES=X python src/train_defense.py \
     --lr 5e-5
 
 
-4. OGPSA Command:
+5. OGPSA Command:
 --------------------------------------------------------
 CUDA_VISIBLE_DEVICES=X python src/train_defense.py \
     --ogpsa \
@@ -50,8 +61,10 @@ CUDA_VISIBLE_DEVICES=X python src/train_defense.py \
     --lr 5e-5
 
 
-5. Evaluation Command (Benchmarking):
+6. Evaluation Command (Benchmarking):
 --------------------------------------------------------
+# Notice we are using the completely unseen _test split! No offset needed.
+
 # A. Evaluate ALL models (Offline / Local Test Data)
 CUDA_VISIBLE_DEVICES=X python src/evaluate_defense.py \
     --base_model "/path/to/your/local/qwen/model" \
@@ -59,8 +72,8 @@ CUDA_VISIBLE_DEVICES=X python src/evaluate_defense.py \
     --ogpsa_model_path "results/ogpsa_defense_model/final" \
     --grpo_model_path "results/grpo_defense_model/final" \
     --test_source local \
-    --dataset_path "datasets/meddies_full.jsonl" \
-    --offset 40000 \
+    --dataset_path "datasets/meddies_full_test.jsonl" \
+    --offset 0 \
     --limit 100 \
     --methods Base_Model Pre_Filter Post_Filter Prompt_Defense DPO_Defense OGPSA_Defense GRPO_Defense \
     --output_file "results/defense_results_detailed.json"
@@ -70,14 +83,14 @@ CUDA_VISIBLE_DEVICES=X python src/evaluate_defense.py \
     --base_model "/path/to/your/local/qwen/model" \
     --grpo_model_path "results/grpo_defense_model/final" \
     --test_source local \
-    --dataset_path "datasets/meddies_full.jsonl" \
-    --offset 40000 \
+    --dataset_path "datasets/meddies_full_test.jsonl" \
+    --offset 0 \
     --limit 100 \
     --methods GRPO_Defense \
     --output_file "results/grpo_only_results.json"
 
 
-6. Privacy Filter (One-shot Defense Baseline):
+7. Privacy Filter (One-shot Defense Baseline):
 --------------------------------------------------------
 # A. OpenAI Privacy Filter (Requires pre-downloaded cache)
 CUDA_VISIBLE_DEVICES=X python src/openai_privacy_filter.py
@@ -87,27 +100,31 @@ CUDA_VISIBLE_DEVICES=X python src/meddies_privacy_filter.py \
     --model-path "/path/to/your/local/meddies-pii-v2/model"
 
 
-7. Unified PII Leakage Survey (Baseline & Defenses):
+8. Unified PII Leakage Survey (Baseline & Defenses):
 --------------------------------------------------------
 # Mode options: plain, safe_prompt, few_shot_natural, few_shot_patched
+# Notice we test against the unseen _test split
 
 # A. Natural Leakage Baseline (Zero-shot, no defense):
 CUDA_VISIBLE_DEVICES=X python src/survey_pii_leakage.py \
     --mode plain \
     --model-name "/path/to/your/local/qwen/model" \
     --limit 100 \
-    --dataset-path "datasets/meddies_full.jsonl"
+    --offset 0 \
+    --dataset-path "datasets/meddies_full_test.jsonl"
 
 # B. Prompt Defense (Few-shot Patched - tags like <PERSON>):
 CUDA_VISIBLE_DEVICES=X python src/survey_pii_leakage.py \
     --mode few_shot_patched \
     --model-name "/path/to/your/local/qwen/model" \
     --limit 100 \
-    --dataset-path "datasets/meddies_full.jsonl"
+    --offset 0 \
+    --dataset-path "datasets/meddies_full_test.jsonl"
 
 # C. Prompt Defense (Few-shot Natural - omitting PII naturally):
 CUDA_VISIBLE_DEVICES=X python src/survey_pii_leakage.py \
     --mode few_shot_natural \
     --model-name "/path/to/your/local/qwen/model" \
     --limit 100 \
-    --dataset-path "datasets/meddies_full.jsonl"
+    --offset 0 \
+    --dataset-path "datasets/meddies_full_test.jsonl"
