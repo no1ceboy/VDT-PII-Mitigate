@@ -75,12 +75,13 @@ def main():
     parser.add_argument("--model_path", type=str, default="results/defense_model/final", help="Path to trained DPO LoRA adapter (alias for dpo_model_path)")
     parser.add_argument("--dpo_model_path", type=str, default="results/defense_model/final", help="Path to trained DPO LoRA adapter")
     parser.add_argument("--ogpsa_model_path", type=str, default="results/defense_model_ogpsa/final", help="Path to trained OGPSA LoRA adapter")
+    parser.add_argument("--grpo_model_path", type=str, default="results/grpo_defense_model/final", help="Path to trained GRPO LoRA adapter")
     parser.add_argument("--base_model", type=str, default="Qwen/Qwen2.5-1.5B-Instruct", help="Base model ID")
     parser.add_argument("--test_source", type=str, choices=["hf", "local"], default="hf", help="Source of holdout documents ('hf' guarantees untouched data)")
     parser.add_argument("--hf_offset", type=int, default=2000, help="Offset for HF dataset (use >=2000 to avoid the 1000-1400 training range)")
     parser.add_argument("--limit", type=int, default=50, help="Number of unseen documents to test")
     parser.add_argument("--output_file", type=str, default="results/defense_results_detailed.json", help="Path to save evaluation JSON report")
-    parser.add_argument("--methods", nargs="+", choices=["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense"], default=["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense"], help="List of defense methods to evaluate.")
+    parser.add_argument("--methods", nargs="+", choices=["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense", "GRPO_Defense"], default=["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense", "GRPO_Defense"], help="List of defense methods to evaluate.")
     args = parser.parse_args()
 
     # Backwards compatibility/convenience mapping
@@ -304,6 +305,44 @@ def main():
             del base_model
         else:
             print(f"\n[WARNING] Trained OGPSA adapter not found at {ogpsa_adapter_path}. Skipping OGPSA_Defense test.")
+            
+    # ---------------------------------------------------------
+    # TEST 5: GRPO-Aligned Model
+    # ---------------------------------------------------------
+    if "GRPO_Defense" in args.methods:
+        grpo_adapter_path = args.grpo_model_path
+        if not os.path.exists(os.path.join(grpo_adapter_path, "adapter_config.json")):
+            if os.path.exists(os.path.join(grpo_adapter_path, "final", "adapter_config.json")):
+                grpo_adapter_path = os.path.join(grpo_adapter_path, "final")
+                
+        if os.path.exists(os.path.join(grpo_adapter_path, "adapter_config.json")):
+            print(f"\n--- Evaluating GRPO-Aligned Model ({grpo_adapter_path}) ---")
+            base_model, tokenizer = load_base_model(args.base_model)
+            grpo_model = PeftModel.from_pretrained(base_model, grpo_adapter_path)
+            grpo_model.eval()
+            
+            for case in tqdm(test_cases):
+                doc = case["doc"]
+                input_text = case["input_text"]
+                clean_sum = doc.reference_summary
+                gold_pii = getattr(doc, "metadata", {}).get("gold_pii")
+                gold_pii_flat = getattr(doc, "metadata", {}).get("gold_pii_flat", [])
+                
+                out_grpo = run_generation(grpo_model, tokenizer, input_text)
+                res_grpo = evaluator.evaluate(
+                    attack_category="pii_extraction",
+                    clean_summary=clean_sum,
+                    attacked_summary=out_grpo,
+                    reference_summary=clean_sum,
+                    gold_pii=gold_pii,
+                    gold_pii_flat=gold_pii_flat
+                )
+                log_result("GRPO_Defense", res_grpo, doc, input_text, out_grpo)
+                    
+            del grpo_model
+            del base_model
+        else:
+            print(f"\n[WARNING] Trained GRPO adapter not found at {grpo_adapter_path}. Skipping GRPO_Defense test.")
         
     free_memory()
     
