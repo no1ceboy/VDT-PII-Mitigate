@@ -15,6 +15,7 @@ CUDA_VISIBLE_DEVICES=X python src/train_grpo.py \
     --model_name "/path/to/your/local/qwen/model" \
     --dataset_path "datasets/meddies_full.jsonl" \
     --output_dir "results/grpo_defense_model" \
+    --finetuning_type fft \
     --epochs 1 \
     --batch_size 2 \
     --grad_accum 4 \
@@ -49,11 +50,27 @@ CUDA_VISIBLE_DEVICES=X python src/train_defense.py \
     --lr 5e-5
 
 
-5. Evaluation Command:
+5. Evaluation Command (Benchmarking):
 --------------------------------------------------------
+# A. Evaluate ALL models (Offline / Local Test Data)
 CUDA_VISIBLE_DEVICES=X python src/evaluate_defense.py \
-    --model_path "results/grpo_defense_model" \
-    --model_name "GRPO_Defense"
+    --base_model "/path/to/your/local/qwen/model" \
+    --dpo_model_path "results/dpo_defense_model/final" \
+    --ogpsa_model_path "results/ogpsa_defense_model/final" \
+    --grpo_model_path "results/grpo_defense_model/final" \
+    --test_source local \
+    --limit 100 \
+    --methods Base_Model Pre_Filter Post_Filter Prompt_Defense DPO_Defense OGPSA_Defense GRPO_Defense \
+    --output_file "results/defense_results_detailed.json"
+
+# B. Evaluate ONLY the newly trained GRPO Model (Offline / Local Test Data)
+CUDA_VISIBLE_DEVICES=X python src/evaluate_defense.py \
+    --base_model "/path/to/your/local/qwen/model" \
+    --grpo_model_path "results/grpo_defense_model/final" \
+    --test_source local \
+    --limit 100 \
+    --methods GRPO_Defense \
+    --output_file "results/grpo_only_results.json"
 
 
 6. Privacy Filter (One-shot Defense Baseline):
