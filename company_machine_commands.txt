@@ -59,6 +59,8 @@ CUDA_VISIBLE_DEVICES=X python src/evaluate_defense.py \
     --ogpsa_model_path "results/ogpsa_defense_model/final" \
     --grpo_model_path "results/grpo_defense_model/final" \
     --test_source local \
+    --dataset_path "datasets/meddies_full.jsonl" \
+    --offset 40000 \
     --limit 100 \
     --methods Base_Model Pre_Filter Post_Filter Prompt_Defense DPO_Defense OGPSA_Defense GRPO_Defense \
     --output_file "results/defense_results_detailed.json"
@@ -68,6 +70,8 @@ CUDA_VISIBLE_DEVICES=X python src/evaluate_defense.py \
     --base_model "/path/to/your/local/qwen/model" \
     --grpo_model_path "results/grpo_defense_model/final" \
     --test_source local \
+    --dataset_path "datasets/meddies_full.jsonl" \
+    --offset 40000 \
     --limit 100 \
     --methods GRPO_Defense \
     --output_file "results/grpo_only_results.json"

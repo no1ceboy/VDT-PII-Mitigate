@@ -78,7 +78,8 @@ def main():
     parser.add_argument("--grpo_model_path", type=str, default="results/grpo_defense_model/final", help="Path to trained GRPO LoRA adapter")
     parser.add_argument("--base_model", type=str, default="Qwen/Qwen2.5-1.5B-Instruct", help="Base model ID")
     parser.add_argument("--test_source", type=str, choices=["hf", "local"], default="hf", help="Source of holdout documents ('hf' guarantees untouched data)")
-    parser.add_argument("--hf_offset", type=int, default=2000, help="Offset for HF dataset (use >=2000 to avoid the 1000-1400 training range)")
+    parser.add_argument("--dataset_path", type=str, default=None, help="Path to local JSONL dataset (used if test_source='local')")
+    parser.add_argument("--offset", type=int, default=2000, help="Offset for dataset to avoid training range")
     parser.add_argument("--limit", type=int, default=50, help="Number of unseen documents to test")
     parser.add_argument("--output_file", type=str, default="results/defense_results_detailed.json", help="Path to save evaluation JSON report")
     parser.add_argument("--methods", nargs="+", choices=["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense", "GRPO_Defense"], default=["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense", "GRPO_Defense"], help="List of defense methods to evaluate.")
@@ -94,20 +95,49 @@ def main():
     
     test_docs = []
     if args.test_source == "hf":
-        print(f"[INFO] Fetching {args.limit} unseen documents from Hugging Face Meddies/meddies-pii (offset={args.hf_offset})...")
+        print(f"[INFO] Fetching {args.limit} unseen documents from Hugging Face Meddies/meddies-pii (offset={args.offset})...")
         try:
             from src.survey_natural_leakage import load_from_hf
-            test_docs = load_from_hf(dataset_name="Meddies/meddies-pii", config_name="vietnamese", split="train", limit=args.limit, offset=args.hf_offset)
+            test_docs = load_from_hf(dataset_name="Meddies/meddies-pii", config_name="vietnamese", split="train", limit=args.limit, offset=args.offset)
             print(f"-> Successfully loaded {len(test_docs)} clean holdout documents from HF.")
         except Exception as e:
             print(f"[ERROR] Failed to fetch HF holdout set: {e}. Falling back to local medical holdout...")
             
     if not test_docs:
-        print(f"[INFO] Loading {args.limit} unseen documents from local medical dataset...")
-        loader = DataLoader("datasets")
-        all_docs = loader.load_all(["medical"])
-        test_docs = all_docs[-args.limit:] if len(all_docs) >= args.limit else all_docs
-        print(f"-> Using {len(test_docs)} local holdout documents.")
+        if args.dataset_path:
+            print(f"[INFO] Loading unseen documents from local JSONL: {args.dataset_path} (offset={args.offset})...")
+            from datasets import load_dataset
+            from src.data_loader import Document
+            ds = load_dataset("json", data_files=args.dataset_path, split="train")
+            
+            start_idx = args.offset
+            end_idx = min(start_idx + args.limit, len(ds))
+            for idx in range(start_idx, end_idx):
+                item = ds[idx]
+                gold_pii = item.get("label", "{}")
+                if isinstance(gold_pii, str):
+                    try: gold_pii = json.loads(gold_pii)
+                    except: gold_pii = {}
+                gold_pii_flat = []
+                for val in gold_pii.values():
+                    if isinstance(val, list): gold_pii_flat.extend(val)
+                    
+                test_docs.append(Document(
+                    id=f"local_{idx}",
+                    source_dataset="local_jsonl",
+                    domain="medical",
+                    document=item.get("raw", ""),
+                    reference_summary="Tóm tắt tài liệu y khoa.",
+                    metadata={"gold_pii": gold_pii, "gold_pii_flat": gold_pii_flat}
+                ))
+            print(f"-> Using {len(test_docs)} local holdout documents from {args.dataset_path}.")
+        else:
+            print(f"[INFO] Loading {args.limit} unseen documents from default local medical dataset...")
+            loader = DataLoader("datasets")
+            all_docs = loader.load_all(["medical"])
+            # Fallback legacy behavior if no specific path is given
+            test_docs = all_docs[-args.limit:] if len(all_docs) >= args.limit else all_docs
+            print(f"-> Using {len(test_docs)} local holdout documents.")
 
     evaluator = PIILeakageEvaluator()
     
