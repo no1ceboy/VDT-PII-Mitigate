@@ -82,7 +82,7 @@ def main():
     parser.add_argument("--offset", type=int, default=2000, help="Offset for dataset to avoid training range")
     parser.add_argument("--limit", type=int, default=50, help="Number of unseen documents to test")
     parser.add_argument("--output_file", type=str, default="results/defense_results_detailed.json", help="Path to save evaluation JSON report")
-    parser.add_argument("--methods", nargs="+", choices=["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense", "GRPO_Defense"], default=["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense", "GRPO_Defense"], help="List of defense methods to evaluate.")
+    parser.add_argument("--methods", nargs="+", choices=["Base_Model", "Pre_Filter", "Post_Filter", "Both_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense", "GRPO_Defense"], default=["Base_Model", "Pre_Filter", "Post_Filter", "Both_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense", "GRPO_Defense"], help="List of defense methods to evaluate.")
     args = parser.parse_args()
 
     # Backwards compatibility/convenience mapping
