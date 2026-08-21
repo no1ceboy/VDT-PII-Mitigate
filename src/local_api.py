@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """API-call code for the two local OpenAI-compatible servers."""
 
-from future import annotations
+from __future__ import annotations
 
 import asyncio
 import os
@@ -80,5 +80,5 @@ async def main() -> None:
     print(qwen_reply)
 
 
-if name == "main":
+if __name__ == "__main__":
     asyncio.run(main())

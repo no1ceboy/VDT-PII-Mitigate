@@ -151,7 +151,7 @@ def main():
     detailed_results = data.get("detailed_results", [])
     if not detailed_results:
         for k, v in data.items():
-            if isinstance(v, list) and k in ["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense", "Standard_DPO", "OGPSA_DPO"]:
+            if isinstance(v, list) and k in ["Base_Model", "Pre_Filter", "Post_Filter", "Both_Filter", "Prompt_Defense", "Standard_DPO", "OGPSA_DPO", "GRPO_Defense"]:
                 detailed_results.extend([dict(item, model=k) for item in v])
                 
     # Continuation load: preserve previous task scores, but don't lose new models from input

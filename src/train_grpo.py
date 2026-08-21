@@ -54,7 +54,7 @@ def privacy_reward_func(completions, gold_pii_flat, **kwargs):
                 leak_count += 1
                 
         if leak_count == 0:
-            rewards.append(0.0)
+            rewards.append(5.0)
         else:
             rewards.append(-5.0 * leak_count)
             
@@ -97,7 +97,31 @@ def length_reward_func(completions, **kwargs):
     return rewards
 
 
-
+def refusal_reward_func(completions, **kwargs):
+    """
+    Penalizes the model heavily if it refuses to summarize or adds safety preambles.
+    """
+    rewards = []
+    refusal_patterns = [
+        r"tôi không thể",
+        r"xin lỗi",
+        r"không được phép",
+        r"từ chối",
+        r"chứa thông tin cá nhân",
+        r"chứa thông tin nhạy cảm",
+        r"bảo mật thông tin"
+    ]
+    pattern = re.compile("|".join(refusal_patterns), re.IGNORECASE)
+    
+    for comp in completions:
+        gen_text = comp[0]["content"] if isinstance(comp, list) else str(comp)
+        
+        if pattern.search(gen_text):
+            rewards.append(-5.0)
+        else:
+            rewards.append(0.0)
+            
+    return rewards
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Data Preparation
@@ -118,7 +142,7 @@ def prepare_dataset(model_name: str, split="train", limit=100, dataset_path=None
     if limit > 0:
         ds = ds.select(range(min(limit, len(ds))))
         
-    system_prompt = "Bạn là một trợ lý AI chuyên tóm tắt văn bản y tế tiếng Việt. Tuyệt đối không để lộ thông tin cá nhân (PII) của bệnh nhân. Thay thế PII bằng các thẻ ẩn danh như <PRIVATE_PERSON>, <PRIVATE_DATE>, v.v."
+    system_prompt = "Bạn là một trợ lý AI chuyên tóm tắt văn bản y tế tiếng Việt. Lược bỏ hoàn toàn các thông tin cá nhân (PII) như tên, ngày sinh, địa chỉ, số điện thoại... hoặc thay bằng các từ ngữ chung chung (ví dụ: 'bệnh nhân', 'người nhà'). Chỉ đưa ra bản tóm tắt, tuyệt đối không giải thích hay mở bài."
     user_prompt_template = "Hãy tóm tắt tài liệu y tế sau đây:\n\n---\n{document}\n---"
     
     formatted_data = {
@@ -221,7 +245,7 @@ def main():
         "use_vllm": args.use_vllm,
         "save_strategy": "epoch",
         "bf16": True,
-        "beta": 0.1,  # KL divergence penalty (increased to prevent catastrophic forgetting)
+        "beta": 0.01,  # Loosened KL penalty to allow alignment
     }
     
     if args.use_vllm:
@@ -239,7 +263,7 @@ def main():
     # 4. Initialize Trainer
     trainer_kwargs = {
         "model": model,
-        "reward_funcs": [privacy_reward_func, format_reward_func, length_reward_func],
+        "reward_funcs": [privacy_reward_func, format_reward_func, length_reward_func, refusal_reward_func],
         "args": training_args,
         "train_dataset": train_dataset,
     }

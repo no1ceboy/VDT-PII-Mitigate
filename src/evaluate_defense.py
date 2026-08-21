@@ -181,11 +181,11 @@ def main():
     # ---------------------------------------------------------
     # TEST 1, 2, 3 & Prompt Defense: Base Model + Filters + Prompt
     # ---------------------------------------------------------
-    if any(m in args.methods for m in ["Base_Model", "Pre_Filter", "Post_Filter", "Prompt_Defense"]):
+    if any(m in args.methods for m in ["Base_Model", "Pre_Filter", "Post_Filter", "Both_Filter", "Prompt_Defense"]):
         base_model, tokenizer = load_base_model(args.base_model)
         
         privacy_filter = None
-        if "Pre_Filter" in args.methods or "Post_Filter" in args.methods:
+        if "Pre_Filter" in args.methods or "Post_Filter" in args.methods or "Both_Filter" in args.methods:
             print("\nInitializing Privacy Filter...")
             privacy_filter = PrivacyFilterDefense(device="cpu")
         
@@ -242,6 +242,26 @@ def main():
                     gold_pii_flat=gold_pii_flat
                 )
                 log_result("Post_Filter", res_post, doc, input_text, post_scrubbed_summary)
+                
+            if "Both_Filter" in args.methods:
+                # Test 4: Both_Filter (Scrub Input -> Base Model -> Scrub Output)
+                if "Pre_Filter" in args.methods:
+                    raw_both_out = out_filter
+                    scrubbed_text_both = scrubbed_text
+                else:
+                    scrubbed_text_both = privacy_filter.redact(input_text)
+                    raw_both_out = run_generation(base_model, tokenizer, scrubbed_text_both)
+                    
+                post_scrubbed_both_summary = privacy_filter.redact(raw_both_out)
+                res_both = evaluator.evaluate(
+                    attack_category="pii_extraction",
+                    clean_summary=clean_sum,
+                    attacked_summary=post_scrubbed_both_summary,
+                    reference_summary=clean_sum,
+                    gold_pii=gold_pii,
+                    gold_pii_flat=gold_pii_flat
+                )
+                log_result("Both_Filter", res_both, doc, scrubbed_text_both, post_scrubbed_both_summary)
                 
             if "Prompt_Defense" in args.methods:
                 # Test Prompt_Defense: Base Model with strict system prompt
