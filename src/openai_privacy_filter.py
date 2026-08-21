@@ -6,9 +6,11 @@ to redact sensitive PII tokens from documents *before* summarization.
 
 import torch
 
+import os
+
 class PrivacyFilterDefense:
-    def __init__(self, model_id: str = "openai/privacy-filter", device: str = "cuda"):
-        print(f"Loading Privacy Filter model: {model_id} on {device}...")
+    def __init__(self, model_path: str = None, device: str = "cuda"):
+        print(f"Loading Privacy Filter model from {model_path or 'Hugging Face'} on {device}...")
         self.runtime = None
         try:
             from opf._common.checkpoint_download import ensure_default_checkpoint
@@ -20,8 +22,12 @@ class PrivacyFilterDefense:
             return
             
         try:
-            print("Ensuring OPF checkpoint is downloaded (this may take a moment on first run)...")
-            checkpoint_path = ensure_default_checkpoint()
+            if model_path and os.path.exists(model_path):
+                print(f"Loading local OPF checkpoint from {model_path}...")
+                checkpoint_path = model_path
+            else:
+                print("Ensuring OPF checkpoint is downloaded (this may take a moment on first run)...")
+                checkpoint_path = ensure_default_checkpoint()
             
             # The model_id argument is not strictly used by opf as it pulls from its default,
             # but we allow passing it for API consistency.

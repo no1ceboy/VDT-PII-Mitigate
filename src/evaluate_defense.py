@@ -15,7 +15,7 @@ from peft import PeftModel
 
 from src.data_loader import DataLoader
 from src.pii_leakage_evaluator import PIILeakageEvaluator
-from src.openai_privacy_filter import PrivacyFilterDefense
+from src.meddies_privacy_filter import MeddiesPrivacyFilter
 
 def load_base_model(model_id="Qwen/Qwen2.5-1.5B-Instruct"):
     print(f"\nLoading base model: {model_id}")
@@ -82,6 +82,7 @@ def main():
     parser.add_argument("--offset", type=int, default=2000, help="Offset for dataset to avoid training range")
     parser.add_argument("--limit", type=int, default=50, help="Number of unseen documents to test")
     parser.add_argument("--output_file", type=str, default="results/defense_results_detailed.json", help="Path to save evaluation JSON report")
+    parser.add_argument("--filter_model_path", type=str, default="/path/to/local/vism-vi-pii-recognition", help="Path to the local Meddies Privacy Filter model")
     parser.add_argument("--methods", nargs="+", choices=["Base_Model", "Pre_Filter", "Post_Filter", "Both_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense", "GRPO_Defense"], default=["Base_Model", "Pre_Filter", "Post_Filter", "Both_Filter", "Prompt_Defense", "DPO_Defense", "OGPSA_Defense", "GRPO_Defense"], help="List of defense methods to evaluate.")
     args = parser.parse_args()
 
@@ -187,7 +188,7 @@ def main():
         privacy_filter = None
         if "Pre_Filter" in args.methods or "Post_Filter" in args.methods or "Both_Filter" in args.methods:
             print("\nInitializing Privacy Filter...")
-            privacy_filter = PrivacyFilterDefense(device="cpu")
+            privacy_filter = MeddiesPrivacyFilter(model_path=args.filter_model_path, device="cpu")
         
         print("\n--- Evaluating Base Model, Filters, and Prompt Defense ---")
         for case in tqdm(test_cases):
@@ -277,8 +278,8 @@ def main():
                 log_result("Prompt_Defense", res_prompt, doc, input_text, out_prompt)
                 
         del base_model
-        if privacy_filter and privacy_filter.runtime:
-            del privacy_filter.runtime
+        if privacy_filter and hasattr(privacy_filter, 'extractor'):
+            del privacy_filter.extractor
         if privacy_filter:
             del privacy_filter
         free_memory()
