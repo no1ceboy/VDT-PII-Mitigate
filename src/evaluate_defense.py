@@ -164,6 +164,9 @@ def main():
         if is_success:
             r["successes"] += 1
                 
+        # Get gold_pii_flat for logging
+        gold_pii_flat = getattr(doc, "metadata", {}).get("gold_pii_flat", [])
+        
         detailed_results.append({
             "doc_id": getattr(doc, "id", "unknown_doc"),
             "model": model_name,
@@ -171,6 +174,7 @@ def main():
             "prompt": input_text,
             "generated_summary": generated_text,
             "is_leaked": is_success,
+            "gold_pii_flat": gold_pii_flat,
             "leak_details": getattr(eval_res, "details", str(eval_res))
         })
     

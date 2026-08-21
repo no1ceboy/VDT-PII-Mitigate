@@ -89,6 +89,17 @@ CUDA_VISIBLE_DEVICES=X python src/evaluate_defense.py \
     --methods GRPO_Defense \
     --output_file "results/grpo_only_results.json"
 
+# C. Evaluate with LLM-as-a-Judge (Checks Coherence, Fluency, etc.)
+CUDA_VISIBLE_DEVICES=X python src/evaluate_defense.py \
+    --base_model "/path/to/your/local/qwen/model" \
+    --grpo_model_path "results/grpo_defense_model/final" \
+    --judge_model "/path/to/your/local/qwen/model" \
+    --test_source local \
+    --dataset_path "datasets/meddies_full_test.jsonl" \
+    --limit 50 \
+    --methods GRPO_Defense \
+    --output_file "results/grpo_judge_results.json"
+
 
 7. Privacy Filter (One-shot Defense Baseline):
 --------------------------------------------------------
