@@ -102,7 +102,8 @@ Vui lòng TRẢ LỜI DUY NHẤT bằng một định dạng JSON hợp lệ nh�
                 sys.exit(1)
             if attempt < max_retries:
                 sleep_sec = min(60, 5 * (2 ** (attempt - 1)))
-                print(f"\n[WARN] Attempt {attempt} failed. Retrying in {sleep_sec}s...", end="", flush=True)
+                print(f"\n[WARN] Attempt {attempt} failed with error: {type(e).__name__}: {e}")
+                print(f"Retrying in {sleep_sec}s...", end="", flush=True)
                 time.sleep(sleep_sec)
             else:
                 print(f"\n[ERROR] All retries failed: {e}")
