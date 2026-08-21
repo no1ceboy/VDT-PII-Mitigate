@@ -32,6 +32,7 @@ def build_parser():
     parser.add_argument("--model_name", type=str,
                         default="Qwen/Qwen2.5-1.5B-Instruct",
                         help="HuggingFace model ID to fine-tune")
+    parser.add_argument("--finetuning_type", type=str, default="qlora", choices=["qlora", "lora", "fft"], help="Type of finetuning: qlora (4-bit), lora (16-bit), or fft (Full Fine-Tuning)")
 
     # ── Training hyperparameters ──────────────────────────────────────────────
     parser.add_argument("--epochs", type=int, default=3)
@@ -142,33 +143,39 @@ def run_standard_dpo(args):
     if eval_dataset is not None:
         eval_dataset = eval_dataset.map(format_row, remove_columns=eval_dataset.column_names)
 
-    # ── Model (QLoRA 4-bit) ───────────────────────────────────────────────────
-    print("[DPO] Loading model with 4-bit QLoRA…")
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_quant_type="nf4",
-        # Use bfloat16 compute dtype on 30/40-series GPUs (Ampere+), float16 on older
-        bnb_4bit_compute_dtype=torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16,
-        bnb_4bit_use_double_quant=True,   # extra ~0.4-bit savings
-    )
-    model = AutoModelForCausalLM.from_pretrained(
-        args.model_name,
-        quantization_config=bnb_config,
-        device_map={"": 0},
-        attn_implementation="flash_attention_2" if _flash_attn_available() else "eager",
-    )
+    # ── Model ───────────────────────────────────────────────────
+    print(f"[DPO] Loading model with {args.finetuning_type}…")
+    
+    model_kwargs = {
+        "device_map": {"": 0},
+        "attn_implementation": "flash_attention_2" if _flash_attn_available() else "eager",
+        "torch_dtype": torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16,
+    }
+    
+    if args.finetuning_type == "qlora":
+        bnb_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_compute_dtype=torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16,
+            bnb_4bit_use_double_quant=True,
+        )
+        model_kwargs["quantization_config"] = bnb_config
+
+    model = AutoModelForCausalLM.from_pretrained(args.model_name, **model_kwargs)
     model.config.use_cache = False  # required for gradient checkpointing
 
-    peft_config = LoraConfig(
-        r=args.lora_r,
-        lora_alpha=args.lora_alpha,
-        lora_dropout=0.05,
-        bias="none",
-        task_type="CAUSAL_LM",
-        # Include gate_proj / up_proj / down_proj for better coverage on Qwen MLP
-        target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
-                        "gate_proj", "up_proj", "down_proj"],
-    )
+    peft_config = None
+    if args.finetuning_type in ["qlora", "lora"]:
+        peft_config = LoraConfig(
+            r=args.lora_r,
+            lora_alpha=args.lora_alpha,
+            lora_dropout=0.05,
+            bias="none",
+            task_type="CAUSAL_LM",
+            # Include gate_proj / up_proj / down_proj for better coverage on Qwen MLP
+            target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
+                            "gate_proj", "up_proj", "down_proj"],
+        )
 
     # ── Training config ───────────────────────────────────────────────────────
     use_bf16 = torch.cuda.is_bf16_supported()

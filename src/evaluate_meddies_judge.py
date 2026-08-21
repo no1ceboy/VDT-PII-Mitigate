@@ -62,7 +62,7 @@ Vui lòng TRẢ LỜI DUY NHẤT bằng một định dạng JSON hợp lệ nh�
                 content = response.text.strip()
             elif provider == "local":
                 import asyncio
-                import local_api
+                from src import local_api
                 import os
                 
                 if model == local_api.OSS_MODEL:
