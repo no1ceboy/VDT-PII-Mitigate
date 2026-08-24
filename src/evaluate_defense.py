@@ -73,8 +73,8 @@ def run_generation(model, tokenizer, prompt, max_new_tokens=200, system_prompt=N
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate Defense against Natural Leakage")
-    parser.add_argument("--model_path", type=str, default="results/defense_model/final", help="Path to trained DPO LoRA adapter (alias for dpo_model_path)")
-    parser.add_argument("--dpo_model_path", type=str, default="results/defense_model/final", help="Path to trained DPO LoRA adapter")
+    parser.add_argument("--model_path", type=str, default="results/defense_model/final", help="Path to trained DPO LoRA adapter or FFT model (alias for dpo_model_path)")
+    parser.add_argument("--dpo_model_path", type=str, default="results/defense_model/final", help="Path to trained DPO LoRA adapter or FFT model")
     parser.add_argument("--ogpsa_model_path", type=str, default="results/defense_model_ogpsa/final", help="Path to trained OGPSA LoRA adapter")
     parser.add_argument("--grpo_model_path", type=str, default="results/grpo_defense_model/final", help="Path to trained GRPO LoRA adapter")
     parser.add_argument("--base_model", type=str, default="Qwen/Qwen2.5-1.5B-Instruct", help="Base model ID")
@@ -297,16 +297,25 @@ def main():
     # TEST 3: DPO-Aligned Model
     # ---------------------------------------------------------
     if "DPO_Defense" in args.methods:
-        print("\n--- Evaluating Trained Defense Model ---")
-        adapter_path = args.dpo_model_path
-        if not os.path.exists(os.path.join(adapter_path, "adapter_config.json")):
-            if os.path.exists(os.path.join(adapter_path, "final", "adapter_config.json")):
-                adapter_path = os.path.join(adapter_path, "final")
-                
-        if os.path.exists(os.path.join(adapter_path, "adapter_config.json")):
-            base_model, tokenizer = load_base_model(args.base_model)
-            print(f"Loading trained LoRA adapter from: {adapter_path}...")
-            dpo_model = PeftModel.from_pretrained(base_model, adapter_path)
+        print("\n--- Evaluating DPO Defense Model ---")
+        dpo_path = args.dpo_model_path
+        if not os.path.exists(os.path.join(dpo_path, "adapter_config.json")) and not os.path.exists(os.path.join(dpo_path, "config.json")):
+            if os.path.exists(os.path.join(dpo_path, "final", "adapter_config.json")) or os.path.exists(os.path.join(dpo_path, "final", "config.json")):
+                dpo_path = os.path.join(dpo_path, "final")
+
+        is_lora = os.path.exists(os.path.join(dpo_path, "adapter_config.json"))
+        is_fft = os.path.exists(os.path.join(dpo_path, "config.json"))
+
+        if is_lora or is_fft:
+            if is_lora:
+                base_model, tokenizer = load_base_model(args.base_model)
+                print(f"Loading trained DPO LoRA adapter from: {dpo_path}...")
+                dpo_model = PeftModel.from_pretrained(base_model, dpo_path)
+            else:
+                print(f"Loading trained DPO full FFT model from: {dpo_path}...")
+                dpo_model, tokenizer = load_base_model(dpo_path)
+                base_model = None
+
             dpo_model.eval()
             
             for case in tqdm(test_cases):
@@ -328,9 +337,10 @@ def main():
                 log_result("DPO_Defense", res_dpo, doc, input_text, out_dpo)
                     
             del dpo_model
-            del base_model
+            if base_model is not None:
+                del base_model
         else:
-            print(f"\n[WARNING] Trained DPO adapter not found at {adapter_path}. Skipping DPO_Defense test.")
+            print(f"\n[WARNING] Trained DPO model (LoRA or FFT) not found at {dpo_path}. Skipping DPO_Defense test.")
 
     # ---------------------------------------------------------
     # TEST 4: OGPSA-Aligned Model

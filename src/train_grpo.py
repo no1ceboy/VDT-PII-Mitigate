@@ -15,6 +15,8 @@ from datasets import Dataset, load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from peft import LoraConfig
 
+from pii_leakage_evaluator import PIILeakageEvaluator
+
 try:
     from trl import GRPOTrainer, GRPOConfig
 except ImportError:
@@ -27,43 +29,46 @@ except ImportError:
 # Reward Functions
 # ──────────────────────────────────────────────────────────────────────────────
 
+_pii_evaluator = PIILeakageEvaluator()
+
+
+def _completion_text(completion):
+    """Extract text from the completion formats used by different TRL versions."""
+    if isinstance(completion, list) and completion:
+        last_message = completion[-1]
+        if isinstance(last_message, dict):
+            return str(last_message.get("content", ""))
+    if isinstance(completion, dict):
+        return str(completion.get("content", ""))
+    return str(completion)
+
 def privacy_reward_func(completions, gold_pii_flat, **kwargs):
     """
-    Penalizes the model heavily for leaking PII.
-    Reward = 0.0 if 0 leaks. -5.0 for each leaked item.
-    (We don't reward safe behavior, we only punish unsafe behavior to prevent reward hacking).
+    Penalizes the model for leaking PII using the same fuzzy evaluator used at test time.
+
+    Keeping training and evaluation detection identical is important: otherwise the
+    reward can consider a paraphrased/partially copied PII item safe while evaluation
+    later counts it as a leak.
     """
     rewards = []
     for comp, pii_list in zip(completions, gold_pii_flat):
-        gen_text = comp[0]["content"] if isinstance(comp, list) else str(comp)
-        
+        gen_text = _completion_text(comp)
+
         if not pii_list or str(pii_list).lower() == "nan":
             rewards.append(0.0)
             continue
-            
-        leak_count = 0
-        for pii_item in pii_list:
-            item_str = str(pii_item).strip()
-            if not item_str or len(item_str) < 3:
-                continue
-                
-            # If the item is mostly digits (like a phone number or ID), build a space-tolerant regex
-            digits_only = re.sub(r'\D', '', item_str)
-            if 8 <= len(digits_only) <= 12 and len(digits_only) >= len(item_str) * 0.5:
-                tol_pattern = r'\s*[-.]?\s*'.join(list(digits_only))
-                pattern = re.compile(rf"(?:\b|\s){tol_pattern}(?:\b|\s|[.,!?;:])", re.IGNORECASE)
-            else:
-                escaped_item = re.escape(item_str)
-                pattern = re.compile(rf"(?:\b|\s){escaped_item}(?:\b|\s|[.,!?;:])", re.IGNORECASE)
-            
-            if pattern.search(gen_text) or item_str.lower() in gen_text.lower():
-                leak_count += 1
-                
+
+        result = _pii_evaluator.evaluate(
+            attacked_summary=gen_text,
+            gold_pii_flat=pii_list,
+        )
+        leak_count = len(result.leaked_items)
+
         if leak_count == 0:
             rewards.append(5.0)
         else:
             rewards.append(-5.0 * leak_count)
-            
+
     return rewards
 
 
@@ -74,7 +79,7 @@ def format_reward_func(completions, **kwargs):
     """
     rewards = []
     for comp in completions:
-        gen_text = comp[0]["content"] if isinstance(comp, list) else str(comp)
+        gen_text = _completion_text(comp)
         
         score = 0.0
         if re.search(r"^\s*[-*]\s+", gen_text, re.MULTILINE):
@@ -92,7 +97,7 @@ def length_reward_func(completions, **kwargs):
     """
     rewards = []
     for comp in completions:
-        gen_text = comp[0]["content"] if isinstance(comp, list) else str(comp)
+        gen_text = _completion_text(comp)
         
         char_len = len(gen_text.strip())
         if char_len < 50:
@@ -120,37 +125,13 @@ def refusal_reward_func(completions, **kwargs):
     pattern = re.compile("|".join(refusal_patterns), re.IGNORECASE)
     
     for comp in completions:
-        gen_text = comp[0]["content"] if isinstance(comp, list) else str(comp)
+        gen_text = _completion_text(comp)
         
         if pattern.search(gen_text):
             rewards.append(-5.0)
         else:
             rewards.append(0.0)
             
-    return rewards
-
-
-def strict_format_penalty_func(completions, **kwargs):
-    """
-    Extremely harsh penalty if the model hallucinates ANY phone number, email, or CMND/CCCD, 
-    regardless of whether it was in the ground truth.
-    """
-    rewards = []
-    # Match emails
-    email_regex = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
-    # Match any sequence of 9 to 12 digits, possibly separated by spaces, dots, or dashes
-    numeric_regex = re.compile(r"\b(?:\d[\s\-.]*){9,12}\b")
-    
-    for comp in completions:
-        gen_text = comp[0]["content"] if isinstance(comp, list) else str(comp)
-        penalty = 0.0
-        
-        if email_regex.search(gen_text):
-            penalty -= 10.0
-        if numeric_regex.search(gen_text):
-            penalty -= 10.0
-            
-        rewards.append(penalty)
     return rewards
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -275,7 +256,7 @@ def main():
         "use_vllm": args.use_vllm,
         "save_strategy": "epoch",
         "bf16": True,
-        "beta": 0.0,  # KL penalty removed so the model can completely diverge to maximize reward
+        "beta": 0.01,  # Loosened KL penalty to allow alignment
     }
     
     if args.use_vllm:
@@ -293,7 +274,7 @@ def main():
     # 4. Initialize Trainer
     trainer_kwargs = {
         "model": model,
-        "reward_funcs": [privacy_reward_func, strict_format_penalty_func, format_reward_func, length_reward_func, refusal_reward_func],
+        "reward_funcs": [privacy_reward_func, format_reward_func, length_reward_func, refusal_reward_func],
         "args": training_args,
         "train_dataset": train_dataset,
     }
