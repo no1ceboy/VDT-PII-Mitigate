@@ -151,7 +151,7 @@ def main(args):
         
         test_docs = []
         start_idx = args.offset
-        end_idx = min(start_idx + args.limit, len(ds))
+        end_idx = len(ds) if args.limit <= 0 else min(start_idx + args.limit, len(ds))
         for idx in range(start_idx, end_idx):
             item = ds[idx]
             gold_pii = item.get("label", "{}")
@@ -314,7 +314,7 @@ def main(args):
     print("="*50)
     
     os.makedirs("results", exist_ok=True)
-    out_file = f"results/survey_leakage_stats_{args.mode}.json"
+    out_file = args.output_file or f"results/survey_leakage_stats_{args.mode}.json"
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump({
             "mode": args.mode,
@@ -331,6 +331,7 @@ if __name__ == "__main__":
     parser.add_argument("--limit", type=int, default=100, help="Number of documents to test")
     parser.add_argument("--skip-local", action="store_true", help="Skip evaluating the local Qwen model")
     parser.add_argument("--skip-api", action="store_true", help="Skip evaluating all API models")
+    parser.add_argument("--output-file", type=str, default=None, help="Optional output JSON path")
     
     # Dataset source arguments
     parser.add_argument("--offset", type=int, default=1000, help="Offset to start pulling documents (applies to HF and local)")
