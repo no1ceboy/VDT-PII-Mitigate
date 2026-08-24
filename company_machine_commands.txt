@@ -41,6 +41,7 @@ CUDA_VISIBLE_DEVICES=X python src/train_grpo.py \
 CUDA_VISIBLE_DEVICES=X python -m src.survey_pii_leakage \
     --mode plain \
     --model-name "/path/to/your/local/qwen/model" \
+    --local-model-label "Qwen 1.5B Local" \
     --dataset-path "datasets/meddies_full_train.jsonl" \
     --limit 0 \
     --skip-api \
@@ -52,6 +53,7 @@ python -m src.survey_pii_leakage \
     --dataset-path "datasets/meddies_full_train.jsonl" \
     --limit 0 \
     --skip-local \
+    --api-models gpt-oss-120b Qwen3-14B \
     --output-file "results/survey_meddies_train_api.json"
 
 # Build DPO pairs from the local Qwen survey. Chosen responses are redacted
@@ -147,25 +149,31 @@ CUDA_VISIBLE_DEVICES=X python src/meddies_privacy_filter.py \
 # Notice we test against the unseen _test split
 
 # A. Natural Leakage Baseline (Zero-shot, no defense):
-CUDA_VISIBLE_DEVICES=X python src/survey_pii_leakage.py \
+CUDA_VISIBLE_DEVICES=X python -m src.survey_pii_leakage \
     --mode plain \
     --model-name "/path/to/your/local/qwen/model" \
+    --local-model-label "Qwen 1.5B Local" \
+    --skip-api \
     --limit 100 \
     --offset 0 \
     --dataset-path "datasets/meddies_full_test.jsonl"
 
 # B. Prompt Defense (Few-shot Patched - tags like <PERSON>):
-CUDA_VISIBLE_DEVICES=X python src/survey_pii_leakage.py \
+CUDA_VISIBLE_DEVICES=X python -m src.survey_pii_leakage \
     --mode few_shot_patched \
     --model-name "/path/to/your/local/qwen/model" \
+    --local-model-label "Qwen 1.5B Local" \
+    --skip-api \
     --limit 100 \
     --offset 0 \
     --dataset-path "datasets/meddies_full_test.jsonl"
 
 # C. Prompt Defense (Few-shot Natural - omitting PII naturally):
-CUDA_VISIBLE_DEVICES=X python src/survey_pii_leakage.py \
+CUDA_VISIBLE_DEVICES=X python -m src.survey_pii_leakage \
     --mode few_shot_natural \
     --model-name "/path/to/your/local/qwen/model" \
+    --local-model-label "Qwen 1.5B Local" \
+    --skip-api \
     --limit 100 \
     --offset 0 \
     --dataset-path "datasets/meddies_full_test.jsonl"
