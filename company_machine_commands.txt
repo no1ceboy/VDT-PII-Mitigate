@@ -32,10 +32,20 @@ CUDA_VISIBLE_DEVICES=X python src/train_grpo.py \
     --grad_accum 4 \
     --lr 2e-5 \
     --num_generations 4 \
-    --num_generations 4 \
     --debug_rewards \
     --debug_reward_limit 200 \
+    --trace_generations \
+    --trace_dataset_path "datasets/meddies_full_val.jsonl" \
+    --trace_limit 50 \
+    --trace_every_steps 100 \
     --limit 0  # 0 means use all available data
+
+# GRPO trace files are written inside the output directory:
+#   training_log.jsonl      aggregate Trainer metrics by optimizer step
+#   reward_debug.jsonl      bounded individual reward/completion samples
+#   generation_trace.jsonl  fixed validation generations at step 0, every 100 steps, and final
+#   behavior_summary.json   leak/refusal/length rates for each trace point
+#   behavior_report.md      compact local report with a table and representative examples
 
 
 4. Build a Leakage-Based DPO Dataset from Meddies TRAIN Only:
