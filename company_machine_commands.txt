@@ -32,6 +32,8 @@ CUDA_VISIBLE_DEVICES=X python src/train_grpo.py \
     --lr 2e-5 \
     --num_generations 4 \
     --num_generations 4 \
+    --debug_rewards \
+    --debug_reward_limit 200 \
     --limit 0  # 0 means use all available data
 
 

@@ -9,10 +9,14 @@ import os
 import argparse
 import sys
 import re
+import json
+import time
+import hashlib
+from threading import Lock
 
 import torch
 from datasets import Dataset, load_dataset
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, TrainerCallback
 from peft import LoraConfig
 
 from pii_leakage_evaluator import PIILeakageEvaluator
@@ -30,6 +34,68 @@ except ImportError:
 # ──────────────────────────────────────────────────────────────────────────────
 
 _pii_evaluator = PIILeakageEvaluator()
+_REWARD_DEBUG_PATH = None
+_REWARD_DEBUG_LIMIT = 0
+_REWARD_DEBUG_WRITTEN = 0
+_REWARD_DEBUG_LOCK = Lock()
+
+
+class JSONLTrainingLogger(TrainerCallback):
+    """Write Trainer metrics to a plain JSONL file without TensorBoard/W&B."""
+
+    def __init__(self, output_path):
+        self.output_path = output_path
+
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        if not logs:
+            return
+        record = {
+            "event": "trainer_log",
+            "time": time.time(),
+            "step": state.global_step,
+            "epoch": state.epoch,
+            "metrics": logs,
+        }
+        with open(self.output_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
+
+
+def configure_reward_debug(output_path, limit=200):
+    """Enable a bounded, human-inspectable reward/completion trace."""
+    global _REWARD_DEBUG_PATH, _REWARD_DEBUG_LIMIT, _REWARD_DEBUG_WRITTEN
+    _REWARD_DEBUG_PATH = output_path
+    _REWARD_DEBUG_LIMIT = limit
+    _REWARD_DEBUG_WRITTEN = 0
+
+
+def _write_reward_debug(component, completions, rewards, details=None):
+    """Write individual reward components and completions for offline review."""
+    global _REWARD_DEBUG_WRITTEN
+    if _REWARD_DEBUG_PATH is None:
+        return
+
+    with _REWARD_DEBUG_LOCK:
+        if _REWARD_DEBUG_WRITTEN >= _REWARD_DEBUG_LIMIT:
+            return
+        for index, (completion, reward) in enumerate(zip(completions, rewards)):
+            if _REWARD_DEBUG_WRITTEN >= _REWARD_DEBUG_LIMIT:
+                break
+            completion_text = _completion_text(completion)
+            record = {
+                "event": "reward_debug",
+                "time": time.time(),
+                "component": component,
+                "completion_index": index,
+                "completion_id": hashlib.sha1(completion_text.encode("utf-8")).hexdigest()[:12],
+                "completion_chars": len(completion_text.strip()),
+                "completion": completion_text,
+                "reward": float(reward),
+            }
+            if details and index < len(details):
+                record.update(details[index])
+            with open(_REWARD_DEBUG_PATH, "a", encoding="utf-8") as f:
+                f.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
+            _REWARD_DEBUG_WRITTEN += 1
 
 
 def _completion_text(completion):
@@ -51,11 +117,13 @@ def privacy_reward_func(completions, gold_pii_flat, **kwargs):
     later counts it as a leak.
     """
     rewards = []
+    debug_details = []
     for comp, pii_list in zip(completions, gold_pii_flat):
         gen_text = _completion_text(comp)
 
         if not pii_list or str(pii_list).lower() == "nan":
             rewards.append(0.0)
+            debug_details.append({"leaked_items": [], "gold_pii_count": 0})
             continue
 
         result = _pii_evaluator.evaluate(
@@ -63,12 +131,17 @@ def privacy_reward_func(completions, gold_pii_flat, **kwargs):
             gold_pii_flat=pii_list,
         )
         leak_count = len(result.leaked_items)
+        debug_details.append({
+            "leaked_items": result.leaked_items,
+            "gold_pii_count": len(pii_list),
+        })
 
         if leak_count == 0:
             rewards.append(5.0)
         else:
             rewards.append(-5.0 * leak_count)
 
+    _write_reward_debug("privacy", completions, rewards, debug_details)
     return rewards
 
 
@@ -88,6 +161,7 @@ def format_reward_func(completions, **kwargs):
             score += 0.1
             
         rewards.append(score)
+    _write_reward_debug("format", completions, rewards)
     return rewards
 
 
@@ -105,6 +179,7 @@ def length_reward_func(completions, **kwargs):
         else:
             rewards.append(0.0)
             
+    _write_reward_debug("length", completions, rewards)
     return rewards
 
 
@@ -132,6 +207,7 @@ def refusal_reward_func(completions, **kwargs):
         else:
             rewards.append(0.0)
             
+    _write_reward_debug("refusal", completions, rewards)
     return rewards
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -210,7 +286,20 @@ def main():
     parser.add_argument("--use_vllm", action="store_true", help="Use vLLM for fast generation (requires vllm installed)")
     parser.add_argument("--report_to", type=str, default="none", choices=["none", "wandb", "tensorboard"], help="Where to log training metrics")
     parser.add_argument("--dataset_path", type=str, default=None, help="Path to local JSONL dataset (if None, downloads from HF)")
+    parser.add_argument("--debug_rewards", action="store_true", help="Write reward components and sampled completions to reward_debug.jsonl")
+    parser.add_argument("--debug_reward_limit", type=int, default=200, help="Maximum completion records written to reward_debug.jsonl")
     args = parser.parse_args()
+
+    os.makedirs(args.output_dir, exist_ok=True)
+    with open(os.path.join(args.output_dir, "run_config.json"), "w", encoding="utf-8") as f:
+        json.dump(vars(args), f, indent=2, ensure_ascii=False)
+
+    if args.debug_rewards:
+        configure_reward_debug(
+            os.path.join(args.output_dir, "reward_debug.jsonl"),
+            limit=args.debug_reward_limit,
+        )
+        print(f"[GRPO] Reward debug log: {os.path.join(args.output_dir, 'reward_debug.jsonl')}")
 
     # 1. Dataset
     train_dataset = prepare_dataset(args.model_name, split="train", limit=args.limit, dataset_path=args.dataset_path)
@@ -289,12 +378,14 @@ def main():
         trainer_kwargs["max_completion_length"] = args.max_completion_length
         
     trainer = GRPOTrainer(**trainer_kwargs)
+    trainer.add_callback(JSONLTrainingLogger(os.path.join(args.output_dir, "training_log.jsonl")))
 
     print("[GRPO] Starting training...")
     trainer.train()
     
     print(f"[GRPO] Saving final adapter to {args.output_dir}")
     trainer.save_model(args.output_dir)
+    trainer.save_state()
 
 if __name__ == "__main__":
     main()
