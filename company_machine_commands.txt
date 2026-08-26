@@ -27,6 +27,7 @@ CUDA_VISIBLE_DEVICES=X python src/train_grpo.py \
     --output_dir "results/grpo_defense_model" \
     --finetuning_type fft \
     --epochs 1 \
+    --seed 42 \
     --batch_size 2 \
     --grad_accum 4 \
     --lr 2e-5 \
@@ -79,6 +80,7 @@ CUDA_VISIBLE_DEVICES=X python src/train_defense.py \
     --dataset_path "results/dpo_meddies_train_qwen.jsonl" \
     --output_dir "results/dpo_defense_model" \
     --epochs 3 \
+    --seed 42 \
     --batch_size 1 \
     --grad_accum 4 \
     --lr 5e-5

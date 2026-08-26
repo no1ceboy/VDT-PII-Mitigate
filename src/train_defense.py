@@ -36,6 +36,8 @@ def build_parser():
 
     # ── Training hyperparameters ──────────────────────────────────────────────
     parser.add_argument("--epochs", type=int, default=3)
+    parser.add_argument("--seed", type=int, default=42,
+                        help="Random seed for splitting, initialization, and training")
     parser.add_argument("--batch_size", type=int, default=1,
                         help="Per-device train batch size")
     parser.add_argument("--grad_accum", type=int, default=4,
@@ -113,7 +115,7 @@ def run_standard_dpo(args):
 
     # Hold out val_samples for evaluation (matching OGPSA logic)
     if args.val_samples > 0 and args.val_samples < len(dataset):
-        split = dataset.train_test_split(test_size=args.val_samples, seed=42)
+        split = dataset.train_test_split(test_size=args.val_samples, seed=args.seed)
         train_dataset, eval_dataset = split["train"], split["test"]
     else:
         train_dataset, eval_dataset = dataset, None
@@ -197,6 +199,8 @@ def run_standard_dpo(args):
         gradient_checkpointing_kwargs={"use_reentrant": False},
         report_to=args.report_to,
         run_name=args.run_name,
+        seed=args.seed,
+        data_seed=args.seed,
         beta=args.beta,
         # Prevent the trainer from re-tokenising already-formatted strings
         precompute_ref_log_probs=False,
@@ -309,6 +313,7 @@ def run_ogpsa_dpo(args):
         "--save_strategy",            "epoch",
         "--save_only_model",          "True",
         "--warmup_steps",             "0",
+        "--seed",                     str(args.seed),
         "--report_to",                args.report_to,
         "--output_dir",               output_dir,
         "--bf16",                     str(use_bf16),
@@ -352,6 +357,10 @@ def run_ogpsa_dpo(args):
 def main():
     parser = build_parser()
     args = parser.parse_args()
+
+    # Transformers' helper seeds Python, NumPy (when installed), and PyTorch.
+    from transformers import set_seed
+    set_seed(args.seed)
 
     if args.ogpsa:
         print("=" * 60)

@@ -16,7 +16,7 @@ from threading import Lock
 
 import torch
 from datasets import Dataset, load_dataset
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, TrainerCallback
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, TrainerCallback, set_seed
 from peft import LoraConfig
 
 from pii_leakage_evaluator import PIILeakageEvaluator
@@ -276,6 +276,7 @@ def main():
     parser.add_argument("--output_dir", type=str, default="results/grpo_defense_model")
     parser.add_argument("--finetuning_type", type=str, default="qlora", choices=["qlora", "lora", "fft"], help="Type of finetuning: qlora (4-bit), lora (16-bit), or fft (Full Fine-Tuning)")
     parser.add_argument("--epochs", type=int, default=1)
+    parser.add_argument("--seed", type=int, default=42, help="Random seed for data order, initialization, and generation")
     parser.add_argument("--batch_size", type=int, default=2, help="Per device generation batch size")
     parser.add_argument("--grad_accum", type=int, default=4)
     parser.add_argument("--lr", type=float, default=2e-5)
@@ -289,6 +290,8 @@ def main():
     parser.add_argument("--debug_rewards", action="store_true", help="Write reward components and sampled completions to reward_debug.jsonl")
     parser.add_argument("--debug_reward_limit", type=int, default=200, help="Maximum completion records written to reward_debug.jsonl")
     args = parser.parse_args()
+
+    set_seed(args.seed)
 
     os.makedirs(args.output_dir, exist_ok=True)
     with open(os.path.join(args.output_dir, "run_config.json"), "w", encoding="utf-8") as f:
@@ -353,6 +356,10 @@ def main():
         config_kwargs["vllm_gpu_memory_utilization"] = 0.25
     
     config_params = inspect.signature(GRPOConfig.__init__).parameters
+    if "seed" in config_params:
+        config_kwargs["seed"] = args.seed
+    if "data_seed" in config_params:
+        config_kwargs["data_seed"] = args.seed
     if "max_prompt_length" in config_params:
         config_kwargs["max_prompt_length"] = args.max_prompt_length
     if "max_completion_length" in config_params:
