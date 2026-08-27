@@ -116,6 +116,9 @@ def main():
     parser.add_argument("--provider", type=str, default="google", choices=["google", "openrouter", "local"], help="API provider")
     parser.add_argument("--api_key", type=str, default="", help="API key")
     parser.add_argument("--limit", type=int, default=30, help="Max summaries to evaluate per model (0 for no limit)")
+    parser.add_argument("--output_file", "--output-file", dest="output_file", type=str,
+                        default="results/benchmarks/meddies_judge_scores.json",
+                        help="Path for the scored JSON output; existing file is used for resume")
     args = parser.parse_args()
     
     api_key = args.api_key
@@ -143,8 +146,9 @@ def main():
     print(f"{'Model Name':<20} | {'Faithful (LLM)':<18} | {'Coverage (LLM)':<18} | {'Coherence':<12} | {'Fluency':<12}")
     print("-" * 105)
     
-    out_file = "results/benchmarks/meddies_judge_scores.json"
-    os.makedirs(os.path.dirname(out_file), exist_ok=True)
+    out_file = args.output_file
+    output_dir = os.path.dirname(out_file)
+    os.makedirs(output_dir or ".", exist_ok=True)
     
     summary_scores = {}
     
