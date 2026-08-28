@@ -17,6 +17,7 @@ import argparse
 import time
 import sys
 import types
+import math
 from pathlib import Path
 
 def call_llm_judge_all(original_prompt, cand_summary, model, api_key, provider="google"):
@@ -107,7 +108,27 @@ Vui lòng TRẢ LỜI DUY NHẤT bằng một định dạng JSON hợp lệ nh�
                 time.sleep(sleep_sec)
             else:
                 print(f"\n[ERROR] All retries failed: {e}")
-                return None
+            return None
+
+
+def parse_score(value):
+    """Return a finite judge score in the expected 1-5 range, or None."""
+    if isinstance(value, bool) or value is None:
+        return None
+    try:
+        score = float(value)
+    except (TypeError, ValueError):
+        return None
+    if not math.isfinite(score) or score < 1 or score > 5:
+        return None
+    return score
+
+
+def item_has_all_scores(item):
+    """Check whether one result has four usable judge scores."""
+    return all(parse_score(item.get(field)) is not None for field in (
+        "coherence", "fluency", "faithfulness_ragas", "coverage_ragas"
+    ))
 
 def main():
     parser = argparse.ArgumentParser(description="Meddies specific LLM Judge (RAGAS + Coherence/Fluency)")
@@ -187,22 +208,12 @@ def main():
         
     for model_key, items in model_groups.items():
         existing_scores = summary_scores.get(model_key, {})
-        target_count = len(items) if args.limit <= 0 else min(args.limit, len(items))
-        
-        valid_items = [
-            it for it in items 
-            if it.get("coherence") is not None and str(it.get("coherence", "")).lower() != "nan"
-            and it.get("fluency") is not None and str(it.get("fluency", "")).lower() != "nan"
-            and it.get("faithfulness_ragas") is not None and str(it.get("faithfulness_ragas", "")).lower() != "nan"
-            and it.get("coverage_ragas") is not None and str(it.get("coverage_ragas", "")).lower() != "nan"
-        ]
-        has_eval = len(valid_items) >= target_count
-        
-        if has_eval:
-            print(f"\n[SKIP] {model_key} already fully evaluated (target: {target_count}). Skipping...")
+        candidate_items = items if args.limit <= 0 else items[:args.limit]
+        items_to_eval = [it for it in candidate_items if not item_has_all_scores(it)]
+
+        if not items_to_eval:
+            print(f"\n[SKIP] {model_key} already fully evaluated. Skipping...")
             continue
-            
-        items_to_eval = items[:args.limit] if args.limit > 0 else items
         
         c_scores, f_scores, faith_scores, cov_scores = [], [], [], []
         print(f"\n[LLM] {model_key} - processing {len(items_to_eval)} samples...", end="", flush=True)
@@ -211,10 +222,19 @@ def main():
             cand = it.get("generated_summary", it.get("output", ""))
             res = call_llm_judge_all(original_prompt, cand, args.model, api_key, provider=args.provider)
             if res is not None:
-                c_val = float(res.get("coherence", 3))
-                f_val = float(res.get("fluency", 3))
-                faith_val = float(res.get("faithfulness", 3))
-                cov_val = float(res.get("coverage", 3))
+                c_val = parse_score(res.get("coherence"))
+                f_val = parse_score(res.get("fluency"))
+                faith_val = parse_score(res.get("faithfulness"))
+                cov_val = parse_score(res.get("coverage"))
+
+                if None in (c_val, f_val, faith_val, cov_val):
+                    print(
+                        f"\n[WARN] Invalid judge scores for {model_key}/{it.get('doc_id', idx)} "
+                        "(one or more fields were null, non-numeric, or outside 1-5). "
+                        "Leaving this item unscored for the next resume run."
+                    )
+                    time.sleep(4.1)
+                    continue
                 
                 c_scores.append(c_val)
                 f_scores.append(f_val)
@@ -228,26 +248,33 @@ def main():
                 print(".", end="", flush=True)
             else:
                 print("\n[CRITICAL ERROR] API returned None. Quota likely exhausted.")
-                print("Exiting immediately to prevent saving corrupted 0.0 scores.")
-                print("Run the script again later to resume exactly where you left off!")
-                sys.exit(1)
+                print("Skipping this item; it will be retried on the next resume run.")
             
             # 4.1s sleep ensures we never exceed 15 RPM (60 / 15 = 4)
             time.sleep(4.1)
         print(" Done!")
         
-        avg_c = sum(c_scores) / len(c_scores) if c_scores else 0.0
-        avg_f = sum(f_scores) / len(f_scores) if f_scores else 0.0
-        avg_faith = sum(faith_scores) / len(faith_scores) if faith_scores else 0.0
-        avg_cov = sum(cov_scores) / len(cov_scores) if cov_scores else 0.0
-        
-        existing_scores["coherence_llm"] = avg_c
-        existing_scores["fluency_llm"] = avg_f
-        existing_scores["faithfulness_ragas"] = avg_faith
-        existing_scores["coverage_ragas"] = avg_cov
+        # Recompute the summary from every successfully scored item, rather
+        # than only the items processed in this invocation. This keeps resume
+        # runs statistically correct and never replaces missing scores with 0.
+        complete_items = [it for it in items if item_has_all_scores(it)]
+        if complete_items:
+            existing_scores["coherence_llm"] = sum(parse_score(it["coherence"]) for it in complete_items) / len(complete_items)
+            existing_scores["fluency_llm"] = sum(parse_score(it["fluency"]) for it in complete_items) / len(complete_items)
+            existing_scores["faithfulness_ragas"] = sum(parse_score(it["faithfulness_ragas"]) for it in complete_items) / len(complete_items)
+            existing_scores["coverage_ragas"] = sum(parse_score(it["coverage_ragas"]) for it in complete_items) / len(complete_items)
+            existing_scores["scored_items"] = len(complete_items)
             
         summary_scores[model_key] = existing_scores
-        print(f"{model_key:<20} | {existing_scores.get('faithfulness_ragas', 0.0):>18.4f} | {existing_scores.get('coverage_ragas', 0.0):>18.4f} | {existing_scores.get('coherence_llm', 0.0):>12.2f} | {existing_scores.get('fluency_llm', 0.0):>12.2f}")
+        def display_score(field, digits):
+            value = existing_scores.get(field)
+            return f"{value:>{digits + 5}.{digits}f}" if isinstance(value, (int, float)) else f"{'n/a':>{digits + 5}}"
+
+        print(
+            f"{model_key:<20} | {display_score('faithfulness_ragas', 4)} | "
+            f"{display_score('coverage_ragas', 4)} | {display_score('coherence_llm', 2)} | "
+            f"{display_score('fluency_llm', 2)}"
+        )
         
         # Incremental save
         final_output = {
